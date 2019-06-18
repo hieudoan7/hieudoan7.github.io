@@ -23,6 +23,19 @@ I. DFS Tree Output của thuật toán DFS là 1 cây khung (spanning tree) Tấ
     </item>
     
     <item>
+      <title>Hugo Tutorial</title>
+      <link>https://1612198.github.io/posts/hugo-tutorial/</link>
+      <pubDate>Fri, 19 Apr 2019 15:01:41 +0700</pubDate>
+      
+      <guid>https://1612198.github.io/posts/hugo-tutorial/</guid>
+      <description>Hugo Tutorial 18.06.2019
+I. Install Hugo &amp;amp; Setup Theme 2 best tutorial about hugo
+part 1 part 2
+Về cơ bản, chúng ta host blog lên github sẽ tạo 2 repository
+ Repo 1: hieudoan7: chứa các file config của hugo, content, nói chung tất tần tật. Repo 2: 1612198.github.io: repo này chứa file html để render lên web  Chú ý: dateformat trong file config.toml (ở thư mục gốc, thư mục mà ta có thể sử dụng hugo command) phải để ở ngày 2.</description>
+    </item>
+    
+    <item>
       <title>The Fine Art of Small Talk</title>
       <link>https://1612198.github.io/posts/the-fine-art-of-small-talk/</link>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
@@ -39,15 +52,6 @@ Em học được gì qua nội dung quyển sách? Contents  Chapter 1: What&am
       
       <guid>https://1612198.github.io/about/</guid>
       <description>I am Hieu Doan Minh  Hello everyone, my name is Hieu. I come from Binh Dinh province, Vietnam. I study computer science in HCMUS. I would love to think about code and solve problems. I like playing football, watching football matches and chess, listening to music too. I am also kind of humour. If you want to make friend with me, don&amp;rsquo;t hesitate to ping me!!! I&amp;rsquo;am very appreciated, especially if you are female.</description>
-    </item>
-    
-    <item>
-      <title>Hugo Tutorial</title>
-      <link>https://1612198.github.io/posts/hugo-tutorial/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://1612198.github.io/posts/hugo-tutorial/</guid>
-      <description>The way I used Hugo to make my website. I will update my post in a few days.</description>
     </item>
     
   </channel>

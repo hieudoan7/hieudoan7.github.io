@@ -11,13 +11,22 @@
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugo Tutorial"/>
-<meta name="twitter:description" content="The way I used Hugo to make my website. I will update my post in a few days."/>
+<meta name="twitter:description" content="Hugo Tutorial 18.06.2019
+I. Install Hugo &amp; Setup Theme 2 best tutorial about hugo
+part 1 part 2
+Về cơ bản, chúng ta host blog lên github sẽ tạo 2 repository
+ Repo 1: hieudoan7: chứa các file config của hugo, content, nói chung tất tần tật. Repo 2: 1612198.github.io: repo này chứa file html để render lên web  Chú ý: dateformat trong file config.toml (ở thư mục gốc, thư mục mà ta có thể sử dụng hugo command) phải để ở ngày 2."/>
 
     <meta property="og:title" content="Hugo Tutorial" />
-<meta property="og:description" content="The way I used Hugo to make my website. I will update my post in a few days." />
+<meta property="og:description" content="Hugo Tutorial 18.06.2019
+I. Install Hugo &amp; Setup Theme 2 best tutorial about hugo
+part 1 part 2
+Về cơ bản, chúng ta host blog lên github sẽ tạo 2 repository
+ Repo 1: hieudoan7: chứa các file config của hugo, content, nói chung tất tần tật. Repo 2: 1612198.github.io: repo này chứa file html để render lên web  Chú ý: dateformat trong file config.toml (ở thư mục gốc, thư mục mà ta có thể sử dụng hugo command) phải để ở ngày 2." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://1612198.github.io/posts/hugo-tutorial/" />
-
+<meta property="article:published_time" content="2019-04-19T15:01:41&#43;07:00"/>
+<meta property="article:modified_time" content="2019-04-19T15:01:41&#43;07:00"/>
 
 
     
@@ -118,7 +127,7 @@
           <div class="date">
             <span class="posted-on">
               <i class="fas fa-calendar"></i>
-              <time datetime='0001-01-01T00:00:00Z'>
+              <time datetime='2019-04-19T15:01:41&#43;07:00'>
                 April 19, 2019
               </time>
             </span>
@@ -135,9 +144,54 @@
       <div>
         
 
-<h2 id="the-way-i-used-hugo-to-make-my-website">The way I used Hugo to make my website.</h2>
+<h1 id="hugo-tutorial">Hugo Tutorial</h1>
 
-<p>I will update my post in a few days.</p>
+<p>18.06.2019</p>
+
+<h2 id="i-install-hugo-setup-theme">I. Install Hugo &amp; Setup Theme</h2>
+
+<p>2 best tutorial about hugo</p>
+
+<p><a href="https://www.youtube.com/watch?v=oUjk6wpJn7I">part 1</a><br/>
+<a href="https://www.youtube.com/watch?v=4W9sVoVYMLo">part 2</a></p>
+
+<p>Về cơ bản, chúng ta host blog lên github sẽ tạo 2 repository</p>
+
+<ul>
+<li>Repo 1: hieudoan7: chứa các file config của hugo, content, nói chung tất tần tật.</li>
+<li>Repo 2: 1612198.github.io: repo này chứa file html để render lên web</li>
+</ul>
+
+<p><strong>Chú ý</strong>: dateformat trong file config.toml (ở thư mục gốc, thư mục mà ta có thể sử dụng hugo command) phải để ở ngày 2.1.2006 ở bất kỳ format nào (vd: &ldquo;January 02, 2006&rdquo;) (hình như là theo quy định của Golang :v)</p>
+
+<h2 id="ii-post-deploy">II. Post &amp; Deploy</h2>
+
+<ul>
+<li>Tạo post <br/>
+<code>bash
+hugo new posts/mypost.md
+</code></li>
+<li>Chỉnh sửa config toml file <code>mypost.md</code>
+
+<ul>
+<li>draft = &ldquo;false&rdquo;</li>
+<li>title = &ldquo;My Title post&rdquo;</li>
+</ul></li>
+<li>Add nội dung bài post dưới phần toml header</li>
+<li>Chạy trên local host để check:   <br/>
+<code>bash
+hugo server -w (--watch)
+</code></li>
+<li>Deploy qua <code>1612198.github.io</code> để nó render lên web</li>
+<li>Push 2 repo lên github để host là được.   <br/>
+<code>git config --global user.name &quot;1612198</code>  <br/>
+<code>git config --global user.gmail &quot;hieudoan190598@gmail.com&quot;</code>                <br/>
+<code>git config --list</code>                         <br/>
+Vào từng cái repo (trong 2 repo đã có file .git rồi nên ko cần dùng <code>git remote</code>)     <br/>
+<code>git add .</code>           <br/>
+<code>git commit -m &quot;comment for your commit&quot;</code>     <br/>
+<code>git push origin master</code></li>
+</ul>
 
       </div>
 
