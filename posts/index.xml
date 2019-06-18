@@ -6,10 +6,21 @@
     <description>Recent content in Posts on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Jun 2019 15:01:41 +0700</lastBuildDate>
     
 	<atom:link href="https://1612198.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kosaraju&#39;s Algorithm Intuition</title>
+      <link>https://1612198.github.io/posts/kosaraju/</link>
+      <pubDate>Tue, 18 Jun 2019 15:01:41 +0700</pubDate>
+      
+      <guid>https://1612198.github.io/posts/kosaraju/</guid>
+      <description>Kosaraju &amp;rsquo;s Algorithms 17/06/2019
+I. DFS Tree Output của thuật toán DFS là 1 cây khung (spanning tree) Tất cả các cạnh của đồ thị gốc sẽ được chia làm 4 loại trong DFS spanning Tree: + Tree Edge (sometimes Tree Edge được xếp vào Forward Edge) + Forward Edge + Back Edge + Cross Edge
+Example If the original graph is undirected then all of its edges are tree edge or black edge</description>
+    </item>
     
     <item>
       <title>The Fine Art of Small Talk</title>
