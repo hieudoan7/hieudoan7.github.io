@@ -6,10 +6,22 @@
     <description>Recent content on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 18 Jun 2019 15:01:41 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 25 Jun 2019 13:25:20 +0700</lastBuildDate>
     
 	<atom:link href="https://1612198.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fenwick Tree - Binary Indexed Tree</title>
+      <link>https://1612198.github.io/posts/fenwicktree/</link>
+      <pubDate>Tue, 25 Jun 2019 13:25:20 +0700</pubDate>
+      
+      <guid>https://1612198.github.io/posts/fenwicktree/</guid>
+      <description>Binary Indexed Tree (Fenwick Tree) 24/06/2019
+Định nghĩa: Fenwick Tree (Binary Indexed Tree) là một CTDL với n node (n+1 nodes với node gốc bù nhìn) chứa thông tin (thường là tổng cộng dồn) về các phần tử trong đoạn (i-(i&amp;amp;-i), i] (mảng tính từ 1)
+* Nhận xét: Cây getSum vs cây Update khác nhau: - in GetSum: parent(i) = i-(i&amp;amp;-i) - in Update: parent(i) = i+(i&amp;amp;-i)
+Mục đích: Mục đích cây này là để tính range sum và khi update 1 phần tử trong mảng a thì các range sum involved cũng được update với chi phí thấp.</description>
+    </item>
     
     <item>
       <title>Kosaraju&#39;s Algorithm Intuition</title>
