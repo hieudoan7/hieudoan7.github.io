@@ -170,15 +170,16 @@ Mục đích: Mục đích cây này là để tính range sum và khi update 1 
 <li>Khởi tạo tất cả fen[i] = 0         <br />
     fen[n+1]={0}</li>
 <li>Coi như ta đang update các phần tử của mảng, a<a href="i in [1..n]">i</a> và update vào fen[i] &amp; các parent of (i)
-** parent(i) = i+ (i&amp;-i)
-<code>cpp
-void update (int pos, int val){
-    while(pos&lt;=n){
-        fen[pos]+=val;
-        pos+= (pos&amp;-pos);
+** parent(i) = i+ (i&amp;-i)</li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    <span style="color:#fff;font-weight:bold">void</span> update (<span style="color:#fff;font-weight:bold">int</span> pos, <span style="color:#fff;font-weight:bold">int</span> val){
+        <span style="color:#fff;font-weight:bold">while</span>(pos&lt;=n){
+            fen[pos]+=val;
+            pos+= (pos&amp;-pos);
+        }
     }
-}
-</code></li>
+</code></pre></div>
+<ul>
 <li>Bàn về update: Khi update a[i], ta phải update những <code>fen[j]</code> với range <code>(j-(j&amp;-j), j]</code> contains <code>i</code>
 Nghĩa là: <code>j = i + bit 1 (ở 1 vị trí nào đó)</code> đảm bảo biên phải luôn <code>&gt; i</code> <br />
 Biên trái:
