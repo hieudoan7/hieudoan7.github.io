@@ -3,19 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://1612198.github.io/posts/fenwicktree/</loc>
-    <lastmod>2019-06-25T13:25:20+07:00</lastmod>
+    <loc>https://1612198.github.io/posts/polistnotation/</loc>
+    <lastmod>2019-06-29T11:20:28+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://1612198.github.io/posts/</loc>
-    <lastmod>2019-06-25T13:25:20+07:00</lastmod>
+    <lastmod>2019-06-29T11:20:28+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://1612198.github.io/</loc>
-    <lastmod>2019-06-25T13:25:20+07:00</lastmod>
+    <lastmod>2019-06-29T11:20:28+07:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -27,6 +27,11 @@
                 hreflang="en"
                 href="https://1612198.github.io/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://1612198.github.io/posts/fenwicktree/</loc>
+    <lastmod>2019-06-25T13:25:20+07:00</lastmod>
   </url>
   
   <url>

@@ -201,6 +201,52 @@ Vào từng cái repo (trong 2 repo đã có file .git rồi nên ko cần dùng
 <li>Link đường dẫn image trong post (<code>/imgs/my_image.jpg</code>) (thư mục gốc <code>/</code> là tương đương với <code>static/</code>)</li>
 </ul>
 
+<h3 id="2-xuống-dòng">2. Xuống dòng</h3>
+
+<ul>
+<li>2 dấu cách (giống trên stackoverflow, codeforces)</li>
+</ul>
+
+<h3 id="3-math-expression">3. Math Expression</h3>
+
+<p>Dùng <strong>MathJax</strong></p>
+
+<ul>
+<li>Tạo file <code>mathjax_support.html</code> trong <code>theme/layouts/partials/</code><br /></li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">type</span>=<span style="color:#0ff;font-weight:bold">&#34;text/javascript&#34;</span> <span style="color:#007f7f">async</span>
+  <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;</span>&gt;
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [[<span style="color:#0ff;font-weight:bold">&#39;$&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;$&#39;</span>], [<span style="color:#0ff;font-weight:bold">&#39;\\(&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;\\)&#39;</span>]],
+    displayMath: [[<span style="color:#0ff;font-weight:bold">&#39;$$&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;$$&#39;</span>]],
+    processEscapes: <span style="color:#fff;font-weight:bold">true</span>,
+    processEnvironments: <span style="color:#fff;font-weight:bold">true</span>,
+    skipTags: [<span style="color:#0ff;font-weight:bold">&#39;script&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;noscript&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;style&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;textarea&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;pre&#39;</span>],
+    TeX: { equationNumbers: { autoNumber: <span style="color:#0ff;font-weight:bold">&#34;AMS&#34;</span> },
+         extensions: [<span style="color:#0ff;font-weight:bold">&#34;AMSmath.js&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;AMSsymbols.js&#34;</span>] }
+  }
+  });
+  MathJax.Hub.Queue(<span style="color:#fff;font-weight:bold">function</span>() {
+    <span style="color:#007f7f">// Fix &lt;code&gt; tags after MathJax finishes running. This is a
+</span><span style="color:#007f7f"></span>    <span style="color:#007f7f">// hack to overcome a shortcoming of Markdown. Discussion at
+</span><span style="color:#007f7f"></span>    <span style="color:#007f7f">// https://github.com/mojombo/jekyll/issues/199
+</span><span style="color:#007f7f"></span>    <span style="color:#fff;font-weight:bold">var</span> all = MathJax.Hub.getAllJax(), i;
+    <span style="color:#fff;font-weight:bold">for</span>(i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; all.length; i += <span style="color:#ff0;font-weight:bold">1</span>) {
+        all[i].SourceElement().parentNode.className += <span style="color:#0ff;font-weight:bold">&#39; has-jax&#39;</span>;
+    }
+  });
+
+  MathJax.Hub.Config({
+  <span style="color:#007f7f">// Autonumbering by mathjax
+</span><span style="color:#007f7f"></span>  TeX: { equationNumbers: { autoNumber: <span style="color:#0ff;font-weight:bold">&#34;AMS&#34;</span> } }
+  });
+&lt;/<span style="font-weight:bold">script</span>&gt;</code></pre></div>
+<ul>
+<li>Add file này vào <code>footer.html</code> or <code>header.html</code> (trước thẻ <code>&lt;/footer&gt;</code>)<br />
+<br /></li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ partial &#34;mathjax_support.html&#34; . }}</code></pre></div>
       </div>
 
       <footer>
@@ -247,6 +293,34 @@ Vào từng cái repo (trong 2 repo đã có file .git rồi nên ko cần dùng
       [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
     
   </section>
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
 </footer>
 
     </main>

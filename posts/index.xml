@@ -6,10 +6,24 @@
     <description>Recent content in Posts on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 25 Jun 2019 13:25:20 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 29 Jun 2019 11:20:28 +0700</lastBuildDate>
     
 	<atom:link href="https://1612198.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Polish Notation</title>
+      <link>https://1612198.github.io/posts/polistnotation/</link>
+      <pubDate>Sat, 29 Jun 2019 11:20:28 +0700</pubDate>
+      
+      <guid>https://1612198.github.io/posts/polistnotation/</guid>
+      <description>Polist Notation 29/06/2019
+I. Kí pháp Balan là gì? (What is Polish Notation) Kí pháp Balan là một dạng viết khác của biểu thức toán học.
+ Balan tiền tố (prefix): Đưa các toán tử lên đầu
+ Balan ngược: Đưa các toán tử ra sau cùng
+  Trong kí pháp Balan, các dấu ngoặc bị lược bỏ
+Ví dụ: Xét biểu thức: $3 + 5*(6-3) + 1$</description>
+    </item>
     
     <item>
       <title>Fenwick Tree - Binary Indexed Tree</title>
@@ -20,7 +34,8 @@
       <description>Binary Indexed Tree (Fenwick Tree) 24/06/2019
 Định nghĩa: Fenwick Tree (Binary Indexed Tree) là một CTDL với n node (n+1 nodes với node gốc bù nhìn) chứa thông tin (thường là tổng cộng dồn) về các phần tử trong đoạn (i-(i&amp;amp;-i), i] (mảng tính từ 1)
 * Nhận xét: Cây getSum vs cây Update khác nhau:
-- in GetSum: parent(i) = i-(i&amp;amp;-i) - in Update: parent(i) = i+(i&amp;amp;-i)
+- in GetSum: parent(i) = i-(i&amp;amp;-i)
+- in Update: parent(i) = i+(i&amp;amp;-i)
 Mục đích: Mục đích cây này là để tính range sum và khi update 1 phần tử trong mảng a thì các range sum involved cũng được update với chi phí thấp.</description>
     </item>
     
