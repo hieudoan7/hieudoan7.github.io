@@ -18,7 +18,8 @@
       
       <guid>https://1612198.github.io/posts/z-function/</guid>
       <description>th, td { padding: 1.0rem; } table, th, td { border: 2px solid black; } 
-String Processing 18/04/2019 Cho 2 xâu P (pattern) và S (string). Mộ số bài toán
+String Processing 18/04/2019
+Cho 2 xâu P (pattern) và S (string). Mộ số bài toán
  Tìm vị trí xuất hiện đầu tiên của P trong S Đếm số lần xuất hiện P trong S Cho S, tìm P ngắn nhất để repeat P nhiều lần ta được S &amp;hellip;  I. Z-function 1.</description>
     </item>
     
