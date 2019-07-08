@@ -6,10 +6,24 @@
     <description>Recent content in Posts on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 08 Jul 2019 21:43:13 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jul 2019 00:06:06 +0700</lastBuildDate>
     
 	<atom:link href="https://1612198.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dijikstra Algorithm</title>
+      <link>https://1612198.github.io/posts/dijistra_algorithm/</link>
+      <pubDate>Tue, 09 Jul 2019 00:06:06 +0700</pubDate>
+      
+      <guid>https://1612198.github.io/posts/dijistra_algorithm/</guid>
+      <description>Dijikstra Algorithm 08/07/2019
+I. Mục đích: Tìm đường đi ngắn nhất từ 1 node (starting node) đến tất cả các nodes còn lại.
+Nhược điểm: Kết quả SAI khi đồ thị có mạch âm.
+Ưu điểm: So với Bellman-ford, Dijistra hiệu quả hơn vì chỉ duyệt qua các cạnh đúng 1 lần.
+II. Ý tưởng: Luôn lan truyền đến node gần nhất với starting node x.
+Vì sao nó đúng?</description>
+    </item>
     
     <item>
       <title>Bellman-Ford Algorithm</title>
