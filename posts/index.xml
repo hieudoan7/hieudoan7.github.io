@@ -6,10 +6,23 @@
     <description>Recent content in Posts on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 07 Jul 2019 14:27:00 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jul 2019 21:43:13 +0700</lastBuildDate>
     
 	<atom:link href="https://1612198.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bellman-Ford Algorithm</title>
+      <link>https://1612198.github.io/posts/bellman-ford_algorithm/</link>
+      <pubDate>Mon, 08 Jul 2019 21:43:13 +0700</pubDate>
+      
+      <guid>https://1612198.github.io/posts/bellman-ford_algorithm/</guid>
+      <description>Bellman-Ford Algorithm 08/07/2019
+I. Mục đích Tìm đường đi ngắn nhất từ 1 node (starting node) đến tất cả các nodes còn lại.
+Ưu điểm: Có thể phát hiện mạch âm
+II. Ý tưởng: Gọi $distance[i]$ là đường đi ngắn nhất từ đỉnh $x$ (starting node) đến đỉnh i ($distance[x] = 0$)
+ Sau lần round 1: những đỉnh $i$ kề $x$ sẽ xác định được $distance[i]$ (final value luôn đó)</description>
+    </item>
     
     <item>
       <title>Z-function</title>
