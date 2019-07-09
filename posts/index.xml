@@ -6,10 +6,23 @@
     <description>Recent content in Posts on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 09 Jul 2019 00:06:06 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jul 2019 21:06:45 +0700</lastBuildDate>
     
 	<atom:link href="https://1612198.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Floyd-Warshall Algorithm</title>
+      <link>https://1612198.github.io/posts/floyd-warshall_algorithm/</link>
+      <pubDate>Tue, 09 Jul 2019 21:06:45 +0700</pubDate>
+      
+      <guid>https://1612198.github.io/posts/floyd-warshall_algorithm/</guid>
+      <description>Floyd-Warshall algorithm 09/07/2019
+I. Mục đích All pair shortest path
+Tìm đường đi ngắn nhất giữa tất cả các cặp đỉnh.
+II. Ý tưởng: Quy hoạch động dựa vào đỉnh trung gian.
+Với đỉnh trung gian đang xét là $k$, thì những $shortest\_path$ mà có các đỉnh trung gian thuộc $[1..k]$ sẽ được tìm thấy (kết quả cuối cùng luôn), còn những cái path kia thì có ngắn hơn nhưng chưa phải ngắn nhất vì nó còn đường ngắn hơn là đi qua đỉnh trung gian mà ta chưa cover tới.</description>
+    </item>
     
     <item>
       <title>Dijikstra Algorithm</title>
@@ -19,10 +32,9 @@
       <guid>https://1612198.github.io/posts/dijistra_algorithm/</guid>
       <description>Dijikstra Algorithm 08/07/2019
 I. Mục đích: Tìm đường đi ngắn nhất từ 1 node (starting node) đến tất cả các nodes còn lại.
-Nhược điểm: Kết quả SAI khi đồ thị có mạch âm.
+Nhược điểm: Kết quả SAI khi đồ thị cạnh âm chứ chưa cần có mạch âm.
 Ưu điểm: So với Bellman-ford, Dijistra hiệu quả hơn vì chỉ duyệt qua các cạnh đúng 1 lần.
-II. Ý tưởng: Luôn lan truyền đến node gần nhất với starting node x.
-Vì sao nó đúng?</description>
+II. Ý tưởng: Luôn lan truyền đến node gần nhất với starting node x.</description>
     </item>
     
     <item>
