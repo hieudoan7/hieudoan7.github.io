@@ -6,10 +6,24 @@
     <description>Recent content on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 09 Jul 2019 21:06:45 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jul 2019 22:42:22 +0700</lastBuildDate>
     
 	<atom:link href="https://1612198.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>KMP Algorithm</title>
+      <link>https://1612198.github.io/posts/kmp-algorithm/</link>
+      <pubDate>Wed, 10 Jul 2019 22:42:22 +0700</pubDate>
+      
+      <guid>https://1612198.github.io/posts/kmp-algorithm/</guid>
+      <description>Knuth-Morris-Pratt algorithm 10/07/2019
+I. Bài toán: Cho chuỗi Text $T$ (length = $n$) và Pattern $P$ (length = $m$). Tìm số lần xuất hiện của $P$ trong $T$.
+$\Rightarrow$ Naive Solution:
+Tại mỗi vị trí $i$ trong $T$, ta so sánh nó với $P$.
+&amp;gt; code chơi thôi:
+int cnt = 0; for (int i = 0; i &amp;lt;= n-m; i++){ bool flag = false; for (int j = 0; j &amp;lt; m; j++){ if (P[j] == T[i+j]) continue; flag = true; break; } if (flag) cnt++; }  $$\Rightarrow O(n*m) $$</description>
+    </item>
     
     <item>
       <title>Floyd-Warshall Algorithm</title>
