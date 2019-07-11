@@ -6,10 +6,23 @@
     <description>Recent content on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 10 Jul 2019 22:42:22 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jul 2019 21:49:24 +0700</lastBuildDate>
     
 	<atom:link href="https://1612198.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Greatest Common Divisor using Eucidean Algorithm</title>
+      <link>https://1612198.github.io/posts/gcd_euclid/</link>
+      <pubDate>Thu, 11 Jul 2019 21:49:24 +0700</pubDate>
+      
+      <guid>https://1612198.github.io/posts/gcd_euclid/</guid>
+      <description>Greatest Common Divisor using Euclidean Algorithm 11/07/2019
+I. Implementation typedef long long ll; ll gcd (ll a, ll b){ return b==0? a : gcd(b, a%b); }  II. Interpretation Thuật toán Euclid tìm ước chung lớn nhất giữa 2 số $a, b$.
+Không mất tính tổng quát, giả sử $a &amp;gt; b$.
+ 
+Nhìn hình, ta thấy, $gcd(a, b) = x$ khi và chỉ khi $x$ là ước của $a$, $x$ cũng là ước của $b$ và $x$ lớn nhất.</description>
+    </item>
     
     <item>
       <title>KMP Algorithm</title>
