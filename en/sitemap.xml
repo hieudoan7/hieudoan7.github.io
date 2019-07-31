@@ -3,19 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://1612198.github.io/posts/gcd_euclid/</loc>
-    <lastmod>2019-07-11T21:49:24+07:00</lastmod>
+    <loc>https://1612198.github.io/posts/ap_bridges/</loc>
+    <lastmod>2019-07-31T22:01:16+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://1612198.github.io/posts/</loc>
-    <lastmod>2019-07-11T21:49:24+07:00</lastmod>
+    <lastmod>2019-07-31T22:01:16+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://1612198.github.io/</loc>
-    <lastmod>2019-07-11T21:49:24+07:00</lastmod>
+    <lastmod>2019-07-31T22:01:16+07:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -27,6 +27,11 @@
                 hreflang="en"
                 href="https://1612198.github.io/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://1612198.github.io/posts/gcd_euclid/</loc>
+    <lastmod>2019-07-11T21:49:24+07:00</lastmod>
   </url>
   
   <url>

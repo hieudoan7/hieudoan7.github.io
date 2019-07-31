@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="hieudoan7">
+    <meta name="description" content="hieudoan7">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Articulation Point (Cut Point) &amp; Bridge"/>
+<meta name="twitter:description" content="Articulation Point &amp; Bridge 31/07/2019
+I. Definition Ta xét trong undirected graph.
+ Articulation Point (đỉnh khớp): Là đỉnh mà nếu cắt bỏ đi sẽ làm disconnect graph (trong connected graph) còn đối với disconnected graph thì nó làm tăng số connected component.
+ Bridge: Là cạnh mà nếu bỏ đi &hellip; (giống khớp)
+  II. Finding Articulation Point 1. Thuật toán tầm thường Với mỗi đỉnh trong graph, ta thử cắt bỏ đi và đếm số thành phần liên thông."/>
+
+    <meta property="og:title" content="Articulation Point (Cut Point) &amp; Bridge" />
+<meta property="og:description" content="Articulation Point &amp; Bridge 31/07/2019
+I. Definition Ta xét trong undirected graph.
+ Articulation Point (đỉnh khớp): Là đỉnh mà nếu cắt bỏ đi sẽ làm disconnect graph (trong connected graph) còn đối với disconnected graph thì nó làm tăng số connected component.
+ Bridge: Là cạnh mà nếu bỏ đi &hellip; (giống khớp)
+  II. Finding Articulation Point 1. Thuật toán tầm thường Với mỗi đỉnh trong graph, ta thử cắt bỏ đi và đếm số thành phần liên thông." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://1612198.github.io/posts/ap_bridges/" />
+<meta property="article:published_time" content="2019-07-31T22:01:16&#43;07:00"/>
+<meta property="article:modified_time" content="2019-07-31T22:01:16&#43;07:00"/>
+
+
+    
+      <base href="https://1612198.github.io/posts/ap_bridges/">
+    
+    <title>
+  Articulation Point (Cut Point) &amp; Bridge · hieudoan7
+</title>
+
+    
+      <link rel="canonical" href="https://1612198.github.io/posts/ap_bridges/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://1612198.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.55.2" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://1612198.github.io/">
+      hieudoan7
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://1612198.github.io/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://1612198.github.io/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://1612198.github.io/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://1612198.github.io/contact/">Contact me</a>
+          </li>
+        
+      
+      
+        
+        
+        
+          
+        
+          
+            
+              <li class="navigation-item menu-separator">
+                <span>|</span>
+              </li>
+              
+            
+            <li class="navigation-item">
+              <a href="https://1612198.github.io/pt-br/">Português</a>
+            </li>
+          
+        
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Articulation Point (Cut Point) &amp; Bridge</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-07-31T22:01:16&#43;07:00'>
+                July 31, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              3 minutes read
+            </span>
+          </div>
+          
+          
+        </div>
+      </header>
+
+      <div>
+        
+
+<h1 id="articulation-point-bridge">Articulation Point &amp; Bridge</h1>
+
+<p>31/07/2019</p>
+
+<h2 id="i-definition">I. Definition</h2>
+
+<p>Ta xét trong undirected graph.</p>
+
+<ul>
+<li><strong>Articulation Point</strong> (đỉnh khớp): Là đỉnh mà nếu cắt bỏ đi sẽ làm <strong>disconnect graph</strong> (trong connected graph) còn đối với disconnected graph thì nó làm tăng số connected component.<br /></li>
+<li><strong>Bridge</strong>: Là cạnh mà nếu bỏ đi &hellip; (giống khớp)<br /></li>
+</ul>
+
+<h2 id="ii-finding-articulation-point">II. Finding Articulation Point</h2>
+
+<h3 id="1-thuật-toán-tầm-thường">1. Thuật toán tầm thường</h3>
+
+<p>Với mỗi đỉnh trong graph, ta thử cắt bỏ đi và đếm số thành phần liên thông. Nếu tăng thì đỉnh đó là khớp, ngược lại thì không. Gắn đỉnh đó lại và thử bỏ đỉnh khác cho đến khi ta thử hết các đỉnh của graph.<br />
+$$ \Rightarrow O(V*O(DFS)) = O(V(V+E))$$</p>
+
+<h3 id="2-thuật-toán-cải-tiến-tarjan">2. Thuật toán cải tiến (Tarjan)</h3>
+
+<p>Tận dụng sức mạnh của DFS.<br />
+Nhắc lại, các loại edges trong 1 tree.</p>
+
+<p><center></p>
+
+<p><img src="https://1612198.github.io/imgs/Tree_edges.png" alt="tree_edges" />
+</center>
+Trong DFS Tree, chỉ có <strong>Back Edges</strong> và <strong>Tree Edges</strong>.</p>
+
+<p>Xét 1 đỉnh $u$ trong đồ thị:</p>
+
+<ul>
+<li>Nếu $u$ là <strong>root</strong> và $u$ có 2 con trở lên $\Rightarrow u$ là khớp<br /></li>
+<li>Nếu $u$ khác root và <strong>subtree rooted at v</strong> (children of u) <strong>has NOT</strong> back edge to ancestor of u  $\Rightarrow u$ là khớp.<br /></li>
+</ul>
+
+<p>Minh họa:<br />
+<center></p>
+
+<p><img src="https://1612198.github.io/imgs/AP_minhhoa.jpg" alt="AP_minhhoa" />
+</center>
+Nếu không có <strong>back edge</strong> thì khi bỏ $u$ sẽ diconnect graph với subtree rooted at v. $\Rightarrow u$ là khớp.</p>
+
+<h3 id="3-implementation">3. Implementation</h3>
+
+<p>Làm thế nào để ta biết được 1 đỉnh $u$ có phải là khớp hay không?</p>
+
+<ul>
+<li>Đối với trường hợp $u$ là <strong>root</strong>: ta cứ đếm số con tại mỗi node, nếu $u$ là <strong>root</strong> và có $&gt;=2$ con thì $u$ là khớp.<br /></li>
+<li>Trường hợp 2 ta lưu thêm:
+
+<ul>
+<li>$disc[u]$: thời gian khám phá ra đỉnh $u$ (discovery)</li>
+<li>$low[u]$: $min(disc[u], disc[w])$, trong đó $w$ is ancestor of u and there is a back edge from some descendant of $u$ to $w$. Tức là ta lưu lại số thứ tự của node sớm nhất (có thể = cha $u$ nhưng theo con đường back edge của đám con cháu) mà từ đó có thể đi tới cây con rooted at $u$ (include $u$)<br />
+&gt; Thì khi $low[v] \geq disc[u]$ chứng tỏ $u$ là AP ($&ldquo;=&rdquo;$ khi back edge của con $v$ nó trỏ ngay $u$)<br />
+<center></li>
+</ul></li>
+</ul>
+
+<p><img src="https://1612198.github.io/imgs/lowv_equal_discu.jpg" alt="lowv_equal_discu" />
+</center></p>
+
+<p>$\Rightarrow $Code: Tao xin copy nguyên source trên trang <a href="https://cp-algorithms.com/graph/cutpoints.html">cp-algorithm</a> bởi vì nó code quá tuyệt vời.<br />
+$tin$ = $disc$ (time into node).</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">int</span> n; <span style="color:#007f7f">// number of nodes
+</span><span style="color:#007f7f"></span>vector&lt;vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt;&gt; adj; <span style="color:#007f7f">// adjacency list of graph
+</span><span style="color:#007f7f"></span>
+vector&lt;<span style="color:#fff;font-weight:bold">bool</span>&gt; visited;
+vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; tin, low;
+<span style="color:#fff;font-weight:bold">int</span> timer;
+
+<span style="color:#fff;font-weight:bold">void</span> dfs(<span style="color:#fff;font-weight:bold">int</span> v, <span style="color:#fff;font-weight:bold">int</span> p = -<span style="color:#ff0;font-weight:bold">1</span>) {
+    visited[v] = <span style="color:#fff;font-weight:bold">true</span>;
+    tin[v] = low[v] = timer++;
+    <span style="color:#fff;font-weight:bold">int</span> children=<span style="color:#ff0;font-weight:bold">0</span>;
+    <span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> to : adj[v]) {
+        <span style="color:#fff;font-weight:bold">if</span> (to == p) <span style="color:#fff;font-weight:bold">continue</span>;
+        <span style="color:#fff;font-weight:bold">if</span> (visited[to]) {
+            low[v] = min(low[v], tin[to]);
+        } <span style="color:#fff;font-weight:bold">else</span> {
+            dfs(to, v);
+            low[v] = min(low[v], low[to]);
+            <span style="color:#fff;font-weight:bold">if</span> (low[to] &gt;= tin[v] &amp;&amp; p!=-<span style="color:#ff0;font-weight:bold">1</span>)
+                IS_CUTPOINT(v);
+            ++children;
+        }
+    }
+    <span style="color:#fff;font-weight:bold">if</span>(p == -<span style="color:#ff0;font-weight:bold">1</span> &amp;&amp; children &gt; <span style="color:#ff0;font-weight:bold">1</span>)
+        IS_CUTPOINT(v);
+}
+
+<span style="color:#fff;font-weight:bold">void</span> find_cutpoints() {
+    timer = <span style="color:#ff0;font-weight:bold">0</span>;
+    visited.assign(n, <span style="color:#fff;font-weight:bold">false</span>);
+    tin.assign(n, -<span style="color:#ff0;font-weight:bold">1</span>);
+    low.assign(n, -<span style="color:#ff0;font-weight:bold">1</span>);
+    <span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; n; ++i) {
+        <span style="color:#fff;font-weight:bold">if</span> (!visited[i])
+            dfs (i);
+    }
+}
+</code></pre></div>
+<h2 id="iii-finding-bridges">III. Finding Bridges</h2>
+
+<p>Hoàn toàn tương tự, chỉ khác ở điều kiện:<br />
+<center>
+$low[v] &gt; disc[u]$ thay vì $low[v] \geq disc[u]$
+</center></p>
+
+<h3 id="iv-tham-khảo">IV. Tham khảo</h3>
+
+<ul>
+<li>competive programming 3 (Steven Halim)</li>
+<li><a href="https://www.geeksforgeeks.org/articulation-points-or-cut-vertices-in-a-graph/">Articulation Point GFG</a></li>
+<li><a href="https://cp-algorithms.com/graph/cutpoints.html">cp-algorithm</a></li>
+</ul>
+
+      </div>
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://1612198.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Become the BEST VERSION of YOU.</p>
+    
+    
+    
+    
+      
+      [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
+    
+  </section>
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>
