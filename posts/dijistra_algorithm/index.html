@@ -183,8 +183,8 @@ distance[x] = <span style="color:#ff0;font-weight:bold">0</span>;
 q.push({<span style="color:#ff0;font-weight:bold">0</span>,x});
 <span style="color:#fff;font-weight:bold">while</span>(!q.empty()){
     <span style="color:#fff;font-weight:bold">int</span> a = q.top().second; q.pop();
-    <span style="color:#fff;font-weight:bold">if</span> (processed[a]) <span style="color:#fff;font-weight:bold">continue</span>;
-    processed[a] = <span style="color:#fff;font-weight:bold">true</span>; <span style="color:#007f7f">//có thể có nhiều đỉnh trong pqueue vì do cứ nhỏ hơn là nó push vào thôi mà
+    <span style="color:#fff;font-weight:bold">if</span> (processed[a]) <span style="color:#fff;font-weight:bold">continue</span>; <span style="color:#007f7f">//bởi vì cùng dis[a] có thể push nhiều lần và priority_queue thì ko thể remove nên vậy đó.
+</span><span style="color:#007f7f"></span>    processed[a] = <span style="color:#fff;font-weight:bold">true</span>; <span style="color:#007f7f">//có thể có nhiều đỉnh trong pqueue vì do cứ nhỏ hơn là nó push vào thôi mà
 </span><span style="color:#007f7f"></span>    <span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">auto</span> u : adj[a]){
         <span style="color:#fff;font-weight:bold">int</span> b = u.first, w = u.second;
         <span style="color:#fff;font-weight:bold">if</span> (distance[a]+w &lt; distance[b]){
