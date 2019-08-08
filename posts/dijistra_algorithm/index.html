@@ -133,7 +133,7 @@ II. Ý tưởng: Luôn lan truyền đến node gần nhất với starting node
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              2 minutes read
+              3 minutes read
             </span>
           </div>
           
@@ -199,12 +199,20 @@ Chú ý một vài trick ở cài đặt:</p>
 
 <ul>
 <li>Dùng $-d$ để tận dụng <code>default priority_queue</code> q</li>
-<li>Vài nét về <code>priority_queue</code>:
+
+<li><p>Vài nét về <code>priority_queue</code>:</p>
 
 <ul>
-<li><code>priority_queue&lt;int&gt; pq;</code> //mặc định sắp xếp tăng và top() queue sẽ là $min$.</li>
-<li><code>priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;</code>` //sắp xếp giảm và top() queue là $max$.</li>
+<li><code>priority_queue&lt;int&gt; pq;</code> //mặc định sắp xếp tăng và top() queue sẽ là $max$.</li>
+<li><code>priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;</code>` //sắp xếp giảm và top() queue là $min$.</li>
 <li>Có thể dùng <code>multiset&lt;int&gt; mset;</code> cùng 2 thao tác <code>insert</code>, <code>remove</code> như 1 <code>min_priority_queue</code> (as multiset default)</li>
+</ul></li>
+
+<li><p>Nhận xét bên lề: Mặc định của <code>priority_queue</code> là phần tử ở <code>top()</code> là <code>max</code>:</p>
+
+<ul>
+<li>Elements are popped from the <em>back</em> of the specific container, which is known as the top of the priority_queue. $(top \rightarrow back)$</li>
+<li>Hàm $cmp$ mặc định là $less$, nghĩa là 2 phần tử thỏa thì nó sẽ không swap, để ý là less là mặc định sort tăng đó, khi sort tăng thì thằng <code>back</code> (trong priority_queue là <code>top</code>) luôn là thằng lớn nhất rồi.</li>
 </ul></li>
 </ul>
 
