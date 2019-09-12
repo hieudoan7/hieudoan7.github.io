@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="hieudoan7">
+    <meta name="description" content="hieudoan7">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Graph Traversal"/>
+<meta name="twitter:description" content="Graph Traversal 12/09/2019
+We discuss about the way we traverse a graph or a tree.
+Assuming we are using adjacent list to represent a graph.
+I. Depth-First Search (DFS) Idea: Đi sâu rồi quần lại.
+1. Implement vector&lt;int&gt; g[N]; //or vector&lt;vector&lt;int&gt;&gt; g; bool vis[N]; void dfs(int v){ //vertex  vis[v] = true; for(auto u:g[v]){ //always for u =))  if (!vis[u]) dfs(u); } } //in main for(int i=0; i&lt;n; i&#43;&#43;){ if (!"/>
+
+    <meta property="og:title" content="Graph Traversal" />
+<meta property="og:description" content="Graph Traversal 12/09/2019
+We discuss about the way we traverse a graph or a tree.
+Assuming we are using adjacent list to represent a graph.
+I. Depth-First Search (DFS) Idea: Đi sâu rồi quần lại.
+1. Implement vector&lt;int&gt; g[N]; //or vector&lt;vector&lt;int&gt;&gt; g; bool vis[N]; void dfs(int v){ //vertex  vis[v] = true; for(auto u:g[v]){ //always for u =))  if (!vis[u]) dfs(u); } } //in main for(int i=0; i&lt;n; i&#43;&#43;){ if (!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://1612198.github.io/posts/graph_traversal/" />
+<meta property="article:published_time" content="2019-09-12T20:25:41&#43;07:00"/>
+<meta property="article:modified_time" content="2019-09-12T20:25:41&#43;07:00"/>
+
+
+    
+      <base href="https://1612198.github.io/posts/graph_traversal/">
+    
+    <title>
+  Graph Traversal · hieudoan7
+</title>
+
+    
+      <link rel="canonical" href="https://1612198.github.io/posts/graph_traversal/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://1612198.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.55.2" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://1612198.github.io/">
+      hieudoan7
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://1612198.github.io/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://1612198.github.io/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://1612198.github.io/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://1612198.github.io/contact/">Contact me</a>
+          </li>
+        
+      
+      
+        
+        
+        
+          
+        
+          
+            
+              <li class="navigation-item menu-separator">
+                <span>|</span>
+              </li>
+              
+            
+            <li class="navigation-item">
+              <a href="https://1612198.github.io/pt-br/">Português</a>
+            </li>
+          
+        
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Graph Traversal</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-09-12T20:25:41&#43;07:00'>
+                September 12, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              3 minutes read
+            </span>
+          </div>
+          
+          
+        </div>
+      </header>
+
+      <div>
+        
+
+<h1 id="graph-traversal">Graph Traversal</h1>
+
+<p>12/09/2019</p>
+
+<p>We discuss about the way we traverse a graph or a tree.<br />
+Assuming we are using adjacent list to represent a graph.</p>
+
+<h2 id="i-depth-first-search-dfs">I. Depth-First Search (DFS)</h2>
+
+<p>Idea: Đi sâu rồi quần lại.</p>
+
+<h3 id="1-implement">1. Implement</h3>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; g[N]; <span style="color:#007f7f">//or vector&lt;vector&lt;int&gt;&gt; g;
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">bool</span> vis[N];
+<span style="color:#fff;font-weight:bold">void</span> dfs(<span style="color:#fff;font-weight:bold">int</span> v){  <span style="color:#007f7f">//vertex
+</span><span style="color:#007f7f"></span>    vis[v] = <span style="color:#fff;font-weight:bold">true</span>;
+    <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">auto</span> u:g[v]){  <span style="color:#007f7f">//always for u =))
+</span><span style="color:#007f7f"></span>        <span style="color:#fff;font-weight:bold">if</span> (!vis[u]) dfs(u);
+    }
+}
+<span style="color:#007f7f">//in main
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;n; i++){
+    <span style="color:#fff;font-weight:bold">if</span> (!vis[i]) dfs(i);
+}
+</code></pre></div>
+<p><strong>Complexity</strong>: $$\Rightarrow O(V+E)$$.</p>
+
+<h3 id="2-application">2. Application</h3>
+
+<h4 id="2-1-connectivity-check-count-cc">2.1. Connectivity Check, Count #CC</h4>
+
+<p>Một đồ thị là connected nếu nó chỉ có 1 CC (connected component). So, giống như việc đếm số CC, nếu số CC &gt; 1 thì đồ thị là không kết nối.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    dfs(<span style="color:#ff0;font-weight:bold">0</span>);
+    <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;n; i++){
+        <span style="color:#fff;font-weight:bold">if</span> (!vis[i]) {
+            cout &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34;Unconnected Graph&#34;</span>;
+            <span style="color:#fff;font-weight:bold">return</span> <span style="color:#ff0;font-weight:bold">0</span>;
+        }
+    }
+    cout &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34;Connected Graph&#34;</span>;
+</code></pre></div>
+<h4 id="2-2-finding-cycles">2.2. Finding Cycles</h4>
+
+<p>Nếu trong quá trình duyệt graph mà phát hiện một đỉnh đã visited mà không phải cha nó (theo chiều đang duyệt) thì chứng tỏ nó có cycle.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; g[N];
+<span style="color:#fff;font-weight:bold">bool</span> vis[N];
+<span style="color:#fff;font-weight:bold">bool</span> dfs(<span style="color:#fff;font-weight:bold">int</span> v, <span style="color:#fff;font-weight:bold">int</span> p = -<span style="color:#ff0;font-weight:bold">1</span>){
+    vis[v] = <span style="color:#fff;font-weight:bold">true</span>;
+    <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">auto</span> u:g[v]){
+        <span style="color:#fff;font-weight:bold">if</span> (!vis){
+            <span style="color:#fff;font-weight:bold">if</span> (dfs(u, v)) <span style="color:#fff;font-weight:bold">return</span> <span style="color:#fff;font-weight:bold">true</span>;
+        } <span style="color:#fff;font-weight:bold">else</span> {
+            <span style="color:#fff;font-weight:bold">if</span> (u != p) <span style="color:#fff;font-weight:bold">return</span> <span style="color:#fff;font-weight:bold">true</span>;
+        }
+    }
+    <span style="color:#fff;font-weight:bold">return</span> <span style="color:#fff;font-weight:bold">false</span>;
+}
+<span style="color:#007f7f">//in main
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;n; i++){
+    <span style="color:#fff;font-weight:bold">if</span> (!vis[i]) <span style="color:#fff;font-weight:bold">if</span>(dfs(i)) cout &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34;Cycle&#34;</span>, <span style="color:#fff;font-weight:bold">break</span>;
+}
+cout &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34;No cycles&#34;</span>;
+</code></pre></div>
+<h4 id="2-3-bipartiteness-check">2.3. Bipartiteness Check</h4>
+
+<p>Có thể color graph với chỉ 2 màu?
+Ý tưởng: sơn nó màu Blue thì các đỉnh kề nó phải màu Red, cứ thế nếu phát hiện thằng nào đã sơn và cùng màu thì fail check.<br />
+Thiết nghĩ nên tham khảo: <a href="https://cp-algorithms.com/graph/depth-first-search.html">cp-algorithms</a>, một bài viết quá ngon.</p>
+
+<h2 id="ii-breath-first-search-bfs">II. Breath-First Search (BFS)</h2>
+
+<p>Idea: Lan truyền theo chiều rộng
+Một điểm khác biệt của BFS vs DFS là nó có thể tìm <strong>đường đi ngắn nhất</strong> khi mà cost giữa tất cả các cạnh như nhau.</p>
+
+<h3 id="1-implement-1">1. Implement</h3>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">bool</span> vis[N];
+vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; g[N];
+<span style="color:#fff;font-weight:bold">void</span> bfs(<span style="color:#fff;font-weight:bold">int</span> s){  <span style="color:#007f7f">//start vertex
+</span><span style="color:#007f7f"></span>    queue&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; q;
+    vis[s] = <span style="color:#fff;font-weight:bold">true</span>;
+    q.push(s);
+    <span style="color:#fff;font-weight:bold">while</span>(!q.empty()){
+        <span style="color:#fff;font-weight:bold">int</span> v = q.front(); p.pop();  <span style="color:#007f7f">//vertex
+</span><span style="color:#007f7f"></span>        <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">auto</span> u: g[v]){  <span style="color:#007f7f">//always u in g[v]
+</span><span style="color:#007f7f"></span>            <span style="color:#fff;font-weight:bold">if</span> (!vis[u]){
+                vis[u] = <span style="color:#fff;font-weight:bold">true</span>;
+                q.push(u);
+            }
+        }
+    }
+}
+
+<span style="color:#007f7f">//in main
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;n; i++){
+    <span style="color:#fff;font-weight:bold">if</span> (!vis[i]) bfs(i);
+}
+</code></pre></div>
+<p><strong>Complexity</strong>: $$\Rightarrow O(V+E)$$.</p>
+
+<h3 id="2-application-1">2. Application</h3>
+
+<h2 id="iii-why-bfs-dsf-has-complexity-o-v-e">III. Why BFS &amp; DSF has complexity $O(V+E)$?</h2>
+
+<p>Vì ta lưu đồ thị ở dạng <strong>adjacent list</strong>.<br />
+Mỗi thao tác duyệt qua cạnh và đỉnh là $O(1)$.<br />
+$O(V+E)$ thực chất là cộng vật lý luôn á. Nhưng mà trong asymtomic complexity người ta nói $O(x+y) = O(max(x,y))$ vì $O(x+y) \leq O(2*max(x,y)) = O(max(x,y))$ ta bỏ đi hằng số $2$ as usual.<br />
+Xét đồ thị:
+<center>
+<img src="https://1612198.github.io/imgs/dfs.jpg" alt="dfs" />
+</center>
+Khi lưu trong máy tính sẽ là mảng $g$ các vector.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">g[1] = {2, 4}  
+g[2] = {1, 3, 5}  
+g[3] = {2, 5}  
+g[4] = {1}  
+g[5] = {2, 3}  </pre></div>
+<p>Ta xét BFS, giả sử xuất phát ta gọi $\rightarrow$ BFS(1):<br />
+Duyệt qua tất cả 2 các phần tử trong g[1]: $2 = g[1].size()$<br />
+$\rightarrow$ BFS(2): duyệt qua 3 phần tử trong g[2]: $3 = g[2].size()$<br />
+$\rightarrow$ BFS(4): duyệt qua 1 phần tử trong g[4]: $1 = g[4].size()$<br />
+$\rightarrow$ BFS(3): duyệt qua 2 phần tử trong g[3]: $2 = g[3].size()$<br />
+$\rightarrow$ BFS(5): duyệt qua 2 phần tử trong g[5]: $2 = g[5].size()$</p>
+
+<p>Thao tác nó tới đỉnh  $i$ là $O(1)$, giống như ta duyệt qua các <strong>adjacent list</strong>, ta đến từng đỉnh, dù nó có cô độc thì cũng đã đến rồi, chi phí vẫn là $O(1)$, so:</p>
+
+<ul>
+<li>Duyệt qua từng đỉnh mất $O(n) = O(V)$.<br /></li>
+<li>Tại mỗi đỉnh $i$ nó duyệt qua $g[i].size()$ các đỉnh kề.<br />
+Để ý sẽ thấy, $g[i].size() = deg(i)$ (số cạnh connect với i).<br /></li>
+</ul>
+
+<p>$$\Rightarrow O(\sum_{i=1}^{n} deg(i)) = O(2E)$$.<br />
+Vậy complexity chính xác là: $O(V+2E)$.</p>
+
+<p><strong>Tham khảo</strong>: CP handbook, cp-algorithms.</p>
+
+      </div>
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://1612198.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Become the BEST VERSION of YOU.</p>
+    
+    
+    
+    
+      
+      [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
+    
+  </section>
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>
