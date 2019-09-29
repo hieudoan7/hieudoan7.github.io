@@ -69,7 +69,7 @@ I. Definition Ta xét trong undirected graph.
       
       <guid>https://1612198.github.io/posts/gcd_euclid/</guid>
       <description>Greatest Common Divisor using Euclidean Algorithm 11/07/2019
-I. Implementation typedef long long ll; ll gcd (ll a, ll b){ return b==0? a : gcd(b, a%b); }  II. Interpretation Thuật toán Euclid tìm ước chung lớn nhất giữa 2 số $a, b$.
+I. Implementation typedef long long ll; ll gcd (ll a, ll b){ return b==0? a : gcd(b, a%b); //phải hỏi b==0? chứ b=0 thì làm sao a chia dư 0 được. }  II. Interpretation Thuật toán Euclid tìm ước chung lớn nhất giữa 2 số $a, b$.
 Không mất tính tổng quát, giả sử $a &amp;gt; b$.
  
 Nhìn hình, ta thấy, $gcd(a, b) = x$ khi và chỉ khi $x$ là ước của $a$, $x$ cũng là ước của $b$ và $x$ lớn nhất.</description>
