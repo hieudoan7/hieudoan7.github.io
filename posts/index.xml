@@ -6,10 +6,23 @@
     <description>Recent content in Posts on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 12 Sep 2019 20:25:41 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 25 Oct 2019 20:14:31 +0700</lastBuildDate>
     
 	<atom:link href="https://1612198.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>All you need to know about Subset Sum Problem</title>
+      <link>https://1612198.github.io/posts/subset_sum/</link>
+      <pubDate>Fri, 25 Oct 2019 20:14:31 +0700</pubDate>
+      
+      <guid>https://1612198.github.io/posts/subset_sum/</guid>
+      <description>All You need to know about Subset Sum Problem 25/10/2019
+Bài toán: Cho 1 multiset $S = \{a_1, a_2, &amp;hellip;, a_n\}$, tìm 1 subset of $S$ thỏa điều kiện $P$.
+Naive Solution: $\rightarrow O(2^n * n)$
+Ta sinh tất cả các subset của $S$ $(O(2^n))$, sau đó duyệt qua từng subset $(O(n))$ để kiểm tra xem nó có thỏa điều kiện $P$ hay không.
+Nó thực sự là 1 bài toán NP-Complete nên ta chỉ có thể giải trong thời gian exponential.</description>
+    </item>
     
     <item>
       <title>Graph Traversal</title>
