@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="hieudoan7">
+    <meta name="description" content="hieudoan7">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[INTERVIEW] Operator System"/>
+<meta name="twitter:description" content="Operator System Questions for Interview 29/10/2019
+Hệ điều hành là 1 chương trình quản lý phần cứng và cấp phát tài nguyên một cách phù hợp cho các chương trình.
+I. Process (Tiến trình) 1. Tiến trình, tiểu trình? Tiến trình là một chương trình máy tính đang thực thi.
+Tiểu trình (thread) là một đơn vị thực thi độc lập mà CPU có thể điều phối được. Thông thường, một Tiến trình gồm nhiều Tiểu trình."/>
+
+    <meta property="og:title" content="[INTERVIEW] Operator System" />
+<meta property="og:description" content="Operator System Questions for Interview 29/10/2019
+Hệ điều hành là 1 chương trình quản lý phần cứng và cấp phát tài nguyên một cách phù hợp cho các chương trình.
+I. Process (Tiến trình) 1. Tiến trình, tiểu trình? Tiến trình là một chương trình máy tính đang thực thi.
+Tiểu trình (thread) là một đơn vị thực thi độc lập mà CPU có thể điều phối được. Thông thường, một Tiến trình gồm nhiều Tiểu trình." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://1612198.github.io/posts/operator_system/" />
+<meta property="article:published_time" content="2019-10-29T23:11:03&#43;07:00"/>
+<meta property="article:modified_time" content="2019-10-29T23:11:03&#43;07:00"/>
+
+
+    
+      <base href="https://1612198.github.io/posts/operator_system/">
+    
+    <title>
+  [INTERVIEW] Operator System · hieudoan7
+</title>
+
+    
+      <link rel="canonical" href="https://1612198.github.io/posts/operator_system/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://1612198.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.55.2" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://1612198.github.io/">
+      hieudoan7
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://1612198.github.io/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://1612198.github.io/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://1612198.github.io/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://1612198.github.io/contact/">Contact me</a>
+          </li>
+        
+      
+      
+        
+        
+        
+          
+        
+          
+            
+              <li class="navigation-item menu-separator">
+                <span>|</span>
+              </li>
+              
+            
+            <li class="navigation-item">
+              <a href="https://1612198.github.io/pt-br/">Português</a>
+            </li>
+          
+        
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">[INTERVIEW] Operator System</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-10-29T23:11:03&#43;07:00'>
+                October 29, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              4 minutes read
+            </span>
+          </div>
+          
+          
+        </div>
+      </header>
+
+      <div>
+        
+
+<h1 id="operator-system-questions-for-interview">Operator System Questions for Interview</h1>
+
+<p>29/10/2019</p>
+
+<p>Hệ điều hành là 1 chương trình quản lý phần cứng và cấp phát tài nguyên một cách phù hợp cho các chương trình.</p>
+
+<h2 id="i-process-tiến-trình">I. Process (Tiến trình)</h2>
+
+<h3 id="1-tiến-trình-tiểu-trình">1. Tiến trình, tiểu trình?</h3>
+
+<p>Tiến trình là một chương trình máy tính đang thực thi.<br />
+Tiểu trình (thread) là một đơn vị thực thi độc lập mà CPU có thể điều phối được. Thông thường, một <strong>Tiến trình</strong> gồm nhiều <strong>Tiểu trình</strong>.<br />
+Khi 1 tiến trình $P$ gồm các tiểu trình $T_1$, $T_2$, $T_3$. Thì giữa các tiểu trình này khác nhau:<br />
++ Thread ID<br />
++ Register<br />
++ Stack<br />
+Và dùng chung:<br />
++ Code<br />
++ Data (Global variable)<br />
++ File<br />
++ Heap</p>
+
+<p>Bỏ nhỏ: Child process là 1 process được sinh ra từ 1 process khác (parent process) mà thôi, sau đó nó lớn sao lớn và nó chết trước cha nó :v</p>
+
+<h3 id="2-context-switch">2. Context Switch</h3>
+
+<p>$\rightarrow$ Chuyển đổi ngữ cảnh là một quá trình lưu lại trạng thái hiện hành và chuyển sang trạng thái khác (nạp mới hoặc phục hồi trạng thái cũ được lưu trước đó)<br />
+$\rightarrow$ Chuyển đổi ngữ cảnh là đặc tính tiêu biểu và nhất thiết phải có của một hệ điều hành đa nhiệm (multitasking)</p>
+
+<h4 id="context-switch-xảy-ra-khi-nào">Context Switch xảy ra khi nào?</h4>
+
+<p>Khi một process đang thực thi, có 2 trường hợp mà hệ thống phải thực hiện context switch.<br />
+1. Preemptive: Bị chiếm bởi process khác có độ ưu tiên cao hơn.<br />
+2. Non-preemtive: Đang chờ 1 tác vụ nhập xuất gì đó.</p>
+
+<h3 id="3-kernel-space-vs-user-space">3. Kernel Space vs User Space</h3>
+
+<p>Xét trên RAM: (Memory)<br />
+Có 1 phần dành riêng để chạy kernel (OS Background process) gọi là kernel space: full access phần cứng và quản lý các ứng dụng đang chạy trên User space.<br />
+User space: các ứng dụng người dùng load lên đó chạy, thực ra chạy trên virtual memory.</p>
+
+<p>Để truy xuất thủ tục trong kernel space, ta cần phát sinh 1 trong 3 event:<br />
++ Ngắt (interrupt): Hết đồng hồ, ngắt từ I/O device<br />
++ Exception: divide by 0<br />
++ Trap (software interrupt): system call, break point</p>
+
+<h2 id="ii-memory">II. Memory</h2>
+
+<p>Coi cái sơ đồ hoạt động sau đây.
+<center>
+<img src="https://1612198.github.io/imgs/virtual_memory.jpg" alt="virtual_memory" />
+</center></p>
+
+<p>Các vấn đề xoay quanh.</p>
+
+<h4 id="1-virtual-memory-có-kích-thước-bao-nhiêu">1. Virtual Memory có kích thước bao nhiêu?</h4>
+
+<p>Số bit biểu diễn virtual address chính là kích thước (conceptional) của virtual memory. &gt; số bit của physical address.<br />
+Vd: 32-bit physical address, 48-bit virtual address</p>
+
+<h4 id="2-virtual-memory-được-lưu-ở-đâu">2. Virtual Memory được lưu ở đâu?</h4>
+
+<p>Kì thực, nó không hề tồn tại, nên không có lưu ở đâu hết.</p>
+
+<h4 id="3-công-dụng-của-virtual-memory">3. Công dụng của Virtual Memory?</h4>
+
+<ul>
+<li>Giải quyết được phân mảnh</li>
+<li>Chương trình có kích thước &gt; RAM vẫn chạy được</li>
+<li>Người lập trình ko cần quan tâm đến kích thước vùng nhơ RAM</li>
+</ul>
+
+<h4 id="4-page-table-được-lưu-ở-đâu">4. Page Table được lưu ở đâu?</h4>
+
+<p>Page Table nó được lưu trong 1 thiết bị phần cứng <strong>MMU</strong> (Memory Management Unit) tích hợp trong CPU. MMU luôn đi kèm với <strong>TLB</strong> (Translation Lookaside Buffer, nhiệm vụ catching).<br />
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/MMU_principle_updated.png/1024px-MMU_principle_updated.png" alt="minh_hoa" />
+Sơ đồ hoạt động của TLB.<br />
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Steps_In_a_Translation_Lookaside_Buffer.png" alt="hoad_dong_TLB" />
+</center></p>
+
+<h4 id="5-làm-gì-khi-xảy-ra-page-fault">5. Làm gì khi xảy ra page fault?</h4>
+
+<p>Khi mà search trong page table thấy bit invalid, nghĩa là chưa được load lên RAM, thì nó phát sinh Trap (ngắt mềm) cho OS, hệ điều hành mới block tiến trình lại và tiến hành đi load ô nhớ đang cần từ disk lên RAM để tiếp tục chạy. Tiến hành các bước sau:<br />
++ Chọn frame để thay thế (nạn nhân, thuật toán thay trang)<br />
++ Lưu nạn nhân vào disk. (cải tiến là thêm dirty bit, nếu fram đó ko có gì thay đổi thì khỏi cần tải về disk)<br />
++ Cập nhật bảng trang (gắn invalid cho nạn nhân)<br />
++ Đọc trang cần thiết vào frame vừa chọn<br />
++ Cập nhật valid cho trang đó<br />
++ Chạy lại instructor lúc nãy.</p>
+
+<h4 id="6-làm-sao-os-biết-page-nào-trong-disk">6. Làm sao OS biết page nào trong disk?</h4>
+
+<p>Có, <code>swap_info_struct()</code> trong kernel á, nếu muốn rõ hơn thì tải code kernel về đọc. <a href="https://stackoverflow.com/questions/32846456/how-does-the-os-know-disk-address-of-an-absent-page">link stackOverFlow</a></p>
+
+<h4 id="7-các-thuật-toán-thay-trang">7. Các thuật toán thay trang?</h4>
+
+<ul>
+<li>NRU: Not Recently Used</li>
+<li>LRU: Least Recently Used</li>
+<li>FIFO: First In First Out<br />
+++ Cơ hội thứ 2: thêm 1 bit active và nếu đầu queue nhưng mà có active thì cho xuống cuối queue đứng<br />
+++ Clock: thay vì cứ cắt đầu xuống đuôi thì nối mẹ vòng rồi cho kim đồng hồ quay.</li>
+</ul>
+
+<h4 id="8-một-tiến-trình-chạy-như-thế-nào">8. Một tiến trình chạy như thế nào?</h4>
+
+<p>Nó load hết lên Virtual Memory, đây chỉ là mang tính conceptional chứ làm gì tồn tại virtual memory, nghĩa là nó load từng ô nhớ thôi, chạy cần cái nào nó load cái đó nhờ <code>swap_info_struct()</code> trong OS.<br />
+<center>
+<img src="https://1612198.github.io/imgs/swap.jpg" alt="swap" />
+</center>
+Thế nhiều tiến trình chạy như thế nào, thì nó cứ load hết lên virtual memory theo thứ tự từng tiến trình, vì VM ko tồn tại dẫn đến thực tế là cứ tiến trình nào cần ô nhớ nào thì nó ms load lên RAM thôi.</p>
+
+      </div>
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://1612198.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Become the BEST VERSION of YOU.</p>
+    
+    
+    
+    
+      
+      [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
+    
+  </section>
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

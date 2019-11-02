@@ -6,10 +6,46 @@
     <description>Recent content in Posts on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 25 Oct 2019 20:14:31 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 02 Nov 2019 14:11:28 +0700</lastBuildDate>
     
 	<atom:link href="https://1612198.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sorting</title>
+      <link>https://1612198.github.io/posts/sorting/</link>
+      <pubDate>Sat, 02 Nov 2019 14:11:28 +0700</pubDate>
+      
+      <guid>https://1612198.github.io/posts/sorting/</guid>
+      <description>Sorting Algorithm 02/11/2019
+This post is going to give you some interesting algorithm ralating sorting elements.
+Problem Sorting an array $a$ consists of $n$ elements in increasing order.
+I. $O(n^2)$ Algorithm 1. Interchange Sort for(int i=0; i&amp;lt;n; i++){ for(int j=i+1; j&amp;lt;n; j++){ if (a[j] &amp;lt; a[i]) swap(a[j], a[i]); } }  2. Bubble Sort Từng phần tử nổi lên như bong bóng vậy đó.
+for(int i=n-1; i&amp;gt;0; i--){ for(int j=1; j&amp;lt;=i; j++){ if (a[j] &amp;lt; a[j-1]) swap(a[j], a[j-1]); } }  Ngoài ra còn có Insertion Sort, Selection Sort, Shaker Sort.</description>
+    </item>
+    
+    <item>
+      <title>[INTERVIEW] Operator System</title>
+      <link>https://1612198.github.io/posts/operator_system/</link>
+      <pubDate>Tue, 29 Oct 2019 23:11:03 +0700</pubDate>
+      
+      <guid>https://1612198.github.io/posts/operator_system/</guid>
+      <description>Operator System Questions for Interview 29/10/2019
+Hệ điều hành là 1 chương trình quản lý phần cứng và cấp phát tài nguyên một cách phù hợp cho các chương trình.
+I. Process (Tiến trình) 1. Tiến trình, tiểu trình? Tiến trình là một chương trình máy tính đang thực thi.
+Tiểu trình (thread) là một đơn vị thực thi độc lập mà CPU có thể điều phối được. Thông thường, một Tiến trình gồm nhiều Tiểu trình.</description>
+    </item>
+    
+    <item>
+      <title>[INTERVIEW] Computer Network</title>
+      <link>https://1612198.github.io/posts/computer_network/</link>
+      <pubDate>Mon, 28 Oct 2019 21:27:43 +0700</pubDate>
+      
+      <guid>https://1612198.github.io/posts/computer_network/</guid>
+      <description>Computer Network Questions for Interview. 28/10/2019
+1. DNS là gì, hoạt động như thế nào? DNS là Domain Name System: Hệ thống chuyển đổi domain name thành địa chỉ IP.
+host: yahoo.com -&amp;gt; search catch -&amp;gt; miss -&amp;gt; Resolver (ISP or nhà cc mạng: VIETEL (người đại diên)) -&amp;gt; ROOT server -&amp;gt; .com server -&amp;gt; yahoo.com server -&amp;gt; đưa cho 1 IP server (rảnh) để mà về tải. Remark: DNS using port 53.</description>
+    </item>
     
     <item>
       <title>All you need to know about Subset Sum Problem</title>

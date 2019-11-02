@@ -3,19 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://1612198.github.io/posts/subset_sum/</loc>
-    <lastmod>2019-10-25T20:14:31+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://1612198.github.io/posts/</loc>
-    <lastmod>2019-10-25T20:14:31+07:00</lastmod>
+    <lastmod>2019-11-02T14:11:28+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://1612198.github.io/posts/sorting/</loc>
+    <lastmod>2019-11-02T14:11:28+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://1612198.github.io/</loc>
-    <lastmod>2019-10-25T20:14:31+07:00</lastmod>
+    <lastmod>2019-11-02T14:11:28+07:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -27,6 +27,21 @@
                 hreflang="en"
                 href="https://1612198.github.io/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://1612198.github.io/posts/operator_system/</loc>
+    <lastmod>2019-10-29T23:11:03+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://1612198.github.io/posts/computer_network/</loc>
+    <lastmod>2019-10-28T21:27:43+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://1612198.github.io/posts/subset_sum/</loc>
+    <lastmod>2019-10-25T20:14:31+07:00</lastmod>
   </url>
   
   <url>
