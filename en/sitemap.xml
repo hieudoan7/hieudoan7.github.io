@@ -4,18 +4,18 @@
   
   <url>
     <loc>https://1612198.github.io/posts/</loc>
-    <lastmod>2019-11-02T14:11:28+07:00</lastmod>
+    <lastmod>2019-11-02T23:12:30+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://1612198.github.io/posts/sorting/</loc>
-    <lastmod>2019-11-02T14:11:28+07:00</lastmod>
+    <loc>https://1612198.github.io/posts/tree_theorem/</loc>
+    <lastmod>2019-11-02T23:12:30+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://1612198.github.io/</loc>
-    <lastmod>2019-11-02T14:11:28+07:00</lastmod>
+    <lastmod>2019-11-02T23:12:30+07:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -27,6 +27,11 @@
                 hreflang="en"
                 href="https://1612198.github.io/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://1612198.github.io/posts/sorting/</loc>
+    <lastmod>2019-11-02T14:11:28+07:00</lastmod>
   </url>
   
   <url>
