@@ -6,10 +6,22 @@
     <description>Recent content in Posts on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 02 Nov 2019 23:12:30 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 17 Dec 2019 14:48:39 +0700</lastBuildDate>
     
 	<atom:link href="https://1612198.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lowest Common Ancestor (LCA)</title>
+      <link>https://1612198.github.io/posts/lca/</link>
+      <pubDate>Tue, 17 Dec 2019 14:48:39 +0700</pubDate>
+      
+      <guid>https://1612198.github.io/posts/lca/</guid>
+      <description>Lowest Common Ancestor (LCA) 17/12/2019
+I. Bài toán Trả lời nhiều queries của bài toán tìm LCA 2 nodes u, v trong 1 rooted tree.
+Lưu ý u, v phải nằm trong 1 cái tree, điều đó đảm bảo every nodes have only 1 parent (aka $2^0$-th parent).
+II. Ý tưởng Có nhiều cách tìm LCA, mình sẽ trình bày cách phổ biến nhất có tên là binary raise (or binary lifting).</description>
+    </item>
     
     <item>
       <title>Tree&#39;s Theorem</title>
