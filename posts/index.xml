@@ -6,10 +6,21 @@
     <description>Recent content in Posts on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 17 Dec 2019 14:48:39 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 28 Dec 2019 22:46:31 +0700</lastBuildDate>
     
 	<atom:link href="https://1612198.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Segment Tree</title>
+      <link>https://1612198.github.io/posts/segment_tree/</link>
+      <pubDate>Sat, 28 Dec 2019 22:46:31 +0700</pubDate>
+      
+      <guid>https://1612198.github.io/posts/segment_tree/</guid>
+      <description>Segment Tree 28/12/2019
+I. Mục đích: Giúp truy xuất giá trị trên 1 đoạn (segment) nhanh chóng và update giá trị nhanh chóng. Nhanh ở đây là $O(log\ n)$. Truy xuất ở đây có thể là tổng, phần tử nhỏ nhất, phần tử lớn nhất, &amp;hellip; .
+II. Cấu tạo chung của 1 segment tree Xét một array $a[n]$ (từ $0..n-1$), ta build $1$ cái cây quản lý mảng a.</description>
+    </item>
     
     <item>
       <title>Lowest Common Ancestor (LCA)</title>
