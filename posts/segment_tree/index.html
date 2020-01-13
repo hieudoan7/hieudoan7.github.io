@@ -236,6 +236,8 @@ $$\Rightarrow T = 2^0 + 2^1 + &hellip; + 2^{log_2(n)+1} = 2^{log_2(n)+2}-1 \leq 
 <p>Còn trường hợp partial sẽ tiếp tục recursive để đưa về base case.</p></li>
 
 <li><p>Không thể xảy ra $st &gt; en$ bởi vì ta đi từ $0..n-1$ và luôn chia $2$ thì không bao giờ có chuyện đó xảy ra nên khỏi lo.</p></li>
+
+<li><p>Trật tự phải là Update node lazy trước rồi làm gì làm sau bởi vì khi node đó đã được gọi thì chứng tỏ thằng cha nó đang chờ kết quả từ nó báo về đề update cho nên dù nó có trong inside, outside hay partial thì update rồi tính sau. (Trong phần comment của HackerEarth có đó).</p></li>
 </ul>
 
 <h2 id="iv-trường-hợp-suy-biến-của-segment-tree">IV. Trường hợp suy biến của Segment Tree</h2>
