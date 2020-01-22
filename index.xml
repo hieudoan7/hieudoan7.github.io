@@ -6,10 +6,26 @@
     <description>Recent content on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Jan 2020 18:41:14 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jan 2020 13:57:57 +0700</lastBuildDate>
     
 	<atom:link href="https://1612198.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Matrix Exponentiation</title>
+      <link>https://1612198.github.io/posts/matrix_exponentiation/</link>
+      <pubDate>Wed, 22 Jan 2020 13:57:57 +0700</pubDate>
+      
+      <guid>https://1612198.github.io/posts/matrix_exponentiation/</guid>
+      <description>Matrix Exponentiation 22/01/2020
+I. Linear Equation Đề bài: Giải hệ thức đệ quy:
+$$\begin{cases}f_i = c_0 + c_1 f_{i-1} + c_2 f_{i-2} + &amp;hellip; + c_k f_{i-k}\\f_0, f_1, &amp;hellip;, f_{k-1}\end{cases}$$
+Giải:
+Ma trận xuất phát điểm: $F_k$ (k+1) x 1
+$$\begin{bmatrix}f_0 \\f_1 \\ &amp;hellip;\\f_{k-1} \\1 \end{bmatrix} $$
+Ma trận chuyển tiếp: (Transition) $T_{(k+1).(k+1)}$
+$$\begin{bmatrix}0 &amp;amp; 1 &amp;amp; 0 &amp;amp; &amp;hellip; &amp;amp; 0 &amp;amp; 0 \\0 &amp;amp; 0 &amp;amp; 1 &amp;amp;&amp;hellip;&amp;amp; 0 &amp;amp; 0 \\ &amp;hellip; \\c_k &amp;amp; c_{k-1} &amp;amp; c_{k-2} &amp;amp; &amp;hellip; &amp;amp; c_1 &amp;amp; c_0\end{bmatrix}$$</description>
+    </item>
     
     <item>
       <title>On the way to SEA VN</title>
@@ -201,12 +217,12 @@ Với đỉnh trung gian đang xét là $k$, thì những $shortest\_path$ mà c
     </item>
     
     <item>
-      <title>Dijikstra Algorithm</title>
+      <title>Dijkstra Algorithm</title>
       <link>https://1612198.github.io/posts/dijistra_algorithm/</link>
       <pubDate>Tue, 09 Jul 2019 00:06:06 +0700</pubDate>
       
       <guid>https://1612198.github.io/posts/dijistra_algorithm/</guid>
-      <description>Dijikstra Algorithm 08/07/2019
+      <description>Dijkstra Algorithm 08/07/2019
 I. Mục đích: Tìm đường đi ngắn nhất từ 1 node (starting node) đến tất cả các nodes còn lại.
 Nhược điểm: Kết quả SAI khi đồ thị cạnh âm chứ chưa cần có mạch âm.
 Ưu điểm: So với Bellman-ford, Dijistra hiệu quả hơn vì chỉ duyệt qua các cạnh đúng 1 lần.
