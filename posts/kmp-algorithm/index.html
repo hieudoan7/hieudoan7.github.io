@@ -201,7 +201,7 @@ Giả sử quá trình đang ở trạng thái:<br />
 
 <p><strong><em>Xây dựng mảng trượt:</em></strong><br />
 Vì đoạn $T[i:x-1]$ bao giờ cũng $= P[0:x-1]$ nên ta chỉ cần xây dựng bảng
-$lps[i],  \forall i \in [0:m]$ (longest prefix suffix) là nó phủ sóng hết tất cả các trường hợp có thể có của $T[i:x-1]$.</p>
+$lps[i],  \forall i \in [0:m-1]$ (longest prefix suffix) là nó phủ sóng hết tất cả các trường hợp có thể có của $T[i:x-1]$.</p>
 
 <h2 id="iii-implement">III. Implement</h2>
 
@@ -239,7 +239,7 @@ Thì mày đã có $lps[i-1] =$ chiều dài dãy con dài nhất vừa là pref
 <p>Nhưng nếu $P[i] != P[lps[i-1]]$ thì sao, thì có nghĩa là tìm chuỗi con khác vừa là tiền tố vừa là hậu tố của $P[:i]$ (chắc chắn là ngắn hơn len +  1 rồi).</p>
 
 <p><strong><em>Chuỗi con này tìm như thế nào?</em></strong><br />
-Có phải là vì $lps[i-1] = len$ nên $P[:len] = P[i-len:i-1]$ cho nên chuỗi $lps[i]$ có thể có là $lps[len-1] + 1$ nếu $P[lps[len-1]] == P[i]$. Cứ như vậy thôi.</p>
+Có phải là vì $lps[i-1] = len$ nên $P[0:len-1] = P[i-len:i-1]$ cho nên chuỗi $lps[i]$ có thể có là $lps[len-1] + 1$ nếu $P[lps[len-1]] == P[i]$. Cứ như vậy thôi.</p>
 
 <p>Hình vẽ minh họa:<br />
 <center>
@@ -272,6 +272,10 @@ Có phải là vì $lps[i-1] = len$ nên $P[:len] = P[i-len:i-1]$ cho nên chu�
 }
 </code></pre></div>
 <p>$$\Rightarrow O(n)$$</p>
+
+<h2 id="iv-tham-khảo">IV. Tham khảo:</h2>
+
+<p><a href="https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/">geeks for geeks</a></p>
 
       </div>
 
