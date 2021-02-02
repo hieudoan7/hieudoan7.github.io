@@ -25,8 +25,8 @@ I. Depth-First Search (DFS) Idea: Đi sâu rồi quần lại.
 1. Implement vector&lt;int&gt; g[N]; //or vector&lt;vector&lt;int&gt;&gt; g; bool vis[N]; void dfs(int v){ //vertex  vis[v] = true; for(auto u:g[v]){ //always for u =))  if (!vis[u]) dfs(u); } } //in main for(int i=0; i&lt;n; i&#43;&#43;){ if (!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://1612198.github.io/posts/graph_traversal/" />
-<meta property="article:published_time" content="2019-09-12T20:25:41&#43;07:00"/>
-<meta property="article:modified_time" content="2019-09-12T20:25:41&#43;07:00"/>
+<meta property="article:published_time" content="2019-09-12T20:25:41+07:00" />
+<meta property="article:modified_time" content="2019-09-12T20:25:41+07:00" />
 
 
     
@@ -59,7 +59,7 @@ I. Depth-First Search (DFS) Idea: Đi sâu rồi quần lại.
     <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.80.0" />
   </head>
 
   <body class=" ">
@@ -142,19 +142,12 @@ I. Depth-First Search (DFS) Idea: Đi sâu rồi quần lại.
       </header>
 
       <div>
-        
-
-<h1 id="graph-traversal">Graph Traversal</h1>
-
+        <h1 id="graph-traversal">Graph Traversal</h1>
 <p>12/09/2019</p>
-
-<p>We discuss about the way we traverse a graph or a tree.<br />
+<p>We discuss about the way we traverse a graph or a tree.<br>
 Assuming we are using adjacent list to represent a graph.</p>
-
 <h2 id="i-depth-first-search-dfs">I. Depth-First Search (DFS)</h2>
-
 <p>Idea: Đi sâu rồi quần lại.</p>
-
 <h3 id="1-implement">1. Implement</h3>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; g[N]; <span style="color:#007f7f">//or vector&lt;vector&lt;int&gt;&gt; g;
 </span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">bool</span> vis[N];
@@ -168,13 +161,9 @@ Assuming we are using adjacent list to represent a graph.</p>
 </span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;n; i++){
     <span style="color:#fff;font-weight:bold">if</span> (!vis[i]) dfs(i);
 }
-</code></pre></div>
-<p><strong>Complexity</strong>: $$\Rightarrow O(V+E)$$.</p>
-
+</code></pre></div><p><strong>Complexity</strong>: $$\Rightarrow O(V+E)$$.</p>
 <h3 id="2-application">2. Application</h3>
-
-<h4 id="2-1-connectivity-check-count-cc">2.1. Connectivity Check, Count #CC</h4>
-
+<h4 id="21-connectivity-check-count-cc">2.1. Connectivity Check, Count #CC</h4>
 <p>Một đồ thị là connected nếu nó chỉ có 1 CC (connected component). So, giống như việc đếm số CC, nếu số CC &gt; 1 thì đồ thị là không kết nối.</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    dfs(<span style="color:#ff0;font-weight:bold">0</span>);
     <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;n; i++){
@@ -184,9 +173,7 @@ Assuming we are using adjacent list to represent a graph.</p>
         }
     }
     cout &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34;Connected Graph&#34;</span>;
-</code></pre></div>
-<h4 id="2-2-finding-cycles">2.2. Finding Cycles</h4>
-
+</code></pre></div><h4 id="22-finding-cycles">2.2. Finding Cycles</h4>
 <p>Nếu trong quá trình duyệt graph mà phát hiện một đỉnh đã visited mà không phải cha nó (theo chiều đang duyệt) thì chứng tỏ nó có cycle.</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; g[N];
 <span style="color:#fff;font-weight:bold">bool</span> vis[N];
@@ -206,18 +193,13 @@ Assuming we are using adjacent list to represent a graph.</p>
     <span style="color:#fff;font-weight:bold">if</span> (!vis[i]) <span style="color:#fff;font-weight:bold">if</span>(dfs(i)) cout &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34;Cycle&#34;</span>, <span style="color:#fff;font-weight:bold">break</span>;
 }
 cout &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34;No cycles&#34;</span>;
-</code></pre></div>
-<h4 id="2-3-bipartiteness-check">2.3. Bipartiteness Check</h4>
-
+</code></pre></div><h4 id="23-bipartiteness-check">2.3. Bipartiteness Check</h4>
 <p>Có thể color graph với chỉ 2 màu?
-Ý tưởng: sơn nó màu Blue thì các đỉnh kề nó phải màu Red, cứ thế nếu phát hiện thằng nào đã sơn và cùng màu thì fail check.<br />
+Ý tưởng: sơn nó màu Blue thì các đỉnh kề nó phải màu Red, cứ thế nếu phát hiện thằng nào đã sơn và cùng màu thì fail check.<br>
 Thiết nghĩ nên tham khảo: <a href="https://cp-algorithms.com/graph/depth-first-search.html">cp-algorithms</a>, một bài viết quá ngon.</p>
-
 <h2 id="ii-breath-first-search-bfs">II. Breath-First Search (BFS)</h2>
-
 <p>Idea: Lan truyền theo chiều rộng
 Một điểm khác biệt của BFS vs DFS là nó có thể tìm <strong>đường đi ngắn nhất</strong> khi mà cost giữa tất cả các cạnh như nhau.</p>
-
 <h3 id="1-implement-1">1. Implement</h3>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">bool</span> vis[N];
 vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; g[N];
@@ -240,44 +222,22 @@ vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; g[N];
 </span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;n; i++){
     <span style="color:#fff;font-weight:bold">if</span> (!vis[i]) bfs(i);
 }
-</code></pre></div>
-<p><strong>Complexity</strong>: $$\Rightarrow O(V+E)$$.</p>
-
+</code></pre></div><p><strong>Complexity</strong>: $$\Rightarrow O(V+E)$$.</p>
 <h3 id="2-application-1">2. Application</h3>
-
-<h2 id="iii-why-bfs-dsf-has-complexity-o-v-e">III. Why BFS &amp; DSF has complexity $O(V+E)$?</h2>
-
-<p>Vì ta lưu đồ thị ở dạng <strong>adjacent list</strong>.<br />
-Mỗi thao tác duyệt qua cạnh và đỉnh là $O(1)$.<br />
-$O(V+E)$ thực chất là cộng vật lý luôn á. Nhưng mà trong asymtomic complexity người ta nói $O(x+y) = O(max(x,y))$ vì $O(x+y) \leq O(2*max(x,y)) = O(max(x,y))$ ta bỏ đi hằng số $2$ as usual.<br />
-Xét đồ thị:
-<center>
-<img src="https://1612198.github.io/imgs/dfs.jpg" alt="dfs" />
-</center>
-Khi lưu trong máy tính sẽ là mảng $g$ các vector.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">g[1] = {2, 4}  
-g[2] = {1, 3, 5}  
-g[3] = {2, 5}  
-g[4] = {1}  
-g[5] = {2, 3}  </pre></div>
-<p>Ta xét BFS, giả sử xuất phát ta gọi $\rightarrow$ BFS(1):<br />
-Duyệt qua tất cả 2 các phần tử trong g[1]: $2 = g[1].size()$<br />
-$\rightarrow$ BFS(2): duyệt qua 3 phần tử trong g[2]: $3 = g[2].size()$<br />
-$\rightarrow$ BFS(4): duyệt qua 1 phần tử trong g[4]: $1 = g[4].size()$<br />
-$\rightarrow$ BFS(3): duyệt qua 2 phần tử trong g[3]: $2 = g[3].size()$<br />
-$\rightarrow$ BFS(5): duyệt qua 2 phần tử trong g[5]: $2 = g[5].size()$</p>
-
+<h2 id="iii-why-bfs--dsf-has-complexity-ove">III. Why BFS &amp; DSF has complexity $O(V+E)$?</h2>
+<p>Vì ta lưu đồ thị ở dạng <strong>adjacent list</strong>.<br>
+Mỗi thao tác duyệt qua cạnh và đỉnh là $O(1)$.<br>
+$O(V+E)$ thực chất là cộng vật lý luôn á. Nhưng mà trong asymtomic complexity người ta nói $O(x+y) = O(max(x,y))$ vì $O(x+y) \leq O(2*max(x,y)) = O(max(x,y))$ ta bỏ đi hằng số $2$ as usual.<br>
+Xét đồ thị:</p>
+<!-- raw HTML omitted -->
 <p>Thao tác nó tới đỉnh  $i$ là $O(1)$, giống như ta duyệt qua các <strong>adjacent list</strong>, ta đến từng đỉnh, dù nó có cô độc thì cũng đã đến rồi, chi phí vẫn là $O(1)$, so:</p>
-
 <ul>
-<li>Duyệt qua từng đỉnh mất $O(n) = O(V)$.<br /></li>
-<li>Tại mỗi đỉnh $i$ nó duyệt qua $g[i].size()$ các đỉnh kề.<br />
-Để ý sẽ thấy, $g[i].size() = deg(i)$ (số cạnh connect với i).<br /></li>
+<li>Duyệt qua từng đỉnh mất $O(n) = O(V)$.</li>
+<li>Tại mỗi đỉnh $i$ nó duyệt qua $g[i].size()$ các đỉnh kề.<br>
+Để ý sẽ thấy, $g[i].size() = deg(i)$ (số cạnh connect với i).</li>
 </ul>
-
-<p>$$\Rightarrow O(\sum_{i=1}^{n} deg(i)) = O(2E)$$.<br />
+<p>$$\Rightarrow O(\sum_{i=1}^{n} deg(i)) = O(2E)$$.<br>
 Vậy complexity chính xác là: $O(V+2E)$.</p>
-
 <p><strong>Tham khảo</strong>: CP handbook, cp-algorithms.</p>
 
       </div>

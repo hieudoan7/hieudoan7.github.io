@@ -15,20 +15,20 @@
 I. Bài toán: Cho chuỗi Text $T$ (length = $n$) và Pattern $P$ (length = $m$). Tìm số lần xuất hiện của $P$ trong $T$.
 $\Rightarrow$ Naive Solution:
 Tại mỗi vị trí $i$ trong $T$, ta so sánh nó với $P$.
-&gt; code chơi thôi:
-int cnt = 0; for (int i = 0; i &lt;= n-m; i&#43;&#43;){ bool flag = false; for (int j = 0; j &lt; m; j&#43;&#43;){ if (P[j] == T[i&#43;j]) continue; flag = true; break; } if (flag) cnt&#43;&#43;; }  $$\Rightarrow O(n*m) $$"/>
+ code chơi thôi:
+ int cnt = 0; for (int i = 0; i &lt;= n-m; i&#43;&#43;){ bool flag = false; for (int j = 0; j &lt; m; j&#43;&#43;){ if (P[j] == T[i&#43;j]) continue; flag = true; break; } if (flag) cnt&#43;&#43;; } $$\Rightarrow O(n*m) $$"/>
 
     <meta property="og:title" content="KMP Algorithm" />
 <meta property="og:description" content="Knuth-Morris-Pratt algorithm 10/07/2019
 I. Bài toán: Cho chuỗi Text $T$ (length = $n$) và Pattern $P$ (length = $m$). Tìm số lần xuất hiện của $P$ trong $T$.
 $\Rightarrow$ Naive Solution:
 Tại mỗi vị trí $i$ trong $T$, ta so sánh nó với $P$.
-&gt; code chơi thôi:
-int cnt = 0; for (int i = 0; i &lt;= n-m; i&#43;&#43;){ bool flag = false; for (int j = 0; j &lt; m; j&#43;&#43;){ if (P[j] == T[i&#43;j]) continue; flag = true; break; } if (flag) cnt&#43;&#43;; }  $$\Rightarrow O(n*m) $$" />
+ code chơi thôi:
+ int cnt = 0; for (int i = 0; i &lt;= n-m; i&#43;&#43;){ bool flag = false; for (int j = 0; j &lt; m; j&#43;&#43;){ if (P[j] == T[i&#43;j]) continue; flag = true; break; } if (flag) cnt&#43;&#43;; } $$\Rightarrow O(n*m) $$" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://1612198.github.io/posts/kmp-algorithm/" />
-<meta property="article:published_time" content="2019-07-10T22:42:22&#43;07:00"/>
-<meta property="article:modified_time" content="2019-07-10T22:42:22&#43;07:00"/>
+<meta property="article:published_time" content="2019-07-10T22:42:22+07:00" />
+<meta property="article:modified_time" content="2019-07-10T22:42:22+07:00" />
 
 
     
@@ -61,7 +61,7 @@ int cnt = 0; for (int i = 0; i &lt;= n-m; i&#43;&#43;){ bool flag = false; for (
     <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.80.0" />
   </head>
 
   <body class=" ">
@@ -135,7 +135,7 @@ int cnt = 0; for (int i = 0; i &lt;= n-m; i&#43;&#43;){ bool flag = false; for (
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              4 minutes read
+              3 minutes read
             </span>
           </div>
           
@@ -144,18 +144,15 @@ int cnt = 0; for (int i = 0; i &lt;= n-m; i&#43;&#43;){ bool flag = false; for (
       </header>
 
       <div>
-        
-
-<h1 id="knuth-morris-pratt-algorithm">Knuth-Morris-Pratt algorithm</h1>
-
+        <h1 id="knuth-morris-pratt-algorithm">Knuth-Morris-Pratt algorithm</h1>
 <p>10/07/2019</p>
-
 <h2 id="i-bài-toán">I. Bài toán:</h2>
-
-<p>Cho chuỗi Text $T$ (length = $n$) và Pattern $P$ (length = $m$). Tìm số lần xuất hiện của $P$ trong $T$.<br />
-$\Rightarrow$ Naive Solution:<br />
-Tại mỗi vị trí $i$ trong $T$, ta so sánh nó với $P$.<br />
-&gt; code chơi thôi:</p>
+<p>Cho chuỗi Text $T$ (length = $n$) và Pattern $P$ (length = $m$). Tìm số lần xuất hiện của $P$ trong $T$.<br>
+$\Rightarrow$ Naive Solution:<br>
+Tại mỗi vị trí $i$ trong $T$, ta so sánh nó với $P$.</p>
+<blockquote>
+<p>code chơi thôi:</p>
+</blockquote>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">int</span> cnt = <span style="color:#ff0;font-weight:bold">0</span>;
 <span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt;= n-m; i++){
     <span style="color:#fff;font-weight:bold">bool</span> flag = <span style="color:#fff;font-weight:bold">false</span>;
@@ -166,46 +163,32 @@ Tại mỗi vị trí $i$ trong $T$, ta so sánh nó với $P$.<br />
     }
     <span style="color:#fff;font-weight:bold">if</span> (flag) cnt++;
 }
-</code></pre></div>
-<p>$$\Rightarrow O(n*m) $$</p>
-
+</code></pre></div><p>$$\Rightarrow O(n*m) $$</p>
 <h2 id="ii-ý-tưởng-của-kmp">II. Ý tưởng của KMP</h2>
-
-<p>Nhược điểm của Naive Algorithm:<br />
-Xét ví dụ:<br />
-$T = &lsquo;AAAABBA&rsquo;$<br />
-$P = &lsquo;AAAA&rsquo;$<br />
-Thì khi $i$ chạy tới $3$ $(AAAA)$ thì được 1 lần count $(cnt = 1)$ nhưng sau đó nó phải so sánh lại từ $i=1$ với $P$.<br />
+<p>Nhược điểm của Naive Algorithm:<br>
+Xét ví dụ:<br>
+$T = &lsquo;AAAABBA&rsquo;$<br>
+$P = &lsquo;AAAA&rsquo;$<br>
+Thì khi $i$ chạy tới $3$ $(AAAA)$ thì được 1 lần count $(cnt = 1)$ nhưng sau đó nó phải so sánh lại từ $i=1$ với $P$.<br>
 Xem rõ ở link: <a href="https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/">https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/</a></p>
-
-<p><strong>KMP ra đời!!!</strong><br />
-Giúp giảm độ phức tạp còn $O(n)$.<br />
+<p><strong>KMP ra đời!!!</strong><br>
+Giúp giảm độ phức tạp còn $O(n)$.<br>
 Sở dĩ độ phức tạp còn $O(n)$ vì KMP luôn hướng con trỏ $i$ trong $T$ đi về phía trước và không quay lui.</p>
-
-<p><strong><em>HOW DOES KMP WORK?</em></strong><br />
-Giả sử quá trình đang ở trạng thái:<br />
-<center>
-<img src="https://1612198.github.io/imgs/kmp_minhhoa.jpg" alt="kmp_minhoa.jpg" />
-</center></p>
-
+<p><em><strong>HOW DOES KMP WORK?</strong></em><br>
+Giả sử quá trình đang ở trạng thái:</p>
+<!-- raw HTML omitted -->
 <p>Ta gặp mismatch tại vị trí $x$, làm sao để không quay lui con trỏ mà vẫn tìm được các $P$ trong $T$?.</p>
-
 <p>Ta có nhận xét:</p>
-
 <ul>
-<li>Đoạn $T[i:x-1] = P[0:x-i-1]$<br /></li>
-<li>$P$ không thể xuất hiện tại $i$, $P$ có thể xuất hiện tại $i+1$, $i+2$, &hellip; . Trong đoạn ta đang quan tâm, $P$ chỉ có thể xuất hiện tại vị trí $j$  (i &lt; j &lt; x) khi và chỉ khi đoạn $T[j:x-1]$ là tiền tố của $P$. Bởi nếu một đoạn $T[j:x-1]$ bất kì mà không phải là tiền tố của $T$ thì so sánh thêm $T[x]$ có ý nghĩa gì đâu.<br /></li>
+<li>Đoạn $T[i:x-1] = P[0:x-i-1]$</li>
+<li>$P$ không thể xuất hiện tại $i$, $P$ có thể xuất hiện tại $i+1$, $i+2$, &hellip; . Trong đoạn ta đang quan tâm, $P$ chỉ có thể xuất hiện tại vị trí $j$  (i &lt; j &lt; x) khi và chỉ khi đoạn $T[j:x-1]$ là tiền tố của $P$. Bởi nếu một đoạn $T[j:x-1]$ bất kì mà không phải là tiền tố của $T$ thì so sánh thêm $T<input checked="" disabled="" type="checkbox"> $ có ý nghĩa gì đâu.</li>
 </ul>
-
 <p>Vậy ta phải tìm được là khi mismatch (or xong pattern) thì ta sẽ trượt $P$ đến đâu để so sánh tiếp với $T[x]$. $P$ phải trượt đến khi nó trùng với một hậu tố của $T[i:x-1]$ (dài nhất nhé).</p>
-
-<p><strong><em>Xây dựng mảng trượt:</em></strong><br />
+<p><em><strong>Xây dựng mảng trượt:</strong></em><br>
 Vì đoạn $T[i:x-1]$ bao giờ cũng $= P[0:x-1]$ nên ta chỉ cần xây dựng bảng
 $lps[i],  \forall i \in [0:m-1]$ (longest prefix suffix) là nó phủ sóng hết tất cả các trường hợp có thể có của $T[i:x-1]$.</p>
-
 <h2 id="iii-implement">III. Implement</h2>
-
-<h3 id="1-xây-dựng-bảng-lps-i">1. Xây dựng bảng lps[i]</h3>
+<h3 id="1-xây-dựng-bảng-lpsi">1. Xây dựng bảng lps[i]</h3>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">int</span>* compute_LPS_array(string P){
     <span style="color:#fff;font-weight:bold">int</span> m = P.length();
     <span style="color:#fff;font-weight:bold">int</span> lps[m];
@@ -228,53 +211,17 @@ $lps[i],  \forall i \in [0:m-1]$ (longest prefix suffix) là nó phủ sóng h�
     }
     <span style="color:#fff;font-weight:bold">return</span> lps;
 }
-</code></pre></div>
-<p>$$\Rightarrow O(m)$$
-<strong><em>Giải thích:</em></strong><br />
-Mày đang ở vị trí $i$, đi tính $lps[i]$.<br />
+</code></pre></div><p>$$\Rightarrow O(m)$$
+<em><strong>Giải thích:</strong></em><br>
+Mày đang ở vị trí $i$, đi tính $lps[i]$.<br>
 Thì mày đã có $lps[i-1] =$ chiều dài dãy con dài nhất vừa là prefix, vừa là suffix của chuỗi $P[:i-1]$.</p>
-
 <p>Thì khi thêm kí tự $P[i]$ vào, chuỗi con dài nhất nó có thể đạt tới là $lps[i-1] + 1$ khi và chỉ khi $P[i] = P[lps[i-1]]$; (trong code là $P[len]$, vì theo thứ tự nên len chính là $lps[i-1]$).</p>
-
 <p>Nhưng nếu $P[i] != P[lps[i-1]]$ thì sao, thì có nghĩa là tìm chuỗi con khác vừa là tiền tố vừa là hậu tố của $P[:i]$ (chắc chắn là ngắn hơn len +  1 rồi).</p>
-
-<p><strong><em>Chuỗi con này tìm như thế nào?</em></strong><br />
+<p><em><strong>Chuỗi con này tìm như thế nào?</strong></em><br>
 Có phải là vì $lps[i-1] = len$ nên $P[0:len-1] = P[i-len:i-1]$ cho nên chuỗi $lps[i]$ có thể có là $lps[len-1] + 1$ nếu $P[lps[len-1]] == P[i]$. Cứ như vậy thôi.</p>
-
-<p>Hình vẽ minh họa:<br />
-<center>
-<img src="https://1612198.github.io/imgs/lps.jpg" alt="lps_minhhoa" />
-</center></p>
-
-<h3 id="2-kmp-search">2. KMP Search</h3>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">void</span> KMPSearch(string P, string T){
-    <span style="color:#fff;font-weight:bold">int</span> m = P.length();
-    <span style="color:#fff;font-weight:bold">int</span> n = T.length();
-    <span style="color:#fff;font-weight:bold">int</span>* lps = compute_LPS_array(P);
-    <span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>;  <span style="color:#007f7f">//index for T
-</span><span style="color:#007f7f"></span>    <span style="color:#fff;font-weight:bold">int</span> j = <span style="color:#ff0;font-weight:bold">0</span>;   <span style="color:#007f7f">//index for P
-</span><span style="color:#007f7f"></span>    <span style="color:#fff;font-weight:bold">while</span> (i &lt; n){
-        <span style="color:#fff;font-weight:bold">if</span> (P[j] == T[i]) {
-            j++;
-            i++;
-        }
-        <span style="color:#fff;font-weight:bold">if</span> (j == m){
-            cout &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34;Found pattern at index &#34;</span> &lt;&lt; i-j &lt;&lt; endl;
-            j = lps[j-<span style="color:#ff0;font-weight:bold">1</span>];
-        }
-        <span style="color:#fff;font-weight:bold">else</span> <span style="color:#fff;font-weight:bold">if</span> (i &lt; n &amp;&amp; P[j] != T[i]){
-            <span style="color:#fff;font-weight:bold">if</span> (j != <span style="color:#ff0;font-weight:bold">0</span>) 
-                j = lps[j-<span style="color:#ff0;font-weight:bold">1</span>];
-            <span style="color:#fff;font-weight:bold">else</span> 
-                i = i + <span style="color:#ff0;font-weight:bold">1</span>;
-        }
-    }
-}
-</code></pre></div>
-<p>$$\Rightarrow O(n)$$</p>
-
+<p>Hình vẽ minh họa:</p>
+<!-- raw HTML omitted -->
 <h2 id="iv-tham-khảo">IV. Tham khảo:</h2>
-
 <p><a href="https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/">geeks for geeks</a></p>
 
       </div>

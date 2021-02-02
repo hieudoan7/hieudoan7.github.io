@@ -25,8 +25,8 @@ II. Ý tưởng: Gọi $distance[i]$ là đường đi ngắn nhất từ đỉn
  Sau lần round 1: những đỉnh $i$ kề $x$ sẽ xác định được $distance[i]$ (final value luôn đó)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://1612198.github.io/posts/bellman-ford_algorithm/" />
-<meta property="article:published_time" content="2019-07-08T21:43:13&#43;07:00"/>
-<meta property="article:modified_time" content="2019-07-08T21:43:13&#43;07:00"/>
+<meta property="article:published_time" content="2019-07-08T21:43:13+07:00" />
+<meta property="article:modified_time" content="2019-07-08T21:43:13+07:00" />
 
 
     
@@ -59,7 +59,7 @@ II. Ý tưởng: Gọi $distance[i]$ là đường đi ngắn nhất từ đỉn
     <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.80.0" />
   </head>
 
   <body class=" ">
@@ -142,41 +142,25 @@ II. Ý tưởng: Gọi $distance[i]$ là đường đi ngắn nhất từ đỉn
       </header>
 
       <div>
-        
-
-<h1 id="bellman-ford-algorithm">Bellman-Ford Algorithm</h1>
-
+        <h1 id="bellman-ford-algorithm">Bellman-Ford Algorithm</h1>
 <p>08/07/2019</p>
-
 <h2 id="i-mục-đích">I. Mục đích</h2>
-
 <p>Tìm đường đi ngắn nhất từ <strong>1 node</strong> (starting node) đến <strong>tất cả</strong> các nodes còn lại.</p>
-
 <p><strong>Ưu điểm</strong>: Có thể phát hiện <strong>mạch âm</strong></p>
-
 <h2 id="ii-ý-tưởng">II. Ý tưởng:</h2>
-
 <p>Gọi $distance[i]$ là đường đi ngắn nhất từ đỉnh $x$ (starting node) đến đỉnh i ($distance[x] = 0$)</p>
-
 <ul>
-<li>Sau lần <code>round 1</code>: những đỉnh $i$ kề $x$ sẽ xác định được $distance[i]$ (final value luôn đó)<br />
-&hellip;<br /></li>
-<li>Sau lần <code>round thứ k</code>: những shortest path từ $x$ đến $i$ nào mà kết quả có $k$ cạnh thì sẽ được xác định.<br /></li>
+<li>Sau lần <code>round 1</code>: những đỉnh $i$ kề $x$ sẽ xác định được $distance[i]$ (final value luôn đó)<br>
+&hellip;</li>
+<li>Sau lần <code>round thứ k</code>: những shortest path từ $x$ đến $i$ nào mà kết quả có $k$ cạnh thì sẽ được xác định.</li>
 </ul>
-
 <p>Mà shortest path từ $x$ đến $any\ i$ chỉ có thể có tối đa $n-1$ edges nên ta chỉ cần <code>round</code> $n-1$ lần là tìm được tất cả các $distance[i]$</p>
-
-<p>Về mặt hình dung ta có thể hiểu là:<br />
+<p>Về mặt hình dung ta có thể hiểu là:<br>
 Sau <code>round 1</code> thì những đỉnh kề $i$ được <strong>discover</strong>, sau <code>round 2</code> thì những đỉnh kề với những <code>đỉnh đã discover lần trước</code> được <strong>discover</strong>, cứ vậy đến hết. Đây cũng là ý tưởng để cải tiến là ta chỉ cần duyệt các <code>cạnh kề với các đỉnh vừa discover</code> mà không cần duyệt hết <code>list cạnh</code>, tuy nhiên, cải tiến này không làm giảm độ phức <strong>Big-Oh</strong>.</p>
-
 <p>Nhưng vì cài đặt là ta duyệt qua edges nên may mắn nào đó nó discover hết trong 1 lần duyệt là điều có thể xảy ra.</p>
-
 <p>Nếu tất cả các $distance[i]$ đều có ít hơn $n-1$ edges thì các $distance[i]$ sẽ được xác định sớm hơn $n-1$ lần.</p>
-
 <p><code>*round</code>: duyệt qua tất cả các cạnh của đồ thị được lưu trong <code>edge list</code>.</p>
-
 <h2 id="iii-implement">III. Implement</h2>
-
 <p>Ta lưu đồ thị dưới dạng <code>edge list</code>, mỗi phần tử là <code>edge</code> với xuất phát từ $a$, đến $b$, và trọng số $w$.</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">1</span>; i&lt;=n; i++)
     distance[i] = INF;
@@ -188,14 +172,10 @@ distance[x] = <span style="color:#ff0;font-weight:bold">0</span>;
         distance[b] = min(distance[b], distance[a] + w);
     }
 }
-</code></pre></div>
-<p>$$\Rightarrow O(n*m) $$</p>
-
+</code></pre></div><p>$$\Rightarrow O(n*m) $$</p>
 <p>Hoàn toàn ta có thể thêm kĩ thuật truy vết để tìm ra các shortest path từ đỉnh $x$ đến $i$.</p>
-
 <h3 id="kiểm-tra-mạch-âm-negative-cycle">Kiểm tra mạch âm (Negative Cycle)</h3>
-
-<p>Nếu có mạch âm thì sau mỗi lần <code>round</code> ta luôn có thể giảm $distance[i]$ (cứ đi qua cái cạnh âm đó) thì khái niệm shortest path không tồn tại.<br />
+<p>Nếu có mạch âm thì sau mỗi lần <code>round</code> ta luôn có thể giảm $distance[i]$ (cứ đi qua cái cạnh âm đó) thì khái niệm shortest path không tồn tại.<br>
 Vì vậy, chỉ cần ta <code>round</code> thêm 1 lần mà phát hiện bất kì $distance[i]$ nào giảm giá trị thì đồ thị chứa <strong>mạch âm</strong>.</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">auto</span> e:edges){
     <span style="color:#fff;font-weight:bold">if</span> (distance[a] + w &lt; distance[b]) {
@@ -203,8 +183,7 @@ Vì vậy, chỉ cần ta <code>round</code> thêm 1 lần mà phát hiện bấ
         <span style="color:#fff;font-weight:bold">break</span>;
     }
 }
-</code></pre></div>
-<p><strong>Tham khảo</strong>: book_Antti Laaksonen.pdf</p>
+</code></pre></div><p><strong>Tham khảo</strong>: book_Antti Laaksonen.pdf</p>
 
       </div>
 

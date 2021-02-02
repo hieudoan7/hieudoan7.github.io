@@ -13,20 +13,16 @@
 <meta name="twitter:title" content="Articulation Point (Cut Point) &amp; Bridge"/>
 <meta name="twitter:description" content="Articulation Point &amp; Bridge 31/07/2019
 I. Definition Ta xét trong undirected graph.
- Articulation Point (đỉnh khớp): Là đỉnh mà nếu cắt bỏ đi sẽ làm disconnect graph (trong connected graph) còn đối với disconnected graph thì nó làm tăng số connected component.
- Bridge: Là cạnh mà nếu bỏ đi &hellip; (giống khớp)
-  II. Finding Articulation Point 1. Thuật toán tầm thường Với mỗi đỉnh trong graph, ta thử cắt bỏ đi và đếm số thành phần liên thông."/>
+ Articulation Point (đỉnh khớp): Là đỉnh mà nếu cắt bỏ đi sẽ làm disconnect graph (trong connected graph) còn đối với disconnected graph thì nó làm tăng số connected component. Bridge: Là cạnh mà nếu bỏ đi &hellip; (giống khớp)  II. Finding Articulation Point 1. Thuật toán tầm thường Với mỗi đỉnh trong graph, ta thử cắt bỏ đi và đếm số thành phần liên thông."/>
 
     <meta property="og:title" content="Articulation Point (Cut Point) &amp; Bridge" />
 <meta property="og:description" content="Articulation Point &amp; Bridge 31/07/2019
 I. Definition Ta xét trong undirected graph.
- Articulation Point (đỉnh khớp): Là đỉnh mà nếu cắt bỏ đi sẽ làm disconnect graph (trong connected graph) còn đối với disconnected graph thì nó làm tăng số connected component.
- Bridge: Là cạnh mà nếu bỏ đi &hellip; (giống khớp)
-  II. Finding Articulation Point 1. Thuật toán tầm thường Với mỗi đỉnh trong graph, ta thử cắt bỏ đi và đếm số thành phần liên thông." />
+ Articulation Point (đỉnh khớp): Là đỉnh mà nếu cắt bỏ đi sẽ làm disconnect graph (trong connected graph) còn đối với disconnected graph thì nó làm tăng số connected component. Bridge: Là cạnh mà nếu bỏ đi &hellip; (giống khớp)  II. Finding Articulation Point 1. Thuật toán tầm thường Với mỗi đỉnh trong graph, ta thử cắt bỏ đi và đếm số thành phần liên thông." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://1612198.github.io/posts/ap_bridges/" />
-<meta property="article:published_time" content="2019-07-31T22:01:16&#43;07:00"/>
-<meta property="article:modified_time" content="2019-07-31T22:01:16&#43;07:00"/>
+<meta property="article:published_time" content="2019-07-31T22:01:16+07:00" />
+<meta property="article:modified_time" content="2019-07-31T22:01:16+07:00" />
 
 
     
@@ -59,7 +55,7 @@ I. Definition Ta xét trong undirected graph.
     <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.80.0" />
   </head>
 
   <body class=" ">
@@ -142,73 +138,51 @@ I. Definition Ta xét trong undirected graph.
       </header>
 
       <div>
-        
-
-<h1 id="articulation-point-bridge">Articulation Point &amp; Bridge</h1>
-
+        <h1 id="articulation-point--bridge">Articulation Point &amp; Bridge</h1>
 <p>31/07/2019</p>
-
 <h2 id="i-definition">I. Definition</h2>
-
 <p>Ta xét trong undirected graph.</p>
-
 <ul>
-<li><strong>Articulation Point</strong> (đỉnh khớp): Là đỉnh mà nếu cắt bỏ đi sẽ làm <strong>disconnect graph</strong> (trong connected graph) còn đối với disconnected graph thì nó làm tăng số connected component.<br /></li>
-<li><strong>Bridge</strong>: Là cạnh mà nếu bỏ đi &hellip; (giống khớp)<br /></li>
+<li><strong>Articulation Point</strong> (đỉnh khớp): Là đỉnh mà nếu cắt bỏ đi sẽ làm <strong>disconnect graph</strong> (trong connected graph) còn đối với disconnected graph thì nó làm tăng số connected component.</li>
+<li><strong>Bridge</strong>: Là cạnh mà nếu bỏ đi &hellip; (giống khớp)</li>
 </ul>
-
 <h2 id="ii-finding-articulation-point">II. Finding Articulation Point</h2>
-
 <h3 id="1-thuật-toán-tầm-thường">1. Thuật toán tầm thường</h3>
-
-<p>Với mỗi đỉnh trong graph, ta thử cắt bỏ đi và đếm số thành phần liên thông. Nếu tăng thì đỉnh đó là khớp, ngược lại thì không. Gắn đỉnh đó lại và thử bỏ đỉnh khác cho đến khi ta thử hết các đỉnh của graph.<br />
+<p>Với mỗi đỉnh trong graph, ta thử cắt bỏ đi và đếm số thành phần liên thông. Nếu tăng thì đỉnh đó là khớp, ngược lại thì không. Gắn đỉnh đó lại và thử bỏ đỉnh khác cho đến khi ta thử hết các đỉnh của graph.<br>
 $$ \Rightarrow O(V*O(DFS)) = O(V(V+E))$$</p>
-
 <h3 id="2-thuật-toán-cải-tiến-tarjan">2. Thuật toán cải tiến (Tarjan)</h3>
-
-<p>Tận dụng sức mạnh của DFS.<br />
+<p>Tận dụng sức mạnh của DFS.<br>
 Nhắc lại, các loại edges trong 1 tree.</p>
-
-<p><center></p>
-
-<p><img src="https://1612198.github.io/imgs/Tree_edges.png" alt="tree_edges" />
-</center>
-Trong DFS Tree, chỉ có <strong>Back Edges</strong> và <strong>Tree Edges</strong>.</p>
-
+<!-- raw HTML omitted -->
+<p><img src="https://1612198.github.io/imgs/Tree_edges.png" alt="tree_edges"></p>
+<!-- raw HTML omitted -->
 <p>Xét 1 đỉnh $u$ trong đồ thị:</p>
-
 <ul>
-<li>Nếu $u$ là <strong>root</strong> và $u$ có 2 con trở lên $\Rightarrow u$ là khớp<br /></li>
-<li>Nếu $u$ khác root và <strong>subtree rooted at v</strong> (children of u) <strong>has NOT</strong> back edge to ancestor of u  $\Rightarrow u$ là khớp.<br /></li>
+<li>Nếu $u$ là <strong>root</strong> và $u$ có 2 con trở lên $\Rightarrow u$ là khớp</li>
+<li>Nếu $u$ khác root và <strong>subtree rooted at v</strong> (children of u) <strong>has NOT</strong> back edge to ancestor of u  $\Rightarrow u$ là khớp.</li>
 </ul>
-
-<p>Minh họa:<br />
-<center></p>
-
-<p><img src="https://1612198.github.io/imgs/AP_minhhoa.jpg" alt="AP_minhhoa" />
-</center>
-Nếu không có <strong>back edge</strong> thì khi bỏ $u$ sẽ diconnect graph với subtree rooted at v. $\Rightarrow u$ là khớp.</p>
-
+<p>Minh họa:</p>
+<!-- raw HTML omitted -->
+<p><img src="https://1612198.github.io/imgs/AP_minhhoa.jpg" alt="AP_minhhoa"></p>
+<!-- raw HTML omitted -->
 <h3 id="3-implementation">3. Implementation</h3>
-
 <p>Làm thế nào để ta biết được 1 đỉnh $u$ có phải là khớp hay không?</p>
-
 <ul>
-<li>Đối với trường hợp $u$ là <strong>root</strong>: ta cứ đếm số con tại mỗi node, nếu $u$ là <strong>root</strong> và có $&gt;=2$ con thì $u$ là khớp.<br /></li>
+<li>Đối với trường hợp $u$ là <strong>root</strong>: ta cứ đếm số con tại mỗi node, nếu $u$ là <strong>root</strong> và có $&gt;=2$ con thì $u$ là khớp.</li>
 <li>Trường hợp 2 ta lưu thêm:
-
 <ul>
 <li>$disc[u]$: thời gian khám phá ra đỉnh $u$ (discovery)</li>
-<li>$low[u]$: $min(disc[u], disc[w])$, trong đó $w$ is ancestor of u and there is a back edge from some descendant of $u$ to $w$. Tức là ta lưu lại số thứ tự của node sớm nhất (có thể = cha $u$ nhưng theo con đường back edge của đám con cháu) mà từ đó có thể đi tới cây con rooted at $u$ (include $u$)<br />
-&gt; Thì khi $low[v] \geq disc[u]$ chứng tỏ $u$ là AP ($&ldquo;=&rdquo;$ khi back edge của con $v$ nó trỏ ngay $u$)<br />
-<center></li>
-</ul></li>
+<li>$low[u]$: $min(disc[u], disc[w])$, trong đó $w$ is ancestor of u and there is a back edge from some descendant of $u$ to $w$. Tức là ta lưu lại số thứ tự của node sớm nhất (có thể = cha $u$ nhưng theo con đường back edge của đám con cháu) mà từ đó có thể đi tới cây con rooted at $u$ (include $u$)</li>
 </ul>
-
-<p><img src="https://1612198.github.io/imgs/lowv_equal_discu.jpg" alt="lowv_equal_discu" />
-</center></p>
-
-<p>$\Rightarrow $Code: Tao xin copy nguyên source trên trang <a href="https://cp-algorithms.com/graph/cutpoints.html">cp-algorithm</a> bởi vì nó code quá tuyệt vời.<br />
+<blockquote>
+<p>Thì khi $low[v] \geq disc[u]$ chứng tỏ $u$ là AP ($&quot;=&quot;$ khi back edge của con $v$ nó trỏ ngay $u$)</p>
+</blockquote>
+<!-- raw HTML omitted -->
+</li>
+</ul>
+<p><img src="https://1612198.github.io/imgs/lowv_equal_discu.jpg" alt="lowv_equal_discu"></p>
+<!-- raw HTML omitted -->
+<p>$\Rightarrow $Code: Tao xin copy nguyên source trên trang <a href="https://cp-algorithms.com/graph/cutpoints.html">cp-algorithm</a> bởi vì nó code quá tuyệt vời.<br>
 $tin$ = $disc$ (time into node).</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">int</span> N = <span style="color:#ff0;font-weight:bold">1e5</span>; <span style="color:#007f7f">//maximum number of vertices
 </span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> n; <span style="color:#007f7f">//number of nodes
@@ -242,18 +216,10 @@ $tin$ = $disc$ (time into node).</p>
     <span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;n; i++)
         <span style="color:#fff;font-weight:bold">if</span>(!vis[i]) dfs(i);
 }
-</code></pre></div>
-<h2 id="iii-finding-bridges">III. Finding Bridges</h2>
-
-<p>Hoàn toàn tương tự, chỉ khác ở điều kiện:<br />
-<center>
-$low[v] &gt; disc[u]$ thay vì $low[v] \geq disc[u]$ và không có chuyện trùng nhau.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">bridge.push_back({a, b}); <span style="color:#007f7f">//ko co trung
-</span></code></pre></div>
-<p></center></p>
-
+</code></pre></div><h2 id="iii-finding-bridges">III. Finding Bridges</h2>
+<p>Hoàn toàn tương tự, chỉ khác ở điều kiện:</p>
+<!-- raw HTML omitted -->
 <h3 id="iv-tham-khảo">IV. Tham khảo</h3>
-
 <ul>
 <li>competive programming 3 (Steven Halim)</li>
 <li><a href="https://www.geeksforgeeks.org/articulation-points-or-cut-vertices-in-a-graph/">Articulation Point GFG</a></li>

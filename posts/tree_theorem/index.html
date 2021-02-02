@@ -23,8 +23,8 @@ I. Các cấu trúc cây cơ bản 1. Binary Tree Mỗi node trong cây có tố
 3. AVL Tree (height balanced binary tree) Là self balancing Binary Search Tree &#43; chênh lệch giữa cây con trái và cây con phải tại bất kì node nào luôn không vượt quá $1$." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://1612198.github.io/posts/tree_theorem/" />
-<meta property="article:published_time" content="2019-11-02T23:12:30&#43;07:00"/>
-<meta property="article:modified_time" content="2019-11-02T23:12:30&#43;07:00"/>
+<meta property="article:published_time" content="2019-11-02T23:12:30+07:00" />
+<meta property="article:modified_time" content="2019-11-02T23:12:30+07:00" />
 
 
     
@@ -57,7 +57,7 @@ I. Các cấu trúc cây cơ bản 1. Binary Tree Mỗi node trong cây có tố
     <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.80.0" />
   </head>
 
   <body class=" ">
@@ -140,60 +140,40 @@ I. Các cấu trúc cây cơ bản 1. Binary Tree Mỗi node trong cây có tố
       </header>
 
       <div>
-        
-
-<h1 id="tree-s-theorem">Tree&rsquo;s Theorem</h1>
-
+        <h1 id="trees-theorem">Tree&rsquo;s Theorem</h1>
 <p>01/11/2019</p>
-
 <h2 id="i-các-cấu-trúc-cây-cơ-bản">I. Các cấu trúc cây cơ bản</h2>
-
 <h3 id="1-binary-tree">1. Binary Tree</h3>
-
 <p>Mỗi node trong cây có tối đa $2$ con.</p>
-
 <h3 id="2-binary-search-tree">2. Binary Search Tree</h3>
-
 <p>Là Binary Tree + giá trị của node luôn <strong>lớn hơn</strong> giá trị của node <strong>con trái</strong> và <strong>bé hơn</strong> giá trị của node <strong>con phải</strong>.</p>
-
 <h3 id="3-avl-tree-height-balanced-binary-tree">3. AVL Tree (height balanced binary tree)</h3>
-
 <p>Là self balancing <strong>Binary Search Tree</strong> + <strong>chênh lệch</strong> giữa cây con trái và cây con phải tại bất kì node nào luôn <strong>không vượt quá</strong> $1$. (&lt;=1)</p>
-
 <h3 id="4-red-black-tree">4. Red-Black Tree</h3>
-
-<p>Là self balancing <strong>Binary Search Tree</strong> +<br />
-+ Không có 2 node RED liên tiếp<br />
-+ Chiều cao đen luôn không đổi tại mọi node.<br />
-+ tất cả node lá là BLACK<br />
-+ Root always black (sometime this property is omitted)</p>
-
+<p>Là self balancing <strong>Binary Search Tree</strong> +</p>
+<ul>
+<li>Không có 2 node RED liên tiếp</li>
+<li>Chiều cao đen luôn không đổi tại mọi node.</li>
+<li>tất cả node lá là BLACK</li>
+<li>Root always black (sometime this property is omitted)</li>
+</ul>
 <p>$\rightarrow$ Hệ quả: Path từ root đến lá xa nhất không dài hơn gấp $2$ lần path từ root đến lá gần nhất. (Dùng property $1$ để suy ra).</p>
-
 <h2 id="ii-so-sánh-avl-tree-vs-red-black-tree">II. So sánh AVL Tree vs Red-Black Tree</h2>
-
 <p>Giống nhau:</p>
-
 <ul>
-<li>Cả 2 đều là self balancing <strong>Binary Search Tree</strong><br /></li>
-<li>Các thao tác: Search, Insert, Delete đều mất chi phí $O(log(n))$.<br /></li>
+<li>Cả 2 đều là self balancing <strong>Binary Search Tree</strong></li>
+<li>Các thao tác: Search, Insert, Delete đều mất chi phí $O(log(n))$.</li>
 </ul>
-
 <p>Khác nhau:</p>
-
 <ul>
-<li>AVL is more stricly balance than Red_black Tree<br /></li>
+<li>AVL is more stricly balance than Red_black Tree</li>
 </ul>
-
 <p>$\rightarrow$ Suy ra</p>
-
 <ul>
-<li>AVL search nhanh hơn<br /></li>
-<li>AVL chèn lâu hơn<br /></li>
+<li>AVL search nhanh hơn</li>
+<li>AVL chèn lâu hơn</li>
 </ul>
-
 <p>Các CTDL như set, map đều dùng red-black tree (set chưa chắc :v), trong khi AVL dùng trong database (where fast look up required)</p>
-
 <h2 id="iii-duyệt-cây">III. Duyệt cây</h2>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">typedef</span> <span style="color:#fff;font-weight:bold">struct</span> Node* ref;
 <span style="color:#fff;font-weight:bold">struct</span> Node{
@@ -201,8 +181,7 @@ I. Các cấu trúc cây cơ bản 1. Binary Tree Mỗi node trong cây có tố
     Node* left;
     Node* right;
 };
-</code></pre></div>
-<h3 id="1-preorder">1. Preorder</h3>
+</code></pre></div><h3 id="1-preorder">1. Preorder</h3>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#007f7f">//root-left-right
 </span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> preorder(ref root){
     <span style="color:#fff;font-weight:bold">if</span> (root == <span style="color:#fff;font-weight:bold">NULL</span>) <span style="color:#fff;font-weight:bold">return</span>;
@@ -210,8 +189,7 @@ I. Các cấu trúc cây cơ bản 1. Binary Tree Mỗi node trong cây có tố
     preorder(root-&gt;left);
     preorder(root-&gt;right);
 }
-</code></pre></div>
-<h3 id="2-inorder">2. Inorder</h3>
+</code></pre></div><h3 id="2-inorder">2. Inorder</h3>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#007f7f">//left-root-right
 </span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> Inorder(ref root){
     <span style="color:#fff;font-weight:bold">if</span> (root == <span style="color:#fff;font-weight:bold">NULL</span>) <span style="color:#fff;font-weight:bold">return</span>;
@@ -219,8 +197,7 @@ I. Các cấu trúc cây cơ bản 1. Binary Tree Mỗi node trong cây có tố
     cout &lt;&lt; root-&gt;value;
     Inorder(root-&gt;right);
 }
-</code></pre></div>
-<h3 id="3-postorder">3. Postorder</h3>
+</code></pre></div><h3 id="3-postorder">3. Postorder</h3>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#007f7f">//left-right-root
 </span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> Postorder(ref root){
     <span style="color:#fff;font-weight:bold">if</span> (root == <span style="color:#fff;font-weight:bold">NULL</span>) <span style="color:#fff;font-weight:bold">return</span>;
@@ -228,8 +205,7 @@ I. Các cấu trúc cây cơ bản 1. Binary Tree Mỗi node trong cây có tố
     Postorder(root-&gt;right);
     cerr &lt;&lt; root-&gt;value;
 }
-</code></pre></div>
-<h3 id="4-dfs-and-bfs">4. DFS and BFS</h3>
+</code></pre></div><h3 id="4-dfs-and-bfs">4. DFS and BFS</h3>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">void</span> dfs(<span style="color:#fff;font-weight:bold">int</span> v, <span style="color:#fff;font-weight:bold">int</span> p = <span style="color:#ff0;font-weight:bold">0</span>){
     <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">auto</span> u:g[v]){
         <span style="color:#fff;font-weight:bold">if</span> (u == p) <span style="color:#fff;font-weight:bold">continue</span>;

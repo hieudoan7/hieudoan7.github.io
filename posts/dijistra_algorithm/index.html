@@ -25,8 +25,8 @@ Nhược điểm: Kết quả SAI khi đồ thị cạnh âm chứ chưa cần c
 II. Ý tưởng: Luôn lan truyền đến node gần nhất với starting node x." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://1612198.github.io/posts/dijistra_algorithm/" />
-<meta property="article:published_time" content="2019-07-09T00:06:06&#43;07:00"/>
-<meta property="article:modified_time" content="2019-07-09T00:06:06&#43;07:00"/>
+<meta property="article:published_time" content="2019-07-09T00:06:06+07:00" />
+<meta property="article:modified_time" content="2019-07-09T00:06:06+07:00" />
 
 
     
@@ -59,7 +59,7 @@ II. Ý tưởng: Luôn lan truyền đến node gần nhất với starting node
     <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.80.0" />
   </head>
 
   <body class=" ">
@@ -142,40 +142,26 @@ II. Ý tưởng: Luôn lan truyền đến node gần nhất với starting node
       </header>
 
       <div>
-        
-
-<h1 id="dijkstra-algorithm">Dijkstra Algorithm</h1>
-
+        <h1 id="dijkstra-algorithm">Dijkstra Algorithm</h1>
 <p>08/07/2019</p>
-
 <h2 id="i-mục-đích">I. Mục đích:</h2>
-
-<p>Tìm đường đi ngắn nhất từ <strong>1 node</strong> (starting node) đến <strong>tất cả</strong> các nodes còn lại.<br />
-<strong>Nhược điểm</strong>: Kết quả <strong>SAI</strong> khi đồ thị <strong>cạnh âm</strong> chứ chưa cần có <strong>mạch âm</strong>.<br />
+<p>Tìm đường đi ngắn nhất từ <strong>1 node</strong> (starting node) đến <strong>tất cả</strong> các nodes còn lại.<br>
+<strong>Nhược điểm</strong>: Kết quả <strong>SAI</strong> khi đồ thị <strong>cạnh âm</strong> chứ chưa cần có <strong>mạch âm</strong>.<br>
 <strong>Ưu điểm</strong>: So với Bellman-ford, Dijistra hiệu quả hơn vì chỉ duyệt qua các cạnh đúng 1 lần.</p>
-
 <h2 id="ii-ý-tưởng">II. Ý tưởng:</h2>
-
-<p>Luôn lan truyền đến <strong>node gần nhất</strong> với <strong>starting node x</strong>.<br />
-<strong><em>Vì sao nó đúng?</em></strong></p>
-
+<p>Luôn lan truyền đến <strong>node gần nhất</strong> với <strong>starting node x</strong>.<br>
+<em><strong>Vì sao nó đúng?</strong></em></p>
 <blockquote>
 <p>Vì Dijistra luôn vươn đến đỉnh gần gốc nhất (gốc là starting node). Điều đó có nghĩa là những đỉnh mà nó vươn tới sau sẽ có đường đi xa hơn. Vậy thôi, thì ở 1 trạng thái xyz nào đó nó vươn tới đỉnh i thì còn mong chờ gì nữa là lúc sau nó sẽ đến i bằng con đường ngắn hơn?? <strong>No way</strong>.</p>
 </blockquote>
-
 <p>Điều đó mang đến cho ta nhận xét:</p>
-
 <ul>
 <li><em>whenever a node is selected, its distance is final.</em></li>
 </ul>
-
 <h2 id="iii-implement">III. Implement</h2>
-
-<p>Lưu đồ thị ở dạng <strong><em>adjacent list</em></strong><br />
+<p>Lưu đồ thị ở dạng <em><strong>adjacent list</strong></em><br>
 $adj[a]$ chứa một $pair(b, w)$ (cạnh $a-b$ có trọng số là $w$).</p>
-
 <p>Sử dụng <code>priority_queue</code> để select được đỉnh gần gốc nhất trong thời gian logaric.</p>
-
 <p>Những thằng gần gốc nhất mà chưa được chọn thì chỉ có thể là những thằng mà ở trạng thái đó nó có thể đi tới thôi.</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">1</span>; i &lt;= n; i++)
     distance[i] = INF;
@@ -193,27 +179,27 @@ q.push({<span style="color:#ff0;font-weight:bold">0</span>,x});
         }
     }
 }
-</code></pre></div>
-<p>$$ \Rightarrow O(n + m\log(m))$$
+</code></pre></div><p>$$ \Rightarrow O(n + m\log(m))$$
 Chú ý một vài trick ở cài đặt:</p>
-
 <ul>
-<li>Dùng $-d$ để tận dụng <code>default priority_queue</code> q</li>
-
-<li><p>Vài nét về <code>priority_queue</code>:</p>
-
+<li>
+<p>Dùng $-d$ để tận dụng <code>default priority_queue</code> q</p>
+</li>
+<li>
+<p>Vài nét về <code>priority_queue</code>:</p>
 <ul>
 <li><code>priority_queue&lt;int&gt; pq;</code> //mặc định sắp xếp tăng và top() queue sẽ là $max$.</li>
-<li><code>priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;</code>` //sắp xếp giảm và top() queue là $min$.</li>
+<li>`priority_queue&lt;int, vector<!-- raw HTML omitted -->, greater<!-- raw HTML omitted -->&gt; pq;`` //sắp xếp giảm và top() queue là $min$.</li>
 <li>Có thể dùng <code>multiset&lt;int&gt; mset;</code> cùng 2 thao tác <code>insert</code>, <code>remove</code> như 1 <code>min_priority_queue</code> (as multiset default)</li>
-</ul></li>
-
-<li><p>Nhận xét bên lề: Mặc định của <code>priority_queue</code> là phần tử ở <code>top()</code> là <code>max</code>:</p>
-
+</ul>
+</li>
+<li>
+<p>Nhận xét bên lề: Mặc định của <code>priority_queue</code> là phần tử ở <code>top()</code> là <code>max</code>:</p>
 <ul>
 <li>Elements are popped from the <em>back</em> of the specific container, which is known as the top of the priority_queue. $(top \rightarrow back)$</li>
 <li>Hàm $cmp$ mặc định là $less$, nghĩa là 2 phần tử thỏa thì nó sẽ không swap, để ý là less là mặc định sort tăng đó, khi sort tăng thì thằng <code>back</code> (trong priority_queue là <code>top</code>) luôn là thằng lớn nhất rồi.</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
       </div>

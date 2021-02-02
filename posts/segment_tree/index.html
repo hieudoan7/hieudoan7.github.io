@@ -21,8 +21,8 @@ I. Mục đích: Giúp truy xuất giá trị trên 1 đoạn (segment) nhanh ch
 II. Cấu tạo chung của 1 segment tree Xét một array $a[n]$ (từ $0..n-1$), ta build $1$ cái cây quản lý mảng a." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://1612198.github.io/posts/segment_tree/" />
-<meta property="article:published_time" content="2019-12-28T22:46:31&#43;07:00"/>
-<meta property="article:modified_time" content="2019-12-28T22:46:31&#43;07:00"/>
+<meta property="article:published_time" content="2019-12-28T22:46:31+07:00" />
+<meta property="article:modified_time" content="2019-12-28T22:46:31+07:00" />
 
 
     
@@ -55,7 +55,7 @@ II. Cấu tạo chung của 1 segment tree Xét một array $a[n]$ (từ $0..n-1
     <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.80.0" />
   </head>
 
   <body class=" ">
@@ -138,38 +138,23 @@ II. Cấu tạo chung của 1 segment tree Xét một array $a[n]$ (từ $0..n-1
       </header>
 
       <div>
-        
-
-<h1 id="segment-tree">Segment Tree</h1>
-
+        <h1 id="segment-tree">Segment Tree</h1>
 <p>28/12/2019</p>
-
 <h2 id="i-mục-đích">I. Mục đích:</h2>
-
 <p>Giúp truy xuất giá trị trên 1 đoạn (segment) nhanh chóng và update giá trị nhanh chóng. Nhanh ở đây là $O(log\ n)$. Truy xuất ở đây có thể là tổng, phần tử nhỏ nhất, phần tử lớn nhất, &hellip; .</p>
-
 <h2 id="ii-cấu-tạo-chung-của-1-segment-tree">II. Cấu tạo chung của 1 segment tree</h2>
-
-<p>Xét một array $a[n]$ (từ $0..n-1$), ta build $1$ cái cây quản lý mảng a.<br />
-Nói là cây nhưng thực chất là mảng: $Tree[4n]$.<br />
-Tại sao lại $4n$?<br />
+<p>Xét một array $a[n]$ (từ $0..n-1$), ta build $1$ cái cây quản lý mảng a.<br>
+Nói là cây nhưng thực chất là mảng: $Tree[4n]$.<br>
+Tại sao lại $4n$? <br>
 Đầu tiên ta xét vai trò của mỗi node trong Tree[]</p>
-
 <ul>
-<li>$Node[1]$: root quản lý toàn bộ array, range $[0..n-1]$<br /></li>
-<li>$Node[2]$: quản lý range $[0..(n-1)/2]$<br /></li>
-<li>$Node[3]$: quản lý range $[(n-1)/2+1..n-1]$<br /></li>
-<li>$Node[4]$: &hellip;<br /></li>
+<li>$Node[1]$: root quản lý toàn bộ array, range $[0..n-1]$</li>
+<li>$Node[2]$: quản lý range $[0..(n-1)/2]$</li>
+<li>$Node[3]$: quản lý range $[(n-1)/2+1..n-1]$</li>
+<li>$Node[4]$: &hellip;</li>
 </ul>
-
-<p>Xét ví dụ minh họa sau sẽ rõ.
-<p align="center">
-<img src="https://1612198.github.io/imgs/segment.jpg">
-</p>
-Tree phải có $size = 4n$ vì như ta thấy với $n = 6$, thì nó cần tới node $13$ để quản lý tức $Tree[13]$ vì vậy $2n$ sẽ không đủ, mặc dù node $10$, $11$ (Tức $Tree[10]$, $Tree[11]$) chỉ là những dummy node. Có nghĩa là segment tree sẽ là $1$ cây nhị phân không đầy đủ, và để thêm đầy đủ thì tổng số node của nó sẽ là $T$.<br />
-$$ T = 2^0 + 2^1 + 2^2 + &hellip; + 2^m$$ với $ m = ceil\{log_2(n)\} \leq log_2(n) + 1$
-$$\Rightarrow T = 2^0 + 2^1 + &hellip; + 2^{log_2(n)+1} = 2^{log_2(n)+2}-1 \leq 4n $$</p>
-
+<p>Xét ví dụ minh họa sau sẽ rõ.</p>
+<!-- raw HTML omitted -->
 <h2 id="iii-cài-đặt-segment-tree-thuần-túy-có-lazy-propagation">III. Cài đặt Segment Tree thuần túy có Lazy Propagation.</h2>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#007f7f">//Khai báo dữ liệu
 </span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> n, a[N];
@@ -226,30 +211,29 @@ $$\Rightarrow T = 2^0 + 2^1 + &hellip; + 2^{log_2(n)+1} = 2^{log_2(n)+2}-1 \leq 
     update(<span style="color:#ff0;font-weight:bold">2</span>*node+<span style="color:#ff0;font-weight:bold">1</span>, (st+en)/<span style="color:#ff0;font-weight:bold">2</span>+<span style="color:#ff0;font-weight:bold">1</span>, en, L, R, v);
     Tree[node] = Tree[<span style="color:#ff0;font-weight:bold">2</span>*node] + Tree[<span style="color:#ff0;font-weight:bold">2</span>*node+<span style="color:#ff0;font-weight:bold">1</span>];
 }
-</code></pre></div>
-<p><strong>Lưu ý</strong></p>
-
+</code></pre></div><p><strong>Lưu ý</strong></p>
 <ul>
-<li><p>Có $2$ base case</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">+ node i cover [st..en] nằm ngoài range[L..R]
-+ node i cover [st..en] nằm trong range[L..R]  </pre></div>
-<p>Còn trường hợp partial sẽ tiếp tục recursive để đưa về base case.</p></li>
-
-<li><p>Không thể xảy ra $st &gt; en$ bởi vì ta đi từ $0..n-1$ và luôn chia $2$ thì không bao giờ có chuyện đó xảy ra nên khỏi lo.</p></li>
-
-<li><p>Trật tự phải là Update node lazy trước rồi làm gì làm sau bởi vì khi node đó đã được gọi thì chứng tỏ thằng cha nó đang chờ kết quả từ nó báo về đề update cho nên dù nó có trong inside, outside hay partial thì update rồi tính sau. (Trong phần comment của HackerEarth có đó).</p></li>
+<li>
+<p>Có $2$ base case</p>
+<pre><code>  + node i cover [st..en] nằm ngoài range[L..R]
+  + node i cover [st..en] nằm trong range[L..R]  
+</code></pre>
+<p>Còn trường hợp partial sẽ tiếp tục recursive để đưa về base case.</p>
+</li>
+<li>
+<p>Không thể xảy ra $st &gt; en$ bởi vì ta đi từ $0..n-1$ và luôn chia $2$ thì không bao giờ có chuyện đó xảy ra nên khỏi lo.</p>
+</li>
+<li>
+<p>Trật tự phải là Update node lazy trước rồi làm gì làm sau bởi vì khi node đó đã được gọi thì chứng tỏ thằng cha nó đang chờ kết quả từ nó báo về đề update cho nên dù nó có trong inside, outside hay partial thì update rồi tính sau. (Trong phần comment của HackerEarth có đó).</p>
+</li>
 </ul>
-
 <h2 id="iv-trường-hợp-suy-biến-của-segment-tree">IV. Trường hợp suy biến của Segment Tree</h2>
-
 <p>Đặc điểm</p>
-
 <ul>
-<li>Query 1 range<br /></li>
-<li>Update 1 phần tử<br /></li>
+<li>Query 1 range</li>
+<li>Update 1 phần tử</li>
 </ul>
-
-<p>Cài đặt: Thay vì build từ root đến lá như segment tree thuần túy ta sẽ build từ lá đến gốc, vẫn với size bất kì $n$.<br />
+<p>Cài đặt: Thay vì build từ root đến lá như segment tree thuần túy ta sẽ build từ lá đến gốc, vẫn với size bất kì $n$.<br>
 Các node từ $n$ đến $2n-1$ là các node lá chứa các phần tử $a[0]$ đến $a[n-1]$ của mảng $a$. Từ đó đi lên node cha nó là nó/2 và node 1 luôn là root.</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">int</span> n, a[N];
 <span style="color:#fff;font-weight:bold">int</span> Tree[<span style="color:#ff0;font-weight:bold">2</span>*N]; <span style="color:#007f7f">//only need 2n (n nhỏ thôi)
@@ -272,13 +256,12 @@ Các node từ $n$ đến $2n-1$ là các node lá chứa các phần tử $a[0]
 }
 <span style="color:#007f7f">//build 1 tree
 </span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;n; i++) update(i, a[i]);
-</code></pre></div>
-<p><strong>Lưu ý cài đặt</strong><br />
-- Node con trái luôn là vị trí chẵn, Node con phải luôn là vị trí lẻ.
-Như vậy, $1$ node $k$ sẽ có con trái là $2k$, con phải là $2k+1$. (Bất kì size $n$ nào, đọc link codeforces sẽ rõ)</p>
-
+</code></pre></div><p><strong>Lưu ý cài đặt</strong></p>
+<ul>
+<li>Node con trái luôn là vị trí chẵn, Node con phải luôn là vị trí lẻ.
+Như vậy, $1$ node $k$ sẽ có con trái là $2k$, con phải là $2k+1$. (Bất kì size $n$ nào, đọc link codeforces sẽ rõ)</li>
+</ul>
 <h3 id="v-tham-khảo">V. Tham khảo</h3>
-
 <ol>
 <li><a href="https://www.hackerearth.com/practice/notes/segment-tree-and-lazy-propagation/">HackerEarth Segment Tree tutorial</a></li>
 <li><a href="https://codeforces.com/blog/entry/18051">Blog Codeforces</a></li>

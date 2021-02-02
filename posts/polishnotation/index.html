@@ -13,22 +13,20 @@
 <meta name="twitter:title" content="Polish Notation"/>
 <meta name="twitter:description" content="Polist Notation 29/06/2019
 I. Kí pháp Balan là gì? (What is Polish Notation) Kí pháp Balan là một dạng viết khác của biểu thức toán học.
- Balan tiền tố (prefix): Đưa các toán tử lên đầu
- Balan ngược: Đưa các toán tử ra sau cùng
-  Trong kí pháp Balan, các dấu ngoặc bị lược bỏ
-Ví dụ: Xét biểu thức: $3 &#43; 5*(6-3) &#43; 1$"/>
+ Balan tiền tố (prefix): Đưa các toán tử lên đầu Balan ngược: Đưa các toán tử ra sau cùng  Trong kí pháp Balan, các dấu ngoặc bị lược bỏ
+Ví dụ: Xét biểu thức: $3 &#43; 5*(6-3) &#43; 1$
+ Balan: $ &#43; &#43; 3 * 5 - 6\ 3\ 1$ Balan ngược: $3\ 5\ 6\ 3 - * &#43; 1 &#43;$  Để xây dựng được kí pháp Balan, ta dùng cây biểu thức:"/>
 
     <meta property="og:title" content="Polish Notation" />
 <meta property="og:description" content="Polist Notation 29/06/2019
 I. Kí pháp Balan là gì? (What is Polish Notation) Kí pháp Balan là một dạng viết khác của biểu thức toán học.
- Balan tiền tố (prefix): Đưa các toán tử lên đầu
- Balan ngược: Đưa các toán tử ra sau cùng
-  Trong kí pháp Balan, các dấu ngoặc bị lược bỏ
-Ví dụ: Xét biểu thức: $3 &#43; 5*(6-3) &#43; 1$" />
+ Balan tiền tố (prefix): Đưa các toán tử lên đầu Balan ngược: Đưa các toán tử ra sau cùng  Trong kí pháp Balan, các dấu ngoặc bị lược bỏ
+Ví dụ: Xét biểu thức: $3 &#43; 5*(6-3) &#43; 1$
+ Balan: $ &#43; &#43; 3 * 5 - 6\ 3\ 1$ Balan ngược: $3\ 5\ 6\ 3 - * &#43; 1 &#43;$  Để xây dựng được kí pháp Balan, ta dùng cây biểu thức:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://1612198.github.io/posts/polishnotation/" />
-<meta property="article:published_time" content="2019-06-29T11:20:28&#43;07:00"/>
-<meta property="article:modified_time" content="2019-06-29T11:20:28&#43;07:00"/>
+<meta property="article:published_time" content="2019-06-29T11:20:28+07:00" />
+<meta property="article:modified_time" content="2019-06-29T11:20:28+07:00" />
 
 
     
@@ -61,7 +59,7 @@ Ví dụ: Xét biểu thức: $3 &#43; 5*(6-3) &#43; 1$" />
     <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://1612198.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.80.0" />
   </head>
 
   <body class=" ">
@@ -144,89 +142,66 @@ Ví dụ: Xét biểu thức: $3 &#43; 5*(6-3) &#43; 1$" />
       </header>
 
       <div>
-        
-
-<h1 id="polist-notation">Polist Notation</h1>
-
+        <h1 id="polist-notation">Polist Notation</h1>
 <p>29/06/2019</p>
-
 <h2 id="i-kí-pháp-balan-là-gì-what-is-polish-notation">I. Kí pháp Balan là gì? (What is Polish Notation)</h2>
-
 <p>Kí pháp Balan là một dạng viết khác của biểu thức toán học.</p>
-
 <ul>
-<li>Balan tiền tố (prefix): Đưa các toán tử lên đầu<br /></li>
-<li>Balan ngược: Đưa các toán tử ra sau cùng<br />
-<br /></li>
+<li>Balan tiền tố (prefix): Đưa các toán tử lên đầu</li>
+<li>Balan ngược: Đưa các toán tử ra sau cùng</li>
 </ul>
-
-<p><strong>Trong kí pháp Balan, các dấu ngoặc bị lược bỏ</strong><br />
+<p><strong>Trong kí pháp Balan, các dấu ngoặc bị lược bỏ</strong><br>
 Ví dụ: Xét biểu thức: $3 + 5*(6-3) + 1$</p>
-
 <ul>
-<li>Balan: $ + + 3 * 5 - 6\ 3\ 1$<br /></li>
-<li>Balan ngược:  $3\ 5\ 6\ 3 - * + 1 +$<br /></li>
+<li>Balan: $ + + 3 * 5 - 6\ 3\ 1$</li>
+<li>Balan ngược:  $3\ 5\ 6\ 3 - * + 1 +$</li>
 </ul>
-
 <p>Để xây dựng được kí pháp Balan, ta dùng <strong>cây biểu thức</strong>:</p>
-
-<p><img src="https://1612198.github.io/imgs/express-tree.jpg" alt="express-tree" /></p>
-
+<p><img src="https://1612198.github.io/imgs/express-tree.jpg" alt="express-tree"></p>
 <p>Đặc điểm của cây biểu thức:</p>
-
 <ul>
-<li>Tất cả các toán hạng (operand) đều nằm ở lá, các toán tử (operator) nằm ở các nodes khác lá<br /></li>
-<li>Thứ tự duyệt<br />
-
+<li>Tất cả các toán hạng (operand) đều nằm ở lá, các toán tử (operator) nằm ở các nodes khác lá</li>
+<li>Thứ tự duyệt
 <ul>
-<li>Duyệt giữa (lRr): Biểu thức tự nhiên<br /></li>
-<li>Duyệt trước (Rlr): Balan<br /></li>
-<li>Duyệt sau (lrR): Balan ngược.<br /></li>
-</ul></li>
+<li>Duyệt giữa (lRr): Biểu thức tự nhiên</li>
+<li>Duyệt trước (Rlr): Balan</li>
+<li>Duyệt sau (lrR): Balan ngược.</li>
 </ul>
-
+</li>
+</ul>
 <h2 id="ii-áp-dụng-kí-pháp-balan-trong-calculator-application-of-polish-notation">II. Áp dụng kí pháp Balan trong calculator? (Application of Polish Notation)</h2>
-
-<p>Bài toán: Từ một chuỗi S = &ldquo;$ 3+5*(6-3)+1 $&ldquo;, viết chương trình để máy tính thực hiện.<br />
+<p>Bài toán: Từ một chuỗi S = &ldquo;$ 3+5*(6-3)+1 $&rdquo;, viết chương trình để máy tính thực hiện.<br>
 Ở đây mình dùng Balan ngược:</p>
-
 <h3 id="1-biểu-diễn-chuỗi-s-về-kí-pháp-ba-lan-ngược">1. Biểu diễn chuỗi S về kí pháp Ba lan ngược</h3>
-
-<p>Đây, kết quả mong muốn: $3\ 5\ 6\ 3 - * + 1 +$<br />
-But, How to do that?<br />
-(Tạm thời chỉ làm $+-*/$), nếu muốn làm nhiều hơn thì viết hàm getPriority() là được)<br />
+<p>Đây, kết quả mong muốn: $3\ 5\ 6\ 3 - * + 1 +$<br>
+But, How to do that?<br>
+(Tạm thời chỉ làm $+-*/$), nếu muốn làm nhiều hơn thì viết hàm getPriority() là được) <br>
 <strong>Ý tưởng</strong>: Dùng thêm Stack toán tử, duyệt qua các kí tự của chuỗi S</p>
-
 <ul>
-<li>Nếu S[i] là toán hạng (số): Cho ra output<br /></li>
-<li>Nếu S[i] là toán tử: xét S[i] vs stack.top()<br />
-
+<li>Nếu S[i] là toán hạng (số): Cho ra output</li>
+<li>Nếu S[i] là toán tử: xét S[i] vs stack.top()
 <ul>
-<li>Nếu S[i] $&lt;=$ stack.top() thì pop() stack ra output cho tới khi S[i] &gt; stack.top() or stack empty or stack.top()==&lsquo;(&rsquo;<br /></li>
-<li>Nếu S[i] &gt; stack.top() thì push vào stack<br /></li>
-</ul></li>
-<li>Trường hợp S[i]=&lsquo;(&rsquo; thì ta push vào Stack, S[i]=&lsquo;)&rsquo; thì ta cứ pop() cho tới khi pop() luôn thằng &lsquo;(&rsquo;<br /></li>
+<li>Nếu S[i] $&lt;=$ stack.top() thì pop() stack ra output cho tới khi S[i] &gt; stack.top() or stack empty or stack.top()=='('</li>
+<li>Nếu S[i] &gt; stack.top() thì push vào stack</li>
 </ul>
-
+</li>
+<li>Trường hợp S[i]='(' thì ta push vào Stack, S[i]=')' thì ta cứ pop() cho tới khi pop() luôn thằng &lsquo;(&rsquo;</li>
+</ul>
 <h3 id="2-tính-toán">2. Tính toán:</h3>
-
-<p>Từ chuối Balan ngược: RPN = $3\ 5\ 6\ 3 - * + 1 +$<br />
+<p>Từ chuối Balan ngược: RPN = $3\ 5\ 6\ 3 - * + 1 +$<br>
 <strong>Ý tưởng:</strong></p>
-
 <ul>
-<li>Dùng 1 cái stack tính toán<br /></li>
-<li>Duỵệt qua cái chuỗi balan ngược, nếu RPN[i] là toán hạng thì push vào stack, nếu là toán tử thì pop từ stack ra 2 thằng.<br />
-
+<li>Dùng 1 cái stack tính toán</li>
+<li>Duỵệt qua cái chuỗi balan ngược, nếu RPN[i] là toán hạng thì push vào stack, nếu là toán tử thì pop từ stack ra 2 thằng.
 <ul>
-<li>$ b= stack.top() $<br /></li>
-<li>$ a= stack. kề top() $<br /></li>
-</ul></li>
+<li>$ b= stack.top() $</li>
+<li>$ a= stack. kề top() $</li>
 </ul>
-
+</li>
+</ul>
 <p>rồi lấy $a RPN[i] b$ và push kết quả đó vào lại stack. Kết quả cuối cùng là phần tử duy nhất còn lại trong stack.</p>
-
-<p>Finally, Take your hand dirty, please!!!<br />
-<strong>Implement</strong> (please Take your hand dirty!!!)<br />
+<p>Finally, Take your hand dirty, please!!!<br>
+<strong>Implement</strong> (please Take your hand dirty!!!)<br>
 <a href="https://pastebin.com/keM7n2LN">Link code tham khảo</a></p>
 
       </div>
