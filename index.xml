@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hieudoan7</title>
-    <link>https://1612198.github.io/</link>
+    <link>https://hieudoan7.github.io/</link>
     <description>Recent content on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 22 Jan 2020 13:57:57 +0700</lastBuildDate><atom:link href="https://1612198.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Jan 2020 13:57:57 +0700</lastBuildDate><atom:link href="https://hieudoan7.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Matrix Exponentiation</title>
-      <link>https://1612198.github.io/posts/matrix_exponentiation/</link>
+      <link>https://hieudoan7.github.io/posts/matrix_exponentiation/</link>
       <pubDate>Wed, 22 Jan 2020 13:57:57 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/matrix_exponentiation/</guid>
+      <guid>https://hieudoan7.github.io/posts/matrix_exponentiation/</guid>
       <description>Matrix Exponentiation 22/01/2020
 I. Linear Equation Đề bài: Giải hệ thức đệ quy:
 $$\begin{cases}f_i = c_0 + c_1 f_{i-1} + c_2 f_{i-2} + &amp;hellip; + c_k f_{i-k}\\f_0, f_1, &amp;hellip;, f_{k-1}\end{cases}$$
@@ -25,10 +25,10 @@ $$\begin{bmatrix}0 &amp;amp; 1 &amp;amp; 0 &amp;amp; &amp;hellip; &amp;amp; 0 &a
     
     <item>
       <title>On the way to SEA VN</title>
-      <link>https://1612198.github.io/posts/sea/</link>
+      <link>https://hieudoan7.github.io/posts/sea/</link>
       <pubDate>Mon, 13 Jan 2020 18:41:14 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/sea/</guid>
+      <guid>https://hieudoan7.github.io/posts/sea/</guid>
       <description>On the way to SEA VN 13/01/2020
 Hôm nay mình rảnh nhân dịp nghỉ tết (19 âm lịch rồi) nên viết lại một chút quá trình phỏng vấn SEA VN để lưu lại, cũng như biết đâu giúp được 1 số bạn.
 Quá trình phỏng vấn bao gồm 4 rounds
@@ -37,10 +37,10 @@ Quá trình phỏng vấn bao gồm 4 rounds
     
     <item>
       <title>Segment Tree</title>
-      <link>https://1612198.github.io/posts/segment_tree/</link>
+      <link>https://hieudoan7.github.io/posts/segment_tree/</link>
       <pubDate>Sat, 28 Dec 2019 22:46:31 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/segment_tree/</guid>
+      <guid>https://hieudoan7.github.io/posts/segment_tree/</guid>
       <description>Segment Tree 28/12/2019
 I. Mục đích: Giúp truy xuất giá trị trên 1 đoạn (segment) nhanh chóng và update giá trị nhanh chóng. Nhanh ở đây là $O(log\ n)$. Truy xuất ở đây có thể là tổng, phần tử nhỏ nhất, phần tử lớn nhất, &amp;hellip; .
 II. Cấu tạo chung của 1 segment tree Xét một array $a[n]$ (từ $0..n-1$), ta build $1$ cái cây quản lý mảng a.</description>
@@ -48,10 +48,10 @@ II. Cấu tạo chung của 1 segment tree Xét một array $a[n]$ (từ $0..n-1
     
     <item>
       <title>Lowest Common Ancestor (LCA)</title>
-      <link>https://1612198.github.io/posts/lca/</link>
+      <link>https://hieudoan7.github.io/posts/lca/</link>
       <pubDate>Tue, 17 Dec 2019 14:48:39 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/lca/</guid>
+      <guid>https://hieudoan7.github.io/posts/lca/</guid>
       <description>Lowest Common Ancestor (LCA) 17/12/2019
 I. Bài toán Trả lời nhiều queries của bài toán tìm LCA 2 nodes u, v trong 1 rooted tree.
 Lưu ý u, v phải nằm trong 1 cái tree, điều đó đảm bảo every nodes have only 1 parent (aka $2^0$-th parent).
@@ -60,10 +60,10 @@ II. Ý tưởng Có nhiều cách tìm LCA, mình sẽ trình bày cách phổ b
     
     <item>
       <title>Tree&#39;s Theorem</title>
-      <link>https://1612198.github.io/posts/tree_theorem/</link>
+      <link>https://hieudoan7.github.io/posts/tree_theorem/</link>
       <pubDate>Sat, 02 Nov 2019 23:12:30 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/tree_theorem/</guid>
+      <guid>https://hieudoan7.github.io/posts/tree_theorem/</guid>
       <description>Tree&amp;rsquo;s Theorem 01/11/2019
 I. Các cấu trúc cây cơ bản 1. Binary Tree Mỗi node trong cây có tối đa $2$ con.
 2. Binary Search Tree Là Binary Tree + giá trị của node luôn lớn hơn giá trị của node con trái và bé hơn giá trị của node con phải.
@@ -72,10 +72,10 @@ I. Các cấu trúc cây cơ bản 1. Binary Tree Mỗi node trong cây có tố
     
     <item>
       <title>Sorting</title>
-      <link>https://1612198.github.io/posts/sorting/</link>
+      <link>https://hieudoan7.github.io/posts/sorting/</link>
       <pubDate>Sat, 02 Nov 2019 14:11:28 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/sorting/</guid>
+      <guid>https://hieudoan7.github.io/posts/sorting/</guid>
       <description>Sorting Algorithm 02/11/2019
 This post is going to give you some interesting algorithm ralating sorting elements.
 Problem Sorting an array $a$ consists of $n$ elements in increasing order.
@@ -85,10 +85,10 @@ for(int i=n-1; i&amp;gt;0; i--){ for(int j=1; j&amp;lt;=i; j++){ if (a[j] &amp;l
     
     <item>
       <title>[INTERVIEW] Operator System</title>
-      <link>https://1612198.github.io/posts/operator_system/</link>
+      <link>https://hieudoan7.github.io/posts/operator_system/</link>
       <pubDate>Tue, 29 Oct 2019 23:11:03 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/operator_system/</guid>
+      <guid>https://hieudoan7.github.io/posts/operator_system/</guid>
       <description>Operator System Questions for Interview 29/10/2019
 Hệ điều hành là 1 chương trình quản lý phần cứng và cấp phát tài nguyên một cách phù hợp cho các chương trình.
 I. Process (Tiến trình) 1. Tiến trình, tiểu trình? Tiến trình là một chương trình máy tính đang thực thi.
@@ -97,10 +97,10 @@ Tiểu trình (thread) là một đơn vị thực thi độc lập mà CPU có 
     
     <item>
       <title>[INTERVIEW] Computer Network</title>
-      <link>https://1612198.github.io/posts/computer_network/</link>
+      <link>https://hieudoan7.github.io/posts/computer_network/</link>
       <pubDate>Mon, 28 Oct 2019 21:27:43 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/computer_network/</guid>
+      <guid>https://hieudoan7.github.io/posts/computer_network/</guid>
       <description>Computer Network Questions for Interview. 28/10/2019
 1. DNS là gì, hoạt động như thế nào? DNS là Domain Name System: Hệ thống chuyển đổi domain name thành địa chỉ IP.
 host: yahoo.com -&amp;gt; search catch -&amp;gt; miss -&amp;gt; Resolver (ISP or nhà cc mạng: VIETEL (người đại diên)) -&amp;gt; ROOT server -&amp;gt; .com server -&amp;gt; yahoo.com server -&amp;gt; đưa cho 1 IP server (rảnh) để mà về tải. Remark: DNS using port 53.</description>
@@ -108,10 +108,10 @@ host: yahoo.com -&amp;gt; search catch -&amp;gt; miss -&amp;gt; Resolver (ISP or
     
     <item>
       <title>All you need to know about Subset Sum Problem</title>
-      <link>https://1612198.github.io/posts/subset_sum/</link>
+      <link>https://hieudoan7.github.io/posts/subset_sum/</link>
       <pubDate>Fri, 25 Oct 2019 20:14:31 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/subset_sum/</guid>
+      <guid>https://hieudoan7.github.io/posts/subset_sum/</guid>
       <description>All You need to know about Subset Sum Problem 25/10/2019
 Bài toán:Cho 1 multiset $S = \{a_1, a_2, &amp;hellip;, a_n\}$, tìm 1 subset of $S$ thỏa điều kiện $P$.
 Naive Solution: $\rightarrow O(2^n * n)$
@@ -121,10 +121,10 @@ Nó thực sự là 1 bài toán NP-Complete nên ta chỉ có thể giải tron
     
     <item>
       <title>Graph Traversal</title>
-      <link>https://1612198.github.io/posts/graph_traversal/</link>
+      <link>https://hieudoan7.github.io/posts/graph_traversal/</link>
       <pubDate>Thu, 12 Sep 2019 20:25:41 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/graph_traversal/</guid>
+      <guid>https://hieudoan7.github.io/posts/graph_traversal/</guid>
       <description>Graph Traversal 12/09/2019
 We discuss about the way we traverse a graph or a tree.
 Assuming we are using adjacent list to represent a graph.
@@ -134,10 +134,10 @@ I. Depth-First Search (DFS) Idea: Đi sâu rồi quần lại.
     
     <item>
       <title>Minimum Spanning Tree</title>
-      <link>https://1612198.github.io/posts/minimum_spaning_tree/</link>
+      <link>https://hieudoan7.github.io/posts/minimum_spaning_tree/</link>
       <pubDate>Mon, 05 Aug 2019 20:25:45 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/minimum_spaning_tree/</guid>
+      <guid>https://hieudoan7.github.io/posts/minimum_spaning_tree/</guid>
       <description>Minimum Spanning Tree (Cây khung nhỏ nhất)
 05/08/2019
 I. Definition  Tree: (Cây) là đồ thị vô hướng (undirected), liên thông (connected) và không có chu trình (acyclic).
@@ -146,10 +146,10 @@ Các tính chất của cây:  Cây n nodes luôn có n-1 cạnh Mỗi cạnh đ
     
     <item>
       <title>Solving Recursive Sequence using Generating Function</title>
-      <link>https://1612198.github.io/posts/solving_recursive_using_generating_fuction/</link>
+      <link>https://hieudoan7.github.io/posts/solving_recursive_using_generating_fuction/</link>
       <pubDate>Fri, 02 Aug 2019 22:11:07 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/solving_recursive_using_generating_fuction/</guid>
+      <guid>https://hieudoan7.github.io/posts/solving_recursive_using_generating_fuction/</guid>
       <description>Solving Recursive Sequence using Generating Function 02/08/2019
 I. Definition Hàm sinh là cái hàm mà nén 1 dãy số $\{a_n\}, n\geq 0$ có quy luật thành một cái tổng $$\sum_{n=0}^\infty a_nx^n$$ Hệ số của $x^n$ chính là số hạng $a_n$ trong dãy $\{a_n\}, n\geq 0$.
 II. Several Formulas Generating Function III. Solving Recursive Sequence. Examples:
@@ -158,10 +158,10 @@ This example is my friend &amp;rsquo;s question in his interview, so I just note
     
     <item>
       <title>Articulation Point (Cut Point) &amp; Bridge</title>
-      <link>https://1612198.github.io/posts/ap_bridges/</link>
+      <link>https://hieudoan7.github.io/posts/ap_bridges/</link>
       <pubDate>Wed, 31 Jul 2019 22:01:16 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/ap_bridges/</guid>
+      <guid>https://hieudoan7.github.io/posts/ap_bridges/</guid>
       <description>Articulation Point &amp;amp; Bridge 31/07/2019
 I. Definition Ta xét trong undirected graph.
  Articulation Point (đỉnh khớp): Là đỉnh mà nếu cắt bỏ đi sẽ làm disconnect graph (trong connected graph) còn đối với disconnected graph thì nó làm tăng số connected component. Bridge: Là cạnh mà nếu bỏ đi &amp;hellip; (giống khớp)  II. Finding Articulation Point 1. Thuật toán tầm thường Với mỗi đỉnh trong graph, ta thử cắt bỏ đi và đếm số thành phần liên thông.</description>
@@ -169,10 +169,10 @@ I. Definition Ta xét trong undirected graph.
     
     <item>
       <title>Greatest Common Divisor using Eucidean Algorithm</title>
-      <link>https://1612198.github.io/posts/gcd_euclid/</link>
+      <link>https://hieudoan7.github.io/posts/gcd_euclid/</link>
       <pubDate>Thu, 11 Jul 2019 21:49:24 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/gcd_euclid/</guid>
+      <guid>https://hieudoan7.github.io/posts/gcd_euclid/</guid>
       <description>Greatest Common Divisor using Euclidean Algorithm 11/07/2019
 I. Implementation typedef long long ll; ll gcd (ll a, ll b){ return b==0? a : gcd(b, a%b); //phải hỏi b==0? chứ b=0 thì làm sao a chia dư 0 được. } II. Interpretation Thuật toán Euclid tìm ước chung lớn nhất giữa 2 số $a, b$.
 Không mất tính tổng quát, giả sử $a &amp;gt; b$.
@@ -181,10 +181,10 @@ Nhìn hình, ta thấy, $gcd(a, b) = x$ khi và chỉ khi $x$ là ước của $
     
     <item>
       <title>KMP Algorithm</title>
-      <link>https://1612198.github.io/posts/kmp-algorithm/</link>
+      <link>https://hieudoan7.github.io/posts/kmp-algorithm/</link>
       <pubDate>Wed, 10 Jul 2019 22:42:22 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/kmp-algorithm/</guid>
+      <guid>https://hieudoan7.github.io/posts/kmp-algorithm/</guid>
       <description>Knuth-Morris-Pratt algorithm 10/07/2019
 I. Bài toán: Cho chuỗi Text $T$ (length = $n$) và Pattern $P$ (length = $m$). Tìm số lần xuất hiện của $P$ trong $T$.
 $\Rightarrow$ Naive Solution:
@@ -195,10 +195,10 @@ Tại mỗi vị trí $i$ trong $T$, ta so sánh nó với $P$.
     
     <item>
       <title>Floyd-Warshall Algorithm</title>
-      <link>https://1612198.github.io/posts/floyd-warshall_algorithm/</link>
+      <link>https://hieudoan7.github.io/posts/floyd-warshall_algorithm/</link>
       <pubDate>Tue, 09 Jul 2019 21:06:45 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/floyd-warshall_algorithm/</guid>
+      <guid>https://hieudoan7.github.io/posts/floyd-warshall_algorithm/</guid>
       <description>Floyd-Warshall algorithm 09/07/2019
 I. Mục đích All pair shortest path
 Tìm đường đi ngắn nhất giữa tất cả các cặp đỉnh.
@@ -208,10 +208,10 @@ Với đỉnh trung gian đang xét là $k$, thì những $shortest\_path$ mà c
     
     <item>
       <title>Dijkstra Algorithm</title>
-      <link>https://1612198.github.io/posts/dijistra_algorithm/</link>
+      <link>https://hieudoan7.github.io/posts/dijistra_algorithm/</link>
       <pubDate>Tue, 09 Jul 2019 00:06:06 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/dijistra_algorithm/</guid>
+      <guid>https://hieudoan7.github.io/posts/dijistra_algorithm/</guid>
       <description>Dijkstra Algorithm 08/07/2019
 I. Mục đích: Tìm đường đi ngắn nhất từ 1 node (starting node) đến tất cả các nodes còn lại.
 Nhược điểm: Kết quả SAI khi đồ thị cạnh âm chứ chưa cần có mạch âm.
@@ -221,10 +221,10 @@ II. Ý tưởng: Luôn lan truyền đến node gần nhất với starting node
     
     <item>
       <title>Bellman-Ford Algorithm</title>
-      <link>https://1612198.github.io/posts/bellman-ford_algorithm/</link>
+      <link>https://hieudoan7.github.io/posts/bellman-ford_algorithm/</link>
       <pubDate>Mon, 08 Jul 2019 21:43:13 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/bellman-ford_algorithm/</guid>
+      <guid>https://hieudoan7.github.io/posts/bellman-ford_algorithm/</guid>
       <description>Bellman-Ford Algorithm 08/07/2019
 I. Mục đích Tìm đường đi ngắn nhất từ 1 node (starting node) đến tất cả các nodes còn lại.
 Ưu điểm: Có thể phát hiện mạch âm
@@ -234,10 +234,10 @@ II. Ý tưởng: Gọi $distance[i]$ là đường đi ngắn nhất từ đỉn
     
     <item>
       <title>Z-function</title>
-      <link>https://1612198.github.io/posts/z-function/</link>
+      <link>https://hieudoan7.github.io/posts/z-function/</link>
       <pubDate>Sun, 07 Jul 2019 14:27:00 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/z-function/</guid>
+      <guid>https://hieudoan7.github.io/posts/z-function/</guid>
       <description>String Processing 18/04/2019
 Cho 2 xâu P (pattern) và S (string). Mộ số bài toán
  Tìm vị trí xuất hiện đầu tiên của P trong S Đếm số lần xuất hiện P trong S Cho S, tìm P ngắn nhất để repeat P nhiều lần ta được S &amp;hellip;  I. Z-function 1. Định nghĩa Z-function Cho xâu $S = s[0..n-1]$.
@@ -246,10 +246,10 @@ Hàm $Z$ của xâu $S$ là dãy $z[0], z[1], &amp;hellip;, z[n-1]$ trong đó $
     
     <item>
       <title>Polish Notation</title>
-      <link>https://1612198.github.io/posts/polishnotation/</link>
+      <link>https://hieudoan7.github.io/posts/polishnotation/</link>
       <pubDate>Sat, 29 Jun 2019 11:20:28 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/polishnotation/</guid>
+      <guid>https://hieudoan7.github.io/posts/polishnotation/</guid>
       <description>Polist Notation 29/06/2019
 I. Kí pháp Balan là gì? (What is Polish Notation) Kí pháp Balan là một dạng viết khác của biểu thức toán học.
  Balan tiền tố (prefix): Đưa các toán tử lên đầu Balan ngược: Đưa các toán tử ra sau cùng  Trong kí pháp Balan, các dấu ngoặc bị lược bỏ
@@ -259,10 +259,10 @@ Ví dụ: Xét biểu thức: $3 + 5*(6-3) + 1$
     
     <item>
       <title>Fenwick Tree - Binary Indexed Tree</title>
-      <link>https://1612198.github.io/posts/fenwicktree/</link>
+      <link>https://hieudoan7.github.io/posts/fenwicktree/</link>
       <pubDate>Tue, 25 Jun 2019 13:25:20 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/fenwicktree/</guid>
+      <guid>https://hieudoan7.github.io/posts/fenwicktree/</guid>
       <description>Binary Indexed Tree (Fenwick Tree) 24/06/2019
 Định nghĩa: Fenwick Tree (Binary Indexed Tree) là một CTDL với n node (n+1 nodes với node gốc bù nhìn) chứa thông tin (thường là tổng cộng dồn) về các phần tử trong đoạn (i-(i&amp;amp;-i), i] (mảng tính từ $1$)
 Mục đích: Mục đích cây này là để tính range sum và khi update 1 phần tử trong mảng a thì các range sum involved cũng được update với chi phí thấp.</description>
@@ -270,10 +270,10 @@ Mục đích: Mục đích cây này là để tính range sum và khi update 1 
     
     <item>
       <title>Kosaraju&#39;s Algorithm Intuition</title>
-      <link>https://1612198.github.io/posts/kosaraju/</link>
+      <link>https://hieudoan7.github.io/posts/kosaraju/</link>
       <pubDate>Tue, 18 Jun 2019 15:01:41 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/kosaraju/</guid>
+      <guid>https://hieudoan7.github.io/posts/kosaraju/</guid>
       <description>Kosaraju &amp;rsquo;s Algorithms 17/06/2019
 I. DFS Tree Output của thuật toán DFS là 1 cây khung (spanning tree) Tất cả các cạnh của đồ thị gốc sẽ được chia làm 4 loại trong DFS spanning Tree:
  Tree Edge (sometimes Tree Edge được xếp vào Forward Edge) Forward Edge Back Edge Cross Edge  Example
@@ -282,10 +282,10 @@ If the original graph is undirected then all of its edges are tree edge or black
     
     <item>
       <title>Hugo Tutorial</title>
-      <link>https://1612198.github.io/posts/hugo-tutorial/</link>
+      <link>https://hieudoan7.github.io/posts/hugo-tutorial/</link>
       <pubDate>Fri, 19 Apr 2019 15:01:41 +0700</pubDate>
       
-      <guid>https://1612198.github.io/posts/hugo-tutorial/</guid>
+      <guid>https://hieudoan7.github.io/posts/hugo-tutorial/</guid>
       <description>Hugo Tutorial 18.06.2019
 I. Install Hugo &amp;amp; Setup Theme 2 best tutorial about hugo
 part 1part 2
@@ -295,20 +295,20 @@ Về cơ bản, chúng ta host blog lên github sẽ tạo 2 repository
     
     <item>
       <title>The Fine Art of Small Talk</title>
-      <link>https://1612198.github.io/posts/the-fine-art-of-small-talk/</link>
+      <link>https://hieudoan7.github.io/posts/the-fine-art-of-small-talk/</link>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://1612198.github.io/posts/the-fine-art-of-small-talk/</guid>
+      <guid>https://hieudoan7.github.io/posts/the-fine-art-of-small-talk/</guid>
       <description>Small Talk Note 05/04/2019
 Em học được gì qua nội dung quyển sách? Contents  Chapter 1: What&amp;rsquo;s Big Deal About Small Talk? Chapter 2: Get Over Your Mom &amp;rsquo;s Intentions Chapter 3: Take the Plunge: Start a Conversation! Chapter 4: Keep the Conservation Going! Chapter 5: Let&amp;rsquo;s Give &amp;lsquo;Em Something to Talk About Chapter 6: Hearing Aids and Listening Devices Chapter 7: Prevent Pregmant Pauses with Preparationg Chapter 8: Conservation Clout Chapter 9: Crimes and Misdemeanors Chapter 10: The Graceful Exit Chapter 11: The Conservation Ball Is in Your Court!</description>
     </item>
     
     <item>
       <title>About me</title>
-      <link>https://1612198.github.io/about/</link>
+      <link>https://hieudoan7.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://1612198.github.io/about/</guid>
+      <guid>https://hieudoan7.github.io/about/</guid>
       <description>I am Hieu Doan Minh  Hello everyone, my name is Hieu. I come from Binh Dinh province, Vietnam. I study computer science in HCMUS. I would love to think about code and solve problems. I like playing football, watching football matches and chess, listening to music too. I am also kind of humour. If you want to make friend with me, don&amp;rsquo;t hesitate to ping me!!! I&amp;rsquo;am very appreciated, especially if you are female.</description>
     </item>
     
