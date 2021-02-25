@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="hieudoan7">
+    <meta name="description" content="hieudoan7">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Linux] Useful Commands"/>
+<meta name="twitter:description" content="Useful Command Lines 25/02/2021
+I. Cat Read a text-like file
+Example:
+$ cat file.txt | grep &#34;pattern&#34; | -A number_of_after_line -B number_of_before_line -C both_before_and_after_lines II. Find Find one or more files base on pattern
+ return all the file and directory locate in a dir  $ find ~/Hd7/  return only file (or dir)  $ find ~/Hd7/ -type f or
+$ find ~/Hd7/ -type d  return a file with specific name  $ find ."/>
+
+    <meta property="og:title" content="[Linux] Useful Commands" />
+<meta property="og:description" content="Useful Command Lines 25/02/2021
+I. Cat Read a text-like file
+Example:
+$ cat file.txt | grep &#34;pattern&#34; | -A number_of_after_line -B number_of_before_line -C both_before_and_after_lines II. Find Find one or more files base on pattern
+ return all the file and directory locate in a dir  $ find ~/Hd7/  return only file (or dir)  $ find ~/Hd7/ -type f or
+$ find ~/Hd7/ -type d  return a file with specific name  $ find ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hieudoan7.github.io/be/useful_command/" />
+<meta property="article:published_time" content="2021-02-25T09:50:59+07:00" />
+<meta property="article:modified_time" content="2021-02-25T09:50:59+07:00" />
+
+
+    
+      <base href="https://hieudoan7.github.io/be/useful_command/">
+    
+    <title>
+  [Linux] Useful Commands · hieudoan7
+</title>
+
+    
+      <link rel="canonical" href="https://hieudoan7.github.io/be/useful_command/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://hieudoan7.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.80.0" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://hieudoan7.github.io/">
+      hieudoan7
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/be/">Backend Career</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/interview/">Interview</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/others/">Others</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>[Linux] Useful Commands</h1>
+    </header>
+
+    <h1 id="useful-command-lines">Useful Command Lines</h1>
+<p>25/02/2021</p>
+<h2 id="i-cat">I. Cat</h2>
+<p>Read a text-like file<br>
+Example:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat file.txt | grep <span style="color:#0ff;font-weight:bold">&#34;pattern&#34;</span> | -A number_of_after_line -B number_of_before_line -C both_before_and_after_lines
+</code></pre></div><h2 id="ii-find">II. Find</h2>
+<p>Find one or more files base on pattern</p>
+<ul>
+<li>return all the file and directory locate in a dir</li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ find ~/Hd7/
+</code></pre></div><ul>
+<li>return only file (or dir)</li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ find ~/Hd7/ -type f
+</code></pre></div><p>or</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ find ~/Hd7/ -type d
+</code></pre></div><ul>
+<li>return a file with specific name</li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ find . -type f -name &#34;test.txt&#34;
+</code></pre></div><ul>
+<li>return a file match the pattern</li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ find . -type f -name &#34;*.py&#34;
+</code></pre></div><p>case insensitive: <code>-iname</code></p>
+<ul>
+<li>return files which are modified in from 2 to 10 minutes ago</li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ find . -type f -mmin -10 -mmin + 2
+</code></pre></div><p><code>+10</code> mean more than 10 minutes ago<br>
+<code>-mtime </code> apply for day instead of minute</p>
+<ul>
+<li>return files over 5M</li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ find . -size + 5M
+</code></pre></div><p>after that we can list all file in that directory</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ ls -lah path 
+</code></pre></div><ul>
+<li>return all empty file/dir</li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ find .  -empty
+</code></pre></div><ul>
+<li>return file/dir have permission</li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ find . -perm 777
+</code></pre></div><ul>
+<li>execute another command on result of a find command</li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ find path -name &#34;*.py&#34; -exec rm {} +
+</code></pre></div><ul>
+<li>exclude in find</li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ find ./codeforces -type f ! -name &#34;*.*&#34;
+</code></pre></div><ul>
+<li>find default apply for all subdirectory, to only apply for 1 level directory, use <code>-maxdepth</code></li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ find . -type f -name &#34;*.jpg&#34; -maxdepth 1
+</code></pre></div><h2 id="iii-du-disk-usage">III. du (Disk Usage)</h2>
+<p>Example</p>
+<ul>
+<li>show size of current directory in human-readable output</li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ du -sh
+</code></pre></div><h2 id="iv-sed-stream-editor">IV. sed (Stream EDitor)</h2>
+<ul>
+<li>Find and replace text in a file</li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sed -i &#39;s/original/new/g&#39; file.txt
+</code></pre></div><p><code>-i</code>: in-place (ie: save back to original file)<br>
+<code>s</code>: substitute command<br>
+<code>g</code>: global (ie: replace all and not just the firse occurence)</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Become the BEST VERSION of YOU.</p>
+    
+    
+    
+    
+      
+      [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
+    
+  </section>
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

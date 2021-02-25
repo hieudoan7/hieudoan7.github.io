@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="hieudoan7">
+    <meta name="description" content="hieudoan7">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Polish Notation"/>
+<meta name="twitter:description" content="Polist Notation 29/06/2019
+I. Kí pháp Balan là gì? (What is Polish Notation) Kí pháp Balan là một dạng viết khác của biểu thức toán học.
+ Balan tiền tố (prefix): Đưa các toán tử lên đầu Balan ngược: Đưa các toán tử ra sau cùng  Trong kí pháp Balan, các dấu ngoặc bị lược bỏ
+Ví dụ: Xét biểu thức: $3 &#43; 5*(6-3) &#43; 1$
+ Balan: $ &#43; &#43; 3 * 5 - 6\ 3\ 1$ Balan ngược: $3\ 5\ 6\ 3 - * &#43; 1 &#43;$  Để xây dựng được kí pháp Balan, ta dùng cây biểu thức:"/>
+
+    <meta property="og:title" content="Polish Notation" />
+<meta property="og:description" content="Polist Notation 29/06/2019
+I. Kí pháp Balan là gì? (What is Polish Notation) Kí pháp Balan là một dạng viết khác của biểu thức toán học.
+ Balan tiền tố (prefix): Đưa các toán tử lên đầu Balan ngược: Đưa các toán tử ra sau cùng  Trong kí pháp Balan, các dấu ngoặc bị lược bỏ
+Ví dụ: Xét biểu thức: $3 &#43; 5*(6-3) &#43; 1$
+ Balan: $ &#43; &#43; 3 * 5 - 6\ 3\ 1$ Balan ngược: $3\ 5\ 6\ 3 - * &#43; 1 &#43;$  Để xây dựng được kí pháp Balan, ta dùng cây biểu thức:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hieudoan7.github.io/algos/polishnotation/" />
+<meta property="article:published_time" content="2019-06-29T11:20:28+07:00" />
+<meta property="article:modified_time" content="2019-06-29T11:20:28+07:00" />
+
+
+    
+      <base href="https://hieudoan7.github.io/algos/polishnotation/">
+    
+    <title>
+  Polish Notation · hieudoan7
+</title>
+
+    
+      <link rel="canonical" href="https://hieudoan7.github.io/algos/polishnotation/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://hieudoan7.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.80.0" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://hieudoan7.github.io/">
+      hieudoan7
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/be/">Backend Career</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/interview/">Interview</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/others/">Others</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Polish Notation</h1>
+    </header>
+
+    <h1 id="polist-notation">Polist Notation</h1>
+<p>29/06/2019</p>
+<h2 id="i-kí-pháp-balan-là-gì-what-is-polish-notation">I. Kí pháp Balan là gì? (What is Polish Notation)</h2>
+<p>Kí pháp Balan là một dạng viết khác của biểu thức toán học.</p>
+<ul>
+<li>Balan tiền tố (prefix): Đưa các toán tử lên đầu</li>
+<li>Balan ngược: Đưa các toán tử ra sau cùng</li>
+</ul>
+<p><strong>Trong kí pháp Balan, các dấu ngoặc bị lược bỏ</strong><br>
+Ví dụ: Xét biểu thức: $3 + 5*(6-3) + 1$</p>
+<ul>
+<li>Balan: $ + + 3 * 5 - 6\ 3\ 1$</li>
+<li>Balan ngược:  $3\ 5\ 6\ 3 - * + 1 +$</li>
+</ul>
+<p>Để xây dựng được kí pháp Balan, ta dùng <strong>cây biểu thức</strong>:</p>
+<p><img src="https://hieudoan7.github.io/imgs/express-tree.jpg" alt="express-tree"></p>
+<p>Đặc điểm của cây biểu thức:</p>
+<ul>
+<li>Tất cả các toán hạng (operand) đều nằm ở lá, các toán tử (operator) nằm ở các nodes khác lá</li>
+<li>Thứ tự duyệt
+<ul>
+<li>Duyệt giữa (lRr): Biểu thức tự nhiên</li>
+<li>Duyệt trước (Rlr): Balan</li>
+<li>Duyệt sau (lrR): Balan ngược.</li>
+</ul>
+</li>
+</ul>
+<h2 id="ii-áp-dụng-kí-pháp-balan-trong-calculator-application-of-polish-notation">II. Áp dụng kí pháp Balan trong calculator? (Application of Polish Notation)</h2>
+<p>Bài toán: Từ một chuỗi S = &ldquo;$ 3+5*(6-3)+1 $&rdquo;, viết chương trình để máy tính thực hiện.<br>
+Ở đây mình dùng Balan ngược:</p>
+<h3 id="1-biểu-diễn-chuỗi-s-về-kí-pháp-ba-lan-ngược">1. Biểu diễn chuỗi S về kí pháp Ba lan ngược</h3>
+<p>Đây, kết quả mong muốn: $3\ 5\ 6\ 3 - * + 1 +$<br>
+But, How to do that?<br>
+(Tạm thời chỉ làm $+-*/$), nếu muốn làm nhiều hơn thì viết hàm getPriority() là được) <br>
+<strong>Ý tưởng</strong>: Dùng thêm Stack toán tử, duyệt qua các kí tự của chuỗi S</p>
+<ul>
+<li>Nếu S[i] là toán hạng (số): Cho ra output</li>
+<li>Nếu S[i] là toán tử: xét S[i] vs stack.top()
+<ul>
+<li>Nếu S[i] $&lt;=$ stack.top() thì pop() stack ra output cho tới khi S[i] &gt; stack.top() or stack empty or stack.top()=='('</li>
+<li>Nếu S[i] &gt; stack.top() thì push vào stack</li>
+</ul>
+</li>
+<li>Trường hợp S[i]='(' thì ta push vào Stack, S[i]=')' thì ta cứ pop() cho tới khi pop() luôn thằng &lsquo;(&rsquo;</li>
+</ul>
+<h3 id="2-tính-toán">2. Tính toán:</h3>
+<p>Từ chuối Balan ngược: RPN = $3\ 5\ 6\ 3 - * + 1 +$<br>
+<strong>Ý tưởng:</strong></p>
+<ul>
+<li>Dùng 1 cái stack tính toán</li>
+<li>Duỵệt qua cái chuỗi balan ngược, nếu RPN[i] là toán hạng thì push vào stack, nếu là toán tử thì pop từ stack ra 2 thằng.
+<ul>
+<li>$ b= stack.top() $</li>
+<li>$ a= stack. kề top() $</li>
+</ul>
+</li>
+</ul>
+<p>rồi lấy $a RPN[i] b$ và push kết quả đó vào lại stack. Kết quả cuối cùng là phần tử duy nhất còn lại trong stack.</p>
+<p>Finally, Take your hand dirty, please!!!<br>
+<strong>Implement</strong> (please Take your hand dirty!!!)<br>
+<a href="https://pastebin.com/keM7n2LN">Link code tham khảo</a></p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Become the BEST VERSION of YOU.</p>
+    
+    
+    
+    
+      
+      [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
+    
+  </section>
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

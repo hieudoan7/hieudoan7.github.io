@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interviews on hieudoan7</title>
+    <link>https://hieudoan7.github.io/interview/</link>
+    <description>Recent content in Interviews on hieudoan7</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 13 Jan 2020 18:41:14 +0700</lastBuildDate><atom:link href="https://hieudoan7.github.io/interview/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On the way to SEA VN</title>
+      <link>https://hieudoan7.github.io/interview/sea/</link>
+      <pubDate>Mon, 13 Jan 2020 18:41:14 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/interview/sea/</guid>
+      <description>On the way to SEA VN 13/01/2020
+Hôm nay mình rảnh nhân dịp nghỉ tết (19 âm lịch rồi) nên viết lại một chút quá trình phỏng vấn SEA VN để lưu lại, cũng như biết đâu giúp được 1 số bạn.
+Quá trình phỏng vấn bao gồm 4 rounds
+ Round 0: Làm bài test trên giấy Round 1: Face to Face technical interview 1 Round 2: Face to Face technical interview 2 Round 3: Yes/no round (:v)  I.</description>
+    </item>
+    
+    <item>
+      <title>[INTERVIEW] Operator System</title>
+      <link>https://hieudoan7.github.io/interview/operator_system/</link>
+      <pubDate>Tue, 29 Oct 2019 23:11:03 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/interview/operator_system/</guid>
+      <description>Operator System Questions for Interview 29/10/2019
+Hệ điều hành là 1 chương trình quản lý phần cứng và cấp phát tài nguyên một cách phù hợp cho các chương trình.
+I. Process (Tiến trình) 1. Tiến trình, tiểu trình? Tiến trình là một chương trình máy tính đang thực thi.
+Tiểu trình (thread) là một đơn vị thực thi độc lập mà CPU có thể điều phối được. Thông thường, một Tiến trình gồm nhiều Tiểu trình.</description>
+    </item>
+    
+    <item>
+      <title>[INTERVIEW] Computer Network</title>
+      <link>https://hieudoan7.github.io/interview/computer_network/</link>
+      <pubDate>Mon, 28 Oct 2019 21:27:43 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/interview/computer_network/</guid>
+      <description>Computer Network Questions for Interview. 28/10/2019
+1. DNS là gì, hoạt động như thế nào? DNS là Domain Name System: Hệ thống chuyển đổi domain name thành địa chỉ IP.
+host: yahoo.com -&amp;gt; search catch -&amp;gt; miss -&amp;gt; Resolver (ISP or nhà cc mạng: VIETEL (người đại diên)) -&amp;gt; ROOT server -&amp;gt; .com server -&amp;gt; yahoo.com server -&amp;gt; đưa cho 1 IP server (rảnh) để mà về tải. Remark: DNS using port 53.</description>
+    </item>
+    
+  </channel>
+</rss>

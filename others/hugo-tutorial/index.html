@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="hieudoan7">
+    <meta name="description" content="hieudoan7">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo Tutorial"/>
+<meta name="twitter:description" content="Hugo Tutorial 18.06.2019
+I. Install Hugo &amp; Setup Theme 2 best tutorial about hugo
+part 1part 2
+Về cơ bản, chúng ta host blog lên github sẽ tạo 2 repository
+ Repo 1: hieudoan7: chứa các file config của hugo, content, nói chung tất tần tật. Repo 2: hieudoan7.github.io: repo này chứa file html để render lên web  Chú ý: dateformat trong file config.toml (ở thư mục gốc, thư mục mà ta có thể sử dụng hugo command) phải để ở ngày 2."/>
+
+    <meta property="og:title" content="Hugo Tutorial" />
+<meta property="og:description" content="Hugo Tutorial 18.06.2019
+I. Install Hugo &amp; Setup Theme 2 best tutorial about hugo
+part 1part 2
+Về cơ bản, chúng ta host blog lên github sẽ tạo 2 repository
+ Repo 1: hieudoan7: chứa các file config của hugo, content, nói chung tất tần tật. Repo 2: hieudoan7.github.io: repo này chứa file html để render lên web  Chú ý: dateformat trong file config.toml (ở thư mục gốc, thư mục mà ta có thể sử dụng hugo command) phải để ở ngày 2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hieudoan7.github.io/others/hugo-tutorial/" />
+<meta property="article:published_time" content="2019-04-19T15:01:41+07:00" />
+<meta property="article:modified_time" content="2019-04-19T15:01:41+07:00" />
+
+
+    
+      <base href="https://hieudoan7.github.io/others/hugo-tutorial/">
+    
+    <title>
+  Hugo Tutorial · hieudoan7
+</title>
+
+    
+      <link rel="canonical" href="https://hieudoan7.github.io/others/hugo-tutorial/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://hieudoan7.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.80.0" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://hieudoan7.github.io/">
+      hieudoan7
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/be/">Backend Career</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/interview/">Interview</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/others/">Others</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Hugo Tutorial</h1>
+    </header>
+
+    <h1 id="hugo-tutorial">Hugo Tutorial</h1>
+<p>18.06.2019</p>
+<h2 id="i-install-hugo--setup-theme">I. Install Hugo &amp; Setup Theme</h2>
+<p>2 best tutorial about hugo</p>
+<p><a href="https://www.youtube.com/watch?v=oUjk6wpJn7I">part 1</a><!-- raw HTML omitted -->
+<a href="https://www.youtube.com/watch?v=4W9sVoVYMLo">part 2</a></p>
+<p>Về cơ bản, chúng ta host blog lên github sẽ tạo 2 repository</p>
+<ul>
+<li>Repo 1: hieudoan7: chứa các file config của hugo, content, nói chung tất tần tật.</li>
+<li>Repo 2: hieudoan7.github.io: repo này chứa file html để render lên web</li>
+</ul>
+<p><strong>Chú ý</strong>: dateformat trong file config.toml (ở thư mục gốc, thư mục mà ta có thể sử dụng hugo command) phải để ở ngày 2.1.2006 ở bất kỳ format nào (vd: &ldquo;January 02, 2006&rdquo;) (hình như là theo quy định của Golang :v)</p>
+<h2 id="ii-post--deploy">II. Post &amp; Deploy</h2>
+<ul>
+<li>Tạo post <!-- raw HTML omitted -->
+<code>hugo new posts/mypost.md</code></li>
+<li>Chỉnh sửa config toml file <code>mypost.md</code>
+<ul>
+<li>draft = &ldquo;false&rdquo;</li>
+<li>title = &ldquo;My Title post&rdquo;</li>
+</ul>
+</li>
+<li>Add nội dung bài post dưới phần toml header</li>
+<li>Chạy trên local host để check:   <!-- raw HTML omitted -->
+<code>hugo server -w (--watch)</code></li>
+<li>Deploy qua <code>hieudoan7.github.io</code> để nó render lên web   <!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo -d (--deploy) ../hieudoan7.github.io/
+</code></pre></div></li>
+<li>Push 2 repo lên github để host là được.   <!-- raw HTML omitted -->
+<code>git config --global user.name &quot;hieudoan7</code>  <!-- raw HTML omitted -->
+<code>git config --global user.gmail &quot;hieudoan190598@gmail.com&quot;</code>                <!-- raw HTML omitted -->
+<code>git config --list</code>                         <!-- raw HTML omitted -->
+Vào từng cái repo (trong 2 repo đã có file .git rồi nên ko cần dùng <code>git remote</code>)     <!-- raw HTML omitted -->
+<code>git add .</code>           <!-- raw HTML omitted -->
+<code>git commit -m &quot;comment for your commit&quot;</code>     <!-- raw HTML omitted -->
+<code>git push origin master</code></li>
+</ul>
+<h2 id="iii-add-comment-componet">III. Add comment componet</h2>
+<p><a href="https://portfolio.peter-baumgartner.net/2017/09/10/how-to-install-disqus-on-hugo/">awesome guide</a></p>
+<h2 id="iv-hugo-tips">IV. Hugo Tips</h2>
+<h3 id="1-insert-image-in-hugo-post">1. Insert Image in Hugo post</h3>
+<ul>
+<li>Bỏ image vào folder static (cùng <code>config.toml</code>)</li>
+<li>Link đường dẫn image trong post (<code>/imgs/my_image.jpg</code>) (thư mục gốc <code>/</code> là tương đương với <code>static/</code>)</li>
+</ul>
+<h3 id="2-xuống-dòng">2. Xuống dòng</h3>
+<ul>
+<li>2 dấu cách (giống trên stackoverflow, codeforces)</li>
+</ul>
+<h3 id="3-math-expression">3. Math Expression</h3>
+<p>Dùng <strong>MathJax</strong></p>
+<ul>
+<li>Tạo file <code>mathjax_support.html</code> trong <code>theme/layouts/partials/</code></li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">type</span>=<span style="color:#0ff;font-weight:bold">&#34;text/javascript&#34;</span> <span style="color:#007f7f">async</span>
+  <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;</span>&gt;
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [[<span style="color:#0ff;font-weight:bold">&#39;$&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;$&#39;</span>], [<span style="color:#0ff;font-weight:bold">&#39;\\(&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;\\)&#39;</span>]],
+    displayMath: [[<span style="color:#0ff;font-weight:bold">&#39;$$&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;$$&#39;</span>]],
+    processEscapes: <span style="color:#fff;font-weight:bold">true</span>,
+    processEnvironments: <span style="color:#fff;font-weight:bold">true</span>,
+    skipTags: [<span style="color:#0ff;font-weight:bold">&#39;script&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;noscript&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;style&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;textarea&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;pre&#39;</span>],
+    TeX: { equationNumbers: { autoNumber: <span style="color:#0ff;font-weight:bold">&#34;AMS&#34;</span> },
+         extensions: [<span style="color:#0ff;font-weight:bold">&#34;AMSmath.js&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;AMSsymbols.js&#34;</span>] }
+  }
+  });
+  MathJax.Hub.Queue(<span style="color:#fff;font-weight:bold">function</span>() {
+    <span style="color:#007f7f">// Fix &lt;code&gt; tags after MathJax finishes running. This is a
+</span><span style="color:#007f7f"></span>    <span style="color:#007f7f">// hack to overcome a shortcoming of Markdown. Discussion at
+</span><span style="color:#007f7f"></span>    <span style="color:#007f7f">// https://github.com/mojombo/jekyll/issues/199
+</span><span style="color:#007f7f"></span>    <span style="color:#fff;font-weight:bold">var</span> all = MathJax.Hub.getAllJax(), i;
+    <span style="color:#fff;font-weight:bold">for</span>(i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; all.length; i += <span style="color:#ff0;font-weight:bold">1</span>) {
+        all[i].SourceElement().parentNode.className += <span style="color:#0ff;font-weight:bold">&#39; has-jax&#39;</span>;
+    }
+  });
+
+  MathJax.Hub.Config({
+  <span style="color:#007f7f">// Autonumbering by mathjax
+</span><span style="color:#007f7f"></span>  TeX: { equationNumbers: { autoNumber: <span style="color:#0ff;font-weight:bold">&#34;AMS&#34;</span> } }
+  });
+&lt;/<span style="font-weight:bold">script</span>&gt;
+</code></pre></div><ul>
+<li>Add file này vào <code>footer.html</code> or <code>header.html</code> (trước thẻ <code>&lt;/footer&gt;</code>)</li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ partial &#34;mathjax_support.html&#34; . }}
+</code></pre></div><p>Nguồn: <a href="https://divadnojnarg.github.io/blog/mathjax/">https://divadnojnarg.github.io/blog/mathjax/</a></p>
+<h3 id="4-insert-table-in-hugo-blog">4. Insert table in hugo blog</h3>
+<ul>
+<li>Tạo table using markdown syntax</li>
+<li>add css style để full border (2px) and padding 1rem</li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="font-weight:bold">style</span>&gt;
+    <span style="font-weight:bold">th</span>, <span style="font-weight:bold">td</span> {
+        <span style="color:#fff;font-weight:bold">padding</span>: <span style="color:#ff0;font-weight:bold">1.0</span><span style="color:#fff;font-weight:bold">rem</span>;
+    }
+    <span style="font-weight:bold">table</span>, <span style="font-weight:bold">th</span>, <span style="font-weight:bold">td</span> {
+      <span style="color:#fff;font-weight:bold">border</span>: <span style="color:#ff0;font-weight:bold">2</span><span style="color:#fff;font-weight:bold">px</span> <span style="color:#fff;font-weight:bold">solid</span> <span style="color:#fff;font-weight:bold">black</span>;
+    }
+ &lt;/<span style="font-weight:bold">style</span>&gt;
+</code></pre></div>
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Become the BEST VERSION of YOU.</p>
+    
+    
+    
+    
+      
+      [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
+    
+  </section>
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

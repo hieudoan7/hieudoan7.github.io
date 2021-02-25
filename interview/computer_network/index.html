@@ -10,25 +10,30 @@
     <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="About me"/>
-<meta name="twitter:description" content="I am Hieu Doan Minh  Hello everyone, my name is Hieu. I come from Binh Dinh province, Vietnam. I study computer science in HCMUS. I would love to think about code and solve problems. I like playing football, watching football matches and chess, listening to music too. I am also kind of humour. If you want to make friend with me, don&rsquo;t hesitate to ping me!!! I&rsquo;am very appreciated, especially if you are female."/>
+<meta name="twitter:title" content="[INTERVIEW] Computer Network"/>
+<meta name="twitter:description" content="Computer Network Questions for Interview. 28/10/2019
+1. DNS là gì, hoạt động như thế nào? DNS là Domain Name System: Hệ thống chuyển đổi domain name thành địa chỉ IP.
+host: yahoo.com -&gt; search catch -&gt; miss -&gt; Resolver (ISP or nhà cc mạng: VIETEL (người đại diên)) -&gt; ROOT server -&gt; .com server -&gt; yahoo.com server -&gt; đưa cho 1 IP server (rảnh) để mà về tải. Remark: DNS using port 53."/>
 
-    <meta property="og:title" content="About me" />
-<meta property="og:description" content="I am Hieu Doan Minh  Hello everyone, my name is Hieu. I come from Binh Dinh province, Vietnam. I study computer science in HCMUS. I would love to think about code and solve problems. I like playing football, watching football matches and chess, listening to music too. I am also kind of humour. If you want to make friend with me, don&rsquo;t hesitate to ping me!!! I&rsquo;am very appreciated, especially if you are female." />
+    <meta property="og:title" content="[INTERVIEW] Computer Network" />
+<meta property="og:description" content="Computer Network Questions for Interview. 28/10/2019
+1. DNS là gì, hoạt động như thế nào? DNS là Domain Name System: Hệ thống chuyển đổi domain name thành địa chỉ IP.
+host: yahoo.com -&gt; search catch -&gt; miss -&gt; Resolver (ISP or nhà cc mạng: VIETEL (người đại diên)) -&gt; ROOT server -&gt; .com server -&gt; yahoo.com server -&gt; đưa cho 1 IP server (rảnh) để mà về tải. Remark: DNS using port 53." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hieudoan7.github.io/about/" />
-
+<meta property="og:url" content="https://hieudoan7.github.io/interview/computer_network/" />
+<meta property="article:published_time" content="2019-10-28T21:27:43+07:00" />
+<meta property="article:modified_time" content="2019-10-28T21:27:43+07:00" />
 
 
     
-      <base href="https://hieudoan7.github.io/about/">
+      <base href="https://hieudoan7.github.io/interview/computer_network/">
     
     <title>
-  About me · hieudoan7
+  [INTERVIEW] Computer Network · hieudoan7
 </title>
 
     
-      <link rel="canonical" href="https://hieudoan7.github.io/about/">
+      <link rel="canonical" href="https://hieudoan7.github.io/interview/computer_network/">
     
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
@@ -97,15 +102,55 @@
   <section class="container page">
   <article>
     <header>
-      <h1>About me</h1>
+      <h1>[INTERVIEW] Computer Network</h1>
     </header>
 
-    <h4 id="i-am-hieu-doan-minh">I am Hieu Doan Minh</h4>
-<blockquote>
-<p>Hello everyone, my name is Hieu. I come from Binh Dinh province, Vietnam. I study computer science in HCMUS.
-I would love to think about code and solve problems. I like playing football, watching football matches and chess, listening to music too. I am also kind of humour. If you want to make friend with me, don&rsquo;t hesitate to ping me!!! I&rsquo;am very appreciated, especially if you are female.</p>
-</blockquote>
-<p>Contact me: <a href="mailto:hieudoan190598@gmail.com">hieudoan190598@gmail.com</a></p>
+    <h1 id="computer-network-questions-for-interview">Computer Network Questions for Interview.</h1>
+<p>28/10/2019</p>
+<h3 id="1-dns-là-gì-hoạt-động-như-thế-nào">1. DNS là gì, hoạt động như thế nào?</h3>
+<p>DNS là Domain Name System: Hệ thống chuyển đổi domain name thành địa chỉ IP.<br>
+host: yahoo.com -&gt; search catch -&gt; miss -&gt; Resolver (ISP or nhà cc mạng: VIETEL (người đại diên)) -&gt;  ROOT server -&gt; .com server -&gt; yahoo.com server -&gt; đưa cho 1 IP server (rảnh) để mà về tải.
+Remark: DNS using port 53.</p>
+<p>2 video tham khảo: <a href="https://www.youtube.com/watch?v=mpQZVYPuDGU">1</a> &amp; <a href="https://www.youtube.com/watch?v=2ZUxoi7YNgs">2</a></p>
+<h3 id="2-có-các-loại-mô-hình-mạng-nào-nói-chi-tiết">2. Có các loại mô hình mạng nào, nói chi tiết</h3>
+<p>Networking Model: OSI Model (7 layers) vs TCP/IP Model (4 layers)<br>
+<strong>OSI Model</strong></p>
+<ol>
+<li>Application   //Data Present</li>
+<li>Presentation</li>
+<li>Session</li>
+<li>Transport   //Data Flow -&gt; segment (TCP/UDP)</li>
+<li>Network                 -&gt; datagram (IP)</li>
+<li>Datalink                 -&gt; Frame</li>
+<li>Physical                 -&gt; Bit</li>
+</ol>
+<p><strong>TCP/IP Model</strong></p>
+<ol>
+<li>Application (1,2,3)</li>
+<li>Transport (4)</li>
+<li>Internet  (5)</li>
+<li>Network Access (6, 7)</li>
+</ol>
+<h3 id="3-switch-vs-router">3. Switch vs Router</h3>
+<p>-&gt; Switch &lt; Router</p>
+<ul>
+<li>Switch kết nối các host trong cùng 1 mạng</li>
+<li>Router kết nối các mạng với nhau.</li>
+</ul>
+<h3 id="4-tcp-vs-udp">4. TCP vs UDP</h3>
+<p><strong>TCP</strong>: Transport Control Protocol<br>
+<strong>UDP</strong>: User Datagram Protocol<br>
+TCP:</p>
+<ul>
+<li>Truyền đáng tin cậy</li>
+<li>Có tạo kết nối giữa bên gửi và bên nhận</li>
+<li>Dùng cơ chế pipeline (đảm bảo ko mất gói tin)<br>
+(pipeline: set timeout, khi mà bên gửi ko nhận được ACK trong khoảng thời gian đó, nó sẽ tự động gửi lại)<br>
+UDP:</li>
+<li>Truyền không tin cậy</li>
+<li>Không tạo kết nối</li>
+<li>Dùng trong các ứng dụng chịu lỗi được và cần tốc độ như media livestream.</li>
+</ul>
 
   </article>
 </section>

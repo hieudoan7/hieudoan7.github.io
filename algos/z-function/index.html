@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="hieudoan7">
+    <meta name="description" content="hieudoan7">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Z-function"/>
+<meta name="twitter:description" content="String Processing 18/04/2019
+Cho 2 xâu P (pattern) và S (string). Mộ số bài toán
+ Tìm vị trí xuất hiện đầu tiên của P trong S Đếm số lần xuất hiện P trong S Cho S, tìm P ngắn nhất để repeat P nhiều lần ta được S &hellip;  I. Z-function 1. Định nghĩa Z-function Cho xâu $S = s[0..n-1]$.
+Hàm $Z$ của xâu $S$ là dãy $z[0], z[1], &hellip;, z[n-1]$ trong đó $z[i]$ là max (length) prefix của $s[i."/>
+
+    <meta property="og:title" content="Z-function" />
+<meta property="og:description" content="String Processing 18/04/2019
+Cho 2 xâu P (pattern) và S (string). Mộ số bài toán
+ Tìm vị trí xuất hiện đầu tiên của P trong S Đếm số lần xuất hiện P trong S Cho S, tìm P ngắn nhất để repeat P nhiều lần ta được S &hellip;  I. Z-function 1. Định nghĩa Z-function Cho xâu $S = s[0..n-1]$.
+Hàm $Z$ của xâu $S$ là dãy $z[0], z[1], &hellip;, z[n-1]$ trong đó $z[i]$ là max (length) prefix của $s[i." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hieudoan7.github.io/algos/z-function/" />
+<meta property="article:published_time" content="2019-07-07T14:27:00+07:00" />
+<meta property="article:modified_time" content="2019-07-07T14:27:00+07:00" />
+
+
+    
+      <base href="https://hieudoan7.github.io/algos/z-function/">
+    
+    <title>
+  Z-function · hieudoan7
+</title>
+
+    
+      <link rel="canonical" href="https://hieudoan7.github.io/algos/z-function/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://hieudoan7.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.80.0" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://hieudoan7.github.io/">
+      hieudoan7
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/be/">Backend Career</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/interview/">Interview</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/others/">Others</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Z-function</h1>
+    </header>
+
+    <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h1 id="string-processing">String Processing</h1>
+<p>18/04/2019</p>
+<p>Cho 2 xâu P (pattern) và S (string). Mộ số bài toán</p>
+<ul>
+<li>Tìm vị trí xuất hiện đầu tiên của P trong S</li>
+<li>Đếm số lần xuất hiện P trong S</li>
+<li>Cho S, tìm P ngắn nhất để repeat P nhiều lần ta được S</li>
+<li>&hellip;</li>
+</ul>
+<h2 id="i--z-function">I.  Z-function</h2>
+<h3 id="1-định-nghĩa-z-function">1. Định nghĩa Z-function</h3>
+<p>Cho xâu $S = s[0..n-1]$.<br>
+Hàm $Z$ của xâu $S$ là dãy $z[0], z[1], &hellip;, z[n-1]$ trong đó $z[i]$ là <strong>max (length) prefix</strong> của $s[i..n-1]$ với $s[0..n-1]$.<br>
+Ví dụ: Xét xâu $S = &lsquo;abaabab&rsquo;$ (length = 7)<br>
+Ta sẽ có được hàm z</p>
+<!-- raw HTML omitted -->
+<table>
+<thead>
+<tr>
+<th>i</th>
+<th>2 xâu cần so sánh</th>
+<th>z[i]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>quy ước = 0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>&lsquo;abaabab&rsquo; vs &lsquo;baabab&rsquo;</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&lsquo;abaabab&rsquo; vs &lsquo;aabab&rsquo;</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&lsquo;abaabab&rsquo; vs &lsquo;abab&rsquo;</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&lsquo;abaabab&rsquo; vs &lsquo;bab&rsquo;</td>
+<td>0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&lsquo;abaabab&rsquo; vs &lsquo;ab&rsquo;</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&lsquo;abaabab&rsquo; vs &lsquo;b&rsquo;</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<!-- raw HTML omitted -->
+<ul>
+<li>$x$ kí tự đầu của $S$ sẽ xuất hiện lại ở vị trí $k$</li>
+<li>Số phần tử có giá trị $x$ là số lần xuất hiện của $S[0..x-1]$ trong $S$.</li>
+</ul>
+<h3 id="2-implement">2. Implement</h3>
+<h4 id="a-thuật-toán-bình-thường">a) Thuật toán bình thường</h4>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">z[i] = <span style="color:#ff0;font-weight:bold">0</span> <span style="color:#fff;font-weight:bold">for</span> all i
+<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">1</span>; i&lt;n; i++){
+    <span style="color:#fff;font-weight:bold">while</span>(i+z[i] &lt; n &amp;&amp; s[z[i]] == s[i+z[i]]) 
+        z[i]++;
+}
+</code></pre></div><p>$ \Rightarrow O(n^2)$</p>
+<h4 id="b-thuật-toán-cải-tiến">b) Thuật toán cải tiến</h4>
+<p><strong>Ý tưởng</strong>: Ta sẽ bám vào thằng xa nhất mà ta đã nhìn thấy.<br>
+Như thế nào là thằng xa nhất ta đã nhìn thấy?</p>
+<p>Ví dụ: ta đang tính $z[i]$ được $k$ thì thằng xa nhất mà ta có thể nhìn thấy là $i+k-1$.<br>
+Gọi thằng xa nhất mà ta có thể nhìn thấy là $right\_most$ thì<br>
+$$ right\_most = max(j+z[j]-1) \hspace{9mm} \forall  0 \leq j \leq current\ i $$
+Từ thằng $right\_most$ ta sẽ xác định được điểm xuất phát của nó là $left$ (ta có lưu lại mà). Nghĩa là mình bám đoạn $left$ đến $right\_most$ (length = k). (điều chắc chắn là $i &gt; left$).</p>
+<p>Có phải là đoạn $s[i..right\_most]$ nó hoàn toàn giống với đoạn $s[i-left..k-1]$ vì $z[left]
+= k$. Vì vậy ta sẽ tận dụng việc đoạn này đã được so sánh prefix với $s$ trước đó thông qua việc đi tính $z[i-left]$ trước đó.</p>
+<p>Đọc code sẽ rõ, nếu may mắn full cây (trùng cả đoạn) thì tăng lên so sánh tiếp, không thì được 1 khúc trùng với $z[i-left]$.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">1</span>; i&lt;=n; i++){
+    <span style="color:#fff;font-weight:bold">if</span> (i &lt;= right_most) z[i] = min(z[i-left],right_most-i+<span style="color:#ff0;font-weight:bold">1</span>);
+    <span style="color:#fff;font-weight:bold">while</span>(i+z[i] &lt; n &amp;&amp; s[z[i]] == s[i+z[i]]) 
+        z[i]++;
+    <span style="color:#fff;font-weight:bold">if</span> (i+z[i]-<span style="color:#ff0;font-weight:bold">1</span> &gt; right_most){
+        left = i;
+        right_most = i+z[i]-<span style="color:#ff0;font-weight:bold">1</span>;
+    }
+}
+</code></pre></div><p>$ \Rightarrow O(n)$</p>
+<p>I think this is good link for you to discover Z-function: <a href="https://cp-algorithms.com/string/z-function.html">https://cp-algorithms.com/string/z-function.html</a></p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Become the BEST VERSION of YOU.</p>
+    
+    
+    
+    
+      
+      [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
+    
+  </section>
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="hieudoan7">
+    <meta name="description" content="hieudoan7">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="All you need to know about Subset Sum Problem"/>
+<meta name="twitter:description" content="All You need to know about Subset Sum Problem 25/10/2019
+Bài toán:Cho 1 multiset $S = \{a_1, a_2, &hellip;, a_n\}$, tìm 1 subset of $S$ thỏa điều kiện $P$.
+Naive Solution: $\rightarrow O(2^n * n)$
+Ta sinh tất cả các subset của $S$ $(O(2^n))$, sau đó duyệt qua từng subset $(O(n))$ để kiểm tra xem nó có thỏa điều kiện $P$ hay không.
+Nó thực sự là 1 bài toán NP-Complete nên ta chỉ có thể giải trong thời gian exponential."/>
+
+    <meta property="og:title" content="All you need to know about Subset Sum Problem" />
+<meta property="og:description" content="All You need to know about Subset Sum Problem 25/10/2019
+Bài toán:Cho 1 multiset $S = \{a_1, a_2, &hellip;, a_n\}$, tìm 1 subset of $S$ thỏa điều kiện $P$.
+Naive Solution: $\rightarrow O(2^n * n)$
+Ta sinh tất cả các subset của $S$ $(O(2^n))$, sau đó duyệt qua từng subset $(O(n))$ để kiểm tra xem nó có thỏa điều kiện $P$ hay không.
+Nó thực sự là 1 bài toán NP-Complete nên ta chỉ có thể giải trong thời gian exponential." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hieudoan7.github.io/algos/subset_sum/" />
+<meta property="article:published_time" content="2019-10-25T20:14:31+07:00" />
+<meta property="article:modified_time" content="2019-10-25T20:14:31+07:00" />
+
+
+    
+      <base href="https://hieudoan7.github.io/algos/subset_sum/">
+    
+    <title>
+  All you need to know about Subset Sum Problem · hieudoan7
+</title>
+
+    
+      <link rel="canonical" href="https://hieudoan7.github.io/algos/subset_sum/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://hieudoan7.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.80.0" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://hieudoan7.github.io/">
+      hieudoan7
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/be/">Backend Career</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/interview/">Interview</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/others/">Others</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>All you need to know about Subset Sum Problem</h1>
+    </header>
+
+    <h1 id="all-you-need-to-know-about-subset-sum-problem">All You need to know about Subset Sum Problem</h1>
+<p>25/10/2019</p>
+<p><!-- raw HTML omitted -->Bài toán:<!-- raw HTML omitted --> Cho 1 multiset $S = \{a_1, a_2, &hellip;, a_n\}$, tìm 1 subset of $S$ thỏa điều kiện $P$.<br>
+Naive Solution: $\rightarrow O(2^n * n)$<br>
+Ta sinh tất cả các subset của $S$ $(O(2^n))$, sau đó duyệt qua từng subset $(O(n))$ để kiểm tra xem nó có thỏa điều kiện $P$ hay không.</p>
+<p>Nó thực sự là 1 bài toán NP-Complete nên ta chỉ có thể giải trong thời gian exponential. Có cải tiến $O(n^\frac{n}{2})$, xem <a href="https://en.wikipedia.org/wiki/Subset_sum_problem">wiki</a></p>
+<p>Khi mà bài toán trở nên cụ thể (ie: Tập giá trị nhỏ), ta có thể dùng <strong>DP Technique</strong> để giải trong thời gian đa thức. Chúng ta cùng tìm hiểu 1 số bài toán cụ thể của <strong>Subset Sum problem</strong> sau đây:</p>
+<h2 id="1-0-1-knapsack-problem">1. 0-1 Knapsack Problem</h2>
+<p><!-- raw HTML omitted -->Bài toán:<!-- raw HTML omitted --><br>
+Bạn có 1 balo (Knapsack) với sức chứa $W$ kilograms.<br>
+Có $n$ món đồ có trọng lượng $\{w_1, w_2, &hellip;, w_n\}$ và có giá trị tương ứng $\{v_1, v_2, &hellip;, v_n\}$.<br>
+Hãy tìm cách lấy các món đồ nào đó để bỏ vừa trong balo và đạt giá trị cao nhất.</p>
+<p>Khi mà bài toán có tính lặp lại nhỏ hơn (recursion, suboptimal problem) và Overlap (hiển nhiên đến sau) thì đó là lúc ta dùng <strong>DP Technique</strong>.</p>
+<p><!-- raw HTML omitted -->Solution:<!-- raw HTML omitted --> (<strong>DP Technique</strong>)<br>
+Đặt $dp(n, W)$ là maximum value we can get from $n$ món đồ và với cái balo có capacity of $W$ kilograms. Thì:<br>
+$$ dp(n, W) = max\begin{cases}dp(n-1, W) &amp; (not\ taken)\\ v[n] + dp(n-1, W - w[n]) &amp; (taken)\end{cases}$$<br>
+Base case: (Vẽ bảng ra cho rõ)</p>
+<ul>
+<li>$dp(0, j) = 0\ \ \ \forall 0\leq j \leq W$</li>
+<li>$dp(i, 0) = 0\ \ \ \forall 1\leq i \leq n$</li>
+</ul>
+<p><!-- raw HTML omitted -->Implementation:<!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#007f7f">//top-down approach
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> n, W, w[N], v[N];
+<span style="color:#fff;font-weight:bold">int</span> mem[N][W]; <span style="color:#007f7f">//memset(mem, -1, sizeof mem);
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> dp(<span style="color:#fff;font-weight:bold">int</span> n, <span style="color:#fff;font-weight:bold">int</span> W){
+    <span style="color:#fff;font-weight:bold">if</span> (W &lt;= <span style="color:#ff0;font-weight:bold">0</span> || n == <span style="color:#ff0;font-weight:bold">0</span>) <span style="color:#fff;font-weight:bold">return</span> <span style="color:#ff0;font-weight:bold">0</span>;
+    <span style="color:#fff;font-weight:bold">int</span> &amp;res(mem[n][W]);
+    <span style="color:#fff;font-weight:bold">if</span> (res != -<span style="color:#ff0;font-weight:bold">1</span>) <span style="color:#fff;font-weight:bold">return</span> res;
+    <span style="color:#fff;font-weight:bold">return</span> res = max(dp(n-<span style="color:#ff0;font-weight:bold">1</span>, W), v[n]+dp(n-<span style="color:#ff0;font-weight:bold">1</span>, W - w[n]));
+}
+
+<span style="color:#007f7f">//bottom-up approach
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> dp[N][W]; <span style="color:#007f7f">//full 0
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">1</span>; i&lt;=n; i++) {
+    <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> j=<span style="color:#ff0;font-weight:bold">1</span>; j&lt;=W; j++) {
+        dp[i][j] = max(dp[i-<span style="color:#ff0;font-weight:bold">1</span>][j], v[i]+dp[i-<span style="color:#ff0;font-weight:bold">1</span>][j-w[i]});
+    }
+}
+</code></pre></div><p>Complexity: $$\rightarrow O(nW)$$
+Note: Guessing? Is the last element was taken or not? :v</p>
+<h2 id="2-existence-of-a-subset-equal-to-given-sum">2. Existence of a subset Equal to given Sum</h2>
+<p><!-- raw HTML omitted -->Bài toán <!-- raw HTML omitted --><br>
+Given a set of non-negative integers $S$, and a value $SUM$, determine if there is a subset of $S$ with sum equal to given $SUM$.</p>
+<p><!-- raw HTML omitted -->Solution<!-- raw HTML omitted -->  (<strong>DP Technique</strong>)<br>
+Why DP? Giả sử ta đang ở trạng thái lơ lửng $i$ (đang duyệt tới phần tử thứ i (based 1)), nếu $i-1$ phần tử trước đó đã có thể construct a subset with sum $SUM$ thì tới đây chắc chắn có mà không cần đếm xỉa tới $a[i]$, nếu trước đó chưa có nhưng nó có subset with sum equal $SUM-a[i]$ thì giờ thêm $a[i]$ vào subset đó 100% perfect. Cảm quan như vậy dẫn đường cho DP.<br>
+$\rightarrow$ <strong>Recall</strong>: Những bài subset thường là tới phần tử $i$ ta dựa vào tất cả những cái subset đã cấu thành tử $i-1$ phần tử trước đó và thêm vào, + với nó đứng 1 mình (tương đương với thêm vào tập rỗng $i-1$ phần tử trước đó).</p>
+<p>Đặt $dp(i, j)$ là có hay không subset of i phần tử đầu với sum bằng $j$.<br>
+Rõ ràng:<br>
+$$dp(i, j) = dp(i-1, j-a[i])\ |\ dp(i-1, j)$$
+base case: $dp(i, 0) = true \ \ \ \forall 1\leq i\leq n$</p>
+<p><!-- raw HTML omitted -->Implementation<!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">int</span> dp[N][SUM]; <span style="color:#007f7f">//int ms bitwise or duoc
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;=n; i++) dp[i][<span style="color:#ff0;font-weight:bold">0</span>] = <span style="color:#fff;font-weight:bold">true</span>;
+<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">1</span>; i&lt;=n; i++){
+    <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> j=<span style="color:#ff0;font-weight:bold">0</span>; j&lt;=SUM; j++){
+        dp[i][j] = dp[i-<span style="color:#ff0;font-weight:bold">1</span>][j];
+        <span style="color:#fff;font-weight:bold">if</span> (j-a[i]&gt;=<span style="color:#ff0;font-weight:bold">0</span>) dp[i][j] |= dp[i-<span style="color:#ff0;font-weight:bold">1</span>][j-a[i]];
+    }
+}
+<span style="color:#fff;font-weight:bold">bool</span> ans = dp[n][SUM];
+<span style="color:#007f7f">//Link Submission: https://practice.geeksforgeeks.org/problems/subset-sum-problem/0
+</span></code></pre></div><p>$\rightarrow$ Bài toán có thể modify thành bài toán kiểm tra sự tồn tại của subset equal 0 với set gồm các phần tử không cần phải non-negative.</p>
+<h3 id="21-parition-problem">2.1. Parition Problem</h3>
+<p><!-- raw HTML omitted -->Bài toán<!-- raw HTML omitted -->:<br>
+Cho 1 multiset of integers $S$, the task is divide it into $2$ set $S1$ and $S2$ such that the absolute difference between their sums is minimum.</p>
+<p>$\rightarrow$ Thật ra đây chỉ là bài giống bài trên, ta check xem cái $sum$ nào có thể construct gần với $mid$ nhất là ok.<br>
+<!-- raw HTML omitted -->Solution<!-- raw HTML omitted --><br>
+Dùng DP như trên, chỉ khác ở bước kết quả, ta duyệt từ mid về trước để tìm cái $dp[n][i] = true$ đầu tiên thôi.<br>
+<!-- raw HTML omitted -->Implementation<!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">int</span> n, a[N], sum = <span style="color:#ff0;font-weight:bold">0</span>;
+<span style="color:#fff;font-weight:bold">int</span> all_sum;
+<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">1</span>; i&lt;=n; i++) sum += [i];
+all_sum = sum;
+sum /= <span style="color:#ff0;font-weight:bold">2</span>;
+vector&lt;vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt;&gt; dp(n+<span style="color:#ff0;font-weight:bold">1</span>, vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt;(sum+<span style="color:#ff0;font-weight:bold">1</span>, <span style="color:#ff0;font-weight:bold">0</span>));
+<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;=n; i++) dp[i][<span style="color:#ff0;font-weight:bold">0</span>] = <span style="color:#ff0;font-weight:bold">1</span>; <span style="color:#007f7f">//empty set
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">1</span>; i&lt;=n; i++){
+    <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> j=<span style="color:#ff0;font-weight:bold">0</span>; j&lt;=sum; j++){
+        dp[i][j] = dp[i-<span style="color:#ff0;font-weight:bold">1</span>][j];
+        <span style="color:#fff;font-weight:bold">if</span> (j-a[i]&gt;=<span style="color:#ff0;font-weight:bold">0</span>) dp[i][j] |= dp[i-<span style="color:#ff0;font-weight:bold">1</span>][j-a[i]];
+    }
+}
+<span style="color:#fff;font-weight:bold">int</span> ans;
+<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=sum; ; i--){
+    <span style="color:#fff;font-weight:bold">if</span> (dp[n][i] == <span style="color:#fff;font-weight:bold">true</span>){
+        ans = all_sum - i - i;
+        <span style="color:#fff;font-weight:bold">break</span>;
+    }
+}
+cout &lt;&lt; ans &lt;&lt; endl;
+<span style="color:#007f7f">//Link submission: https://practice.geeksforgeeks.org/problems/minimum-sum-partition/0
+</span></code></pre></div>
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Become the BEST VERSION of YOU.</p>
+    
+    
+    
+    
+      
+      [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
+    
+  </section>
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

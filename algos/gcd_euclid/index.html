@@ -10,23 +10,32 @@
     <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="hieudoan7"/>
-<meta name="twitter:description" content="hieudoan7"/>
+<meta name="twitter:title" content="Greatest Common Divisor using Eucidean Algorithm"/>
+<meta name="twitter:description" content="Greatest Common Divisor using Euclidean Algorithm 11/07/2019
+I. Implementation typedef long long ll; ll gcd (ll a, ll b){ return b==0? a : gcd(b, a%b); //phải hỏi b==0? chứ b=0 thì làm sao a chia dư 0 được. } II. Interpretation Thuật toán Euclid tìm ước chung lớn nhất giữa 2 số $a, b$.
+Không mất tính tổng quát, giả sử $a &gt; b$.
+Nhìn hình, ta thấy, $gcd(a, b) = x$ khi và chỉ khi $x$ là ước của $a$, $x$ cũng là ước của $b$ và $x$ lớn nhất."/>
 
-    <meta property="og:title" content="hieudoan7" />
-<meta property="og:description" content="hieudoan7" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://hieudoan7.github.io/" />
-<meta property="og:updated_time" content="2021-02-25T09:50:59+07:00" />
+    <meta property="og:title" content="Greatest Common Divisor using Eucidean Algorithm" />
+<meta property="og:description" content="Greatest Common Divisor using Euclidean Algorithm 11/07/2019
+I. Implementation typedef long long ll; ll gcd (ll a, ll b){ return b==0? a : gcd(b, a%b); //phải hỏi b==0? chứ b=0 thì làm sao a chia dư 0 được. } II. Interpretation Thuật toán Euclid tìm ước chung lớn nhất giữa 2 số $a, b$.
+Không mất tính tổng quát, giả sử $a &gt; b$.
+Nhìn hình, ta thấy, $gcd(a, b) = x$ khi và chỉ khi $x$ là ước của $a$, $x$ cũng là ước của $b$ và $x$ lớn nhất." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hieudoan7.github.io/algos/gcd_euclid/" />
+<meta property="article:published_time" content="2019-07-11T21:49:24+07:00" />
+<meta property="article:modified_time" content="2019-07-11T21:49:24+07:00" />
 
 
     
-      <base href="https://hieudoan7.github.io/">
+      <base href="https://hieudoan7.github.io/algos/gcd_euclid/">
     
-    <title>hieudoan7</title>
+    <title>
+  Greatest Common Divisor using Eucidean Algorithm · hieudoan7
+</title>
 
     
-      <link rel="canonical" href="https://hieudoan7.github.io/">
+      <link rel="canonical" href="https://hieudoan7.github.io/algos/gcd_euclid/">
     
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
@@ -48,7 +57,6 @@
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <link rel="alternate" type="application/rss+xml" href="https://hieudoan7.github.io/index.xml" title="hieudoan7" />
     <meta name="generator" content="Hugo 0.80.0" />
   </head>
 
@@ -93,59 +101,36 @@
 
       <div class="content">
         
-  <section class="container centered">
-  <div class="about">
-    
-      <div class="avatar"><img src="https://hieudoan7.github.io/imgs/hieudm.jpg" alt="avatar"></div>
-    
-    <h1>hieudoan7</h1>
-    <h2>Software Engineering</h2>
-    
-    <ul>
-      
-        
-          <li>
-            <a href="https://github.com/hieudoan7" aria-label="Github">
-              <i class="fab fa-github" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-        
-          <li>
-            <a href="https://gitlab.com/hieudoan190598" aria-label="Gitlab">
-              <i class="fab fa-gitlab" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-        
-          <li>
-            <a href="https://twitter.com/Cristia45971976" aria-label="Twitter">
-              <i class="fab fa-twitter" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-        
-          <li>
-            <a href="https://www.linkedin.com/in/hieudoan1905/" aria-label="LinkedIn">
-              <i class="fab fa-linkedin" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-        
-          <li>
-            <a href="https://medium.com/" aria-label="Medium">
-              <i class="fab fa-medium" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-    </ul>
-    
-  </div>
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Greatest Common Divisor using Eucidean Algorithm</h1>
+    </header>
+
+    <h1 id="greatest-common-divisor-using-euclidean-algorithm">Greatest Common Divisor using Euclidean Algorithm</h1>
+<p>11/07/2019</p>
+<h2 id="i-implementation">I. Implementation</h2>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">typedef</span> <span style="color:#fff;font-weight:bold">long</span> <span style="color:#fff;font-weight:bold">long</span> ll;
+ll gcd (ll a, ll b){
+    <span style="color:#fff;font-weight:bold">return</span> b==<span style="color:#ff0;font-weight:bold">0</span>? a : gcd(b, a%b); <span style="color:#007f7f">//phải hỏi b==0? chứ b=0 thì làm sao a chia dư 0 được.
+</span><span style="color:#007f7f"></span>}
+</code></pre></div><h2 id="ii-interpretation">II. Interpretation</h2>
+<p>Thuật toán Euclid tìm ước chung lớn nhất giữa 2 số $a, b$.<br>
+Không mất tính tổng quát, giả sử $a &gt; b$.</p>
+<!-- raw HTML omitted -->
+<p>Nhìn hình, ta thấy, $gcd(a, b) = x$ khi và chỉ khi $x$ là ước của $a$, $x$ cũng là ước của $b$ và $x$ lớn nhất.</p>
+<p>Mà $$\begin{cases}a = n<em>b + ( a\ %\ b) \\a\ %\ x = 0 \\ b\ %\ x = 0 \Rightarrow n</em>b\ %\ x = 0 \end{cases}$$
+Nên  $$ (a\ %\ b)\ %\ x = 0$$.<br>
+Suy ra:  $$gcd(a, b) = gcd(b, a%b)$$
+$$(=x)$$</p>
+<p><em><strong>Corner Case</strong></em>  (final recurrence)</p>
+<ul>
+<li>$ a = 0 $ hoặc $ b = 0 $ thì $\ gcd(a , b) =$ thằng còn lại khác $0$.</li>
+<li>$ a = 0 $ và $ b = 0 $ thì $\ gcd(0, 0) = 0$ (casio 570VN Plus).<br>
+$\Rightarrow $ Cách cài đặt rất đúng.</li>
+</ul>
+
+  </article>
 </section>
 
 

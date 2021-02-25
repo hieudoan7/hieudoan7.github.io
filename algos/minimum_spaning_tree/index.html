@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="hieudoan7">
+    <meta name="description" content="hieudoan7">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Minimum Spanning Tree"/>
+<meta name="twitter:description" content="Minimum Spanning Tree (Cây khung nhỏ nhất)
+05/08/2019
+I. Definition  Tree: (Cây) là đồ thị vô hướng (undirected), liên thông (connected) và không có chu trình (acyclic).
+Các tính chất của cây:  Cây n nodes luôn có n-1 cạnh Mỗi cạnh đều là cầu Thêm 1 cạnh bất kì sẽ tạo nên chu trình.   Spanning Tree: (Cây khung) là Cây chứa tất cả các nodes, so nó luôn có n-1 cạnh."/>
+
+    <meta property="og:title" content="Minimum Spanning Tree" />
+<meta property="og:description" content="Minimum Spanning Tree (Cây khung nhỏ nhất)
+05/08/2019
+I. Definition  Tree: (Cây) là đồ thị vô hướng (undirected), liên thông (connected) và không có chu trình (acyclic).
+Các tính chất của cây:  Cây n nodes luôn có n-1 cạnh Mỗi cạnh đều là cầu Thêm 1 cạnh bất kì sẽ tạo nên chu trình.   Spanning Tree: (Cây khung) là Cây chứa tất cả các nodes, so nó luôn có n-1 cạnh." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hieudoan7.github.io/algos/minimum_spaning_tree/" />
+<meta property="article:published_time" content="2019-08-05T20:25:45+07:00" />
+<meta property="article:modified_time" content="2019-08-05T20:25:45+07:00" />
+
+
+    
+      <base href="https://hieudoan7.github.io/algos/minimum_spaning_tree/">
+    
+    <title>
+  Minimum Spanning Tree · hieudoan7
+</title>
+
+    
+      <link rel="canonical" href="https://hieudoan7.github.io/algos/minimum_spaning_tree/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://hieudoan7.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.80.0" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://hieudoan7.github.io/">
+      hieudoan7
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/be/">Backend Career</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/interview/">Interview</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/others/">Others</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Minimum Spanning Tree</h1>
+    </header>
+
+    <h1 id="minimum-spanning-tree">Minimum Spanning Tree</h1>
+<p>(Cây khung nhỏ nhất)<br>
+05/08/2019</p>
+<h2 id="i-definition">I. Definition</h2>
+<ul>
+<li><em><strong>Tree</strong></em>: (Cây) là đồ thị vô hướng (undirected), liên thông (connected) và không có chu trình (acyclic).<br>
+Các tính chất của cây:
+<ul>
+<li>Cây <strong>n nodes</strong> luôn có <strong>n-1 cạnh</strong></li>
+<li>Mỗi cạnh đều là <strong>cầu</strong></li>
+<li>Thêm 1 cạnh bất kì sẽ tạo nên chu trình.</li>
+</ul>
+</li>
+<li><em><strong>Spanning Tree:</strong></em> (Cây khung) là <strong>Cây</strong> chứa tất cả các nodes, so nó luôn có n-1 cạnh.
+<blockquote>
+<p>Có thể tìm cây khung sử dụng bfs, dfs.</p>
+</blockquote>
+</li>
+<li><em><strong>Minimum Spanning Tree:</strong></em> Là cây khung có chi phí nhỏ nhất (tổng weight min), dĩ nhiên nó cũng phải có n-1 cạnh thôi.</li>
+<li>Maximum Spanning Tree có thể hoàn toàn sử dụng thuật toán minimum spanning tree bằng cách đổi dấu các cạnh.</li>
+</ul>
+<h2 id="ii-kruscals-algorithm">II. Kruscal&rsquo;s Algorithm</h2>
+<h3 id="1-ý-tưởng">1. Ý tưởng:</h3>
+<p>Sắp xếp tất cả các cạnh theo thứ tự tăng của weight.<br>
+Lần lượt lấy các cạnh để cấu thành cây khung, nếu cạnh nào làm xuất hiện cycle thì bỏ qua đi tiếp đến khi đủ $n-1$ cạnh là được. (đủ $n-1$ cạnh có nghĩa là đã cover hết các nodes).</p>
+<h3 id="2-why-does-this-work">2. Why does this work?</h3>
+<p><em>Trực quan:</em><br>
+Cho đồ thị có $n$ nodes và có cây khung nhỏ nhất là $e_1, e_2, &hellip;, e_{n-1}$.</p>
+<p>Giả sử có 1 cây khung $T$ khác mà không chứa 1 cạnh $e_i$ nào đó $(1\leq i \leq n-1)$ ở trên thì rõ ràng $T + e_i$ tạo ra cycle, từ cycle đó ta luôn có thể bỏ đi 1 cạnh $&gt;$ $e_i$ và được cây khung nhỏ hơn. Nếu được loại 1 cạnh thì đương nhiên ta loại cạnh lớn nhất.</p>
+<p>More Provement in <a href="https://cp-algorithms.com/graph/mst_kruskal.html">cp-algorithms</a></p>
+<h3 id="3-implementation">3. Implementation</h3>
+<p>Ý tưởng cài đặt:<br>
+Ban đầu tất cả các đỉnh rời nhau. Lấy các cạnh theo thứ tự đã sort để giảm số CC (ban đầu có n CCs). Đến khi còn 1 CC thì dừng lại.</p>
+<h4 id="cài-đặt-tầm-thường">Cài đặt tầm thường:</h4>
+<p>$$\Rightarrow O(M\ log\ N + N^2)$$
+($M\ log\ N \approx M\ log\ M$)</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">struct</span> Edge {
+    <span style="color:#fff;font-weight:bold">int</span> u, v, weight;
+    <span style="color:#fff;font-weight:bold">bool</span> <span style="color:#fff;font-weight:bold">operator</span>&lt;(Edge <span style="color:#fff;font-weight:bold">const</span>&amp; other) {
+        <span style="color:#fff;font-weight:bold">return</span> weight &lt; other.weight;
+    }
+};
+
+<span style="color:#fff;font-weight:bold">int</span> n;
+vector&lt;Edge&gt; edges;
+
+<span style="color:#fff;font-weight:bold">int</span> cost = <span style="color:#ff0;font-weight:bold">0</span>;
+vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; tree_id(n);
+vector&lt;Edge&gt; result;
+<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; n; i++)
+    tree_id[i] = i;
+
+sort(edges.begin(), edges.end());
+
+<span style="color:#fff;font-weight:bold">for</span> (Edge e : edges) {
+    <span style="color:#fff;font-weight:bold">if</span> (tree_id[e.u] != tree_id[e.v]) {
+        cost += e.weight;
+        result.push_back(e);
+
+        <span style="color:#fff;font-weight:bold">int</span> old_id = tree_id[e.u], new_id = tree_id[e.v];
+        <span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; n; i++) {
+            <span style="color:#fff;font-weight:bold">if</span> (tree_id[i] == old_id)
+                tree_id[i] = new_id;
+        }
+    }
+}
+</code></pre></div><h3 id="cài-đặt-dùng-dsu-disjoint-set-union">Cài đặt dùng DSU (Disjoint Set Union)</h3>
+<p>$$\Rightarrow O(M\ log\ N + N + M) = O(M\ log\ N)$$</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; parent, rank; 
+<span style="color:#007f7f">//parent: leader (representative)
+</span><span style="color:#007f7f">//rank: height of tree
+</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> make_set(<span style="color:#fff;font-weight:bold">int</span> v) {
+    parent[v] = v;
+    rank[v] = <span style="color:#ff0;font-weight:bold">0</span>;
+}
+
+<span style="color:#fff;font-weight:bold">int</span> find_set(<span style="color:#fff;font-weight:bold">int</span> v) {
+    <span style="color:#fff;font-weight:bold">if</span> (v == parent[v])
+        <span style="color:#fff;font-weight:bold">return</span> v;
+    <span style="color:#fff;font-weight:bold">return</span> parent[v] = find_set(parent[v]);
+}
+
+<span style="color:#fff;font-weight:bold">void</span> union_sets(<span style="color:#fff;font-weight:bold">int</span> a, <span style="color:#fff;font-weight:bold">int</span> b) {
+    a = find_set(a);
+    b = find_set(b);
+    <span style="color:#fff;font-weight:bold">if</span> (a != b) {
+        <span style="color:#fff;font-weight:bold">if</span> (rank[a] &lt; rank[b])
+            swap(a, b);
+        parent[b] = a;
+        <span style="color:#fff;font-weight:bold">if</span> (rank[a] == rank[b])
+            rank[a]++;
+    }
+}
+
+<span style="color:#fff;font-weight:bold">struct</span> Edge {
+    <span style="color:#fff;font-weight:bold">int</span> u, v, weight;
+    <span style="color:#fff;font-weight:bold">bool</span> <span style="color:#fff;font-weight:bold">operator</span>&lt;(Edge <span style="color:#fff;font-weight:bold">const</span>&amp; other) {
+        <span style="color:#fff;font-weight:bold">return</span> weight &lt; other.weight;
+    }
+};
+
+<span style="color:#fff;font-weight:bold">int</span> n;
+vector&lt;Edge&gt; edges;
+
+<span style="color:#fff;font-weight:bold">int</span> cost = <span style="color:#ff0;font-weight:bold">0</span>;
+vector&lt;Edge&gt; result;
+parent.resize(n);
+rank.resize(n);
+<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; n; i++)
+    make_set(i);
+
+sort(edges.begin(), edges.end());
+
+<span style="color:#fff;font-weight:bold">for</span> (Edge e : edges) {
+    <span style="color:#fff;font-weight:bold">if</span> (find_set(e.u) != find_set(e.v)) {
+        cost += e.weight;
+        result.push_back(e);
+        union_sets(e.u, e.v);
+    }
+}
+</code></pre></div><p>Có thể dùng $size[]$ thay cho $rank[]$, more information: <a href="https://cp-algorithms.com/data_structures/disjoint_set_union.html">cp-algorithms</a></p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Become the BEST VERSION of YOU.</p>
+    
+    
+    
+    
+      
+      [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
+    
+  </section>
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

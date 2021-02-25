@@ -10,23 +10,32 @@
     <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="hieudoan7"/>
-<meta name="twitter:description" content="hieudoan7"/>
+<meta name="twitter:title" content="Solving Recursive Sequence using Generating Function"/>
+<meta name="twitter:description" content="Solving Recursive Sequence using Generating Function 02/08/2019
+I. Definition Hàm sinh là cái hàm mà nén 1 dãy số $\{a_n\}, n\geq 0$ có quy luật thành một cái tổng $$\sum_{n=0}^\infty a_nx^n$$ Hệ số của $x^n$ chính là số hạng $a_n$ trong dãy $\{a_n\}, n\geq 0$.
+II. Several Formulas Generating Function III. Solving Recursive Sequence. Examples:
+This example is my friend &rsquo;s question in his interview, so I just note it. Ngoài ra còn có hàm sinh mũ cũng giải các hệ thức đệ quy phức tạp hơn."/>
 
-    <meta property="og:title" content="hieudoan7" />
-<meta property="og:description" content="hieudoan7" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://hieudoan7.github.io/" />
-<meta property="og:updated_time" content="2021-02-25T09:50:59+07:00" />
+    <meta property="og:title" content="Solving Recursive Sequence using Generating Function" />
+<meta property="og:description" content="Solving Recursive Sequence using Generating Function 02/08/2019
+I. Definition Hàm sinh là cái hàm mà nén 1 dãy số $\{a_n\}, n\geq 0$ có quy luật thành một cái tổng $$\sum_{n=0}^\infty a_nx^n$$ Hệ số của $x^n$ chính là số hạng $a_n$ trong dãy $\{a_n\}, n\geq 0$.
+II. Several Formulas Generating Function III. Solving Recursive Sequence. Examples:
+This example is my friend &rsquo;s question in his interview, so I just note it. Ngoài ra còn có hàm sinh mũ cũng giải các hệ thức đệ quy phức tạp hơn." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hieudoan7.github.io/algos/solving_recursive_using_generating_fuction/" />
+<meta property="article:published_time" content="2019-08-02T22:11:07+07:00" />
+<meta property="article:modified_time" content="2019-08-02T22:11:07+07:00" />
 
 
     
-      <base href="https://hieudoan7.github.io/">
+      <base href="https://hieudoan7.github.io/algos/solving_recursive_using_generating_fuction/">
     
-    <title>hieudoan7</title>
+    <title>
+  Solving Recursive Sequence using Generating Function · hieudoan7
+</title>
 
     
-      <link rel="canonical" href="https://hieudoan7.github.io/">
+      <link rel="canonical" href="https://hieudoan7.github.io/algos/solving_recursive_using_generating_fuction/">
     
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
@@ -48,7 +57,6 @@
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <link rel="alternate" type="application/rss+xml" href="https://hieudoan7.github.io/index.xml" title="hieudoan7" />
     <meta name="generator" content="Hugo 0.80.0" />
   </head>
 
@@ -93,59 +101,29 @@
 
       <div class="content">
         
-  <section class="container centered">
-  <div class="about">
-    
-      <div class="avatar"><img src="https://hieudoan7.github.io/imgs/hieudm.jpg" alt="avatar"></div>
-    
-    <h1>hieudoan7</h1>
-    <h2>Software Engineering</h2>
-    
-    <ul>
-      
-        
-          <li>
-            <a href="https://github.com/hieudoan7" aria-label="Github">
-              <i class="fab fa-github" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-        
-          <li>
-            <a href="https://gitlab.com/hieudoan190598" aria-label="Gitlab">
-              <i class="fab fa-gitlab" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-        
-          <li>
-            <a href="https://twitter.com/Cristia45971976" aria-label="Twitter">
-              <i class="fab fa-twitter" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-        
-          <li>
-            <a href="https://www.linkedin.com/in/hieudoan1905/" aria-label="LinkedIn">
-              <i class="fab fa-linkedin" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-        
-          <li>
-            <a href="https://medium.com/" aria-label="Medium">
-              <i class="fab fa-medium" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-    </ul>
-    
-  </div>
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Solving Recursive Sequence using Generating Function</h1>
+    </header>
+
+    <h1 id="solving-recursive-sequence-using-generating-function">Solving Recursive Sequence using Generating Function</h1>
+<p>02/08/2019</p>
+<h2 id="i-definition">I. Definition</h2>
+<p>Hàm sinh là cái hàm mà nén 1 dãy số $\{a_n\}, n\geq 0$ có quy luật thành một cái tổng
+$$\sum_{n=0}^\infty a_nx^n$$
+Hệ số của $x^n$ chính là số hạng $a_n$ trong dãy $\{a_n\}, n\geq 0$.</p>
+<h2 id="ii-several-formulas-generating-function">II. Several Formulas Generating Function</h2>
+<!-- raw HTML omitted -->
+<h2 id="iii-solving-recursive-sequence">III. Solving Recursive Sequence.</h2>
+<p>Examples:</p>
+<!-- raw HTML omitted -->
+<p>This example is my friend &rsquo;s question in his interview, so I just note it.
+Ngoài ra còn có hàm sinh mũ cũng giải các hệ thức đệ quy phức tạp hơn.</p>
+<p>More about generating function: <a href="https://drive.google.com/file/d/1TcJoJIkiUKVVT3c0gu8bgtSdoQ3RIwGj/view?usp=sharing">slide thầy Luyện HCMUS</a>.<br>
+You can comment your example, i will try my best to solve it.</p>
+
+  </article>
 </section>
 
 
