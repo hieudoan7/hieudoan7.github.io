@@ -6,7 +6,17 @@
     <description>Recent content in Others on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Apr 2019 15:01:41 +0700</lastBuildDate><atom:link href="https://hieudoan7.github.io/others/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 May 2021 17:12:47 +0700</lastBuildDate><atom:link href="https://hieudoan7.github.io/others/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hieu test</title>
+      <link>https://hieudoan7.github.io/others/test/</link>
+      <pubDate>Sun, 23 May 2021 17:12:47 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/others/test/</guid>
+      <description>Hieu test hugo to come back stronger yes here we go again
+test insert image in hugo</description>
+    </item>
+    
     <item>
       <title>Hugo Tutorial</title>
       <link>https://hieudoan7.github.io/others/hugo-tutorial/</link>
