@@ -120,12 +120,13 @@ ll gcd (ll a, ll b){
 </span><span style="color:#007f7f"></span>}
 </code></pre></div><h2 id="ii-interpretation">II. Interpretation</h2>
 <p>Thuật toán Euclid tìm ước chung lớn nhất giữa 2 số $a, b$.<br>
-Không mất tính tổng quát, giả sử $a &gt; b$.</p>
-<!-- raw HTML omitted -->
+Không mất tính tổng quát, giả sử $a &gt; b$.<br>
+<img src="https://hieudoan7.github.io/imgs/gcd_euclid.jpg" alt="gcd_euclid"></p>
 <p>Nhìn hình, ta thấy, $gcd(a, b) = x$ khi và chỉ khi $x$ là ước của $a$, $x$ cũng là ước của $b$ và $x$ lớn nhất.</p>
-<p>Mà $$\begin{cases}a = n<em>b + ( a\ %\ b) \\a\ %\ x = 0 \\ b\ %\ x = 0 \Rightarrow n</em>b\ %\ x = 0 \end{cases}$$
-Nên  $$ (a\ %\ b)\ %\ x = 0$$.<br>
-Suy ra:  $$gcd(a, b) = gcd(b, a%b)$$
+<p>Mà
+$$\begin{cases}a = nb + (a \% b) \\a \% x = 0 \ \wedge b \% x = 0 \Rightarrow nb \% x = 0 \end{cases}$$</p>
+<p>Nên  $$ (a\%b)\ \%x = 0$$.<br>
+Suy ra:  $$gcd(a, b) = gcd(b, a\% b)$$
 $$(=x)$$</p>
 <p><em><strong>Corner Case</strong></em>  (final recurrence)</p>
 <ul>

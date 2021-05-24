@@ -229,7 +229,7 @@ Ví dụ: Xét biểu thức: $3 + 5*(6-3) + 1$
       <guid>https://hieudoan7.github.io/algos/fenwicktree/</guid>
       <description>Binary Indexed Tree (Fenwick Tree) 24/06/2019
 Định nghĩa: Fenwick Tree (Binary Indexed Tree) là một CTDL với n node (n+1 nodes với node gốc bù nhìn) chứa thông tin (thường là tổng cộng dồn) về các phần tử trong đoạn (i-(i&amp;amp;-i), i] (mảng tính từ $1$)
-Mục đích: Mục đích cây này là để tính range sum và khi update 1 phần tử trong mảng a thì các range sum involved cũng được update với chi phí thấp.</description>
+ Nhận xét: Cây getSum vs cây Update khác nhau:  in GetSum: parent(i) = i-(i&amp;amp;-i) in Update: parent(i) = i+(i&amp;amp;-i)    Mục đích: Mục đích cây này là để tính range sum và khi update 1 phần tử trong mảng a thì các range sum involved cũng được update với chi phí thấp.</description>
     </item>
     
     <item>
@@ -240,8 +240,7 @@ Mục đích: Mục đích cây này là để tính range sum và khi update 1 
       <guid>https://hieudoan7.github.io/algos/kosaraju/</guid>
       <description>Kosaraju &amp;rsquo;s Algorithms 17/06/2019
 I. DFS Tree Output của thuật toán DFS là 1 cây khung (spanning tree) Tất cả các cạnh của đồ thị gốc sẽ được chia làm 4 loại trong DFS spanning Tree:
- Tree Edge (sometimes Tree Edge được xếp vào Forward Edge) Forward Edge Back Edge Cross Edge  Example
-If the original graph is undirected then all of its edges are tree edge or black edge</description>
+ Tree Edge (sometimes Tree Edge được xếp vào Forward Edge) Forward Edge Back Edge Cross Edge  Example If the original graph is undirected then all of its edges are tree edge or black edge</description>
     </item>
     
   </channel>

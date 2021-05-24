@@ -124,8 +124,11 @@ Tại sao lại $4n$? <br>
 <li>$Node[3]$: quản lý range $[(n-1)/2+1..n-1]$</li>
 <li>$Node[4]$: &hellip;</li>
 </ul>
-<p>Xét ví dụ minh họa sau sẽ rõ.</p>
-<!-- raw HTML omitted -->
+<p>Xét ví dụ minh họa sau sẽ rõ.
+<img src="https://hieudoan7.github.io/imgs/segment.jpg" alt="segment.jpg">
+Tree phải có $size = 4n$ vì như ta thấy với $n = 6$, thì nó cần tới node $13$ để quản lý tức $Tree[13]$ vì vậy $2n$ sẽ không đủ, mặc dù node $10$, $11$ (Tức $Tree[10]$, $Tree[11]$) chỉ là những dummy node. Có nghĩa là segment tree sẽ là $1$ cây nhị phân không đầy đủ, và để thêm đầy đủ thì tổng số node của nó sẽ là $T$.<br>
+$$ T = 2^0 + 2^1 + 2^2 + &hellip; + 2^m$$ với $ m = ceil\{log_2(n)\} \leq log_2(n) + 1$
+$$\Rightarrow T = 2^0 + 2^1 + &hellip; + 2^{log_2(n)+1} = 2^{log_2(n)+2}-1 \leq 4n $$</p>
 <h2 id="iii-cài-đặt-segment-tree-thuần-túy-có-lazy-propagation">III. Cài đặt Segment Tree thuần túy có Lazy Propagation.</h2>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#007f7f">//Khai báo dữ liệu
 </span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> n, a[N];

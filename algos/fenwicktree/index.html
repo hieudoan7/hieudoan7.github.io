@@ -13,12 +13,12 @@
 <meta name="twitter:title" content="Fenwick Tree - Binary Indexed Tree"/>
 <meta name="twitter:description" content="Binary Indexed Tree (Fenwick Tree) 24/06/2019
 Định nghĩa: Fenwick Tree (Binary Indexed Tree) là một CTDL với n node (n&#43;1 nodes với node gốc bù nhìn) chứa thông tin (thường là tổng cộng dồn) về các phần tử trong đoạn (i-(i&amp;-i), i] (mảng tính từ $1$)
-Mục đích: Mục đích cây này là để tính range sum và khi update 1 phần tử trong mảng a thì các range sum involved cũng được update với chi phí thấp."/>
+ Nhận xét: Cây getSum vs cây Update khác nhau:  in GetSum: parent(i) = i-(i&amp;-i) in Update: parent(i) = i&#43;(i&amp;-i)    Mục đích: Mục đích cây này là để tính range sum và khi update 1 phần tử trong mảng a thì các range sum involved cũng được update với chi phí thấp."/>
 
     <meta property="og:title" content="Fenwick Tree - Binary Indexed Tree" />
 <meta property="og:description" content="Binary Indexed Tree (Fenwick Tree) 24/06/2019
 Định nghĩa: Fenwick Tree (Binary Indexed Tree) là một CTDL với n node (n&#43;1 nodes với node gốc bù nhìn) chứa thông tin (thường là tổng cộng dồn) về các phần tử trong đoạn (i-(i&amp;-i), i] (mảng tính từ $1$)
-Mục đích: Mục đích cây này là để tính range sum và khi update 1 phần tử trong mảng a thì các range sum involved cũng được update với chi phí thấp." />
+ Nhận xét: Cây getSum vs cây Update khác nhau:  in GetSum: parent(i) = i-(i&amp;-i) in Update: parent(i) = i&#43;(i&amp;-i)    Mục đích: Mục đích cây này là để tính range sum và khi update 1 phần tử trong mảng a thì các range sum involved cũng được update với chi phí thấp." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hieudoan7.github.io/algos/fenwicktree/" />
 <meta property="article:published_time" content="2019-06-25T13:25:20+07:00" />
@@ -113,7 +113,15 @@ Mục đích: Mục đích cây này là để tính range sum và khi update 1 
 <p>24/06/2019</p>
 <h2 id="định-nghĩa">Định nghĩa:</h2>
 <p>Fenwick Tree (Binary Indexed Tree) là một CTDL với n node (n+1 nodes với node gốc bù nhìn) chứa thông tin (thường là tổng cộng dồn) về các phần tử trong đoạn <code>(i-(i&amp;-i), i]</code> <strong>(mảng tính từ $1$)</strong></p>
-<!-- raw HTML omitted -->
+<p><img src="https://hieudoan7.github.io/imgs/BITSum.png" alt="BITSum"></p>
+<ul>
+<li>Nhận xét: Cây getSum vs cây Update khác nhau:
+<ul>
+<li>in GetSum: <code>parent(i) = i-(i&amp;-i)</code></li>
+<li>in Update: <code>parent(i) = i+(i&amp;-i)</code></li>
+</ul>
+</li>
+</ul>
 <h2 id="mục-đích">Mục đích:</h2>
 <p>Mục đích cây này là để tính range sum và khi update 1 phần tử trong mảng a thì các range sum involved cũng được update với chi phí thấp. <!-- raw HTML omitted -->
 =&gt; Chi phí tính range sum &amp; update value đều là O(log n)</p>

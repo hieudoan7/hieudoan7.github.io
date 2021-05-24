@@ -128,7 +128,6 @@ Hàm $Z$ của xâu $S$ là dãy $z[0], z[1], &hellip;, z[n-1]$ trong đó $z[i]
 Hàm $Z$ của xâu $S$ là dãy $z[0], z[1], &hellip;, z[n-1]$ trong đó $z[i]$ là <strong>max (length) prefix</strong> của $s[i..n-1]$ với $s[0..n-1]$.<br>
 Ví dụ: Xét xâu $S = &lsquo;abaabab&rsquo;$ (length = 7)<br>
 Ta sẽ có được hàm z</p>
-<!-- raw HTML omitted -->
 <table>
 <thead>
 <tr>
@@ -175,7 +174,7 @@ Ta sẽ có được hàm z</p>
 </tr>
 </tbody>
 </table>
-<!-- raw HTML omitted -->
+<p>Sau khi có được hàm Z của xâu  S, thì với $z[k] = x$ cho ta biết:</p>
 <ul>
 <li>$x$ kí tự đầu của $S$ sẽ xuất hiện lại ở vị trí $k$</li>
 <li>Số phần tử có giá trị $x$ là số lần xuất hiện của $S[0..x-1]$ trong $S$.</li>
@@ -207,8 +206,8 @@ Từ thằng $right\_most$ ta sẽ xác định được điểm xuất phát c�
         right_most = i+z[i]-<span style="color:#ff0;font-weight:bold">1</span>;
     }
 }
-</code></pre></div><p>$ \Rightarrow O(n)$</p>
-<p>I think this is good link for you to discover Z-function: <a href="https://cp-algorithms.com/string/z-function.html">https://cp-algorithms.com/string/z-function.html</a></p>
+</code></pre></div><p>$ \Rightarrow O(n)$<br>
+I think this is good link for you to discover Z-function: <a href="https://cp-algorithms.com/string/z-function.html">https://cp-algorithms.com/string/z-function.html</a></p>
 
   </article>
 </section>
