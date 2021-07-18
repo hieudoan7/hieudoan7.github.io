@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="hieudoan7">
+    <meta name="description" content="hieudoan7">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[web] SSL/TLS Certificate"/>
+<meta name="twitter:description" content="SSL/TLS Certificate Explanation 18/07/2021
+After spending a few days researching the SSL/TLS certificate, I want to take a note for myself and show what I have understood in this blog post. Leave a comment if you have any disagreements or concerns about this topic.
+I. What is SSL Certificate? First, SSL is the abbreviation of Secure Socket Layer and TLS is the abbreviation of Transport Layer Security which is the upgradation of SSL."/>
+
+    <meta property="og:title" content="[web] SSL/TLS Certificate" />
+<meta property="og:description" content="SSL/TLS Certificate Explanation 18/07/2021
+After spending a few days researching the SSL/TLS certificate, I want to take a note for myself and show what I have understood in this blog post. Leave a comment if you have any disagreements or concerns about this topic.
+I. What is SSL Certificate? First, SSL is the abbreviation of Secure Socket Layer and TLS is the abbreviation of Transport Layer Security which is the upgradation of SSL." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hieudoan7.github.io/be/ssl_cert/" />
+<meta property="article:published_time" content="2021-07-18T09:59:19+07:00" />
+<meta property="article:modified_time" content="2021-07-18T09:59:19+07:00" />
+
+
+    
+      <base href="https://hieudoan7.github.io/be/ssl_cert/">
+    
+    <title>
+  [web] SSL/TLS Certificate · hieudoan7
+</title>
+
+    
+      <link rel="canonical" href="https://hieudoan7.github.io/be/ssl_cert/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://hieudoan7.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.80.0" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://hieudoan7.github.io/">
+      hieudoan7
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/be/">Backend Career</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/english/">English</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/interview/">Interview</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/others/">Others</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>[web] SSL/TLS Certificate</h1>
+    </header>
+
+    <h1 id="ssltls-certificate-explanation">SSL/TLS Certificate Explanation</h1>
+<p>18/07/2021</p>
+<p>After spending a few days researching the SSL/TLS certificate, I want to take a note for myself and show what I have understood in this blog post. Leave a comment if you have any disagreements or concerns about this topic.</p>
+<h2 id="i-what-is-ssl-certificate">I. What is SSL Certificate?</h2>
+<p>First, SSL is the abbreviation of Secure Socket Layer and TLS is the abbreviation of Transport Layer Security which is the upgradation of SSL. In this post scope, we use the term SSL implying for both SSL/TLS.</p>
+<p>An SSL Certificate is a digital certificate that authenticates a website&rsquo;s identity and enables an encrypted connection. In addition, it&rsquo;s actually a trusted way to transmit website (server) &rsquo;s public key to client.</p>
+<h2 id="ii-what-is-ssl-certificate-used-for">II. What is SSL Certificate used for?</h2>
+<p>As we mentioned earlier, SSL Certificate use to prove whether the website we&rsquo;re trying to connect is trusted or not.</p>
+<h2 id="iii-how-does-ssl-certificate-work">III. How does SSL Certificate work?</h2>
+<p>An SSL certificate comprises 3 certificates: End Entity Cert, Intermediate Cert and Root Cert which is also known as the &lsquo;chain of trust&rsquo;.</p>
+<p>When the client connects to the server through HTTPS protocol, the first phase is SSL handshake and it&rsquo;s where the validation of certification occurs. The client says &ldquo;hello&rdquo; to the server, the server responses an SSL Cert for the client to validate, just imagine the server say: &ldquo;hey, this is my identity, check it before you accept to connect to me&rdquo;. How does the client validate the SSL Cert received from the server?
+This process takes place in the order from End Entity Cert to Root Cert, client will use the pubic key carried in the parent cert to validate the current cert except for the root cert because the root cert&rsquo;s parent doesn&rsquo;t exist. So the question is how the client validate the root cert to ensure this SSL Cert is trusted or more specific to ensure the website public key is signed by a trusted Certificate Authority (CA). The magic is the client store all the public keys (or something like that to allow it to validate the root cert) in their local machine. If the Root CA doesn&rsquo;t match any of the stored CAs, the client can decide to install itself or conclude the cert isn&rsquo;t valid.</p>
+<h2 id="iv-summary">IV. Summary</h2>
+<h2 id="references">References</h2>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=r1nJT63BFQ0&amp;t=616s">Hussein Video</a></li>
+<li><a href="https://security.stackexchange.com/questions/56389/ssl-certificate-framework-101-how-does-the-browser-actually-verify-the-validity?rq=1">security stackexchange question</a></li>
+<li><a href="https://www.keyfactor.com/blog/what-is-ssl/">blog keyfactor.com</a></li>
+</ol>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Become the BEST VERSION of YOU.</p>
+    
+    
+    
+    
+      
+      [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
+    
+  </section>
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>
