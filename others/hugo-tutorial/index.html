@@ -123,7 +123,7 @@ Về cơ bản, chúng ta host blog lên github sẽ tạo 2 repository
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              2 minutes read
+              3 minutes read
             </span>
           </div>
           
@@ -155,22 +155,24 @@ Về cơ bản, chúng ta host blog lên github sẽ tạo 2 repository
 </ul>
 </li>
 <li>Add nội dung bài post dưới phần toml header</li>
-<li>Chạy trên local host để check:   <!-- raw HTML omitted -->
+<li>Chạy trên local host để check:<br>
 <code>hugo server -w (--watch)</code></li>
-<li>Deploy qua <code>hieudoan7.github.io</code> để nó render lên web   <!-- raw HTML omitted -->
+<li>Deploy qua <code>hieudoan7.github.io</code> để nó render lên web
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo -d (--deploy) ../hieudoan7.github.io/
 </code></pre></div></li>
-<li>Push 2 repo lên github để host là được.   <!-- raw HTML omitted -->
-<code>git config --global user.name &quot;hieudoan7</code>  <!-- raw HTML omitted -->
-<code>git config --global user.gmail &quot;hieudoan190598@gmail.com&quot;</code>                <!-- raw HTML omitted -->
-<code>git config --list</code>                         <!-- raw HTML omitted -->
-Vào từng cái repo (trong 2 repo đã có file .git rồi nên ko cần dùng <code>git remote</code>)     <!-- raw HTML omitted -->
-<code>git add .</code>           <!-- raw HTML omitted -->
-<code>git commit -m &quot;comment for your commit&quot;</code>     <!-- raw HTML omitted -->
+<li>Push 2 repo lên github để host là được.<br>
+<code>git config --global user.name &quot;hieudoan7</code><br>
+<code>git config --global user.gmail &quot;hieudoan190598@gmail.com&quot;</code><br>
+<code>git config --list</code><br>
+Vào từng cái repo (trong 2 repo đã có file .git rồi nên ko cần dùng <code>git remote</code>)<br>
+<code>git add .</code><br>
+<code>git commit -m &quot;comment for your commit&quot;</code><br>
 <code>git push origin master</code></li>
 </ul>
 <h2 id="iii-add-comment-componet">III. Add comment componet</h2>
 <p><a href="https://portfolio.peter-baumgartner.net/2017/09/10/how-to-install-disqus-on-hugo/">awesome guide</a></p>
+<p>First, Every article use the single.html template to render page, so in order to add any components or header/footer or everything related to page view, you need to modify the <code>single.html</code> file which is located in <code>themes/hugo-coder/layout/_default/single.html</code>, notice that every other <code>single.html</code> will not be accepted.</p>
+<p>Second, you create a <code>disqus.html</code> file in <code>partials</code> folder which is basically a template for comment section and then attach it to the above <code>single.html</code> using valid syntax such as existing file.</p>
 <h2 id="iv-hugo-tips">IV. Hugo Tips</h2>
 <h3 id="1-insert-image-in-hugo-post">1. Insert Image in Hugo post</h3>
 <ul>
