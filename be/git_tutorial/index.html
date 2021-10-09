@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="hieudoan7">
+    <meta name="description" content="hieudoan7">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Basic Git Knowledge"/>
+<meta name="twitter:description" content="Doing the job of a developer, we work with Git on daily basic and sometime we just feel fine and go on with some basic git flow. Have you ran into a git problem and hesitate to make any further steps to fix it? I think Git problem is something we cannot avoid, so why don&rsquo;t we spend a little time to dive deeply into it? Let&rsquo;s get started. Before we can imagine on different scenarios, let&rsquo;s take a look at some basic stuff."/>
+
+    <meta property="og:title" content="Basic Git Knowledge" />
+<meta property="og:description" content="Doing the job of a developer, we work with Git on daily basic and sometime we just feel fine and go on with some basic git flow. Have you ran into a git problem and hesitate to make any further steps to fix it? I think Git problem is something we cannot avoid, so why don&rsquo;t we spend a little time to dive deeply into it? Let&rsquo;s get started. Before we can imagine on different scenarios, let&rsquo;s take a look at some basic stuff." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hieudoan7.github.io/be/git_tutorial/" />
+<meta property="article:published_time" content="2021-10-08T20:54:38+07:00" />
+<meta property="article:modified_time" content="2021-10-08T20:54:38+07:00" />
+
+
+    
+      <base href="https://hieudoan7.github.io/be/git_tutorial/">
+    
+    <title>
+  Basic Git Knowledge · hieudoan7
+</title>
+
+    
+      <link rel="canonical" href="https://hieudoan7.github.io/be/git_tutorial/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://hieudoan7.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.80.0" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://hieudoan7.github.io/">
+      hieudoan7
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/be/">Backend Career</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/english/">English</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/interview/">Interview</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/others/">Others</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Basic Git Knowledge</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2021-10-08T20:54:38&#43;07:00'>
+                October 08, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              5 minutes read
+            </span>
+          </div>
+          
+          
+        </div>
+      </header>
+
+      <div>
+        <p>Doing the job of a developer, we work with Git on daily basic and sometime we just feel fine and go on with some basic git flow. Have you ran into a git problem and hesitate to make any further steps to fix it? I think Git problem is something we cannot avoid, so why don&rsquo;t we spend a little time to dive deeply into it? Let&rsquo;s get started.
+Before we can imagine on different scenarios, let&rsquo;s take a look at some basic stuff.</p>
+<h1 id="i-git-basic">I. Git Basic</h1>
+<p>I would recommend you to read <a href="https://www.amazon.com/Pro-Git-Scott-Chacon-ebook/dp/B01ISNIKES/ref=sr_1_1?dchild=1&amp;keywords=pro+git&amp;qid=1633702152&amp;sr=8-1">this book</a> to get a good start on Git.</p>
+<p>Basically, Git repository is a directory which is using Git to keep track of the changes happening in this directory.
+To turn a normal directory into a Git repository, first you need to install git on your computer and then go into that directory, execute <code>git init</code>.</p>
+<h2 id="1-git-file">1. Git File</h2>
+<p>Every files resided in a Git repo has a status which is one of these:</p>
+<ul>
+<li>untracked (the file has been included since last snapshot)</li>
+<li>unmodified (the file stay the same as last snapshot)</li>
+<li>modified (the file has changed compare to last snapshot)</li>
+<li>staged (that change has been staged to be committed, commit make the changes permanent)</li>
+</ul>
+<p><em>(snapshot = commit)</em></p>
+<p><img src="https://hieudoan7.github.io/imgs/git_file_status.jpg" alt="git_file_status_not_found"></p>
+<h2 id="2-git-directory">2. Git Directory</h2>
+<p>With the status of file mentioned above, Git has 3 different directores for files to reside. If a file is untracked, it did&rsquo;t belong to Git repository (it just belongs to normal directory), so Git don&rsquo;t have room for these type of files.</p>
+<ul>
+<li>For modified files, they resides in <strong>Working Directory</strong></li>
+<li>For staged files, they reside in <strong>Staging Area</strong> (sometimes called Index)</li>
+<li>After being committed, these staged files will reside in <strong>.Git repository</strong> and become permanent (unmodified) in the Git repo, start a new life cycle.</li>
+</ul>
+<p><img src="https://hieudoan7.github.io/imgs/git_3_dirs.jpg" alt="git_3_dirs_not_found"></p>
+<h2 id="3-git-commit">3. Git Commit</h2>
+<p>Of course, commit is something only when it&rsquo;s in a Git directory.<br>
+All commits in a Git Repo will form a DAG (Directed Acyclic Graph) in which each node is a commit.<br>
+Every normal commit has 1 parent except for merge commit which has 2 parent.
+Example:</p>
+<p><img src="https://hieudoan7.github.io/imgs/git_commit_dag.jpg" alt="git_commit_dag_not_found"></p>
+<h1 id="ii-usage">II. Usage</h1>
+<p>After having a good git basic, let&rsquo;s dive into pratical use.
+I just take note in some of most confusing usage.</p>
+<h2 id="1-reset">1. Reset</h2>
+<p>First and foremost, Reset will lose your commit forever.<br>
+Recall that commit is a node of change in your whole DAG.</p>
+<p>There are 3 options when using <code>reset</code>: <strong>&ndash;soft</strong>, <strong>&ndash;mixed</strong>, <strong>&ndash;hard</strong>.</p>
+<p>Let&rsquo;s say our Git repo has this DAG:<br>
+C0 &lt;&ndash; C1 &lt;&ndash; C2 &lt;&ndash; C3</p>
+<p>Our HEAD is pointing to C3, if we operates <code>git reset C1</code>, out DAG will be regardless of which option we have chosen.<br>
+C0 &lt;&ndash; C1</p>
+<p>So the question: Did we lose the changes in node C2 and C3?</p>
+<p>Yeah, This question is where options come into the picture.
+It depends:</p>
+<ul>
+<li>If we chose <strong>&ndash;soft</strong>, these changes (C2&amp;C3) will still reside in <code>Staging Area (Index)</code></li>
+<li>If we chose <strong>&ndash;mixed</strong>, these changes (C2&amp;C3) will still reside in <code>Working Directory</code></li>
+<li>If we chose <strong>&ndash;hard</strong>, these changes (C2&amp;C3) will be gone
+forever</li>
+</ul>
+<p>One of the common applications of <code>git reset</code> beside actually reset, we can use it to squash last n commits into 1 commit. Just by performing 2 operations.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ git reset --soft HEAD~n
+$ git commit -m &#39;squash last n commits&#39;
+</code></pre></div><h2 id="2-merge">2. Merge</h2>
+<p>I think this is the most powerful and common git usage, don&rsquo;t we always use git merge in working?
+Let&rsquo;s say we are working on current branch (master) and we want to merge the merged branch (feature) to out master. Git firstly find the LCA (Lowest Common Ancestor) of 2 branch and perform:</p>
+<ul>
+<li>Fast-forward: If our HEAD (master) is LCA , Git just simply move the HEAD pointer to last commit of feature branch.<br>
+DAG: C0 &lt;&ndash; C1 (HEAD: master)<br>
+&ldquo;&mdash;&mdash;&mdash;&mdash;-&rdquo; \<br>
+&ldquo;&mdash;&mdash;&mdash;&mdash;&ndash;&rdquo; C2 &lt;&ndash; C3 (feature)</li>
+<li>3-way merge:
+Git will create an extra commit (merge-commit) which magically contains all changes from feature branch and put this commit ahead of 2 branch, move HEAD (master) to here, this commit is special because it has 2 parent</li>
+</ul>
+<p><img src="https://hieudoan7.github.io/imgs/git_commit_dag.jpg" alt="git_commit_dag_not_found"></p>
+<h3 id="notable-scenarios">Notable Scenarios</h3>
+<p>This is what happens after you merge an unwanted branch to current branch, it might because you&rsquo;ve resolved incorrectly.</p>
+<ul>
+<li>If you want your current branch to back to the before-merge snapshot, <code>Git reset to first parent</code> will help you. Notice that <code>Git reset</code> is a very dangerous operation, espcially if you already published your commit since other people may reply on that commit.</li>
+<li>If you want to reset to the middle of feature branch, you might end up losing all commits after LCA on master branch. Honestly, everything that you already committed won&rsquo;t be lost, I mean here is you don&rsquo;t have any pointer to keep track of these commit.</li>
+</ul>
+<p>Example<br>
+C0 &lt;&ndash; C1 &lt;&ndash; C3 &lt;&ndash;C5 (master)
+\          /
+C2 &lt;&ndash; C4 (feature)</p>
+<p>If you reset to C2 from master, there is no pointer to keep track of commit on old master branch, so you can&rsquo;t recall C3 and C5 commit anymore (from a naive perspective)</p>
+<p>I&rsquo;s worth noting here that you can also recall C3, C5 by reading <code>git reflog</code> (this is the log record the HEAD pointer movement), using <code>git reset HEAD@{n}</code>, this way you move the HEAD point back to C5 and start tracking master branch again.
+<a href="https://stackoverflow.com/questions/2221658/whats-the-difference-between-head-and-head-in-git">this answer might help, scroll down to ashish&rsquo;s answer</a>.</p>
+<p>&ndash;&gt; And just here, you can also realize that branch is nothing rather than a pointer in DAG, so create as much as you can, no worry.</p>
+<ul>
+<li>Re-doing a merged commit<br>
+If you can&rsquo;t use reset like mentioned above, you can do this trick to recreate all your changes from feature branch and merge it again. In case you already resolved correctly while merging feature branch, you can do like <a href="https://stackoverflow.com/questions/1078146/re-doing-a-reverted-merge-in-git">this, 2nd answer</a>. But in case you resolved incorrectly, there is noway git can know what is correct, so the only to mitigate this issue is, this is my idea.</li>
+</ul>
+<p>&ndash;&gt; From your feature branch, squash all commits into 1 commit (using git reset &amp;&amp; commit again), so now your feature branch has a totally different history (of course different commit hash) and when you merge again, git won&rsquo;t recognize anything.</p>
+<p>This post is the result of a lazy work of a depressed developer. So feel free to critisize.</p>
+
+      </div>
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://https-hieudoan7-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Become the BEST VERSION of YOU.</p>
+    
+    
+    
+    
+      
+      [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
+    
+  </section>
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

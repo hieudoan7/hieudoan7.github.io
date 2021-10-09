@@ -6,7 +6,16 @@
     <description>Recent content in Bes on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 18 Jul 2021 09:59:19 +0700</lastBuildDate><atom:link href="https://hieudoan7.github.io/be/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Oct 2021 20:54:38 +0700</lastBuildDate><atom:link href="https://hieudoan7.github.io/be/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basic Git Knowledge</title>
+      <link>https://hieudoan7.github.io/be/git_tutorial/</link>
+      <pubDate>Fri, 08 Oct 2021 20:54:38 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/be/git_tutorial/</guid>
+      <description>Doing the job of a developer, we work with Git on daily basic and sometime we just feel fine and go on with some basic git flow. Have you ran into a git problem and hesitate to make any further steps to fix it? I think Git problem is something we cannot avoid, so why don&amp;rsquo;t we spend a little time to dive deeply into it? Let&amp;rsquo;s get started. Before we can imagine on different scenarios, let&amp;rsquo;s take a look at some basic stuff.</description>
+    </item>
+    
     <item>
       <title>[web] SSL/TLS Certificate</title>
       <link>https://hieudoan7.github.io/be/ssl_cert/</link>
