@@ -115,7 +115,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              5 minutes read
+              6 minutes read
             </span>
           </div>
           
@@ -208,6 +208,9 @@ C2 &lt;&ndash; C4 (feature)</p>
 If you can&rsquo;t use reset like mentioned above, you can do this trick to recreate all your changes from feature branch and merge it again. In case you already resolved correctly while merging feature branch, you can do like <a href="https://stackoverflow.com/questions/1078146/re-doing-a-reverted-merge-in-git">this, 2nd answer</a>. But in case you resolved incorrectly, there is noway git can know what is correct, so the only to mitigate this issue is, this is my idea.</li>
 </ul>
 <p>&ndash;&gt; From your feature branch, squash all commits into 1 commit (using git reset &amp;&amp; commit again), so now your feature branch has a totally different history (of course different commit hash) and when you merge again, git won&rsquo;t recognize anything.</p>
+<h2 id="3-git-rebase">3. Git rebase</h2>
+<p>rebase is another way to integrate your changes to master branch, but it will change the history, so Rebase should only use on your local work.
+<a href="https://www.youtube.com/watch?v=Uszj_k0DGsg">This video timestamp 37:30</a></p>
 <p>This post is the result of a lazy work of a depressed developer. So feel free to critisize.</p>
 
       </div>
