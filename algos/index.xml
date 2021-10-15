@@ -78,7 +78,7 @@ for(int i=n-1; i&amp;gt;0; i--){ for(int j=1; j&amp;lt;=i; j++){ if (a[j] &amp;l
       
       <guid>https://hieudoan7.github.io/algos/subset_sum/</guid>
       <description>All You need to know about Subset Sum Problem 25/10/2019
-Bài toán:Cho 1 multiset $S = \{a_1, a_2, &amp;hellip;, a_n\}$, tìm 1 subset of $S$ thỏa điều kiện $P$.
+Bài toán: Cho 1 multiset $S = \{a_1, a_2, &amp;hellip;, a_n\}$, tìm 1 subset of $S$ thỏa điều kiện $P$.
 Naive Solution: $\rightarrow O(2^n * n)$
 Ta sinh tất cả các subset của $S$ $(O(2^n))$, sau đó duyệt qua từng subset $(O(n))$ để kiểm tra xem nó có thỏa điều kiện $P$ hay không.
 Nó thực sự là 1 bài toán NP-Complete nên ta chỉ có thể giải trong thời gian exponential.</description>
@@ -202,10 +202,9 @@ II. Ý tưởng: Gọi $distance[i]$ là đường đi ngắn nhất từ đỉn
       <pubDate>Sun, 07 Jul 2019 14:27:00 +0700</pubDate>
       
       <guid>https://hieudoan7.github.io/algos/z-function/</guid>
-      <description>String Processing 18/04/2019
+      <description>th, td { padding: 1.0rem; } table, th, td { border: 2px solid black; }  String Processing 18/04/2019
 Cho 2 xâu P (pattern) và S (string). Mộ số bài toán
- Tìm vị trí xuất hiện đầu tiên của P trong S Đếm số lần xuất hiện P trong S Cho S, tìm P ngắn nhất để repeat P nhiều lần ta được S &amp;hellip;  I. Z-function 1. Định nghĩa Z-function Cho xâu $S = s[0..n-1]$.
-Hàm $Z$ của xâu $S$ là dãy $z[0], z[1], &amp;hellip;, z[n-1]$ trong đó $z[i]$ là max (length) prefix của $s[i.</description>
+ Tìm vị trí xuất hiện đầu tiên của P trong S Đếm số lần xuất hiện P trong S Cho S, tìm P ngắn nhất để repeat P nhiều lần ta được S &amp;hellip;  I. Z-function 1.</description>
     </item>
     
     <item>

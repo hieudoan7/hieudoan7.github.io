@@ -115,7 +115,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              6 minutes read
+              5 minutes read
             </span>
           </div>
           
@@ -181,10 +181,14 @@ $ git commit -m &#39;squash last n commits&#39;
 <p>I think this is the most powerful and common git usage, don&rsquo;t we always use git merge in working?
 Let&rsquo;s say we are working on current branch (master) and we want to merge the merged branch (feature) to out master. Git firstly find the LCA (Lowest Common Ancestor) of 2 branch and perform:</p>
 <ul>
-<li>Fast-forward: If our HEAD (master) is LCA , Git just simply move the HEAD pointer to last commit of feature branch.<br>
-DAG: C0 &lt;&ndash; C1 (HEAD: master)<br>
-&ldquo;&mdash;&mdash;&mdash;&mdash;-&rdquo; \<br>
-&ldquo;&mdash;&mdash;&mdash;&mdash;&ndash;&rdquo; C2 &lt;&ndash; C3 (feature)</li>
+<li>Fast-forward: If our HEAD (master) is LCA , Git just simply move the HEAD pointer to last commit of feature branch.</li>
+</ul>
+<pre>
+DAG: C0 <-- C1 (HEAD: master)  
+              \
+               C2 <-- C3 (feature)
+</pre>
+<ul>
 <li>3-way merge:
 Git will create an extra commit (merge-commit) which magically contains all changes from feature branch and put this commit ahead of 2 branch, move HEAD (master) to here, this commit is special because it has 2 parent</li>
 </ul>
@@ -195,10 +199,12 @@ Git will create an extra commit (merge-commit) which magically contains all chan
 <li>If you want your current branch to back to the before-merge snapshot, <code>Git reset to first parent</code> will help you. Notice that <code>Git reset</code> is a very dangerous operation, espcially if you already published your commit since other people may reply on that commit.</li>
 <li>If you want to reset to the middle of feature branch, you might end up losing all commits after LCA on master branch. Honestly, everything that you already committed won&rsquo;t be lost, I mean here is you don&rsquo;t have any pointer to keep track of these commit.</li>
 </ul>
-<p>Example<br>
-C0 &lt;&ndash; C1 &lt;&ndash; C3 &lt;&ndash;C5 (master)
-\          /
-C2 &lt;&ndash; C4 (feature)</p>
+<pre>
+Example
+C0 <-- C1 <-- C3 <--C5 (master)  
+        \          /
+         C2 <-- C4 (feature)
+</pre>
 <p>If you reset to C2 from master, there is no pointer to keep track of commit on old master branch, so you can&rsquo;t recall C3 and C5 commit anymore (from a naive perspective)</p>
 <p>I&rsquo;s worth noting here that you can also recall C3, C5 by reading <code>git reflog</code> (this is the log record the HEAD pointer movement), using <code>git reset HEAD@{n}</code>, this way you move the HEAD point back to C5 and start tracking master branch again.
 <a href="https://stackoverflow.com/questions/2221658/whats-the-difference-between-head-and-head-in-git">this answer might help, scroll down to ashish&rsquo;s answer</a>.</p>

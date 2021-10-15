@@ -179,7 +179,7 @@ Chú ý một vài trick ở cài đặt:</p>
 <p>Vài nét về <code>priority_queue</code>:</p>
 <ul>
 <li><code>priority_queue&lt;int&gt; pq;</code> //mặc định sắp xếp tăng và top() queue sẽ là $max$.</li>
-<li>`priority_queue&lt;int, vector<!-- raw HTML omitted -->, greater<!-- raw HTML omitted -->&gt; pq;`` //sắp xếp giảm và top() queue là $min$.</li>
+<li>`priority_queue&lt;int, vector<int>, greater<int>&gt; pq;`` //sắp xếp giảm và top() queue là $min$.</li>
 <li>Có thể dùng <code>multiset&lt;int&gt; mset;</code> cùng 2 thao tác <code>insert</code>, <code>remove</code> như 1 <code>min_priority_queue</code> (as multiset default)</li>
 </ul>
 </li>
