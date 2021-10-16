@@ -152,12 +152,12 @@ fen[n+1]={0}</li>
 <li>Coi như ta đang update các phần tử của mảng, a[i] (i in [1..n]) và update vào fen[i] &amp; các parent of (i)<br>
 ** parent(i) = i+ (i&amp;-i)</li>
 </ul>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#fff;font-weight:bold">void</span> update (<span style="color:#fff;font-weight:bold">int</span> pos, <span style="color:#fff;font-weight:bold">int</span> val){
-      <span style="color:#fff;font-weight:bold">while</span>(pos&lt;=n){
-          fen[pos]+=val;
-          pos+= (pos&amp;-pos);
-      }
-  }
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>  <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">update</span> (<span style="color:#00688b;font-weight:bold">int</span> pos, <span style="color:#00688b;font-weight:bold">int</span> val){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>      <span style="color:#8b008b;font-weight:bold">while</span>(pos&lt;=n){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>          fen[pos]+=val;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>          pos+= (pos&amp;-pos);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>      }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>  }
 </code></pre></div><ul>
 <li>Bàn về update: Khi update a[i], ta phải update những <code>fen[j]</code> với range <code>(j-(j&amp;-j), j]</code> contains <code>i</code>
 Nghĩa là: <code>j = i + bit 1 (ở 1 vị trí nào đó)</code> đảm bảo biên phải luôn <code>&gt; i</code> \<br>
@@ -175,13 +175,13 @@ Thì j - (j&amp;-j) + 1 &gt; i cũng ko contains i, lượng thêm vào nó nhi�
 <p>Chú thích: <code>LSOne(i)</code> là giá trị bit 1 trái nhất của i. (Least Significant bit)<br>
 <strong>Củ chuối vl, đọc giải thích + implement trong Handbook ok hơn!!!</strong></p>
 <h3 id="2-get-prefix-sum">2. Get prefix sum</h3>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    <span style="color:#fff;font-weight:bold">int</span> sum (<span style="color:#fff;font-weight:bold">int</span> pos){ <span style="color:#007f7f">//sum all [1..pos]
-</span><span style="color:#007f7f"></span>        <span style="color:#fff;font-weight:bold">int</span> ans = <span style="color:#ff0;font-weight:bold">0</span>;
-        <span style="color:#fff;font-weight:bold">while</span>(pos &gt; <span style="color:#ff0;font-weight:bold">0</span>){
-            ans += fen[pos];
-            pos -= (pos&amp;-pos);
-        }
-    }
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>    <span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">sum</span> (<span style="color:#00688b;font-weight:bold">int</span> pos){ <span style="color:#228b22">//sum all [1..pos]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#228b22"></span>        <span style="color:#00688b;font-weight:bold">int</span> ans = <span style="color:#b452cd">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>        <span style="color:#8b008b;font-weight:bold">while</span>(pos &gt; <span style="color:#b452cd">0</span>){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>            ans += fen[pos];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>            pos -= (pos&amp;-pos);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>    }
 </code></pre></div><p>Từ đây ta có thể tính
 <code>sum(int l, int r) = sum(r) - sum(l-1)</code></p>
 

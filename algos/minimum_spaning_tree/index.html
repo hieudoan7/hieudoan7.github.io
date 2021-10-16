@@ -166,90 +166,90 @@ Ban đầu tất cả các đỉnh rời nhau. Lấy các cạnh theo thứ tự
 <h4 id="cài-đặt-tầm-thường">Cài đặt tầm thường:</h4>
 <p>$$\Rightarrow O(M\ log\ N + N^2)$$
 ($M\ log\ N \approx M\ log\ M$)</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">struct</span> Edge {
-    <span style="color:#fff;font-weight:bold">int</span> u, v, weight;
-    <span style="color:#fff;font-weight:bold">bool</span> <span style="color:#fff;font-weight:bold">operator</span>&lt;(Edge <span style="color:#fff;font-weight:bold">const</span>&amp; other) {
-        <span style="color:#fff;font-weight:bold">return</span> weight &lt; other.weight;
-    }
-};
-
-<span style="color:#fff;font-weight:bold">int</span> n;
-vector&lt;Edge&gt; edges;
-
-<span style="color:#fff;font-weight:bold">int</span> cost = <span style="color:#ff0;font-weight:bold">0</span>;
-vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; tree_id(n);
-vector&lt;Edge&gt; result;
-<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; n; i++)
-    tree_id[i] = i;
-
-sort(edges.begin(), edges.end());
-
-<span style="color:#fff;font-weight:bold">for</span> (Edge e : edges) {
-    <span style="color:#fff;font-weight:bold">if</span> (tree_id[e.u] != tree_id[e.v]) {
-        cost += e.weight;
-        result.push_back(e);
-
-        <span style="color:#fff;font-weight:bold">int</span> old_id = tree_id[e.u], new_id = tree_id[e.v];
-        <span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; n; i++) {
-            <span style="color:#fff;font-weight:bold">if</span> (tree_id[i] == old_id)
-                tree_id[i] = new_id;
-        }
-    }
-}
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#8b008b;font-weight:bold">struct</span> <span style="color:#008b45;font-weight:bold">Edge</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#00688b;font-weight:bold">int</span> u, v, weight;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#00688b;font-weight:bold">bool</span> <span style="color:#8b008b;font-weight:bold">operator</span>&lt;(Edge <span style="color:#8b008b;font-weight:bold">const</span>&amp; other) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>        <span style="color:#8b008b;font-weight:bold">return</span> weight &lt; other.weight;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#00688b;font-weight:bold">int</span> n;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>vector&lt;Edge&gt; edges;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#00688b;font-weight:bold">int</span> cost = <span style="color:#b452cd">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; tree_id(n);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>vector&lt;Edge&gt; result;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> i = <span style="color:#b452cd">0</span>; i &lt; n; i++)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    tree_id[i] = i;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>sort(edges.begin(), edges.end());
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#8b008b;font-weight:bold">for</span> (Edge e : edges) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    <span style="color:#8b008b;font-weight:bold">if</span> (tree_id[e.u] != tree_id[e.v]) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        cost += e.weight;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        result.push_back(e);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>        <span style="color:#00688b;font-weight:bold">int</span> old_id = tree_id[e.u], new_id = tree_id[e.v];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>        <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> i = <span style="color:#b452cd">0</span>; i &lt; n; i++) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>            <span style="color:#8b008b;font-weight:bold">if</span> (tree_id[i] == old_id)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>                tree_id[i] = new_id;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>}
 </code></pre></div><h3 id="cài-đặt-dùng-dsu-disjoint-set-union">Cài đặt dùng DSU (Disjoint Set Union)</h3>
 <p>$$\Rightarrow O(M\ log\ N + N + M) = O(M\ log\ N)$$</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; parent, rank; 
-<span style="color:#007f7f">//parent: leader (representative)
-</span><span style="color:#007f7f">//rank: height of tree
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> make_set(<span style="color:#fff;font-weight:bold">int</span> v) {
-    parent[v] = v;
-    rank[v] = <span style="color:#ff0;font-weight:bold">0</span>;
-}
-
-<span style="color:#fff;font-weight:bold">int</span> find_set(<span style="color:#fff;font-weight:bold">int</span> v) {
-    <span style="color:#fff;font-weight:bold">if</span> (v == parent[v])
-        <span style="color:#fff;font-weight:bold">return</span> v;
-    <span style="color:#fff;font-weight:bold">return</span> parent[v] = find_set(parent[v]);
-}
-
-<span style="color:#fff;font-weight:bold">void</span> union_sets(<span style="color:#fff;font-weight:bold">int</span> a, <span style="color:#fff;font-weight:bold">int</span> b) {
-    a = find_set(a);
-    b = find_set(b);
-    <span style="color:#fff;font-weight:bold">if</span> (a != b) {
-        <span style="color:#fff;font-weight:bold">if</span> (rank[a] &lt; rank[b])
-            swap(a, b);
-        parent[b] = a;
-        <span style="color:#fff;font-weight:bold">if</span> (rank[a] == rank[b])
-            rank[a]++;
-    }
-}
-
-<span style="color:#fff;font-weight:bold">struct</span> Edge {
-    <span style="color:#fff;font-weight:bold">int</span> u, v, weight;
-    <span style="color:#fff;font-weight:bold">bool</span> <span style="color:#fff;font-weight:bold">operator</span>&lt;(Edge <span style="color:#fff;font-weight:bold">const</span>&amp; other) {
-        <span style="color:#fff;font-weight:bold">return</span> weight &lt; other.weight;
-    }
-};
-
-<span style="color:#fff;font-weight:bold">int</span> n;
-vector&lt;Edge&gt; edges;
-
-<span style="color:#fff;font-weight:bold">int</span> cost = <span style="color:#ff0;font-weight:bold">0</span>;
-vector&lt;Edge&gt; result;
-parent.resize(n);
-rank.resize(n);
-<span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; n; i++)
-    make_set(i);
-
-sort(edges.begin(), edges.end());
-
-<span style="color:#fff;font-weight:bold">for</span> (Edge e : edges) {
-    <span style="color:#fff;font-weight:bold">if</span> (find_set(e.u) != find_set(e.v)) {
-        cost += e.weight;
-        result.push_back(e);
-        union_sets(e.u, e.v);
-    }
-}
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; parent, rank; 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#228b22">//parent: leader (representative)
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#228b22">//rank: height of tree
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">make_set</span>(<span style="color:#00688b;font-weight:bold">int</span> v) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    parent[v] = v;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    rank[v] = <span style="color:#b452cd">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">find_set</span>(<span style="color:#00688b;font-weight:bold">int</span> v) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#8b008b;font-weight:bold">if</span> (v == parent[v])
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        <span style="color:#8b008b;font-weight:bold">return</span> v;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    <span style="color:#8b008b;font-weight:bold">return</span> parent[v] = find_set(parent[v]);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">union_sets</span>(<span style="color:#00688b;font-weight:bold">int</span> a, <span style="color:#00688b;font-weight:bold">int</span> b) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    a = find_set(a);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    b = find_set(b);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    <span style="color:#8b008b;font-weight:bold">if</span> (a != b) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>        <span style="color:#8b008b;font-weight:bold">if</span> (rank[a] &lt; rank[b])
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>            swap(a, b);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        parent[b] = a;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        <span style="color:#8b008b;font-weight:bold">if</span> (rank[a] == rank[b])
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>            rank[a]++;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span style="color:#8b008b;font-weight:bold">struct</span> <span style="color:#008b45;font-weight:bold">Edge</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>    <span style="color:#00688b;font-weight:bold">int</span> u, v, weight;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    <span style="color:#00688b;font-weight:bold">bool</span> <span style="color:#8b008b;font-weight:bold">operator</span>&lt;(Edge <span style="color:#8b008b;font-weight:bold">const</span>&amp; other) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>        <span style="color:#8b008b;font-weight:bold">return</span> weight &lt; other.weight;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span style="color:#00688b;font-weight:bold">int</span> n;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>vector&lt;Edge&gt; edges;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span style="color:#00688b;font-weight:bold">int</span> cost = <span style="color:#b452cd">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>vector&lt;Edge&gt; result;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>parent.resize(n);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>rank.resize(n);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> i = <span style="color:#b452cd">0</span>; i &lt; n; i++)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>    make_set(i);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>sort(edges.begin(), edges.end());
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span style="color:#8b008b;font-weight:bold">for</span> (Edge e : edges) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>    <span style="color:#8b008b;font-weight:bold">if</span> (find_set(e.u) != find_set(e.v)) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>        cost += e.weight;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>        result.push_back(e);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>        union_sets(e.u, e.v);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>}
 </code></pre></div><p>Có thể dùng $size[]$ thay cho $rank[]$, more information: <a href="https://cp-algorithms.com/data_structures/disjoint_set_union.html">cp-algorithms</a></p>
 
       </div>

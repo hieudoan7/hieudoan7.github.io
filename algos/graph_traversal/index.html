@@ -15,14 +15,14 @@
 We discuss about the way we traverse a graph or a tree.
 Assuming we are using adjacent list to represent a graph.
 I. Depth-First Search (DFS) Idea: Đi sâu rồi quần lại.
-1. Implement vector&lt;int&gt; g[N]; //or vector&lt;vector&lt;int&gt;&gt; g; bool vis[N]; void dfs(int v){ //vertex  vis[v] = true; for(auto u:g[v]){ //always for u =))  if (!vis[u]) dfs(u); } } //in main for(int i=0; i&lt;n; i&#43;&#43;){ if (!"/>
+1. Implement 1vector&lt;int&gt; g[N]; //or vector&lt;vector&lt;int&gt;&gt; g; 2bool vis[N]; 3void dfs(int v){ //vertex 4 vis[v] = true; 5 for(auto u:g[v]){ //always for u =)) 6 if (!vis[u]) dfs(u); 7 } 8} 9//in main 10for(int i=0; i&lt;n; i&#43;&#43;){ 11 if (!"/>
 
     <meta property="og:title" content="Graph Traversal" />
 <meta property="og:description" content="Graph Traversal 12/09/2019
 We discuss about the way we traverse a graph or a tree.
 Assuming we are using adjacent list to represent a graph.
 I. Depth-First Search (DFS) Idea: Đi sâu rồi quần lại.
-1. Implement vector&lt;int&gt; g[N]; //or vector&lt;vector&lt;int&gt;&gt; g; bool vis[N]; void dfs(int v){ //vertex  vis[v] = true; for(auto u:g[v]){ //always for u =))  if (!vis[u]) dfs(u); } } //in main for(int i=0; i&lt;n; i&#43;&#43;){ if (!" />
+1. Implement 1vector&lt;int&gt; g[N]; //or vector&lt;vector&lt;int&gt;&gt; g; 2bool vis[N]; 3void dfs(int v){ //vertex 4 vis[v] = true; 5 for(auto u:g[v]){ //always for u =)) 6 if (!vis[u]) dfs(u); 7 } 8} 9//in main 10for(int i=0; i&lt;n; i&#43;&#43;){ 11 if (!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hieudoan7.github.io/algos/graph_traversal/" />
 <meta property="article:published_time" content="2019-09-12T20:25:41+07:00" />
@@ -123,7 +123,7 @@ I. Depth-First Search (DFS) Idea: Đi sâu rồi quần lại.
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              3 minutes read
+              4 minutes read
             </span>
           </div>
           
@@ -139,50 +139,50 @@ Assuming we are using adjacent list to represent a graph.</p>
 <h2 id="i-depth-first-search-dfs">I. Depth-First Search (DFS)</h2>
 <p>Idea: Đi sâu rồi quần lại.</p>
 <h3 id="1-implement">1. Implement</h3>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; g[N]; <span style="color:#007f7f">//or vector&lt;vector&lt;int&gt;&gt; g;
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">bool</span> vis[N];
-<span style="color:#fff;font-weight:bold">void</span> dfs(<span style="color:#fff;font-weight:bold">int</span> v){  <span style="color:#007f7f">//vertex
-</span><span style="color:#007f7f"></span>    vis[v] = <span style="color:#fff;font-weight:bold">true</span>;
-    <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">auto</span> u:g[v]){  <span style="color:#007f7f">//always for u =))
-</span><span style="color:#007f7f"></span>        <span style="color:#fff;font-weight:bold">if</span> (!vis[u]) dfs(u);
-    }
-}
-<span style="color:#007f7f">//in main
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;n; i++){
-    <span style="color:#fff;font-weight:bold">if</span> (!vis[i]) dfs(i);
-}
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; g[N]; <span style="color:#228b22">//or vector&lt;vector&lt;int&gt;&gt; g;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">bool</span> vis[N];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">dfs</span>(<span style="color:#00688b;font-weight:bold">int</span> v){  <span style="color:#228b22">//vertex
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#228b22"></span>    vis[v] = <span style="color:#658b00">true</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#8b008b;font-weight:bold">auto</span> u:g[v]){  <span style="color:#228b22">//always for u =))
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#228b22"></span>        <span style="color:#8b008b;font-weight:bold">if</span> (!vis[u]) dfs(u);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#228b22">//in main
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=<span style="color:#b452cd">0</span>; i&lt;n; i++){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#8b008b;font-weight:bold">if</span> (!vis[i]) dfs(i);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>}
 </code></pre></div><p><strong>Complexity</strong>: $$\Rightarrow O(V+E)$$.</p>
 <h3 id="2-application">2. Application</h3>
 <h4 id="21-connectivity-check-count-cc">2.1. Connectivity Check, Count #CC</h4>
 <p>Một đồ thị là connected nếu nó chỉ có 1 CC (connected component). So, giống như việc đếm số CC, nếu số CC &gt; 1 thì đồ thị là không kết nối.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    dfs(<span style="color:#ff0;font-weight:bold">0</span>);
-    <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;n; i++){
-        <span style="color:#fff;font-weight:bold">if</span> (!vis[i]) {
-            cout &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34;Unconnected Graph&#34;</span>;
-            <span style="color:#fff;font-weight:bold">return</span> <span style="color:#ff0;font-weight:bold">0</span>;
-        }
-    }
-    cout &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34;Connected Graph&#34;</span>;
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>    dfs(<span style="color:#b452cd">0</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>    <span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=<span style="color:#b452cd">0</span>; i&lt;n; i++){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>        <span style="color:#8b008b;font-weight:bold">if</span> (!vis[i]) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>            cout &lt;&lt; <span style="color:#cd5555">&#34;Unconnected Graph&#34;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>            <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#b452cd">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>    cout &lt;&lt; <span style="color:#cd5555">&#34;Connected Graph&#34;</span>;
 </code></pre></div><h4 id="22-finding-cycles">2.2. Finding Cycles</h4>
 <p>Nếu trong quá trình duyệt graph mà phát hiện một đỉnh đã visited mà không phải cha nó (theo chiều đang duyệt) thì chứng tỏ nó có cycle.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; g[N];
-<span style="color:#fff;font-weight:bold">bool</span> vis[N];
-<span style="color:#fff;font-weight:bold">bool</span> dfs(<span style="color:#fff;font-weight:bold">int</span> v, <span style="color:#fff;font-weight:bold">int</span> p = -<span style="color:#ff0;font-weight:bold">1</span>){
-    vis[v] = <span style="color:#fff;font-weight:bold">true</span>;
-    <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">auto</span> u:g[v]){
-        <span style="color:#fff;font-weight:bold">if</span> (!vis){
-            <span style="color:#fff;font-weight:bold">if</span> (dfs(u, v)) <span style="color:#fff;font-weight:bold">return</span> <span style="color:#fff;font-weight:bold">true</span>;
-        } <span style="color:#fff;font-weight:bold">else</span> {
-            <span style="color:#fff;font-weight:bold">if</span> (u != p) <span style="color:#fff;font-weight:bold">return</span> <span style="color:#fff;font-weight:bold">true</span>;
-        }
-    }
-    <span style="color:#fff;font-weight:bold">return</span> <span style="color:#fff;font-weight:bold">false</span>;
-}
-<span style="color:#007f7f">//in main
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;n; i++){
-    <span style="color:#fff;font-weight:bold">if</span> (!vis[i]) <span style="color:#fff;font-weight:bold">if</span>(dfs(i)) cout &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34;Cycle&#34;</span>, <span style="color:#fff;font-weight:bold">break</span>;
-}
-cout &lt;&lt; <span style="color:#0ff;font-weight:bold">&#34;No cycles&#34;</span>;
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; g[N];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#00688b;font-weight:bold">bool</span> vis[N];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#00688b;font-weight:bold">bool</span> <span style="color:#008b45">dfs</span>(<span style="color:#00688b;font-weight:bold">int</span> v, <span style="color:#00688b;font-weight:bold">int</span> p = -<span style="color:#b452cd">1</span>){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    vis[v] = <span style="color:#658b00">true</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#8b008b;font-weight:bold">auto</span> u:g[v]){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>        <span style="color:#8b008b;font-weight:bold">if</span> (!vis){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>            <span style="color:#8b008b;font-weight:bold">if</span> (dfs(u, v)) <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#658b00">true</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        } <span style="color:#8b008b;font-weight:bold">else</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>            <span style="color:#8b008b;font-weight:bold">if</span> (u != p) <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#658b00">true</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#658b00">false</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#228b22">//in main
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=<span style="color:#b452cd">0</span>; i&lt;n; i++){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    <span style="color:#8b008b;font-weight:bold">if</span> (!vis[i]) <span style="color:#8b008b;font-weight:bold">if</span>(dfs(i)) cout &lt;&lt; <span style="color:#cd5555">&#34;Cycle&#34;</span>, <span style="color:#8b008b;font-weight:bold">break</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>cout &lt;&lt; <span style="color:#cd5555">&#34;No cycles&#34;</span>;
 </code></pre></div><h4 id="23-bipartiteness-check">2.3. Bipartiteness Check</h4>
 <p>Có thể color graph với chỉ 2 màu?
 Ý tưởng: sơn nó màu Blue thì các đỉnh kề nó phải màu Red, cứ thế nếu phát hiện thằng nào đã sơn và cùng màu thì fail check.<br>
@@ -191,27 +191,27 @@ Thiết nghĩ nên tham khảo: <a href="https://cp-algorithms.com/graph/depth-f
 <p>Idea: Lan truyền theo chiều rộng
 Một điểm khác biệt của BFS vs DFS là nó có thể tìm <strong>đường đi ngắn nhất</strong> khi mà cost giữa tất cả các cạnh như nhau.</p>
 <h3 id="1-implement-1">1. Implement</h3>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">bool</span> vis[N];
-vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; g[N];
-<span style="color:#fff;font-weight:bold">void</span> bfs(<span style="color:#fff;font-weight:bold">int</span> s){  <span style="color:#007f7f">//start vertex
-</span><span style="color:#007f7f"></span>    queue&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; q;
-    vis[s] = <span style="color:#fff;font-weight:bold">true</span>;
-    q.push(s);
-    <span style="color:#fff;font-weight:bold">while</span>(!q.empty()){
-        <span style="color:#fff;font-weight:bold">int</span> v = q.front(); p.pop();  <span style="color:#007f7f">//vertex
-</span><span style="color:#007f7f"></span>        <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">auto</span> u: g[v]){  <span style="color:#007f7f">//always u in g[v]
-</span><span style="color:#007f7f"></span>            <span style="color:#fff;font-weight:bold">if</span> (!vis[u]){
-                vis[u] = <span style="color:#fff;font-weight:bold">true</span>;
-                q.push(u);
-            }
-        }
-    }
-}
-
-<span style="color:#007f7f">//in main
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;n; i++){
-    <span style="color:#fff;font-weight:bold">if</span> (!vis[i]) bfs(i);
-}
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#00688b;font-weight:bold">bool</span> vis[N];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; g[N];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">bfs</span>(<span style="color:#00688b;font-weight:bold">int</span> s){  <span style="color:#228b22">//start vertex
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#228b22"></span>    queue&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; q;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    vis[s] = <span style="color:#658b00">true</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    q.push(s);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#8b008b;font-weight:bold">while</span>(!q.empty()){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        <span style="color:#00688b;font-weight:bold">int</span> v = q.front(); p.pop();  <span style="color:#228b22">//vertex
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#228b22"></span>        <span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#8b008b;font-weight:bold">auto</span> u: g[v]){  <span style="color:#228b22">//always u in g[v]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#228b22"></span>            <span style="color:#8b008b;font-weight:bold">if</span> (!vis[u]){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>                vis[u] = <span style="color:#658b00">true</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>                q.push(u);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>            }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#228b22">//in main
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=<span style="color:#b452cd">0</span>; i&lt;n; i++){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    <span style="color:#8b008b;font-weight:bold">if</span> (!vis[i]) bfs(i);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>}
 </code></pre></div><p><strong>Complexity</strong>: $$\Rightarrow O(V+E)$$.</p>
 <h3 id="2-application-1">2. Application</h3>
 <h2 id="iii-why-bfs--dsf-has-complexity-ove">III. Why BFS &amp; DSF has complexity $O(V+E)$?</h2>
@@ -221,11 +221,11 @@ $O(V+E)$ thực chất là cộng vật lý luôn á. Nhưng mà trong asymtomic
 Xét đồ thị:</p>
 <p><img src="https://hieudoan7.github.io/imgs/dfs.jpg" alt="dfs"></p>
 <p>Khi lưu trong máy tính sẽ là mảng $g$ các vector.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">g[1] = {2, 4}  
-g[2] = {1, 3, 5}  
-g[3] = {2, 5}  
-g[4] = {1}  
-g[5] = {2, 3}  
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>g[1] = {2, 4}  
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>g[2] = {1, 3, 5}  
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>g[3] = {2, 5}  
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>g[4] = {1}  
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>g[5] = {2, 3}  
 </code></pre></div><p>Ta xét BFS, giả sử xuất phát ta gọi $\rightarrow$ BFS(1):<br>
 Duyệt qua tất cả 2 các phần tử trong g[1]: $2 = g[1].size()$<br>
 $\rightarrow$ BFS(2): duyệt qua 3 phần tử trong g[2]: $3 = g[2].size()$<br>

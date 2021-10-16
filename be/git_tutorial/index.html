@@ -175,8 +175,8 @@ It depends:</p>
 forever</li>
 </ul>
 <p>One of the common applications of <code>git reset</code> beside actually reset, we can use it to squash last n commits into 1 commit. Just by performing 2 operations.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ git reset --soft HEAD~n
-$ git commit -m &#39;squash last n commits&#39;
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ git reset --soft HEAD~n
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>$ git commit -m &#39;squash last n commits&#39;
 </code></pre></div><h2 id="2-merge">2. Merge</h2>
 <p>I think this is the most powerful and common git usage, don&rsquo;t we always use git merge in working?
 Let&rsquo;s say we are working on current branch (master) and we want to merge the merged branch (feature) to out master. Git firstly find the LCA (Lowest Common Ancestor) of 2 branch and perform:</p>

@@ -67,8 +67,8 @@ I. Các cấu trúc cây cơ bản 1. Binary Tree Mỗi node trong cây có tố
       <description>Sorting Algorithm 02/11/2019
 This post is going to give you some interesting algorithm ralating sorting elements.
 Problem Sorting an array $a$ consists of $n$ elements in increasing order.
-I. $O(n^2)$ Algorithm 1. Interchange Sort for(int i=0; i&amp;lt;n; i++){ for(int j=i+1; j&amp;lt;n; j++){ if (a[j] &amp;lt; a[i]) swap(a[j], a[i]); } } 2. Bubble Sort Từng phần tử nổi lên như bong bóng vậy đó.
-for(int i=n-1; i&amp;gt;0; i--){ for(int j=1; j&amp;lt;=i; j++){ if (a[j] &amp;lt; a[j-1]) swap(a[j], a[j-1]); } } Ngoài ra còn có Insertion Sort, Selection Sort, Shaker Sort.</description>
+I. $O(n^2)$ Algorithm 1. Interchange Sort 1for(int i=0; i&amp;lt;n; i++){ 2 for(int j=i+1; j&amp;lt;n; j++){ 3 if (a[j] &amp;lt; a[i]) swap(a[j], a[i]); 4 } 5} 2. Bubble Sort Từng phần tử nổi lên như bong bóng vậy đó.
+1for(int i=n-1; i&amp;gt;0; i--){ 2	for(int j=1; j&amp;lt;=i; j++){ 3	if (a[j] &amp;lt; a[j-1]) swap(a[j], a[j-1]); 4	} 5	} Ngoài ra còn có Insertion Sort, Selection Sort, Shaker Sort.</description>
     </item>
     
     <item>
@@ -94,7 +94,7 @@ Nó thực sự là 1 bài toán NP-Complete nên ta chỉ có thể giải tron
 We discuss about the way we traverse a graph or a tree.
 Assuming we are using adjacent list to represent a graph.
 I. Depth-First Search (DFS) Idea: Đi sâu rồi quần lại.
-1. Implement vector&amp;lt;int&amp;gt; g[N]; //or vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; g; bool vis[N]; void dfs(int v){ //vertex  vis[v] = true; for(auto u:g[v]){ //always for u =))  if (!vis[u]) dfs(u); } } //in main for(int i=0; i&amp;lt;n; i++){ if (!</description>
+1. Implement 1vector&amp;lt;int&amp;gt; g[N]; //or vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; g; 2bool vis[N]; 3void dfs(int v){ //vertex 4 vis[v] = true; 5 for(auto u:g[v]){ //always for u =)) 6 if (!vis[u]) dfs(u); 7 } 8} 9//in main 10for(int i=0; i&amp;lt;n; i++){ 11 if (!</description>
     </item>
     
     <item>
@@ -138,7 +138,7 @@ I. Definition Ta xét trong undirected graph.
       
       <guid>https://hieudoan7.github.io/algos/gcd_euclid/</guid>
       <description>Greatest Common Divisor using Euclidean Algorithm 11/07/2019
-I. Implementation typedef long long ll; ll gcd (ll a, ll b){ return b==0? a : gcd(b, a%b); //phải hỏi b==0? chứ b=0 thì làm sao a chia dư 0 được. } II. Interpretation Thuật toán Euclid tìm ước chung lớn nhất giữa 2 số $a, b$.
+I. Implementation 1typedef long long ll; 2ll gcd (ll a, ll b){ 3 return b==0? a : gcd(b, a%b); //phải hỏi b==0? chứ b=0 thì làm sao a chia dư 0 được. 4} II. Interpretation Thuật toán Euclid tìm ước chung lớn nhất giữa 2 số $a, b$.
 Không mất tính tổng quát, giả sử $a &amp;gt; b$.
 Nhìn hình, ta thấy, $gcd(a, b) = x$ khi và chỉ khi $x$ là ước của $a$, $x$ cũng là ước của $b$ và $x$ lớn nhất.</description>
     </item>
@@ -154,7 +154,7 @@ I. Bài toán: Cho chuỗi Text $T$ (length = $n$) và Pattern $P$ (length = $m$
 $\Rightarrow$ Naive Solution:
 Tại mỗi vị trí $i$ trong $T$, ta so sánh nó với $P$.
  code chơi thôi:
- int cnt = 0; for (int i = 0; i &amp;lt;= n-m; i++){ bool flag = false; for (int j = 0; j &amp;lt; m; j++){ if (P[j] == T[i+j]) continue; flag = true; break; } if (flag) cnt++; } $$\Rightarrow O(n*m) $$</description>
+ 1int cnt = 0; 2for (int i = 0; i &amp;lt;= n-m; i++){ 3 bool flag = false; 4 for (int j = 0; j &amp;lt; m; j++){ 5 if (P[j] == T[i+j]) continue; 6 flag = true; 7 break; 8 } 9 if (flag) cnt++; 10} $$\Rightarrow O(n*m) $$</description>
     </item>
     
     <item>

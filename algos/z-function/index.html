@@ -204,11 +204,11 @@ Ta sẽ có được hàm z</p>
 </ul>
 <h3 id="2-implement">2. Implement</h3>
 <h4 id="a-thuật-toán-bình-thường">a) Thuật toán bình thường</h4>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">z[i] = <span style="color:#ff0;font-weight:bold">0</span> <span style="color:#fff;font-weight:bold">for</span> all i
-<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">1</span>; i&lt;n; i++){
-    <span style="color:#fff;font-weight:bold">while</span>(i+z[i] &lt; n &amp;&amp; s[z[i]] == s[i+z[i]]) 
-        z[i]++;
-}
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>z[i] = <span style="color:#b452cd">0</span> <span style="color:#8b008b;font-weight:bold">for</span> all i
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=<span style="color:#b452cd">1</span>; i&lt;n; i++){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#8b008b;font-weight:bold">while</span>(i+z[i] &lt; n &amp;&amp; s[z[i]] == s[i+z[i]]) 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>        z[i]++;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>}
 </code></pre></div><p>$ \Rightarrow O(n^2)$</p>
 <h4 id="b-thuật-toán-cải-tiến">b) Thuật toán cải tiến</h4>
 <p><strong>Ý tưởng</strong>: Ta sẽ bám vào thằng xa nhất mà ta đã nhìn thấy.<br>
@@ -220,22 +220,22 @@ Từ thằng $right\_most$ ta sẽ xác định được điểm xuất phát c�
 <p>Có phải là đoạn $s[i..right\_most]$ nó hoàn toàn giống với đoạn $s[i-left..k-1]$ vì $z[left]
 = k$. Vì vậy ta sẽ tận dụng việc đoạn này đã được so sánh prefix với $s$ trước đó thông qua việc đi tính $z[i-left]$ trước đó.</p>
 <p>Đọc code sẽ rõ, nếu may mắn full cây (trùng cả đoạn) thì tăng lên so sánh tiếp, không thì được 1 khúc trùng với $z[i-left]$.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; z_func(string s){
-    <span style="color:#fff;font-weight:bold">int</span> n = s.length();
-    vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; z(n);
-    <span style="color:#fff;font-weight:bold">int</span> l = <span style="color:#ff0;font-weight:bold">0</span>, r = <span style="color:#ff0;font-weight:bold">0</span>;
-    <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">1</span>; i&lt;n; i++){
-        z[i] = max(<span style="color:#ff0;font-weight:bold">0</span>, min(z[i-l], r-i+<span style="color:#ff0;font-weight:bold">1</span>));
-        <span style="color:#fff;font-weight:bold">while</span>(i+z[i] &lt; n &amp;&amp; s[z[i]] == s[i+z[i]]) {
-            z[i]++;
-        }
-        <span style="color:#fff;font-weight:bold">if</span> (i+z[i]-<span style="color:#ff0;font-weight:bold">1</span> &gt; r) {
-            l = i;
-            r = i+z[i]-<span style="color:#ff0;font-weight:bold">1</span>;
-        }
-    }
-    <span style="color:#fff;font-weight:bold">return</span> z;
-}
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; z_func(string s){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#00688b;font-weight:bold">int</span> n = s.length();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; z(n);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#00688b;font-weight:bold">int</span> l = <span style="color:#b452cd">0</span>, r = <span style="color:#b452cd">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=<span style="color:#b452cd">1</span>; i&lt;n; i++){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>        z[i] = max(<span style="color:#b452cd">0</span>, min(z[i-l], r-i+<span style="color:#b452cd">1</span>));
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        <span style="color:#8b008b;font-weight:bold">while</span>(i+z[i] &lt; n &amp;&amp; s[z[i]] == s[i+z[i]]) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>            z[i]++;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        <span style="color:#8b008b;font-weight:bold">if</span> (i+z[i]-<span style="color:#b452cd">1</span> &gt; r) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>            l = i;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>            r = i+z[i]-<span style="color:#b452cd">1</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    <span style="color:#8b008b;font-weight:bold">return</span> z;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>}
 </code></pre></div><p>$ \Rightarrow O(n)$<br>
 I think this is good link for you to discover Z-function: <a href="https://cp-algorithms.com/string/z-function.html">https://cp-algorithms.com/string/z-function.html</a></p>
 

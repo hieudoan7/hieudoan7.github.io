@@ -6,7 +6,17 @@
     <description>Recent content in Englishes on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Sep 2021 17:17:30 +0700</lastBuildDate><atom:link href="https://hieudoan7.github.io/english/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Oct 2021 15:40:34 +0700</lastBuildDate><atom:link href="https://hieudoan7.github.io/english/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PartOfSpeech</title>
+      <link>https://hieudoan7.github.io/english/partofspeech/</link>
+      <pubDate>Fri, 15 Oct 2021 15:40:34 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/english/partofspeech/</guid>
+      <description>hello i&amp;rsquo;m testing golang snippet 1 2for i:=0; i&amp;lt;=5; i++ { 3 fmt.Println(i) 4} 
+1var s = &amp;#34;JavaScript syntax highlighting&amp;#34;; 2alert(s); 1s = &amp;#34;Python syntax highlighting&amp;#34; 2print s 1var i int = 10 2for j:=0; j&amp;lt;i; i++ { 3 fmt.Println(j) 4} 5func f() { /* ... */ } </description>
+    </item>
+    
     <item>
       <title>[Reading] 01 - 7 Incredible Resources of English Reading</title>
       <link>https://hieudoan7.github.io/english/reading_01/</link>

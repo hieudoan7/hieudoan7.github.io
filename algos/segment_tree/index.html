@@ -119,7 +119,7 @@ II. Cấu tạo chung của 1 segment tree Xét một array $a[n]$ (từ $0..n-1
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              4 minutes read
+              5 minutes read
             </span>
           </div>
           
@@ -149,61 +149,61 @@ Tree phải có $size = 4n$ vì như ta thấy với $n = 6$, thì nó cần t�
 $$ T = 2^0 + 2^1 + 2^2 + &hellip; + 2^m$$ với $ m = ceil\{log_2(n)\} \leq log_2(n) + 1$
 $$\Rightarrow T = 2^0 + 2^1 + &hellip; + 2^{log_2(n)+1} = 2^{log_2(n)+2}-1 \leq 4n $$</p>
 <h2 id="iii-cài-đặt-segment-tree-thuần-túy-có-lazy-propagation">III. Cài đặt Segment Tree thuần túy có Lazy Propagation.</h2>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#007f7f">//Khai báo dữ liệu
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> n, a[N];
-<span style="color:#fff;font-weight:bold">int</span> Tree[<span style="color:#ff0;font-weight:bold">4</span>*N], Lazy[<span style="color:#ff0;font-weight:bold">4</span>*N];
-<span style="color:#007f7f">//1. Hàm build cây từ a[n]
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> build(<span style="color:#fff;font-weight:bold">int</span> node, <span style="color:#fff;font-weight:bold">int</span> st, <span style="color:#fff;font-weight:bold">int</span> en) {
-    <span style="color:#fff;font-weight:bold">if</span> (st == en) {
-        Tree[node] = a[st];
-        <span style="color:#fff;font-weight:bold">return</span>;
-    }
-    build(<span style="color:#ff0;font-weight:bold">2</span>*node, st, (st+en)/<span style="color:#ff0;font-weight:bold">2</span>);
-    build(<span style="color:#ff0;font-weight:bold">2</span>*node+<span style="color:#ff0;font-weight:bold">1</span>, (st+en)/<span style="color:#ff0;font-weight:bold">2</span>+<span style="color:#ff0;font-weight:bold">1</span>, en);
-    Tree[node] = Tree[<span style="color:#ff0;font-weight:bold">2</span>*node] + Tree[<span style="color:#ff0;font-weight:bold">2</span>*node+<span style="color:#ff0;font-weight:bold">1</span>];
-}
-<span style="color:#007f7f">//2. Hàm get giá trị từ range [L..R]
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> get(<span style="color:#fff;font-weight:bold">int</span> node, <span style="color:#fff;font-weight:bold">int</span> st, <span style="color:#fff;font-weight:bold">int</span> en, <span style="color:#fff;font-weight:bold">int</span> L, <span style="color:#fff;font-weight:bold">int</span> R){
-    <span style="color:#007f7f">// Nếu node hiện hành chưa update thì update đi rồi tính tiếp
-</span><span style="color:#007f7f"></span>    <span style="color:#fff;font-weight:bold">if</span> (Lazy[node]){
-        Tree[node] += (en - st + <span style="color:#ff0;font-weight:bold">1</span>)*Lazy[node];
-        <span style="color:#fff;font-weight:bold">if</span> (st != en) {
-            Lazy[<span style="color:#ff0;font-weight:bold">2</span>*node] += Lazy[node];
-            Lazy[<span style="color:#ff0;font-weight:bold">2</span>*node+<span style="color:#ff0;font-weight:bold">1</span>] += Lazy[node];
-        }
-        Lazy[node] = <span style="color:#ff0;font-weight:bold">0</span>;
-    }
-    <span style="color:#007f7f">// 2 base case
-</span><span style="color:#007f7f"></span>    <span style="color:#fff;font-weight:bold">if</span> (en &lt; L || st &gt; R) <span style="color:#fff;font-weight:bold">return</span> <span style="color:#ff0;font-weight:bold">0</span>;
-    <span style="color:#fff;font-weight:bold">if</span> (st &gt;= L &amp;&amp; en &lt;= R) <span style="color:#fff;font-weight:bold">return</span> Tree[node];
-    <span style="color:#007f7f">//case partial intersection
-</span><span style="color:#007f7f"></span>    <span style="color:#fff;font-weight:bold">int</span> p1 = get(<span style="color:#ff0;font-weight:bold">2</span>*node, st, (st+en)/<span style="color:#ff0;font-weight:bold">2</span>, L, R);
-    <span style="color:#fff;font-weight:bold">int</span> p2 = get(<span style="color:#ff0;font-weight:bold">2</span>*node+<span style="color:#ff0;font-weight:bold">1</span>, (st+en)/<span style="color:#ff0;font-weight:bold">2</span>+<span style="color:#ff0;font-weight:bold">1</span>, en, L, R);
-    <span style="color:#fff;font-weight:bold">return</span> (p1+p2);
-}
-<span style="color:#007f7f">//3. Hàm update giá trị từ range [L..R] với value v
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">void</span> update(<span style="color:#fff;font-weight:bold">int</span> node, <span style="color:#fff;font-weight:bold">int</span> st, <span style="color:#fff;font-weight:bold">int</span> en, <span style="color:#fff;font-weight:bold">int</span> L, <span style="color:#fff;font-weight:bold">int</span> R, <span style="color:#fff;font-weight:bold">int</span> v){
-    <span style="color:#fff;font-weight:bold">if</span> (Lazy[node]) {
-        Tree[node] += (en - st + <span style="color:#ff0;font-weight:bold">1</span>)*Lazy[node];
-        <span style="color:#fff;font-weight:bold">if</span> (st != en) {
-            Lazy[<span style="color:#ff0;font-weight:bold">2</span>*node] += Lazy[node];
-            Lazy[<span style="color:#ff0;font-weight:bold">2</span>*node+<span style="color:#ff0;font-weight:bold">1</span>] += Lazy[node];
-        }
-        Lazy[node] = <span style="color:#ff0;font-weight:bold">0</span>;
-    }
-    <span style="color:#fff;font-weight:bold">if</span> (en &lt; L || st &gt; R) <span style="color:#fff;font-weight:bold">return</span>;
-    <span style="color:#fff;font-weight:bold">if</span> (st &gt;= L &amp;&amp; en &lt;= R) {
-        Tree[node] += (en - st + <span style="color:#ff0;font-weight:bold">1</span>)*v;
-        <span style="color:#fff;font-weight:bold">if</span> (st != en) {
-            Lazy[<span style="color:#ff0;font-weight:bold">2</span>*node] += v;
-            Lazy[<span style="color:#ff0;font-weight:bold">2</span>*node+<span style="color:#ff0;font-weight:bold">1</span>] += v;
-        }
-        <span style="color:#fff;font-weight:bold">return</span>;
-    }
-    update(<span style="color:#ff0;font-weight:bold">2</span>*node, st, (st+en)/<span style="color:#ff0;font-weight:bold">2</span>, L, R, v);
-    update(<span style="color:#ff0;font-weight:bold">2</span>*node+<span style="color:#ff0;font-weight:bold">1</span>, (st+en)/<span style="color:#ff0;font-weight:bold">2</span>+<span style="color:#ff0;font-weight:bold">1</span>, en, L, R, v);
-    Tree[node] = Tree[<span style="color:#ff0;font-weight:bold">2</span>*node] + Tree[<span style="color:#ff0;font-weight:bold">2</span>*node+<span style="color:#ff0;font-weight:bold">1</span>];
-}
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#228b22">//Khai báo dữ liệu
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">int</span> n, a[N];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#00688b;font-weight:bold">int</span> Tree[<span style="color:#b452cd">4</span>*N], Lazy[<span style="color:#b452cd">4</span>*N];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#228b22">//1. Hàm build cây từ a[n]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">build</span>(<span style="color:#00688b;font-weight:bold">int</span> node, <span style="color:#00688b;font-weight:bold">int</span> st, <span style="color:#00688b;font-weight:bold">int</span> en) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#8b008b;font-weight:bold">if</span> (st == en) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        Tree[node] = a[st];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        <span style="color:#8b008b;font-weight:bold">return</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    build(<span style="color:#b452cd">2</span>*node, st, (st+en)/<span style="color:#b452cd">2</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    build(<span style="color:#b452cd">2</span>*node+<span style="color:#b452cd">1</span>, (st+en)/<span style="color:#b452cd">2</span>+<span style="color:#b452cd">1</span>, en);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    Tree[node] = Tree[<span style="color:#b452cd">2</span>*node] + Tree[<span style="color:#b452cd">2</span>*node+<span style="color:#b452cd">1</span>];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#228b22">//2. Hàm get giá trị từ range [L..R]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">get</span>(<span style="color:#00688b;font-weight:bold">int</span> node, <span style="color:#00688b;font-weight:bold">int</span> st, <span style="color:#00688b;font-weight:bold">int</span> en, <span style="color:#00688b;font-weight:bold">int</span> L, <span style="color:#00688b;font-weight:bold">int</span> R){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    <span style="color:#228b22">// Nếu node hiện hành chưa update thì update đi rồi tính tiếp
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">if</span> (Lazy[node]){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>        Tree[node] += (en - st + <span style="color:#b452cd">1</span>)*Lazy[node];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>        <span style="color:#8b008b;font-weight:bold">if</span> (st != en) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>            Lazy[<span style="color:#b452cd">2</span>*node] += Lazy[node];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>            Lazy[<span style="color:#b452cd">2</span>*node+<span style="color:#b452cd">1</span>] += Lazy[node];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        Lazy[node] = <span style="color:#b452cd">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>    <span style="color:#228b22">// 2 base case
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">if</span> (en &lt; L || st &gt; R) <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#b452cd">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>    <span style="color:#8b008b;font-weight:bold">if</span> (st &gt;= L &amp;&amp; en &lt;= R) <span style="color:#8b008b;font-weight:bold">return</span> Tree[node];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>    <span style="color:#228b22">//case partial intersection
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span style="color:#228b22"></span>    <span style="color:#00688b;font-weight:bold">int</span> p1 = get(<span style="color:#b452cd">2</span>*node, st, (st+en)/<span style="color:#b452cd">2</span>, L, R);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>    <span style="color:#00688b;font-weight:bold">int</span> p2 = get(<span style="color:#b452cd">2</span>*node+<span style="color:#b452cd">1</span>, (st+en)/<span style="color:#b452cd">2</span>+<span style="color:#b452cd">1</span>, en, L, R);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>    <span style="color:#8b008b;font-weight:bold">return</span> (p1+p2);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span style="color:#228b22">//3. Hàm update giá trị từ range [L..R] với value v
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">update</span>(<span style="color:#00688b;font-weight:bold">int</span> node, <span style="color:#00688b;font-weight:bold">int</span> st, <span style="color:#00688b;font-weight:bold">int</span> en, <span style="color:#00688b;font-weight:bold">int</span> L, <span style="color:#00688b;font-weight:bold">int</span> R, <span style="color:#00688b;font-weight:bold">int</span> v){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>    <span style="color:#8b008b;font-weight:bold">if</span> (Lazy[node]) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>        Tree[node] += (en - st + <span style="color:#b452cd">1</span>)*Lazy[node];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>        <span style="color:#8b008b;font-weight:bold">if</span> (st != en) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>            Lazy[<span style="color:#b452cd">2</span>*node] += Lazy[node];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>            Lazy[<span style="color:#b452cd">2</span>*node+<span style="color:#b452cd">1</span>] += Lazy[node];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>        Lazy[node] = <span style="color:#b452cd">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>    <span style="color:#8b008b;font-weight:bold">if</span> (en &lt; L || st &gt; R) <span style="color:#8b008b;font-weight:bold">return</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>    <span style="color:#8b008b;font-weight:bold">if</span> (st &gt;= L &amp;&amp; en &lt;= R) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>        Tree[node] += (en - st + <span style="color:#b452cd">1</span>)*v;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>        <span style="color:#8b008b;font-weight:bold">if</span> (st != en) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>            Lazy[<span style="color:#b452cd">2</span>*node] += v;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>            Lazy[<span style="color:#b452cd">2</span>*node+<span style="color:#b452cd">1</span>] += v;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>        <span style="color:#8b008b;font-weight:bold">return</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>    update(<span style="color:#b452cd">2</span>*node, st, (st+en)/<span style="color:#b452cd">2</span>, L, R, v);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>    update(<span style="color:#b452cd">2</span>*node+<span style="color:#b452cd">1</span>, (st+en)/<span style="color:#b452cd">2</span>+<span style="color:#b452cd">1</span>, en, L, R, v);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>    Tree[node] = Tree[<span style="color:#b452cd">2</span>*node] + Tree[<span style="color:#b452cd">2</span>*node+<span style="color:#b452cd">1</span>];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>}
 </code></pre></div><p><strong>Lưu ý</strong></p>
 <ul>
 <li>
@@ -228,27 +228,27 @@ $$\Rightarrow T = 2^0 + 2^1 + &hellip; + 2^{log_2(n)+1} = 2^{log_2(n)+2}-1 \leq 
 </ul>
 <p>Cài đặt: Thay vì build từ root đến lá như segment tree thuần túy ta sẽ build từ lá đến gốc, vẫn với size bất kì $n$.<br>
 Các node từ $n$ đến $2n-1$ là các node lá chứa các phần tử $a[0]$ đến $a[n-1]$ của mảng $a$. Từ đó đi lên node cha nó là nó/2 và node 1 luôn là root.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">int</span> n, a[N];
-<span style="color:#fff;font-weight:bold">int</span> Tree[<span style="color:#ff0;font-weight:bold">2</span>*N]; <span style="color:#007f7f">//only need 2n (n nhỏ thôi)
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> get(<span style="color:#fff;font-weight:bold">int</span> L, <span style="color:#fff;font-weight:bold">int</span> R){
-    <span style="color:#fff;font-weight:bold">int</span> res = <span style="color:#ff0;font-weight:bold">0</span>;
-    L += n; R += n;
-    <span style="color:#fff;font-weight:bold">while</span>(L&lt;=R){
-        <span style="color:#fff;font-weight:bold">if</span> (L&amp;<span style="color:#ff0;font-weight:bold">1</span>) res += Tree[L++];
-        <span style="color:#fff;font-weight:bold">if</span> (R&amp;<span style="color:#ff0;font-weight:bold">1</span>==<span style="color:#ff0;font-weight:bold">0</span>) res += Tree[R--];
-        L /= <span style="color:#ff0;font-weight:bold">2</span>; R /= <span style="color:#ff0;font-weight:bold">2</span>;
-    }
-    <span style="color:#fff;font-weight:bold">return</span> res;
-}
-<span style="color:#fff;font-weight:bold">int</span> update(<span style="color:#fff;font-weight:bold">int</span> pos, <span style="color:#fff;font-weight:bold">int</span> v){
-    pos += n;
-    Tree[pos] += v;
-    <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> k=pos/<span style="color:#ff0;font-weight:bold">2</span>; k&gt;=<span style="color:#ff0;font-weight:bold">1</span>; k/=<span style="color:#ff0;font-weight:bold">2</span>){
-        Tree[k] = Tree[<span style="color:#ff0;font-weight:bold">2</span>*k] + Tree[<span style="color:#ff0;font-weight:bold">2</span>*k+<span style="color:#ff0;font-weight:bold">1</span>];
-    }
-}
-<span style="color:#007f7f">//build 1 tree
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;n; i++) update(i, a[i]);
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#00688b;font-weight:bold">int</span> n, a[N];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#00688b;font-weight:bold">int</span> Tree[<span style="color:#b452cd">2</span>*N]; <span style="color:#228b22">//only need 2n (n nhỏ thôi)
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">get</span>(<span style="color:#00688b;font-weight:bold">int</span> L, <span style="color:#00688b;font-weight:bold">int</span> R){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#00688b;font-weight:bold">int</span> res = <span style="color:#b452cd">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    L += n; R += n;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#8b008b;font-weight:bold">while</span>(L&lt;=R){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        <span style="color:#8b008b;font-weight:bold">if</span> (L&amp;<span style="color:#b452cd">1</span>) res += Tree[L++];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        <span style="color:#8b008b;font-weight:bold">if</span> (R&amp;<span style="color:#b452cd">1</span>==<span style="color:#b452cd">0</span>) res += Tree[R--];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>        L /= <span style="color:#b452cd">2</span>; R /= <span style="color:#b452cd">2</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#8b008b;font-weight:bold">return</span> res;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">update</span>(<span style="color:#00688b;font-weight:bold">int</span> pos, <span style="color:#00688b;font-weight:bold">int</span> v){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    pos += n;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    Tree[pos] += v;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    <span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> k=pos/<span style="color:#b452cd">2</span>; k&gt;=<span style="color:#b452cd">1</span>; k/=<span style="color:#b452cd">2</span>){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>        Tree[k] = Tree[<span style="color:#b452cd">2</span>*k] + Tree[<span style="color:#b452cd">2</span>*k+<span style="color:#b452cd">1</span>];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="color:#228b22">//build 1 tree
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=<span style="color:#b452cd">0</span>; i&lt;n; i++) update(i, a[i]);
 </code></pre></div><p><strong>Lưu ý cài đặt</strong></p>
 <ul>
 <li>Node con trái luôn là vị trí chẵn, Node con phải luôn là vị trí lẻ.

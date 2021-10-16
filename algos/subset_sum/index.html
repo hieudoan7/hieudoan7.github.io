@@ -154,23 +154,23 @@ Base case: (Vẽ bảng ra cho rõ)</p>
 <li>$dp(i, 0) = 0\ \ \ \forall 1\leq i \leq n$</li>
 </ul>
 <p><u>Implementation:</u></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#007f7f">//top-down approach
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> n, W, w[N], v[N];
-<span style="color:#fff;font-weight:bold">int</span> mem[N][W]; <span style="color:#007f7f">//memset(mem, -1, sizeof mem);
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> dp(<span style="color:#fff;font-weight:bold">int</span> n, <span style="color:#fff;font-weight:bold">int</span> W){
-    <span style="color:#fff;font-weight:bold">if</span> (W &lt;= <span style="color:#ff0;font-weight:bold">0</span> || n == <span style="color:#ff0;font-weight:bold">0</span>) <span style="color:#fff;font-weight:bold">return</span> <span style="color:#ff0;font-weight:bold">0</span>;
-    <span style="color:#fff;font-weight:bold">int</span> &amp;res(mem[n][W]);
-    <span style="color:#fff;font-weight:bold">if</span> (res != -<span style="color:#ff0;font-weight:bold">1</span>) <span style="color:#fff;font-weight:bold">return</span> res;
-    <span style="color:#fff;font-weight:bold">return</span> res = max(dp(n-<span style="color:#ff0;font-weight:bold">1</span>, W), v[n]+dp(n-<span style="color:#ff0;font-weight:bold">1</span>, W - w[n]));
-}
-
-<span style="color:#007f7f">//bottom-up approach
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> dp[N][W]; <span style="color:#007f7f">//full 0
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">1</span>; i&lt;=n; i++) {
-    <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> j=<span style="color:#ff0;font-weight:bold">1</span>; j&lt;=W; j++) {
-        dp[i][j] = max(dp[i-<span style="color:#ff0;font-weight:bold">1</span>][j], v[i]+dp[i-<span style="color:#ff0;font-weight:bold">1</span>][j-w[i]});
-    }
-}
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#228b22">//top-down approach
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">int</span> n, W, w[N], v[N];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#00688b;font-weight:bold">int</span> mem[N][W]; <span style="color:#228b22">//memset(mem, -1, sizeof mem);
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">dp</span>(<span style="color:#00688b;font-weight:bold">int</span> n, <span style="color:#00688b;font-weight:bold">int</span> W){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#8b008b;font-weight:bold">if</span> (W &lt;= <span style="color:#b452cd">0</span> || n == <span style="color:#b452cd">0</span>) <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#b452cd">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#00688b;font-weight:bold">int</span> &amp;res(mem[n][W]);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#8b008b;font-weight:bold">if</span> (res != -<span style="color:#b452cd">1</span>) <span style="color:#8b008b;font-weight:bold">return</span> res;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#8b008b;font-weight:bold">return</span> res = max(dp(n-<span style="color:#b452cd">1</span>, W), v[n]+dp(n-<span style="color:#b452cd">1</span>, W - w[n]));
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#228b22">//bottom-up approach
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">int</span> dp[N][W]; <span style="color:#228b22">//full 0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=<span style="color:#b452cd">1</span>; i&lt;=n; i++) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    <span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> j=<span style="color:#b452cd">1</span>; j&lt;=W; j++) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>        dp[i][j] = max(dp[i-<span style="color:#b452cd">1</span>][j], v[i]+dp[i-<span style="color:#b452cd">1</span>][j-w[i]});
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>}
 </code></pre></div><p>Complexity: $$\rightarrow O(nW)$$
 Note: Guessing? Is the last element was taken or not? :v</p>
 <h2 id="2-existence-of-a-subset-equal-to-given-sum">2. Existence of a subset Equal to given Sum</h2>
@@ -184,16 +184,16 @@ Rõ ràng:<br>
 $$dp(i, j) = dp(i-1, j-a[i])\ |\ dp(i-1, j)$$
 base case: $dp(i, 0) = true \ \ \ \forall 1\leq i\leq n$</p>
 <p><u>Implementation</u></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">int</span> dp[N][SUM]; <span style="color:#007f7f">//int ms bitwise or duoc
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;=n; i++) dp[i][<span style="color:#ff0;font-weight:bold">0</span>] = <span style="color:#fff;font-weight:bold">true</span>;
-<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">1</span>; i&lt;=n; i++){
-    <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> j=<span style="color:#ff0;font-weight:bold">0</span>; j&lt;=SUM; j++){
-        dp[i][j] = dp[i-<span style="color:#ff0;font-weight:bold">1</span>][j];
-        <span style="color:#fff;font-weight:bold">if</span> (j-a[i]&gt;=<span style="color:#ff0;font-weight:bold">0</span>) dp[i][j] |= dp[i-<span style="color:#ff0;font-weight:bold">1</span>][j-a[i]];
-    }
-}
-<span style="color:#fff;font-weight:bold">bool</span> ans = dp[n][SUM];
-<span style="color:#007f7f">//Link Submission: https://practice.geeksforgeeks.org/problems/subset-sum-problem/0
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#00688b;font-weight:bold">int</span> dp[N][SUM]; <span style="color:#228b22">//int ms bitwise or duoc
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=<span style="color:#b452cd">0</span>; i&lt;=n; i++) dp[i][<span style="color:#b452cd">0</span>] = <span style="color:#658b00">true</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=<span style="color:#b452cd">1</span>; i&lt;=n; i++){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> j=<span style="color:#b452cd">0</span>; j&lt;=SUM; j++){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        dp[i][j] = dp[i-<span style="color:#b452cd">1</span>][j];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>        <span style="color:#8b008b;font-weight:bold">if</span> (j-a[i]&gt;=<span style="color:#b452cd">0</span>) dp[i][j] |= dp[i-<span style="color:#b452cd">1</span>][j-a[i]];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#00688b;font-weight:bold">bool</span> ans = dp[n][SUM];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#228b22">//Link Submission: https://practice.geeksforgeeks.org/problems/subset-sum-problem/0
 </span></code></pre></div><p>$\rightarrow$ Bài toán có thể modify thành bài toán kiểm tra sự tồn tại của subset equal 0 với set gồm các phần tử không cần phải non-negative.</p>
 <h3 id="21-parition-problem">2.1. Parition Problem</h3>
 <p><u>Bài toán</u>:<br>
@@ -202,28 +202,28 @@ Cho 1 multiset of integers $S$, the task is divide it into $2$ set $S1$ and $S2$
 <u>Solution</u><br>
 Dùng DP như trên, chỉ khác ở bước kết quả, ta duyệt từ mid về trước để tìm cái $dp[n][i] = true$ đầu tiên thôi.<br>
 <u>Implementation</u></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">int</span> n, a[N], sum = <span style="color:#ff0;font-weight:bold">0</span>;
-<span style="color:#fff;font-weight:bold">int</span> all_sum;
-<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">1</span>; i&lt;=n; i++) sum += [i];
-all_sum = sum;
-sum /= <span style="color:#ff0;font-weight:bold">2</span>;
-vector&lt;vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt;&gt; dp(n+<span style="color:#ff0;font-weight:bold">1</span>, vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt;(sum+<span style="color:#ff0;font-weight:bold">1</span>, <span style="color:#ff0;font-weight:bold">0</span>));
-<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;=n; i++) dp[i][<span style="color:#ff0;font-weight:bold">0</span>] = <span style="color:#ff0;font-weight:bold">1</span>; <span style="color:#007f7f">//empty set
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">1</span>; i&lt;=n; i++){
-    <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> j=<span style="color:#ff0;font-weight:bold">0</span>; j&lt;=sum; j++){
-        dp[i][j] = dp[i-<span style="color:#ff0;font-weight:bold">1</span>][j];
-        <span style="color:#fff;font-weight:bold">if</span> (j-a[i]&gt;=<span style="color:#ff0;font-weight:bold">0</span>) dp[i][j] |= dp[i-<span style="color:#ff0;font-weight:bold">1</span>][j-a[i]];
-    }
-}
-<span style="color:#fff;font-weight:bold">int</span> ans;
-<span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=sum; ; i--){
-    <span style="color:#fff;font-weight:bold">if</span> (dp[n][i] == <span style="color:#fff;font-weight:bold">true</span>){
-        ans = all_sum - i - i;
-        <span style="color:#fff;font-weight:bold">break</span>;
-    }
-}
-cout &lt;&lt; ans &lt;&lt; endl;
-<span style="color:#007f7f">//Link submission: https://practice.geeksforgeeks.org/problems/minimum-sum-partition/0
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#00688b;font-weight:bold">int</span> n, a[N], sum = <span style="color:#b452cd">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#00688b;font-weight:bold">int</span> all_sum;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=<span style="color:#b452cd">1</span>; i&lt;=n; i++) sum += [i];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>all_sum = sum;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>sum /= <span style="color:#b452cd">2</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>vector&lt;vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt;&gt; dp(n+<span style="color:#b452cd">1</span>, vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt;(sum+<span style="color:#b452cd">1</span>, <span style="color:#b452cd">0</span>));
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=<span style="color:#b452cd">0</span>; i&lt;=n; i++) dp[i][<span style="color:#b452cd">0</span>] = <span style="color:#b452cd">1</span>; <span style="color:#228b22">//empty set
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=<span style="color:#b452cd">1</span>; i&lt;=n; i++){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> j=<span style="color:#b452cd">0</span>; j&lt;=sum; j++){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        dp[i][j] = dp[i-<span style="color:#b452cd">1</span>][j];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        <span style="color:#8b008b;font-weight:bold">if</span> (j-a[i]&gt;=<span style="color:#b452cd">0</span>) dp[i][j] |= dp[i-<span style="color:#b452cd">1</span>][j-a[i]];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#00688b;font-weight:bold">int</span> ans;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=sum; ; i--){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    <span style="color:#8b008b;font-weight:bold">if</span> (dp[n][i] == <span style="color:#658b00">true</span>){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>        ans = all_sum - i - i;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>        <span style="color:#8b008b;font-weight:bold">break</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>cout &lt;&lt; ans &lt;&lt; endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="color:#228b22">//Link submission: https://practice.geeksforgeeks.org/problems/minimum-sum-partition/0
 </span></code></pre></div>
       </div>
 

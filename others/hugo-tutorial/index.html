@@ -11,15 +11,13 @@
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugo Tutorial"/>
-<meta name="twitter:description" content="Hugo Tutorial 18.06.2019
-I. Install Hugo &amp; Setup Theme 2 best tutorial about hugo
+<meta name="twitter:description" content="I. Install Hugo &amp; Setup Theme 2 best tutorial about hugo
 part 1 part 2
 Về cơ bản, chúng ta host blog lên github sẽ tạo 2 repository
  Repo 1: hieudoan7: chứa các file config của hugo, content, nói chung tất tần tật. Repo 2: hieudoan7.github.io: repo này chứa file html để render lên web  Chú ý: dateformat trong file config.toml (ở thư mục gốc, thư mục mà ta có thể sử dụng hugo command) phải để ở ngày 2."/>
 
     <meta property="og:title" content="Hugo Tutorial" />
-<meta property="og:description" content="Hugo Tutorial 18.06.2019
-I. Install Hugo &amp; Setup Theme 2 best tutorial about hugo
+<meta property="og:description" content="I. Install Hugo &amp; Setup Theme 2 best tutorial about hugo
 part 1 part 2
 Về cơ bản, chúng ta host blog lên github sẽ tạo 2 repository
  Repo 1: hieudoan7: chứa các file config của hugo, content, nói chung tất tần tật. Repo 2: hieudoan7.github.io: repo này chứa file html để render lên web  Chú ý: dateformat trong file config.toml (ở thư mục gốc, thư mục mà ta có thể sử dụng hugo command) phải để ở ngày 2." />
@@ -132,9 +130,7 @@ Về cơ bản, chúng ta host blog lên github sẽ tạo 2 repository
       </header>
 
       <div>
-        <h1 id="hugo-tutorial">Hugo Tutorial</h1>
-<p>18.06.2019</p>
-<h2 id="i-install-hugo--setup-theme">I. Install Hugo &amp; Setup Theme</h2>
+        <h2 id="i-install-hugo--setup-theme">I. Install Hugo &amp; Setup Theme</h2>
 <p>2 best tutorial about hugo</p>
 <p><a href="https://www.youtube.com/watch?v=oUjk6wpJn7I">part 1</a><br/>
 <a href="https://www.youtube.com/watch?v=4W9sVoVYMLo">part 2</a></p>
@@ -158,7 +154,7 @@ Về cơ bản, chúng ta host blog lên github sẽ tạo 2 repository
 <li>Chạy trên local host để check:<br>
 <code>hugo server -w (--watch)</code></li>
 <li>Deploy qua <code>hieudoan7.github.io</code> để nó render lên web
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo -d (--deploy) ../hieudoan7.github.io/
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo -d (--deploy) ../hieudoan7.github.io/
 </code></pre></div></li>
 <li>Push 2 repo lên github để host là được.<br>
 <code>git config --global user.name &quot;hieudoan7</code><br>
@@ -188,53 +184,76 @@ Vào từng cái repo (trong 2 repo đã có file .git rồi nên ko cần dùng
 <ul>
 <li>Tạo file <code>mathjax_support.html</code> trong <code>theme/layouts/partials/</code></li>
 </ul>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">type</span>=<span style="color:#0ff;font-weight:bold">&#34;text/javascript&#34;</span> <span style="color:#007f7f">async</span>
-  <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;</span>&gt;
-  MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [[<span style="color:#0ff;font-weight:bold">&#39;$&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;$&#39;</span>], [<span style="color:#0ff;font-weight:bold">&#39;\\(&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;\\)&#39;</span>]],
-    displayMath: [[<span style="color:#0ff;font-weight:bold">&#39;$$&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;$$&#39;</span>]],
-    processEscapes: <span style="color:#fff;font-weight:bold">true</span>,
-    processEnvironments: <span style="color:#fff;font-weight:bold">true</span>,
-    skipTags: [<span style="color:#0ff;font-weight:bold">&#39;script&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;noscript&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;style&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;textarea&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;pre&#39;</span>],
-    TeX: { equationNumbers: { autoNumber: <span style="color:#0ff;font-weight:bold">&#34;AMS&#34;</span> },
-         extensions: [<span style="color:#0ff;font-weight:bold">&#34;AMSmath.js&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;AMSsymbols.js&#34;</span>] }
-  }
-  });
-  MathJax.Hub.Queue(<span style="color:#fff;font-weight:bold">function</span>() {
-    <span style="color:#007f7f">// Fix &lt;code&gt; tags after MathJax finishes running. This is a
-</span><span style="color:#007f7f"></span>    <span style="color:#007f7f">// hack to overcome a shortcoming of Markdown. Discussion at
-</span><span style="color:#007f7f"></span>    <span style="color:#007f7f">// https://github.com/mojombo/jekyll/issues/199
-</span><span style="color:#007f7f"></span>    <span style="color:#fff;font-weight:bold">var</span> all = MathJax.Hub.getAllJax(), i;
-    <span style="color:#fff;font-weight:bold">for</span>(i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; all.length; i += <span style="color:#ff0;font-weight:bold">1</span>) {
-        all[i].SourceElement().parentNode.className += <span style="color:#0ff;font-weight:bold">&#39; has-jax&#39;</span>;
-    }
-  });
-
-  MathJax.Hub.Config({
-  <span style="color:#007f7f">// Autonumbering by mathjax
-</span><span style="color:#007f7f"></span>  TeX: { equationNumbers: { autoNumber: <span style="color:#0ff;font-weight:bold">&#34;AMS&#34;</span> } }
-  });
-&lt;/<span style="font-weight:bold">script</span>&gt;
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>&lt;<span style="color:#8b008b;font-weight:bold">script</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;text/javascript&#34;</span> <span style="color:#658b00">async</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#658b00">src</span>=<span style="color:#cd5555">&#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  MathJax.Hub.Config({
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  tex2jax: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    inlineMath: [[<span style="color:#cd5555">&#39;$&#39;</span>,<span style="color:#cd5555">&#39;$&#39;</span>], [<span style="color:#cd5555">&#39;\\(&#39;</span>,<span style="color:#cd5555">&#39;\\)&#39;</span>]],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    displayMath: [[<span style="color:#cd5555">&#39;$$&#39;</span>,<span style="color:#cd5555">&#39;$$&#39;</span>]],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    processEscapes: <span style="color:#8b008b;font-weight:bold">true</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    processEnvironments: <span style="color:#8b008b;font-weight:bold">true</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    skipTags: [<span style="color:#cd5555">&#39;script&#39;</span>, <span style="color:#cd5555">&#39;noscript&#39;</span>, <span style="color:#cd5555">&#39;style&#39;</span>, <span style="color:#cd5555">&#39;textarea&#39;</span>, <span style="color:#cd5555">&#39;pre&#39;</span>],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    TeX: { equationNumbers: { autoNumber: <span style="color:#cd5555">&#34;AMS&#34;</span> },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>         extensions: [<span style="color:#cd5555">&#34;AMSmath.js&#34;</span>, <span style="color:#cd5555">&#34;AMSsymbols.js&#34;</span>] }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  });
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>  MathJax.Hub.Queue(<span style="color:#8b008b;font-weight:bold">function</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    <span style="color:#228b22">// Fix &lt;code&gt; tags after MathJax finishes running. This is a
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#228b22"></span>    <span style="color:#228b22">// hack to overcome a shortcoming of Markdown. Discussion at
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#228b22"></span>    <span style="color:#228b22">// https://github.com/mojombo/jekyll/issues/199
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">var</span> all = MathJax.Hub.getAllJax(), i;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="color:#8b008b;font-weight:bold">for</span>(i = <span style="color:#b452cd">0</span>; i &lt; all.length; i += <span style="color:#b452cd">1</span>) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>        all[i].SourceElement().parentNode.className += <span style="color:#cd5555">&#39; has-jax&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>  });
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>  MathJax.Hub.Config({
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>  <span style="color:#228b22">// Autonumbering by mathjax
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span style="color:#228b22"></span>  TeX: { equationNumbers: { autoNumber: <span style="color:#cd5555">&#34;AMS&#34;</span> } }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>  });
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>&lt;/<span style="color:#8b008b;font-weight:bold">script</span>&gt;
 </code></pre></div><ul>
 <li>Add file này vào <code>footer.html</code> or <code>header.html</code> (trước thẻ <code>&lt;/footer&gt;</code>)</li>
 </ul>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ partial &#34;mathjax_support.html&#34; . }}
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>{{ partial &#34;mathjax_support.html&#34; . }}
 </code></pre></div><p>Nguồn: <a href="https://divadnojnarg.github.io/blog/mathjax/">https://divadnojnarg.github.io/blog/mathjax/</a></p>
 <h3 id="4-insert-table-in-hugo-blog">4. Insert table in hugo blog</h3>
 <ul>
 <li>Tạo table using markdown syntax</li>
 <li>add css style để full border (2px) and padding 1rem</li>
 </ul>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="font-weight:bold">style</span>&gt;
-    <span style="font-weight:bold">th</span>, <span style="font-weight:bold">td</span> {
-        <span style="color:#fff;font-weight:bold">padding</span>: <span style="color:#ff0;font-weight:bold">1.0</span><span style="color:#fff;font-weight:bold">rem</span>;
-    }
-    <span style="font-weight:bold">table</span>, <span style="font-weight:bold">th</span>, <span style="font-weight:bold">td</span> {
-      <span style="color:#fff;font-weight:bold">border</span>: <span style="color:#ff0;font-weight:bold">2</span><span style="color:#fff;font-weight:bold">px</span> <span style="color:#fff;font-weight:bold">solid</span> <span style="color:#fff;font-weight:bold">black</span>;
-    }
- &lt;/<span style="font-weight:bold">style</span>&gt;
-</code></pre></div>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;<span style="color:#8b008b;font-weight:bold">style</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>    <span style="color:#8b008b;font-weight:bold">th</span>, <span style="color:#8b008b;font-weight:bold">td</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>        <span style="color:#8b008b;font-weight:bold">padding</span>: <span style="color:#b452cd">1.0</span><span style="color:#00688b;font-weight:bold">rem</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>    <span style="color:#8b008b;font-weight:bold">table</span>, <span style="color:#8b008b;font-weight:bold">th</span>, <span style="color:#8b008b;font-weight:bold">td</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>      <span style="color:#8b008b;font-weight:bold">border</span>: <span style="color:#b452cd">2</span><span style="color:#00688b;font-weight:bold">px</span> <span style="color:#8b008b;font-weight:bold">solid</span> <span style="color:#8b008b;font-weight:bold">black</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span> &lt;/<span style="color:#8b008b;font-weight:bold">style</span>&gt;
+</code></pre></div><h3 id="5-highlight-code-block">5. Highlight code block</h3>
+<p>Config to use <strong>syntax-highlight</strong> in hugo config file
+You can remove all pygment config now because it will be overide eventually after using <code>markup.highlight</code> config</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>[markup.highlight]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>	codeFences = <span style="color:#8b008b;font-weight:bold">true</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>	guessSyntax = <span style="color:#8b008b;font-weight:bold">true</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>	hl_Lines = <span style="color:#cd5555">&#39;&#39;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>	lineNoStart = <span style="color:#b452cd">1</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>	lineNos = <span style="color:#8b008b;font-weight:bold">true</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>	lineNumbersInTable = <span style="color:#8b008b;font-weight:bold">false</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>	noClasses = <span style="color:#8b008b;font-weight:bold">true</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>	style = <span style="color:#cd5555">&#39;perldoc&#39;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>	tabWidth = <span style="color:#b452cd">4</span>
+</code></pre></div><p>You can also override the syntax highlight configuration in code block.</p>
+<p>Example:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">numpy</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#8b008b;font-weight:bold">print</span>(<span style="color:#cd5555">&#34;This is test.</span><span style="color:#cd5555">\n</span><span style="color:#cd5555">&#34;</span>)
+</code></pre></div><div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199</span><span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#cd5555">&#34;fmt&#34;</span>
+<span style="display:block;width:100%;background-color:#d6d6c6"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200</span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">main</span>() {
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201</span>  fmt.<span style="color:#008b45">Println</span>(<span style="color:#cd5555">&#34;Hello world&#34;</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202</span>}
+</code></pre></div><p>You can learn more in the <a href="https://gohugo.io/content-management/syntax-highlighting/">entry-link</a></p>
+
       </div>
 
       <footer>

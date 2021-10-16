@@ -36,9 +36,9 @@ I. What is SSL Certificate? First, SSL is the abbreviation of Secure Socket Laye
       <description>Useful Command Lines 25/02/2021
 I. Cat Read a text-like file
 Example:
-$ cat file.txt | grep &amp;#34;pattern&amp;#34; | -A number_of_after_line -B number_of_before_line -C both_before_and_after_lines II. Find Find one or more files base on pattern
- return all the file and directory locate in a dir  $ find ~/Hd7/  return only file (or dir)  $ find ~/Hd7/ -type f or
-$ find ~/Hd7/ -type d  return a file with specific name  $ find .</description>
+1$ cat file.txt | grep &amp;#34;pattern&amp;#34; | -A number_of_after_line -B number_of_before_line -C both_before_and_after_lines II. Find Find one or more files base on pattern
+ return all the file and directory locate in a dir  1$ find ~/Hd7/  return only file (or dir)  1$ find ~/Hd7/ -type f or
+1$ find ~/Hd7/ -type d  return a file with specific name  1$ find .</description>
     </item>
     
   </channel>

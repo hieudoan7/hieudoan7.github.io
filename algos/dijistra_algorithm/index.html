@@ -153,22 +153,22 @@ II. Ý tưởng: Luôn lan truyền đến node gần nhất với starting node
 $adj[a]$ chứa một $pair(b, w)$ (cạnh $a-b$ có trọng số là $w$).</p>
 <p>Sử dụng <code>priority_queue</code> để select được đỉnh gần gốc nhất trong thời gian logaric.</p>
 <p>Những thằng gần gốc nhất mà chưa được chọn thì chỉ có thể là những thằng mà ở trạng thái đó nó có thể đi tới thôi.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i = <span style="color:#ff0;font-weight:bold">1</span>; i &lt;= n; i++)
-    distance[i] = INF;
-distance[x] = <span style="color:#ff0;font-weight:bold">0</span>;
-q.push({<span style="color:#ff0;font-weight:bold">0</span>,x});
-<span style="color:#fff;font-weight:bold">while</span>(!q.empty()){
-    <span style="color:#fff;font-weight:bold">int</span> a = q.top().second; q.pop();
-    <span style="color:#fff;font-weight:bold">if</span> (processed[a]) <span style="color:#fff;font-weight:bold">continue</span>; <span style="color:#007f7f">//bởi vì cùng dis[a] có thể push nhiều lần và priority_queue thì ko thể remove nên vậy đó.
-</span><span style="color:#007f7f"></span>    processed[a] = <span style="color:#fff;font-weight:bold">true</span>; <span style="color:#007f7f">//có thể có nhiều đỉnh trong pqueue vì do cứ nhỏ hơn là nó push vào thôi mà
-</span><span style="color:#007f7f"></span>    <span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">auto</span> u : adj[a]){
-        <span style="color:#fff;font-weight:bold">int</span> b = u.first, w = u.second;
-        <span style="color:#fff;font-weight:bold">if</span> (distance[a]+w &lt; distance[b]){
-            distance[b] = distance[a] + w;
-            q.push({-distance[b], b});
-        }
-    }
-}
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> i = <span style="color:#b452cd">1</span>; i &lt;= n; i++)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    distance[i] = INF;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>distance[x] = <span style="color:#b452cd">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>q.push({<span style="color:#b452cd">0</span>,x});
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#8b008b;font-weight:bold">while</span>(!q.empty()){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#00688b;font-weight:bold">int</span> a = q.top().second; q.pop();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#8b008b;font-weight:bold">if</span> (processed[a]) <span style="color:#8b008b;font-weight:bold">continue</span>; <span style="color:#228b22">//bởi vì cùng dis[a] có thể push nhiều lần và priority_queue thì ko thể remove nên vậy đó.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#228b22"></span>    processed[a] = <span style="color:#658b00">true</span>; <span style="color:#228b22">//có thể có nhiều đỉnh trong pqueue vì do cứ nhỏ hơn là nó push vào thôi mà
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#8b008b;font-weight:bold">auto</span> u : adj[a]){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        <span style="color:#00688b;font-weight:bold">int</span> b = u.first, w = u.second;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        <span style="color:#8b008b;font-weight:bold">if</span> (distance[a]+w &lt; distance[b]){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>            distance[b] = distance[a] + w;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>            q.push({-distance[b], b});
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>}
 </code></pre></div><p>$$ \Rightarrow O(n + m\log(m))$$
 Chú ý một vài trick ở cài đặt:</p>
 <ul>

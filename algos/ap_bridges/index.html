@@ -170,42 +170,42 @@ Nhắc lại, các loại edges trong 1 tree.</p>
 <p><img src="https://hieudoan7.github.io/imgs/lowv_equal_discu.jpg" alt="lowv_equal_discu"></p>
 <p>$\Rightarrow $Code: Tao xin copy nguyên source trên trang <a href="https://cp-algorithms.com/graph/cutpoints.html">cp-algorithm</a> bởi vì nó code quá tuyệt vời.<br>
 $tin$ = $disc$ (time into node).</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fff;font-weight:bold">const</span> <span style="color:#fff;font-weight:bold">int</span> N = <span style="color:#ff0;font-weight:bold">1e5</span>; <span style="color:#007f7f">//maximum number of vertices
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">int</span> n; <span style="color:#007f7f">//number of nodes
-</span><span style="color:#007f7f"></span>vector&lt;vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt;&gt; g;
-<span style="color:#fff;font-weight:bold">bool</span> vis[N] = {<span style="color:#ff0;font-weight:bold">0</span>}, cutPoint[N] = {<span style="color:#ff0;font-weight:bold">0</span>};
-<span style="color:#fff;font-weight:bold">int</span> tin[N], low[N], timer = <span style="color:#ff0;font-weight:bold">0</span>;
-
-<span style="color:#fff;font-weight:bold">void</span> dfs(<span style="color:#fff;font-weight:bold">int</span> v, <span style="color:#fff;font-weight:bold">int</span> p = -<span style="color:#ff0;font-weight:bold">1</span>){
-    vis[v] = <span style="color:#fff;font-weight:bold">true</span>;
-    tin[v] = low[v] = timer++;
-    <span style="color:#fff;font-weight:bold">int</span> child = <span style="color:#ff0;font-weight:bold">0</span>;
-    <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">auto</span> to : g[v]){
-        <span style="color:#fff;font-weight:bold">if</span> (to == p) <span style="color:#fff;font-weight:bold">continue</span>;
-        <span style="color:#fff;font-weight:bold">if</span> (!vis[to]){
-            child++;
-            dfs(to, v);
-            low[v] = min(low[v], low[to]);
-            <span style="color:#fff;font-weight:bold">if</span> (low[to] &gt;= tin[v] &amp;&amp; p != -<span style="color:#ff0;font-weight:bold">1</span>)
-                cutPoint[v] = <span style="color:#fff;font-weight:bold">true</span>; <span style="color:#007f7f">//có trùng
-</span><span style="color:#007f7f"></span>        } <span style="color:#fff;font-weight:bold">else</span> {
-            low[v] = min(low[v], tin[to]);
-        }
-    }
-    <span style="color:#fff;font-weight:bold">if</span> (p == -<span style="color:#ff0;font-weight:bold">1</span> &amp; child &gt; <span style="color:#ff0;font-weight:bold">1</span>) 
-        cutPoint[v] = <span style="color:#fff;font-weight:bold">true</span>;
-}
-<span style="color:#fff;font-weight:bold">void</span> find_cutpoints(){
-    timer = <span style="color:#ff0;font-weight:bold">0</span>;
-    memset(vis, <span style="color:#ff0;font-weight:bold">0</span>, <span style="color:#fff;font-weight:bold">sizeof</span> vis);
-    memset(cutPoint, <span style="color:#ff0;font-weight:bold">0</span>, <span style="color:#fff;font-weight:bold">sizeof</span> cutPoint);
-    <span style="color:#fff;font-weight:bold">for</span> (<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>; i&lt;n; i++)
-        <span style="color:#fff;font-weight:bold">if</span>(!vis[i]) dfs(i);
-}
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#8b008b;font-weight:bold">const</span> <span style="color:#00688b;font-weight:bold">int</span> N = <span style="color:#b452cd">1e5</span>; <span style="color:#228b22">//maximum number of vertices
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">int</span> n; <span style="color:#228b22">//number of nodes
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#228b22"></span>vector&lt;vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt;&gt; g;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#00688b;font-weight:bold">bool</span> vis[N] = {<span style="color:#b452cd">0</span>}, cutPoint[N] = {<span style="color:#b452cd">0</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#00688b;font-weight:bold">int</span> tin[N], low[N], timer = <span style="color:#b452cd">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">dfs</span>(<span style="color:#00688b;font-weight:bold">int</span> v, <span style="color:#00688b;font-weight:bold">int</span> p = -<span style="color:#b452cd">1</span>){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    vis[v] = <span style="color:#658b00">true</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    tin[v] = low[v] = timer++;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#00688b;font-weight:bold">int</span> child = <span style="color:#b452cd">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#8b008b;font-weight:bold">auto</span> to : g[v]){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>        <span style="color:#8b008b;font-weight:bold">if</span> (to == p) <span style="color:#8b008b;font-weight:bold">continue</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>        <span style="color:#8b008b;font-weight:bold">if</span> (!vis[to]){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>            child++;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>            dfs(to, v);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>            low[v] = min(low[v], low[to]);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>            <span style="color:#8b008b;font-weight:bold">if</span> (low[to] &gt;= tin[v] &amp;&amp; p != -<span style="color:#b452cd">1</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>                cutPoint[v] = <span style="color:#658b00">true</span>; <span style="color:#228b22">//có trùng
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#228b22"></span>        } <span style="color:#8b008b;font-weight:bold">else</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>            low[v] = min(low[v], tin[to]);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>    <span style="color:#8b008b;font-weight:bold">if</span> (p == -<span style="color:#b452cd">1</span> &amp; child &gt; <span style="color:#b452cd">1</span>) 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>        cutPoint[v] = <span style="color:#658b00">true</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">find_cutpoints</span>(){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>    timer = <span style="color:#b452cd">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>    memset(vis, <span style="color:#b452cd">0</span>, <span style="color:#8b008b;font-weight:bold">sizeof</span> vis);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    memset(cutPoint, <span style="color:#b452cd">0</span>, <span style="color:#8b008b;font-weight:bold">sizeof</span> cutPoint);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> i=<span style="color:#b452cd">0</span>; i&lt;n; i++)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>        <span style="color:#8b008b;font-weight:bold">if</span>(!vis[i]) dfs(i);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>}
 </code></pre></div><h2 id="iii-finding-bridges">III. Finding Bridges</h2>
 <p>Hoàn toàn tương tự, chỉ khác ở điều kiện:
 $low[v] &gt; disc[u]$ thay vì $low[v] \geq disc[u]$ và không có chuyện trùng nhau.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">bridge.push_back({a, b}); <span style="color:#007f7f">//ko co trung
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>bridge.push_back({a, b}); <span style="color:#228b22">//ko co trung
 </span></code></pre></div><h3 id="iv-tham-khảo">IV. Tham khảo</h3>
 <ul>
 <li>competive programming 3 (Steven Halim)</li>
