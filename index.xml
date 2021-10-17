@@ -6,7 +6,16 @@
     <description>Recent content on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 17 Oct 2021 08:32:38 +0700</lastBuildDate><atom:link href="https://hieudoan7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Oct 2021 10:17:44 +0700</lastBuildDate><atom:link href="https://hieudoan7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESL - Listening Series</title>
+      <link>https://hieudoan7.github.io/english/esl/</link>
+      <pubDate>Sun, 17 Oct 2021 10:17:44 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/english/esl/</guid>
+      <description>Intermediate 1. A Student Credit Card source: https://www.esl-lab.com/intermediate/credit-cards/</description>
+    </item>
+    
     <item>
       <title>The Pain of using smart phone</title>
       <link>https://hieudoan7.github.io/others/phone_pain/</link>
@@ -21,13 +30,13 @@ Some of main issues such as:
     </item>
     
     <item>
-      <title>PartOfSpeech</title>
+      <title>Part of Speech and its function</title>
       <link>https://hieudoan7.github.io/english/partofspeech/</link>
       <pubDate>Fri, 15 Oct 2021 15:40:34 +0700</pubDate>
       
       <guid>https://hieudoan7.github.io/english/partofspeech/</guid>
-      <description>hello i&amp;rsquo;m testing golang snippet 1 2for i:=0; i&amp;lt;=5; i++ { 3 fmt.Println(i) 4} 
-1var s = &amp;#34;JavaScript syntax highlighting&amp;#34;; 2alert(s); 1s = &amp;#34;Python syntax highlighting&amp;#34; 2print s 1var i int = 10 2for j:=0; j&amp;lt;i; i++ { 3 fmt.Println(j) 4} 5func f() { /* ... */ } </description>
+      <description>There are 9 basic types called &amp;ldquo;parts of speech&amp;rdquo; or &amp;ldquo;word classes&amp;rdquo;
+ Verb Noun A noun can perform any of the following five functions:   Subject of a verb Object of a verb Complement of a verb (subject complement) Object of a preposition Be in apposition to another noun  Pronoun   same as noun  Adjective   noun modifier  Adverb   modifying a verb modifying an adjective modifying another adverb modifying a noun phrase modifying the whole clause modifying the whole sentence  Determiner   determine the noun (a/an the my)  Preposition https://studio.</description>
     </item>
     
     <item>
