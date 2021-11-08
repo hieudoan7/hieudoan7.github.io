@@ -6,7 +6,16 @@
     <description>Recent content in Others on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 17 Oct 2021 08:32:38 +0700</lastBuildDate><atom:link href="https://hieudoan7.github.io/others/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Oct 2021 10:17:44 +0700</lastBuildDate><atom:link href="https://hieudoan7.github.io/others/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pending</title>
+      <link>https://hieudoan7.github.io/others/pending/</link>
+      <pubDate>Tue, 19 Oct 2021 10:17:44 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/others/pending/</guid>
+      <description>I. Google Wire for dependency injection  only one method: wire.Build(struct1.New, struct2.New) normally, struct1 will be dependency of struct2 if struct2.New only required a field in struct1 -&amp;gt; use FieldsOf() after new struct1 if struct2&amp;rsquo;s input is an interface, we need to bind that interface to a struct just created in struct1.New  II. Spcli proto  spcli proto gen spcli proto publish [&amp;ndash;force] topic_name path/file_name.proto  III. Go confusing stuff  Empty list is not a nil var a *A //  a := &amp;amp;A{} // &amp;amp;{ empty value each fields}  Draft orders Item: .</description>
+    </item>
+    
     <item>
       <title>The Pain of using smart phone</title>
       <link>https://hieudoan7.github.io/others/phone_pain/</link>
