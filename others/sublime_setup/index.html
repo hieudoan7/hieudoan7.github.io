@@ -10,30 +10,34 @@
     <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Computer Network"/>
-<meta name="twitter:description" content="Computer Network Questions for Interview. 28/10/2019
-1. DNS là gì, hoạt động như thế nào? DNS là Domain Name System: Hệ thống chuyển đổi domain name thành địa chỉ IP.
-host: yahoo.com -&gt; search catch -&gt; miss -&gt; Resolver (ISP or nhà cc mạng: VIETEL (người đại diên)) -&gt; ROOT server -&gt; .com server -&gt; yahoo.com server -&gt; đưa cho 1 IP server (rảnh) để mà về tải. Remark: DNS using port 53."/>
+<meta name="twitter:title" content="Setting up Sublime for competitive programming"/>
+<meta name="twitter:description" content="This tutorial helps to set up a quick building for C plus plus program. The result is you just need to type Ctrl &#43; B to build your C&#43;&#43; file.
+All you need is follow these neat steps:
+ Create your own build system
+Tools -&gt; Build System -&gt; New Build System
+Copy this script into it.  1{ 2 &#34;cmd&#34;: [&#34;g&#43;&#43;&#34;, &#34;-std=c&#43;&#43;1z&#34;, &#34;$file&#34;, &#34;-o&#34;, &#34;${file_path}/${file_base_name}&#34;], 3 &#34;file_regex&#34;: &#34;^(..[^:]*):([0-9]&#43;):?([0-9]&#43;)?:? (.*)$&#34;, 4 &#34;working_dir&#34;: &#34;${file_path}&#34;, 5 &#34;selector&#34;: &#34;source."/>
 
-    <meta property="og:title" content="Computer Network" />
-<meta property="og:description" content="Computer Network Questions for Interview. 28/10/2019
-1. DNS là gì, hoạt động như thế nào? DNS là Domain Name System: Hệ thống chuyển đổi domain name thành địa chỉ IP.
-host: yahoo.com -&gt; search catch -&gt; miss -&gt; Resolver (ISP or nhà cc mạng: VIETEL (người đại diên)) -&gt; ROOT server -&gt; .com server -&gt; yahoo.com server -&gt; đưa cho 1 IP server (rảnh) để mà về tải. Remark: DNS using port 53." />
+    <meta property="og:title" content="Setting up Sublime for competitive programming" />
+<meta property="og:description" content="This tutorial helps to set up a quick building for C plus plus program. The result is you just need to type Ctrl &#43; B to build your C&#43;&#43; file.
+All you need is follow these neat steps:
+ Create your own build system
+Tools -&gt; Build System -&gt; New Build System
+Copy this script into it.  1{ 2 &#34;cmd&#34;: [&#34;g&#43;&#43;&#34;, &#34;-std=c&#43;&#43;1z&#34;, &#34;$file&#34;, &#34;-o&#34;, &#34;${file_path}/${file_base_name}&#34;], 3 &#34;file_regex&#34;: &#34;^(..[^:]*):([0-9]&#43;):?([0-9]&#43;)?:? (.*)$&#34;, 4 &#34;working_dir&#34;: &#34;${file_path}&#34;, 5 &#34;selector&#34;: &#34;source." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hieudoan7.github.io/interview/computer_network/" />
-<meta property="article:published_time" content="2019-10-28T21:27:43+07:00" />
-<meta property="article:modified_time" content="2019-10-28T21:27:43+07:00" />
+<meta property="og:url" content="https://hieudoan7.github.io/others/sublime_setup/" />
+<meta property="article:published_time" content="2022-01-10T10:09:23+07:00" />
+<meta property="article:modified_time" content="2022-01-10T10:09:23+07:00" />
 
 
     
-      <base href="https://hieudoan7.github.io/interview/computer_network/">
+      <base href="https://hieudoan7.github.io/others/sublime_setup/">
     
     <title>
-  Computer Network · hieudoan7
+  Setting up Sublime for competitive programming · hieudoan7
 </title>
 
     
-      <link rel="canonical" href="https://hieudoan7.github.io/interview/computer_network/">
+      <link rel="canonical" href="https://hieudoan7.github.io/others/sublime_setup/">
     
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
@@ -107,19 +111,19 @@ host: yahoo.com -&gt; search catch -&gt; miss -&gt; Resolver (ISP or nhà cc m�
     <article>
       <header>
         <div class="post-title">
-          <h1 class="title">Computer Network</h1>
+          <h1 class="title">Setting up Sublime for competitive programming</h1>
         </div>
         <div class="post-meta">
           <div class="date">
             <span class="posted-on">
               <i class="fas fa-calendar"></i>
-              <time datetime='2019-10-28T21:27:43&#43;07:00'>
-                October 28, 2019
+              <time datetime='2022-01-10T10:09:23&#43;07:00'>
+                January 10, 2022
               </time>
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              2 minutes read
+              One minute read
             </span>
           </div>
           
@@ -128,52 +132,42 @@ host: yahoo.com -&gt; search catch -&gt; miss -&gt; Resolver (ISP or nhà cc m�
       </header>
 
       <div>
-        <h1 id="computer-network-questions-for-interview">Computer Network Questions for Interview.</h1>
-<p>28/10/2019</p>
-<h3 id="1-dns-là-gì-hoạt-động-như-thế-nào">1. DNS là gì, hoạt động như thế nào?</h3>
-<p>DNS là Domain Name System: Hệ thống chuyển đổi domain name thành địa chỉ IP.<br>
-host: yahoo.com -&gt; search catch -&gt; miss -&gt; Resolver (ISP or nhà cc mạng: VIETEL (người đại diên)) -&gt;  ROOT server -&gt; .com server -&gt; yahoo.com server -&gt; đưa cho 1 IP server (rảnh) để mà về tải.
-Remark: DNS using port 53.</p>
-<p>2 video tham khảo: <a href="https://www.youtube.com/watch?v=mpQZVYPuDGU">1</a> &amp; <a href="https://www.youtube.com/watch?v=2ZUxoi7YNgs">2</a></p>
-<h3 id="2-có-các-loại-mô-hình-mạng-nào-nói-chi-tiết">2. Có các loại mô hình mạng nào, nói chi tiết</h3>
-<p>Networking Model: OSI Model (7 layers) vs TCP/IP Model (4 layers)<br>
-<strong>OSI Model</strong></p>
+        <p>This tutorial helps to set up a quick building for C plus plus program.
+The result is you just need to type <strong>Ctrl + B</strong> to build your C++ file.</p>
+<p>All you need is follow these neat steps:</p>
 <ol>
-<li>Application   //Data Present</li>
-<li>Presentation</li>
-<li>Session</li>
-<li>Transport   //Data Flow -&gt; segment (TCP/UDP)</li>
-<li>Network                 -&gt; datagram (IP)</li>
-<li>Datalink                 -&gt; Frame</li>
-<li>Physical                 -&gt; Bit</li>
+<li>Create your own build system<br>
+Tools -&gt; Build System -&gt; New Build System<br>
+Copy this script into it.</li>
 </ol>
-<p><strong>TCP/IP Model</strong></p>
-<ol>
-<li>Application (1,2,3)</li>
-<li>Transport (4)</li>
-<li>Internet  (5)</li>
-<li>Network Access (6, 7)</li>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  &#34;cmd&#34;: [&#34;g++&#34;, &#34;-std=c++1z&#34;, &#34;$file&#34;, &#34;-o&#34;, &#34;${file_path}/${file_base_name}&#34;],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  &#34;file_regex&#34;: &#34;^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$&#34;,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  &#34;working_dir&#34;: &#34;${file_path}&#34;,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  &#34;selector&#34;: &#34;source.c, source.c++, source.cxx, source.cpp&#34;,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  &#34;variants&#34;: 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  [ 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>      &#34;name&#34;: &#34;Run&#34;,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>      &#34;cmd&#34;: [&#34;bash&#34;, &#34;-c&#34;, &#34;g++ -std=c++1z &#39;${file}&#39; -o &#39;${file_path}/${file_base_name}&#39; &amp;&amp; xterm -e bash -c &#39;\&#34;${file_path}/${file_base_name}\&#34;; echo Press ENTER to continue; read&#39;&#34;]  
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  ]    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>}
+</code></pre></div><p>Save it with name: myCPP</p>
+<ol start="2">
+<li>
+<p>Choose myCPP as default build system<br>
+Tools -&gt; Build System -&gt; myCPP</p>
+</li>
+<li>
+<p>Set mode to build with<br>
+<strong>Ctrl + Shift + B</strong> and choose <strong>MyCPP - Run</strong></p>
+</li>
+<li>
+<p>Completed<br>
+Every time you push <strong>Ctrl + B</strong>, the program will automatically be saved and build with new terminal, <code>xterm</code> in this case.</p>
+</li>
 </ol>
-<h3 id="3-switch-vs-router">3. Switch vs Router</h3>
-<p>-&gt; Switch &lt; Router</p>
-<ul>
-<li>Switch kết nối các host trong cùng 1 mạng</li>
-<li>Router kết nối các mạng với nhau.</li>
-</ul>
-<h3 id="4-tcp-vs-udp">4. TCP vs UDP</h3>
-<p><strong>TCP</strong>: Transport Control Protocol<br>
-<strong>UDP</strong>: User Datagram Protocol<br>
-TCP:</p>
-<ul>
-<li>Truyền đáng tin cậy</li>
-<li>Có tạo kết nối giữa bên gửi và bên nhận</li>
-<li>Dùng cơ chế pipeline (đảm bảo ko mất gói tin)<br>
-(pipeline: set timeout, khi mà bên gửi ko nhận được ACK trong khoảng thời gian đó, nó sẽ tự động gửi lại)<br>
-UDP:</li>
-<li>Truyền không tin cậy</li>
-<li>Không tạo kết nối</li>
-<li>Dùng trong các ứng dụng chịu lỗi được và cần tốc độ như media livestream.</li>
-</ul>
 
       </div>
 

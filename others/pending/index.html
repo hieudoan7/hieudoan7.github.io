@@ -51,7 +51,7 @@
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
   </head>
 
   <body class=" ">
@@ -163,6 +163,27 @@ Item:
 coverage: go test -coveprofile=prof.out
 visualization: go tool cover -html=prof.out</li>
 </ul>
+<h1 id="v-spex-stuff">V. SPEX stuff</h1>
+<p>export SP_UNIX_SOCKET=/tmp/spex.sock
+socat -d -d -d UNIX-LISTEN:/tmp/spex.sock,reuseaddr,fork TCP:agent-tcp.spex.test.shopee.io:9299
+list out all env variables: env
+? SPEX self call</p>
+<ol>
+<li>spex server: all about SPEX agen
+sps.Init()
+sps.registerProcessor()
+sps.Register()</li>
+<li>spex client
+sps.Init()
+sps.subscribeConfig()
+sps.Register()</li>
+</ol>
+<p>service_info_path
+./configs/spexservice/lostmodule.json
+SP_CONFIG_KEY
+c901206a990dff59fba338a6b6303dff
+SP_UNIX_SOCKET
+/tmp/spex.sock</p>
 
       </div>
 

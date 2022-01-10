@@ -6,7 +6,24 @@
     <description>Recent content in Others on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 19 Oct 2021 10:17:44 +0700</lastBuildDate><atom:link href="https://hieudoan7.github.io/others/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Jan 2022 10:09:23 +0700</lastBuildDate>
+    
+	<atom:link href="https://hieudoan7.github.io/others/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setting up Sublime for competitive programming</title>
+      <link>https://hieudoan7.github.io/others/sublime_setup/</link>
+      <pubDate>Mon, 10 Jan 2022 10:09:23 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/others/sublime_setup/</guid>
+      <description>This tutorial helps to set up a quick building for C plus plus program. The result is you just need to type Ctrl + B to build your C++ file.
+All you need is follow these neat steps:
+ Create your own build system
+Tools -&amp;gt; Build System -&amp;gt; New Build System
+Copy this script into it.  1{ 2 &amp;#34;cmd&amp;#34;: [&amp;#34;g++&amp;#34;, &amp;#34;-std=c++1z&amp;#34;, &amp;#34;$file&amp;#34;, &amp;#34;-o&amp;#34;, &amp;#34;${file_path}/${file_base_name}&amp;#34;], 3 &amp;#34;file_regex&amp;#34;: &amp;#34;^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$&amp;#34;, 4 &amp;#34;working_dir&amp;#34;: &amp;#34;${file_path}&amp;#34;, 5 &amp;#34;selector&amp;#34;: &amp;#34;source.</description>
+    </item>
+    
     <item>
       <title>Pending</title>
       <link>https://hieudoan7.github.io/others/pending/</link>
@@ -70,7 +87,7 @@ Về cơ bản, chúng ta host blog lên github sẽ tạo 2 repository
       
       <guid>https://hieudoan7.github.io/others/the-fine-art-of-small-talk/</guid>
       <description>Small Talk Note 05/04/2019
-Em học được gì qua nội dung quyển sách? Contents  Chapter 1: What&amp;rsquo;s Big Deal About Small Talk? Chapter 2: Get Over Your Mom &amp;rsquo;s Intentions Chapter 3: Take the Plunge: Start a Conversation! Chapter 4: Keep the Conservation Going! Chapter 5: Let&amp;rsquo;s Give &amp;lsquo;Em Something to Talk About Chapter 6: Hearing Aids and Listening Devices Chapter 7: Prevent Pregmant Pauses with Preparationg Chapter 8: Conservation Clout Chapter 9: Crimes and Misdemeanors Chapter 10: The Graceful Exit Chapter 11: The Conservation Ball Is in Your Court!</description>
+Em học được gì qua nội dung quyển sách? Contents  Chapter 1: What&amp;rsquo;s Big Deal About Small Talk? Chapter 2: Get Over Your Mom &amp;lsquo;s Intentions Chapter 3: Take the Plunge: Start a Conversation! Chapter 4: Keep the Conservation Going! Chapter 5: Let&amp;rsquo;s Give &amp;lsquo;Em Something to Talk About Chapter 6: Hearing Aids and Listening Devices Chapter 7: Prevent Pregmant Pauses with Preparationg Chapter 8: Conservation Clout Chapter 9: Crimes and Misdemeanors Chapter 10: The Graceful Exit Chapter 11: The Conservation Ball Is in Your Court!</description>
     </item>
     
   </channel>

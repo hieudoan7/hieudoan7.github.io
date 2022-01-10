@@ -6,7 +6,11 @@
     <description>Recent content in Interviews on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Jan 2020 18:41:14 +0700</lastBuildDate><atom:link href="https://hieudoan7.github.io/interview/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Jan 2020 18:41:14 +0700</lastBuildDate>
+    
+	<atom:link href="https://hieudoan7.github.io/interview/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>On the way to SEA VN</title>
       <link>https://hieudoan7.github.io/interview/sea/</link>

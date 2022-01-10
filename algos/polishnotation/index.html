@@ -59,7 +59,7 @@ Ví dụ: Xét biểu thức: $3 &#43; 5*(6-3) &#43; 1$
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
   </head>
 
   <body class=" ">
@@ -171,11 +171,11 @@ But, How to do that?<br>
 <li>Nếu S[i] là toán hạng (số): Cho ra output</li>
 <li>Nếu S[i] là toán tử: xét S[i] vs stack.top()
 <ul>
-<li>Nếu S[i] $&lt;=$ stack.top() thì pop() stack ra output cho tới khi S[i] &gt; stack.top() or stack empty or stack.top()=='('</li>
+<li>Nếu S[i] $&lt;=$ stack.top() thì pop() stack ra output cho tới khi S[i] &gt; stack.top() or stack empty or stack.top()==&rsquo;(&rsquo;</li>
 <li>Nếu S[i] &gt; stack.top() thì push vào stack</li>
 </ul>
 </li>
-<li>Trường hợp S[i]='(' thì ta push vào Stack, S[i]=')' thì ta cứ pop() cho tới khi pop() luôn thằng &lsquo;(&rsquo;</li>
+<li>Trường hợp S[i]=&rsquo;(&rsquo; thì ta push vào Stack, S[i]=&rsquo;)&rsquo; thì ta cứ pop() cho tới khi pop() luôn thằng &lsquo;(&rsquo;</li>
 </ul>
 <h3 id="2-tính-toán">2. Tính toán:</h3>
 <p>Từ chuối Balan ngược: RPN = $3\ 5\ 6\ 3 - * + 1 +$<br>
