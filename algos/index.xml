@@ -158,7 +158,7 @@ I. Bài toán: Cho chuỗi Text $T$ (length = $n$) và Pattern $P$ (length = $m$
 $\Rightarrow$ Naive Solution:
 Tại mỗi vị trí $i$ trong $T$, ta so sánh nó với $P$.
  code chơi thôi:
- 1int cnt = 0; 2for (int i = 0; i &amp;lt;= n-m; i++){ 3 bool flag = false; 4 for (int j = 0; j &amp;lt; m; j++){ 5 if (P[j] == T[i+j]) continue; 6 flag = true; 7 break; 8 } 9 if (flag) cnt++; 10} $$\Rightarrow O(n*m) $$</description>
+ 1int cnt = 0; 2for (int i = 0; i &amp;lt;= n-m; i++){ 3 bool is_match = true; 4 for (int j = 0; j &amp;lt; m; j++){ 5 if (P[j] == T[i+j]) continue; 6 is_match = false; 7 break; 8 } 9 if (is_match) cnt++; 10} $$\Rightarrow O(n*m) $$</description>
     </item>
     
     <item>
