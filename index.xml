@@ -6,10 +6,42 @@
     <description>Recent content on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 10 Jan 2022 10:09:23 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 28 Mar 2022 20:07:15 +0700</lastBuildDate>
     
 	<atom:link href="https://hieudoan7.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Traverse a Tree Recursively and Iteratively</title>
+      <link>https://hieudoan7.github.io/interview/tree_traversal/</link>
+      <pubDate>Mon, 28 Mar 2022 20:07:15 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/interview/tree_traversal/</guid>
+      <description>In this article, I&amp;rsquo;m going to represent the algorithm of traversing a tree in every orders in both recursive way and especially iterative way.
+To put it simply, the iterative way, we will you stack (only 1 stack) to simulate the process.
+Assuming that the tree structure is as below:
+1struct Node { 2	int value; 3	Node* left; 4	Node* right; 5	Node (int val) { 6	this-&amp;gt;value = val; 7	this-&amp;gt;left = this-&amp;gt;right = NULL; 8	} 9}; 1.</description>
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>https://hieudoan7.github.io/interview/database/</link>
+      <pubDate>Thu, 03 Mar 2022 10:31:00 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/interview/database/</guid>
+      <description>book: Beginning database design solution (Rod Stephens)</description>
+    </item>
+    
+    <item>
+      <title>Common Operating System Questions</title>
+      <link>https://hieudoan7.github.io/interview/os_qa/</link>
+      <pubDate>Fri, 25 Feb 2022 20:35:40 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/interview/os_qa/</guid>
+      <description>1. What do you mean by an operating system? What are its function? 2. binary semaphore vs. mutex signal mechanism vs. locking mechanism
+  mutex mutual exclusion object, used for protecting critical resource only the owner process can release the mutex
+  binary semaphore wait() and signal() //using signaling mechanism hey, i&amp;rsquo;m done, you can carry on wait() and singal() is totally decoupled you can wait() (decrement) on Process B and signal() on process A (increment) semaphore: integer indicating number of &amp;ldquo;toilets&amp;rdquo; available mutex: object acts like a key</description>
+    </item>
     
     <item>
       <title>Setting up Sublime for competitive programming</title>
