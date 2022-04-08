@@ -6,10 +6,20 @@
     <description>Recent content in Interviews on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Mar 2022 20:07:15 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 31 Mar 2022 14:27:00 +0700</lastBuildDate>
     
 	<atom:link href="https://hieudoan7.github.io/interview/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>System_design</title>
+      <link>https://hieudoan7.github.io/interview/system_design/</link>
+      <pubDate>Thu, 31 Mar 2022 14:27:00 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/interview/system_design/</guid>
+      <description>This post is going to be talking about some well-known system design problem
+1. Login System Question:</description>
+    </item>
     
     <item>
       <title>Traverse a Tree Recursively and Iteratively</title>

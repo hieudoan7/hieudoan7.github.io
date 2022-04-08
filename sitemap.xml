@@ -3,13 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://hieudoan7.github.io/about/</loc>
+    <lastmod>2022-04-08T21:35:43+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hieudoan7.github.io/</loc>
-    <lastmod>2022-03-28T20:07:15+07:00</lastmod>
+    <lastmod>2022-04-08T21:35:43+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://hieudoan7.github.io/interview/</loc>
-    <lastmod>2022-03-28T20:07:15+07:00</lastmod>
+    <lastmod>2022-03-31T14:27:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hieudoan7.github.io/interview/system_design/</loc>
+    <lastmod>2022-03-31T14:27:00+07:00</lastmod>
   </url>
   
   <url>
@@ -250,10 +260,6 @@
   <url>
     <loc>https://hieudoan7.github.io/others/the-fine-art-of-small-talk/</loc>
     <lastmod>2019-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hieudoan7.github.io/about/</loc>
   </url>
   
   <url>
