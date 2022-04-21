@@ -6,10 +6,20 @@
     <description>Recent content in Others on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 10 Jan 2022 10:09:23 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 21 Apr 2022 08:15:25 +0700</lastBuildDate>
     
 	<atom:link href="https://hieudoan7.github.io/others/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The way I choose my next destination in my career</title>
+      <link>https://hieudoan7.github.io/others/career_decision/</link>
+      <pubDate>Thu, 21 Apr 2022 08:15:25 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/others/career_decision/</guid>
+      <description>Today I&amp;rsquo;m gonna tell you my experiences, my perspective about life in general and work in particularity.
+My previous job I graduated from University of Science, a pretigous university in Vietnam with long history of great talents, especially in computer science or IT industry. I even studied in honor program, which is a class of top 50 students in 1000 IT students. Having said that, as a new graduate with the pride of a fancy degree, I feel on top of the world.</description>
+    </item>
     
     <item>
       <title>Setting up Sublime for competitive programming</title>
