@@ -6,10 +6,25 @@
     <description>Recent content in Bes on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 08 Oct 2021 20:54:38 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 21 Aug 2022 09:30:07 +0700</lastBuildDate>
     
 	<atom:link href="https://hieudoan7.github.io/be/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setting up Gitlab CI for Golang Project</title>
+      <link>https://hieudoan7.github.io/be/gitlab_ci/</link>
+      <pubDate>Sun, 21 Aug 2022 09:30:07 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/be/gitlab_ci/</guid>
+      <description>After searching how to set up gitlab CI for my golang project for a while (probably 1.5 day). I wanna take some note here to save your time.
+The flow is basically talking to gitlab API.
+The step is:
+1. Get the output
+Either from gitlab runner log or artifact
+with Golang, It is the output from command: go test ./...
+2. Config the regex for gitlab CI to parse the output from all runner</description>
+    </item>
     
     <item>
       <title>Basic Git Knowledge</title>
