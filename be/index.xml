@@ -6,10 +6,22 @@
     <description>Recent content in Bes on hieudoan7</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 Aug 2022 09:30:07 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 01 Oct 2022 16:21:42 +0700</lastBuildDate>
     
 	<atom:link href="https://hieudoan7.github.io/be/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My working tools across computer</title>
+      <link>https://hieudoan7.github.io/be/working_tools/</link>
+      <pubDate>Sat, 01 Oct 2022 16:21:42 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/be/working_tools/</guid>
+      <description>I&amp;rsquo;ve been working for more than 2 years. It&amp;rsquo;s quite a long time but still i don&amp;rsquo;t have an personal toolbox of developing. On this special day, the day I&amp;rsquo;m preparing to leave my second job, gonna sit down and write about all the tools I have used in software development. Here we go!!!
+1. Git   Command line
+use .oh-my-zsh to levarage of nice git command alias
+  Smart git</description>
+    </item>
     
     <item>
       <title>Setting up Gitlab CI for Golang Project</title>
@@ -47,7 +59,7 @@ I. What is SSL Certificate? First, SSL is the abbreviation of Secure Socket Laye
     </item>
     
     <item>
-      <title>[Linux] Useful Commands</title>
+      <title>Linux Useful Commands</title>
       <link>https://hieudoan7.github.io/be/useful_command/</link>
       <pubDate>Thu, 25 Feb 2021 09:50:59 +0700</pubDate>
       
