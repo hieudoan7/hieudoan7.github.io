@@ -12,6 +12,20 @@
     
     
     <item>
+      <title>SQL Problems Collection</title>
+      <link>https://hieudoan7.github.io/be/sql/</link>
+      <pubDate>Sun, 02 Oct 2022 14:46:02 +0700</pubDate>
+      
+      <guid>https://hieudoan7.github.io/be/sql/</guid>
+      <description>Today, I&amp;rsquo;m gonna write down some SQL problems I&amp;rsquo;ve solved or faced during interviewing and working.
+First Goes First
+1. Find the average price of 3 recent days P/S: This problem is originally from Axon Hackerank Online Test.
+You have 1 table named Transactions: Transactions(ID, ResourceID, Price, TransactionTime)
+Example data
+1insert into transactions(ID, Name, Price, Time) 2values 3(1, &amp;#39;Shoes&amp;#39;, 100, 20220810), 4(2, &amp;#39;Hat&amp;#39;, 50, 20220809), 5(3, &amp;#39;Shirt&amp;#39;, 50, 20220808); You are asked to write SQL query showing the average price of 3 recent days for everyday.</description>
+    </item>
+    
+    <item>
       <title>My working tools across computer</title>
       <link>https://hieudoan7.github.io/be/working_tools/</link>
       <pubDate>Sat, 01 Oct 2022 16:21:42 +0700</pubDate>
