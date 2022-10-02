@@ -48,7 +48,7 @@ with Golang, It is the output from command: go test ./...
     </item>
     
     <item>
-      <title>[web] SSL/TLS Certificate</title>
+      <title>SSL/TLS Certificate</title>
       <link>https://hieudoan7.github.io/be/ssl_cert/</link>
       <pubDate>Sun, 18 Jul 2021 09:59:19 +0700</pubDate>
       
