@@ -125,7 +125,7 @@ Example data
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              3 minutes read
+              One minute read
             </span>
           </div>
           
@@ -158,57 +158,10 @@ You have 1 table named Transactions:
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>from transaction_time t;
 </code></pre></div><p>what is the time complexity of this query?? (nested select)
 It&rsquo;s just declarative language, the engine will do its job to optimize the query</p>
-<h3 id="2-show-movies-belonging-to-more-than-2-genres-but-not-comedy">2. Show movies belonging to more than 2 genres but not comedy</h3>
-<p>P/S: This problem is probably from Vidiva Online Test (I&rsquo;m not sure, it was long time ago)</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>CREATE TABLE genres (
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  id INTEGER PRIMARY KEY,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  name VARCHAR(50) NOT NULL
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>CREATE TABLE movies (
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  id INTEGER PRIMARY KEY,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  name VARCHAR(50) NOT NULL
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>CREATE TABLE moviesGenres (
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  movieId INTEGER REFERENCES movies(id),
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  genreId INTEGER REFERENCES genres(id),
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>  PRIMARY KEY(movieId, genreId),
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  FOREIGN KEY (movieId) REFERENCES movies(id)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>  FOREIGN KEY (genreId) REFERENCES genres(id)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>INSERT INTO genres(id, name) VALUES(1, &#39;Comedy&#39;);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>INSERT INTO genres(id, name) VALUES(2, &#39;Action&#39;);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>INSERT INTO genres(id, name) VALUES(3, &#39;Thriller&#39;);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>INSERT INTO genres(id, name) VALUES(4, &#39;Science Fiction&#39;);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>INSERT INTO movies(id, name) VALUES(1, &#39;Bad Boys&#39;);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>INSERT INTO movies(id, name) VALUES(2, &#39;Source Code&#39;);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>INSERT INTO movies(id, name) VALUES(3, &#39;The Bourne Ultimatum&#39;);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>INSERT INTO moviesGenres(movieId, genreId) VALUES(1, 1);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>INSERT INTO moviesGenres(movieId, genreId) VALUES(1, 2);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>INSERT INTO moviesGenres(movieId, genreId) VALUES(1, 3);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>INSERT INTO moviesGenres(movieId, genreId) VALUES(1, 4);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>INSERT INTO moviesGenres(movieId, genreId) VALUES(2, 2);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>INSERT INTO moviesGenres(movieId, genreId) VALUES(2, 3);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>INSERT INTO moviesGenres(movieId, genreId) VALUES(2, 4);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>INSERT INTO moviesGenres(movieId, genreId) VALUES(3, 2);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>INSERT INTO moviesGenres(movieId, genreId) VALUES(3, 3);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>-- Expected output (rows in any order):
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>-- name          noOfGenres
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>-- ------------------------
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>-- Source Code   3
-</code></pre></div><p>Answer:</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>SELECT m.`name` as moviesName, count(m.id) as noOfGenres
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>FROM movies m
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>	LEFT JOIN moviesGenres mg on m.id = mg.movieId
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>	WHERE mg.movieId not in (select s_mg.movieId from moviesGenres s_mg where s_mg.genreId = 1)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>GROUP BY m.id
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>HAVING count(m.id) &gt; 2
-</code></pre></div><h3 id="3-list-out-all-users-with-the-same-phone-and-email">3. List out all users with the same phone and email</h3>
+<h3 id="2-violate-copyright">2. Violate copyright</h3>
+<p>Check this email for more detail:
+<a href="https://mail.google.com/mail/u/0/#inbox/FMfcgzGrbRVWLvJWxrLPCdzzGVbdPGKh">https://mail.google.com/mail/u/0/#inbox/FMfcgzGrbRVWLvJWxrLPCdzzGVbdPGKh</a></p>
+<h3 id="3-list-out-all-users-with-the-same-phone-and-email">3. List out all users with the same phone and email</h3>
 <p>P/S: This is the result i need to query while doing the job at Geniebook</p>
 <p>Answer:</p>
 <div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>select u1.id, u1.mobile , u1.email , u2.id, u2.mobile , u2.email 
