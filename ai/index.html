@@ -10,39 +10,23 @@
     <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Setting up Gitlab CI for Golang Project"/>
-<meta name="twitter:description" content="After searching how to set up gitlab CI for my golang project for a while (probably 1.5 day). I wanna take some note here to save your time.
-The flow is basically talking to gitlab API.
-The step is:
-1. Get the output
-Either from gitlab runner log or artifact
-with Golang, It is the output from command: go test ./...
-2. Config the regex for gitlab CI to parse the output from all runner"/>
+<meta name="twitter:title" content="Ais"/>
+<meta name="twitter:description" content="hieudoan7"/>
 
-    <meta property="og:title" content="Setting up Gitlab CI for Golang Project" />
-<meta property="og:description" content="After searching how to set up gitlab CI for my golang project for a while (probably 1.5 day). I wanna take some note here to save your time.
-The flow is basically talking to gitlab API.
-The step is:
-1. Get the output
-Either from gitlab runner log or artifact
-with Golang, It is the output from command: go test ./...
-2. Config the regex for gitlab CI to parse the output from all runner" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hieudoan7.github.io/be/gitlab_ci/" /><meta property="article:section" content="be" />
-<meta property="article:published_time" content="2022-08-21T09:30:07+07:00" />
-<meta property="article:modified_time" content="2022-08-21T09:30:07+07:00" />
+    <meta property="og:title" content="Ais" />
+<meta property="og:description" content="hieudoan7" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hieudoan7.github.io/ai/" />
 
 
 
     
-      <base href="https://hieudoan7.github.io/be/gitlab_ci/">
+      <base href="https://hieudoan7.github.io/ai/">
     
-    <title>
-  Setting up Gitlab CI for Golang Project · hieudoan7
-</title>
+    <title>Ais · hieudoan7</title>
 
     
-      <link rel="canonical" href="https://hieudoan7.github.io/be/gitlab_ci/">
+      <link rel="canonical" href="https://hieudoan7.github.io/ai/">
     
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
@@ -64,6 +48,7 @@ with Golang, It is the output from command: go test ./...
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
 
+    <link rel="alternate" type="application/rss+xml" href="https://hieudoan7.github.io/ai/index.xml" title="hieudoan7" />
     <meta name="generator" content="Hugo 0.92.2" />
   </head>
 
@@ -116,71 +101,30 @@ with Golang, It is the output from command: go test ./...
 
       <div class="content">
         
-  <section class="container post">
-    <article>
-      <header>
-        <div class="post-title">
-          <h1 class="title">Setting up Gitlab CI for Golang Project</h1>
-        </div>
-        <div class="post-meta">
-          <div class="date">
-            <span class="posted-on">
-              <i class="fas fa-calendar"></i>
-              <time datetime='2022-08-21T09:30:07&#43;07:00'>
-                August 21, 2022
-              </time>
-            </span>
-            <span class="reading-time">
-              <i class="fas fa-clock"></i>
-              One minute read
-            </span>
-          </div>
-          
-          
-        </div>
-      </header>
-
-      <div>
-        <p>After searching how to set up gitlab CI for my golang project for a while (probably 1.5 day). I wanna take some note here to save your time.</p>
-<p>The flow is basically talking to gitlab API.</p>
-<p>The step is:<br>
-<strong>1. Get the output</strong><br>
-Either from gitlab runner log or artifact<br>
-with Golang, It is the output from command: <code>go test ./...</code></p>
-<p><strong>2. Config the regex for gitlab CI to parse the output from all  runner</strong><br>
-Setting -&gt; CI/CD -&gt; General Pipelines<br>
-Fill regex in section <code>Test coverage parsing</code></p>
-<p>That&rsquo;s all.<br>
-You can do the whole process with <code>.gitlab-ci.yml</code> without touching gitlab UI page by specifying <code>coverage</code> in <code>.gitlab-ci.yml</code> file</p>
-<p>You can also change the label of showing the result in<br>
-Setting -&gt; General -&gt; Badges</p>
-<p>References:</p>
-<ul>
-<li><a href="https://blog.nolanemirot.com/posts/add_codecoverage_golang/">https://blog.nolanemirot.com/posts/add_codecoverage_golang/</a><br>
-This site links to other 2 great helps.</li>
-</ul>
-
-      </div>
-
-      <footer>
-        
-
-
-        <div id="disqus_thread"></div>
-<script>
-(function() {
-var d = document, s = d.createElement('script');
-s.src = 'https://https-hieudoan7-github-io.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      </footer>
-    </article>
-
+  <section class="container list">
+  <h1 class="title">Ais</h1>
+  <ul>
     
-  </section>
+    <li>
+      <span class="date">April 28, 2025</span>
+      <a class="title" href="https://hieudoan7.github.io/ai/pandas/">Pandas</a>
+    </li>
+    
+    <li>
+      <span class="date">April 28, 2025</span>
+      <a class="title" href="https://hieudoan7.github.io/ai/introduction/">Introduction</a>
+    </li>
+    
+  </ul>
+  
+
+
+
+
+
+
+</section>
+
 
       </div>
 

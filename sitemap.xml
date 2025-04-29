@@ -1,299 +1,190 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
+    <loc>https://hieudoan7.github.io/ai/</loc>
+    <lastmod>2025-04-28T11:43:59+10:00</lastmod>
+  </url><url>
+    <loc>https://hieudoan7.github.io/</loc>
+    <lastmod>2025-04-28T11:43:59+10:00</lastmod>
+  </url><url>
+    <loc>https://hieudoan7.github.io/ai/pandas/</loc>
+    <lastmod>2025-04-28T11:43:59+10:00</lastmod>
+  </url><url>
+    <loc>https://hieudoan7.github.io/ai/introduction/</loc>
+    <lastmod>2025-04-28T08:35:57+10:00</lastmod>
+  </url><url>
     <loc>https://hieudoan7.github.io/be/</loc>
     <lastmod>2022-10-02T14:46:02+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/be/sql/</loc>
     <lastmod>2022-10-02T14:46:02+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/be/working_tools/</loc>
     <lastmod>2022-10-01T16:21:42+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/others/mac_setup/</loc>
     <lastmod>2022-10-01T16:19:26+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/others/</loc>
     <lastmod>2022-10-01T16:19:26+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/others/oto_b2/</loc>
     <lastmod>2022-09-13T20:15:39+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/be/gitlab_ci/</loc>
     <lastmod>2022-08-21T09:30:07+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/others/career_decision/</loc>
     <lastmod>2022-04-21T08:15:25+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/about/</loc>
     <lastmod>2022-04-08T21:35:43+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hieudoan7.github.io/</loc>
-    <lastmod>2022-04-08T21:35:43+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/interview/</loc>
     <lastmod>2022-03-31T14:27:00+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/interview/system_design/</loc>
     <lastmod>2022-03-31T14:27:00+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/interview/tree_traversal/</loc>
     <lastmod>2022-03-28T20:07:15+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/interview/database/</loc>
     <lastmod>2022-03-03T10:31:00+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/interview/os_qa/</loc>
     <lastmod>2022-02-25T20:35:40+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/others/sublime_setup/</loc>
     <lastmod>2022-01-10T10:09:23+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/english/</loc>
     <lastmod>2021-11-07T16:08:55+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/english/take_english/</loc>
     <lastmod>2021-11-07T16:08:55+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/english/word_usage/</loc>
     <lastmod>2021-11-05T14:17:18+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/english/grammar_note/</loc>
     <lastmod>2021-10-29T10:13:17+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/english/hieuscorpus/</loc>
     <lastmod>2021-10-19T21:56:33+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/english/britishcteen/</loc>
     <lastmod>2021-10-19T16:01:57+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/others/pending/</loc>
     <lastmod>2021-10-19T10:17:44+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/english/esl/</loc>
     <lastmod>2021-10-17T10:17:44+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/others/phone_pain/</loc>
     <lastmod>2021-10-17T08:32:38+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/english/partofspeech/</loc>
     <lastmod>2021-10-15T15:40:34+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/others/dailywalk/</loc>
     <lastmod>2021-10-15T10:20:13+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/be/git_tutorial/</loc>
     <lastmod>2021-10-08T20:54:38+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/english/reading_01/</loc>
     <lastmod>2021-09-13T17:17:30+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/be/ssl_cert/</loc>
     <lastmod>2021-07-18T09:59:19+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/english/first_article/</loc>
     <lastmod>2021-05-24T10:40:47+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/others/test/</loc>
     <lastmod>2021-05-23T17:12:47+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/be/useful_command/</loc>
     <lastmod>2021-02-25T09:50:59+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/</loc>
     <lastmod>2020-01-22T13:57:57+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/matrix_exponentiation/</loc>
     <lastmod>2020-01-22T13:57:57+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/interview/sea/</loc>
     <lastmod>2020-01-13T18:41:14+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/segment_tree/</loc>
     <lastmod>2019-12-28T22:46:31+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/lca/</loc>
     <lastmod>2019-12-17T14:48:39+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/tree_theorem/</loc>
     <lastmod>2019-11-02T23:12:30+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/sorting/</loc>
     <lastmod>2019-11-02T14:11:28+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/interview/operator_system/</loc>
     <lastmod>2019-10-29T23:11:03+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/interview/computer_network/</loc>
     <lastmod>2019-10-28T21:27:43+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/subset_sum/</loc>
     <lastmod>2019-10-25T20:14:31+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/graph_traversal/</loc>
     <lastmod>2019-09-12T20:25:41+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/minimum_spaning_tree/</loc>
     <lastmod>2019-08-05T20:25:45+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/solving_recursive_using_generating_fuction/</loc>
     <lastmod>2019-08-02T22:11:07+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/ap_bridges/</loc>
     <lastmod>2019-07-31T22:01:16+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/gcd_euclid/</loc>
     <lastmod>2019-07-11T21:49:24+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/kmp-algorithm/</loc>
     <lastmod>2019-07-10T22:42:22+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/floyd-warshall_algorithm/</loc>
     <lastmod>2019-07-09T21:06:45+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/dijistra_algorithm/</loc>
     <lastmod>2019-07-09T00:06:06+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/bellman-ford_algorithm/</loc>
     <lastmod>2019-07-08T21:43:13+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/z-function/</loc>
     <lastmod>2019-07-07T14:27:00+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/polishnotation/</loc>
     <lastmod>2019-06-29T11:20:28+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/fenwicktree/</loc>
     <lastmod>2019-06-25T13:25:20+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/algos/kosaraju/</loc>
     <lastmod>2019-06-18T15:01:41+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/others/hugo-tutorial/</loc>
     <lastmod>2019-04-19T15:01:41+07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/others/the-fine-art-of-small-talk/</loc>
     <lastmod>2019-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://hieudoan7.github.io/series/</loc>
   </url>
-  
 </urlset>

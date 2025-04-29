@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ais on hieudoan7</title>
+    <link>https://hieudoan7.github.io/ai/</link>
+    <description>Recent content in Ais on hieudoan7</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 28 Apr 2025 11:43:59 +1000</lastBuildDate><atom:link href="https://hieudoan7.github.io/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pandas</title>
+      <link>https://hieudoan7.github.io/ai/pandas/</link>
+      <pubDate>Mon, 28 Apr 2025 11:43:59 +1000</pubDate>
+      
+      <guid>https://hieudoan7.github.io/ai/pandas/</guid>
+      <description>1. Loading data to pandas 1import pandas as pd 2df = pd.read_csv(&amp;#39;pokemon_data.csv&amp;#39;) incase csv file contains no header
+1df = pd.read_csv(&amp;#39;pokemon_data.csv&amp;#39;, header=None) You can also load data from files other than csv, such as txt, xlsx
+1df_xlsx = pd.read_excel(&amp;#39;pokemon_data.xlsx&amp;#39;) 2df_txt = pd.read_csv(&amp;#39;pokemon_data.txt&amp;#39;, delimiter=&amp;#39;\t&amp;#39;) # tab delimiter 2. Reading data in pandas  Read headers using df.columns. Read one/multiple columns: df[&#39;single_col&#39;], df[[&#39;col1&#39;, &#39;col2&#39;, &#39;col3&#39;]] Read rows  Iterate through all rows: 1for index, row in df.</description>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://hieudoan7.github.io/ai/introduction/</link>
+      <pubDate>Mon, 28 Apr 2025 08:35:57 +1000</pubDate>
+      
+      <guid>https://hieudoan7.github.io/ai/introduction/</guid>
+      <description>Hello there, this section contains all of my writing about AI/ML/DS. This is my new found hobby and career after trying bunch of careers. hehe</description>
+    </item>
+    
+  </channel>
+</rss>

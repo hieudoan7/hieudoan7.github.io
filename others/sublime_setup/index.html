@@ -24,9 +24,10 @@ All you need is follow these neat steps:
 Tools -&gt; Build System -&gt; New Build System
 Copy this script into it.  1{ 2 &#34;cmd&#34;: [&#34;g&#43;&#43;&#34;, &#34;-std=c&#43;&#43;1z&#34;, &#34;$file&#34;, &#34;-o&#34;, &#34;${file_path}/${file_base_name}&#34;], 3 &#34;file_regex&#34;: &#34;^(..[^:]*):([0-9]&#43;):?([0-9]&#43;)?:? (.*)$&#34;, 4 &#34;working_dir&#34;: &#34;${file_path}&#34;, 5 &#34;selector&#34;: &#34;source." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hieudoan7.github.io/others/sublime_setup/" />
+<meta property="og:url" content="https://hieudoan7.github.io/others/sublime_setup/" /><meta property="article:section" content="others" />
 <meta property="article:published_time" content="2022-01-10T10:09:23+07:00" />
 <meta property="article:modified_time" content="2022-01-10T10:09:23+07:00" />
+
 
 
     
@@ -59,7 +60,7 @@ Copy this script into it.  1{ 2 &#34;cmd&#34;: [&#34;g&#43;&#43;&#34;, &#34;-std
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
   </head>
 
   <body class=" ">
@@ -73,6 +74,10 @@ Copy this script into it.  1{ 2 &#34;cmd&#34;: [&#34;g&#43;&#43;&#34;, &#34;-std
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
     <ul class="navigation-list">
       
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/ai/">AI/ML</a>
+          </li>
         
           <li class="navigation-item">
             <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
@@ -140,7 +145,7 @@ The result is you just need to type <strong>Ctrl + B</strong> to build your C++ 
 Tools -&gt; Build System -&gt; New Build System<br>
 Copy this script into it.</li>
 </ol>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>{
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>{
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  &#34;cmd&#34;: [&#34;g++&#34;, &#34;-std=c++1z&#34;, &#34;$file&#34;, &#34;-o&#34;, &#34;${file_path}/${file_base_name}&#34;],
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  &#34;file_regex&#34;: &#34;^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$&#34;,
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  &#34;working_dir&#34;: &#34;${file_path}&#34;,

@@ -26,9 +26,10 @@ Example:
  return all the file and directory locate in a dir  1$ find ~/Hd7/  return only file (or dir)  1$ find ~/Hd7/ -type f or
 1$ find ~/Hd7/ -type d  return a file with specific name  1$ find ." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hieudoan7.github.io/be/useful_command/" />
+<meta property="og:url" content="https://hieudoan7.github.io/be/useful_command/" /><meta property="article:section" content="be" />
 <meta property="article:published_time" content="2021-02-25T09:50:59+07:00" />
 <meta property="article:modified_time" content="2021-02-25T09:50:59+07:00" />
+
 
 
     
@@ -61,7 +62,7 @@ Example:
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
   </head>
 
   <body class=" ">
@@ -75,6 +76,10 @@ Example:
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
     <ul class="navigation-list">
       
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/ai/">AI/ML</a>
+          </li>
         
           <li class="navigation-item">
             <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
@@ -139,89 +144,89 @@ Example:
 <h2 id="i-cat">I. Cat</h2>
 <p>Read a text-like file<br>
 Example:</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ cat file.txt | grep <span style="color:#cd5555">&#34;pattern&#34;</span> | -A number_of_after_line -B number_of_before_line -C both_before_and_after_lines
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ cat file.txt | grep <span style="color:#cd5555">&#34;pattern&#34;</span> | -A number_of_after_line -B number_of_before_line -C both_before_and_after_lines
 </code></pre></div><h2 id="ii-find">II. Find</h2>
 <p>Find one or more files base on pattern</p>
 <ul>
 <li>return all the file and directory locate in a dir</li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find ~/Hd7/
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find ~/Hd7/
 </code></pre></div><ul>
 <li>return only file (or dir)</li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find ~/Hd7/ -type f
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find ~/Hd7/ -type f
 </code></pre></div><p>or</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find ~/Hd7/ -type d
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find ~/Hd7/ -type d
 </code></pre></div><ul>
 <li>return a file with specific name</li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find . -type f -name &#34;test.txt&#34;
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find . -type f -name &#34;test.txt&#34;
 </code></pre></div><ul>
 <li>return a file match the pattern</li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find . -type f -name &#34;*.py&#34;
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find . -type f -name &#34;*.py&#34;
 </code></pre></div><p>case insensitive: <code>-iname</code></p>
 <ul>
 <li>return files which are modified in from 2 to 10 minutes ago</li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find . -type f -mmin -10 -mmin + 2
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find . -type f -mmin -10 -mmin + 2
 </code></pre></div><p><code>+10</code> mean more than 10 minutes ago<br>
 <code>-mtime </code> apply for day instead of minute</p>
 <ul>
 <li>return files over 5M</li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find . -size + 5M
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find . -size + 5M
 </code></pre></div><p>after that we can list all file in that directory</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ ls -lah path 
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ ls -lah path 
 </code></pre></div><ul>
 <li>return all empty file/dir</li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find .  -empty
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find .  -empty
 </code></pre></div><ul>
 <li>return file/dir have permission</li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find . -perm 777
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find . -perm 777
 </code></pre></div><ul>
 <li>execute another command on result of a find command</li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find path -name &#34;*.py&#34; -exec rm {} +
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find path -name &#34;*.py&#34; -exec rm {} +
 </code></pre></div><ul>
 <li>exclude in find</li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find ./codeforces -type f ! -name &#34;*.*&#34;
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find ./codeforces -type f ! -name &#34;*.*&#34;
 </code></pre></div><ul>
 <li>find default apply for all subdirectory, to only apply for 1 level directory, use <code>-maxdepth</code></li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find . -type f -name &#34;*.jpg&#34; -maxdepth 1
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ find . -type f -name &#34;*.jpg&#34; -maxdepth 1
 </code></pre></div><h2 id="iii-du-disk-usage">III. du (Disk Usage)</h2>
 <p>Example</p>
 <ul>
 <li>show size of current directory in human-readable output</li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ du -shc
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ du -shc
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>$ du -s .[^.]*
 </code></pre></div><h2 id="iv-sed-stream-editor">IV. sed (Stream EDitor)</h2>
 <ul>
 <li>Find and replace text in a file</li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>sed -i &#39;s/original/new/g&#39; file.txt
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>sed -i &#39;s/original/new/g&#39; file.txt
 </code></pre></div><p><code>-i</code>: in-place (ie: save back to original file)<br>
 <code>s</code>: substitute command<br>
 <code>g</code>: global (ie: replace all and not just the firse occurence)</p>
 <ul>
 <li>insert text in b.txt into a.txt at line 5 (-i to save back to orginal a.txt)</li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>sed -i &#39;5r ~/path_to_b.txt&#39; a.txt
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>sed -i &#39;5r ~/path_to_b.txt&#39; a.txt
 </code></pre></div><h2 id="v-stat">V. stat</h2>
 <ul>
 <li>show statistics of a file or folder (size, permission, &hellip;)</li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ stat file.txt
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ stat file.txt
 </code></pre></div><h2 id="vi-awk-aho-weinberger-and-kernighan">VI. awk (Aho, Weinberger, and Kernighan)</h2>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ cat file.txt | grep &#34;pattern&#34; | awk &#39;{print $1 $2}&#39;
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ cat file.txt | grep &#34;pattern&#34; | awk &#39;{print $1 $2}&#39;
 </code></pre></div><h2 id="vii-xargs-extended-arguments">VII. xargs (eXtended ARGuments)</h2>
 <p>Read streams of data from standard input, then generate and executes command line, meaning it can take output of a command and passes it as argument of another command. If no command is speicified, xargs executes echo by default.</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ ps -ef | grep &#34;pattern&#34; | awk &#39;{print $2}&#39; | xargs kill -9
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ ps -ef | grep &#34;pattern&#34; | awk &#39;{print $2}&#39; | xargs kill -9
 </code></pre></div>
       </div>
 

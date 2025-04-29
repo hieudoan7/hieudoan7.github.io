@@ -20,9 +20,10 @@ Cho 2 xâu P (pattern) và S (string). Mộ số bài toán
 Cho 2 xâu P (pattern) và S (string). Mộ số bài toán
  Tìm vị trí xuất hiện đầu tiên của P trong S Đếm số lần xuất hiện P trong S Cho S, tìm P ngắn nhất để repeat P nhiều lần ta được S &hellip;  I. Z-function 1." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hieudoan7.github.io/algos/z-function/" />
+<meta property="og:url" content="https://hieudoan7.github.io/algos/z-function/" /><meta property="article:section" content="algos" />
 <meta property="article:published_time" content="2019-07-07T14:27:00+07:00" />
 <meta property="article:modified_time" content="2019-07-07T14:27:00+07:00" />
+
 
 
     
@@ -55,7 +56,7 @@ Cho 2 xâu P (pattern) và S (string). Mộ số bài toán
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
   </head>
 
   <body class=" ">
@@ -69,6 +70,10 @@ Cho 2 xâu P (pattern) và S (string). Mộ số bài toán
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
     <ul class="navigation-list">
       
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/ai/">AI/ML</a>
+          </li>
         
           <li class="navigation-item">
             <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
@@ -149,7 +154,7 @@ Cho 2 xâu P (pattern) và S (string). Mộ số bài toán
 <h3 id="1-định-nghĩa-z-function">1. Định nghĩa Z-function</h3>
 <p>Cho xâu $S = s[0..n-1]$.<br>
 Hàm $Z$ của xâu $S$ là dãy $z[0], z[1], &hellip;, z[n-1]$ trong đó $z[i]$ là <strong>max (length) prefix</strong> của $s[i..n-1]$ với $s[0..n-1]$.<br>
-Ví dụ: Xét xâu $S = &lsquo;abaabab'$ (length = 7)<br>
+Ví dụ: Xét xâu $S = &lsquo;abaabab&rsquo;$ (length = 7)<br>
 Ta sẽ có được hàm z</p>
 <table>
 <thead>
@@ -204,7 +209,7 @@ Ta sẽ có được hàm z</p>
 </ul>
 <h3 id="2-implement">2. Implement</h3>
 <h4 id="a-thuật-toán-bình-thường">a) Thuật toán bình thường</h4>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>z[i] = <span style="color:#b452cd">0</span> <span style="color:#8b008b;font-weight:bold">for</span> all i
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>z[i] = <span style="color:#b452cd">0</span> <span style="color:#8b008b;font-weight:bold">for</span> all i
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=<span style="color:#b452cd">1</span>; i&lt;n; i++){
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#8b008b;font-weight:bold">while</span>(i+z[i] &lt; n &amp;&amp; s[z[i]] == s[i+z[i]]) 
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>        z[i]++;
@@ -220,7 +225,7 @@ Từ thằng $right\_most$ ta sẽ xác định được điểm xuất phát c�
 <p>Có phải là đoạn $s[i..right\_most]$ nó hoàn toàn giống với đoạn $s[i-left..k-1]$ vì $z[left]
 = k$. Vì vậy ta sẽ tận dụng việc đoạn này đã được so sánh prefix với $s$ trước đó thông qua việc đi tính $z[i-left]$ trước đó.</p>
 <p>Đọc code sẽ rõ, nếu may mắn full cây (trùng cả đoạn) thì tăng lên so sánh tiếp, không thì được 1 khúc trùng với $z[i-left]$.</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; z_func(string s){
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; z_func(string s){
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#00688b;font-weight:bold">int</span> n = s.length();
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; z(n);
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#00688b;font-weight:bold">int</span> l = <span style="color:#b452cd">0</span>, r = <span style="color:#b452cd">0</span>;

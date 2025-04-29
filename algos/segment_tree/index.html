@@ -20,9 +20,10 @@ II. Cấu tạo chung của 1 segment tree Xét một array $a[n]$ (từ $0..n-1
 I. Mục đích: Giúp truy xuất giá trị trên 1 đoạn (segment) nhanh chóng và update giá trị nhanh chóng. Nhanh ở đây là $O(log\ n)$. Truy xuất ở đây có thể là tổng, phần tử nhỏ nhất, phần tử lớn nhất, &hellip; .
 II. Cấu tạo chung của 1 segment tree Xét một array $a[n]$ (từ $0..n-1$), ta build $1$ cái cây quản lý mảng a." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hieudoan7.github.io/algos/segment_tree/" />
+<meta property="og:url" content="https://hieudoan7.github.io/algos/segment_tree/" /><meta property="article:section" content="algos" />
 <meta property="article:published_time" content="2019-12-28T22:46:31+07:00" />
 <meta property="article:modified_time" content="2019-12-28T22:46:31+07:00" />
+
 
 
     
@@ -55,7 +56,7 @@ II. Cấu tạo chung của 1 segment tree Xét một array $a[n]$ (từ $0..n-1
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
   </head>
 
   <body class=" ">
@@ -69,6 +70,10 @@ II. Cấu tạo chung của 1 segment tree Xét một array $a[n]$ (từ $0..n-1
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
     <ul class="navigation-list">
       
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/ai/">AI/ML</a>
+          </li>
         
           <li class="navigation-item">
             <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
@@ -149,7 +154,7 @@ Tree phải có $size = 4n$ vì như ta thấy với $n = 6$, thì nó cần t�
 $$ T = 2^0 + 2^1 + 2^2 + &hellip; + 2^m$$ với $ m = ceil\{log_2(n)\} \leq log_2(n) + 1$
 $$\Rightarrow T = 2^0 + 2^1 + &hellip; + 2^{log_2(n)+1} = 2^{log_2(n)+2}-1 \leq 4n $$</p>
 <h2 id="iii-cài-đặt-segment-tree-thuần-túy-có-lazy-propagation">III. Cài đặt Segment Tree thuần túy có Lazy Propagation.</h2>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#228b22">//Khai báo dữ liệu
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#228b22">//Khai báo dữ liệu
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">int</span> n, a[N];
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#00688b;font-weight:bold">int</span> Tree[<span style="color:#b452cd">4</span>*N], Lazy[<span style="color:#b452cd">4</span>*N];
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#228b22">//1. Hàm build cây từ a[n]
@@ -228,7 +233,7 @@ $$\Rightarrow T = 2^0 + 2^1 + &hellip; + 2^{log_2(n)+1} = 2^{log_2(n)+2}-1 \leq 
 </ul>
 <p>Cài đặt: Thay vì build từ root đến lá như segment tree thuần túy ta sẽ build từ lá đến gốc, vẫn với size bất kì $n$.<br>
 Các node từ $n$ đến $2n-1$ là các node lá chứa các phần tử $a[0]$ đến $a[n-1]$ của mảng $a$. Từ đó đi lên node cha nó là nó/2 và node 1 luôn là root.</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#00688b;font-weight:bold">int</span> n, a[N];
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#00688b;font-weight:bold">int</span> n, a[N];
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#00688b;font-weight:bold">int</span> Tree[<span style="color:#b452cd">2</span>*N]; <span style="color:#228b22">//only need 2n (n nhỏ thôi)
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">get</span>(<span style="color:#00688b;font-weight:bold">int</span> L, <span style="color:#00688b;font-weight:bold">int</span> R){
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#00688b;font-weight:bold">int</span> res = <span style="color:#b452cd">0</span>;

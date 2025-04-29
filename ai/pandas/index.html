@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="hieudoan7">
+    <meta name="description" content="hieudoan7">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Pandas"/>
+<meta name="twitter:description" content="1. Loading data to pandas 1import pandas as pd 2df = pd.read_csv(&#39;pokemon_data.csv&#39;) incase csv file contains no header
+1df = pd.read_csv(&#39;pokemon_data.csv&#39;, header=None) You can also load data from files other than csv, such as txt, xlsx
+1df_xlsx = pd.read_excel(&#39;pokemon_data.xlsx&#39;) 2df_txt = pd.read_csv(&#39;pokemon_data.txt&#39;, delimiter=&#39;\t&#39;) # tab delimiter 2. Reading data in pandas  Read headers using df.columns. Read one/multiple columns: df[&#39;single_col&#39;], df[[&#39;col1&#39;, &#39;col2&#39;, &#39;col3&#39;]] Read rows  Iterate through all rows: 1for index, row in df."/>
+
+    <meta property="og:title" content="Pandas" />
+<meta property="og:description" content="1. Loading data to pandas 1import pandas as pd 2df = pd.read_csv(&#39;pokemon_data.csv&#39;) incase csv file contains no header
+1df = pd.read_csv(&#39;pokemon_data.csv&#39;, header=None) You can also load data from files other than csv, such as txt, xlsx
+1df_xlsx = pd.read_excel(&#39;pokemon_data.xlsx&#39;) 2df_txt = pd.read_csv(&#39;pokemon_data.txt&#39;, delimiter=&#39;\t&#39;) # tab delimiter 2. Reading data in pandas  Read headers using df.columns. Read one/multiple columns: df[&#39;single_col&#39;], df[[&#39;col1&#39;, &#39;col2&#39;, &#39;col3&#39;]] Read rows  Iterate through all rows: 1for index, row in df." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hieudoan7.github.io/ai/pandas/" /><meta property="article:section" content="ai" />
+<meta property="article:published_time" content="2025-04-28T11:43:59+10:00" />
+<meta property="article:modified_time" content="2025-04-28T11:43:59+10:00" />
+
+
+
+    
+      <base href="https://hieudoan7.github.io/ai/pandas/">
+    
+    <title>
+  Pandas · hieudoan7
+</title>
+
+    
+      <link rel="canonical" href="https://hieudoan7.github.io/ai/pandas/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://hieudoan7.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.92.2" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://hieudoan7.github.io/">
+      hieudoan7
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/ai/">AI/ML</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/be/">Backend Career</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/english/">English</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/interview/">Interview</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/others/">Others</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Pandas</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2025-04-28T11:43:59&#43;10:00'>
+                April 28, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              2 minutes read
+            </span>
+          </div>
+          
+          
+        </div>
+      </header>
+
+      <div>
+        <h2 id="1-loading-data-to-pandas">1. Loading data to pandas</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">pandas</span> <span style="color:#8b008b;font-weight:bold">as</span> <span style="color:#008b45;text-decoration:underline">pd</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>df = pd.read_csv(<span style="color:#cd5555">&#39;pokemon_data.csv&#39;</span>)
+</code></pre></div><p>incase csv file contains no header</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>df = pd.read_csv(<span style="color:#cd5555">&#39;pokemon_data.csv&#39;</span>, header=<span style="color:#8b008b;font-weight:bold">None</span>)
+</code></pre></div><p>You can also load data from files other than csv, such as txt, xlsx</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>df_xlsx = pd.read_excel(<span style="color:#cd5555">&#39;pokemon_data.xlsx&#39;</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>df_txt = pd.read_csv(<span style="color:#cd5555">&#39;pokemon_data.txt&#39;</span>, delimiter=<span style="color:#cd5555">&#39;</span><span style="color:#cd5555">\t</span><span style="color:#cd5555">&#39;</span>) <span style="color:#228b22"># tab delimiter</span>
+</code></pre></div><h2 id="2-reading-data-in-pandas">2. Reading data in pandas</h2>
+<ul>
+<li>Read headers using <code>df.columns</code>.</li>
+<li>Read one/multiple columns: <code>df['single_col']</code>, <code>df[['col1', 'col2', 'col3']]</code></li>
+<li>Read rows
+<ul>
+<li>Iterate through all rows:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8b008b;font-weight:bold">for</span> index, row <span style="color:#8b008b">in</span> df.iterrows():
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>    <span style="color:#658b00">print</span>(index, row[<span style="color:#cd5555">&#39;Name&#39;</span>])
+</code></pre></div></li>
+<li>read a subset of rows: <code>df.iloc[0:4]</code></li>
+<li>read rows satified specific conditions:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>df.loc[df[<span style="color:#cd5555">&#39;type&#39;</span>] == <span style="color:#cd5555">&#39;Grass&#39;</span>]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#228b22"># can join multiple conditions using | &amp; ~ (single symbol)</span>
+</code></pre></div></li>
+<li>Read a specific location (cell): <code>df.iloc[r, c]</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-sorting-data">3. Sorting data</h2>
+<p>Pandas supports sorting by multiple criteria in ascending/descending order by each criterio</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>df.sort_values([<span style="color:#cd5555">&#39;Type 1&#39;</span>, <span style="color:#cd5555">&#39;HP&#39;</span>], ascending=[<span style="color:#b452cd">1</span>, <span style="color:#b452cd">0</span>])
+</code></pre></div><h2 id="4-modifying-data">4. Modifying data</h2>
+<ul>
+<li>Add a new columns based on information from other columns</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>df[<span style="color:#cd5555">&#39;Total&#39;</span>] = df[<span style="color:#cd5555">&#39;HP&#39;</span>] + df[<span style="color:#cd5555">&#39;Attack&#39;</span>] + df[<span style="color:#cd5555">&#39;Defense&#39;</span>] + df[<span style="color:#cd5555">&#39;Sp. Atk&#39;</span>] + df[<span style="color:#cd5555">&#39;Sp. Def&#39;</span>] + df[<span style="color:#cd5555">&#39;Speed&#39;</span>]
+</code></pre></div><p>you can use the dot syntax only if the column name is single word</p>
+<ul>
+<li>drop columns: <code>df = df.drop(columns=['Total'])</code></li>
+<li>Build a new dataframe by selecting some columns from old one<br>
+<code>df = df[cols[0:4] + [cols[-1]]+cols[4:12]]</code></li>
+<li>Conditional Changes</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>df.loc[df[<span style="color:#cd5555">&#39;Total&#39;</span>] &gt; <span style="color:#b452cd">500</span>, [<span style="color:#cd5555">&#39;Generation&#39;</span>,<span style="color:#cd5555">&#39;Legendary&#39;</span>]] = [<span style="color:#cd5555">&#39;Test 1&#39;</span>, <span style="color:#cd5555">&#39;Test 2&#39;</span>]
+</code></pre></div><h2 id="5-saving-data-exporting-to-files">5. Saving data (exporting to files)</h2>
+<p>Like loading data, you can export into desired format</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>df.to_csv(<span style="color:#cd5555">&#39;modified.csv&#39;</span>, index=<span style="color:#8b008b;font-weight:bold">False</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>df.to_excel(<span style="color:#cd5555">&#39;modified.xlsx&#39;</span>, index=<span style="color:#8b008b;font-weight:bold">False</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>df.to_csv(<span style="color:#cd5555">&#39;modified.txt&#39;</span>, index=<span style="color:#8b008b;font-weight:bold">False</span>, sep=<span style="color:#cd5555">&#39;</span><span style="color:#cd5555">\t</span><span style="color:#cd5555">&#39;</span>)
+</code></pre></div><h2 id="6-filtering-data">6. Filtering data</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>new_df = df.loc[(df[<span style="color:#cd5555">&#39;Type 1&#39;</span>] == <span style="color:#cd5555">&#39;Grass&#39;</span>) &amp; (df[<span style="color:#cd5555">&#39;Type 2&#39;</span>] == <span style="color:#cd5555">&#39;Poison&#39;</span>) &amp; (df[<span style="color:#cd5555">&#39;HP&#39;</span>] &gt; <span style="color:#b452cd">70</span>)]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>new_df.reset_index(drop=<span style="color:#8b008b;font-weight:bold">True</span>, inplace=<span style="color:#8b008b;font-weight:bold">True</span>)
+</code></pre></div><h2 id="6-aggregate-statistics-groupby">6. Aggregate Statistics/ Groupby</h2>
+<p>groupby method return DataframeGroupBy object, often follow by aggregating methods like sum, mean, count</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>df[<span style="color:#cd5555">&#39;count&#39;</span>] = <span style="color:#b452cd">1</span>  <span style="color:#228b22"># add a supporting column for precisely counting</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>df.groupby([<span style="color:#cd5555">&#39;Type 1&#39;</span>, <span style="color:#cd5555">&#39;Type 2&#39;</span>]).count()[<span style="color:#cd5555">&#39;count&#39;</span>]
+</code></pre></div><h2 id="7-working-with-large-amount-of-data">7. Working with large amount of data</h2>
+<p>Pandas supports reading the file by chunk</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>new_df = pd.DataFrame(columns=df.columns)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#8b008b;font-weight:bold">for</span> df <span style="color:#8b008b">in</span> pd.read_csv(<span style="color:#cd5555">&#39;modified.csv&#39;</span>, chunksize=<span style="color:#b452cd">5</span>):
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    results = df.groupby([<span style="color:#cd5555">&#39;Type 1&#39;</span>]).count()
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>    new_df = pd.concat([new_df, results])
+</code></pre></div>
+      </div>
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://https-hieudoan7-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Become the BEST VERSION of YOU.</p>
+    
+    
+    
+    
+      
+      [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
+    
+  </section>
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

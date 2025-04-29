@@ -22,9 +22,10 @@ Các tính chất của cây:  Cây n nodes luôn có n-1 cạnh Mỗi cạnh đ
 I. Definition  Tree: (Cây) là đồ thị vô hướng (undirected), liên thông (connected) và không có chu trình (acyclic).
 Các tính chất của cây:  Cây n nodes luôn có n-1 cạnh Mỗi cạnh đều là cầu Thêm 1 cạnh bất kì sẽ tạo nên chu trình.   Spanning Tree: (Cây khung) là Cây chứa tất cả các nodes, so nó luôn có n-1 cạnh." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hieudoan7.github.io/algos/minimum_spaning_tree/" />
+<meta property="og:url" content="https://hieudoan7.github.io/algos/minimum_spaning_tree/" /><meta property="article:section" content="algos" />
 <meta property="article:published_time" content="2019-08-05T20:25:45+07:00" />
 <meta property="article:modified_time" content="2019-08-05T20:25:45+07:00" />
+
 
 
     
@@ -57,7 +58,7 @@ Các tính chất của cây:  Cây n nodes luôn có n-1 cạnh Mỗi cạnh đ
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
   </head>
 
   <body class=" ">
@@ -71,6 +72,10 @@ Các tính chất của cây:  Cây n nodes luôn có n-1 cạnh Mỗi cạnh đ
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
     <ul class="navigation-list">
       
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/ai/">AI/ML</a>
+          </li>
         
           <li class="navigation-item">
             <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
@@ -166,7 +171,7 @@ Ban đầu tất cả các đỉnh rời nhau. Lấy các cạnh theo thứ tự
 <h4 id="cài-đặt-tầm-thường">Cài đặt tầm thường:</h4>
 <p>$$\Rightarrow O(M\ log\ N + N^2)$$
 ($M\ log\ N \approx M\ log\ M$)</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#8b008b;font-weight:bold">struct</span> <span style="color:#008b45;font-weight:bold">Edge</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#8b008b;font-weight:bold">struct</span> <span style="color:#008b45;font-weight:bold">Edge</span> {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#00688b;font-weight:bold">int</span> u, v, weight;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#00688b;font-weight:bold">bool</span> <span style="color:#8b008b;font-weight:bold">operator</span>&lt;(Edge <span style="color:#8b008b;font-weight:bold">const</span>&amp; other) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>        <span style="color:#8b008b;font-weight:bold">return</span> weight &lt; other.weight;
@@ -198,7 +203,7 @@ Ban đầu tất cả các đỉnh rời nhau. Lấy các cạnh theo thứ tự
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>}
 </code></pre></div><h3 id="cài-đặt-dùng-dsu-disjoint-set-union">Cài đặt dùng DSU (Disjoint Set Union)</h3>
 <p>$$\Rightarrow O(M\ log\ N + N + M) = O(M\ log\ N)$$</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; parent, rank; 
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; parent, rank; 
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#228b22">//parent: leader (representative)
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#228b22">//rank: height of tree
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">make_set</span>(<span style="color:#00688b;font-weight:bold">int</span> v) {

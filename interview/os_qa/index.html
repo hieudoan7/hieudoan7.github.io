@@ -20,9 +20,10 @@
   mutex mutual exclusion object, used for protecting critical resource only the owner process can release the mutex
   binary semaphore wait() and signal() //using signaling mechanism hey, i&rsquo;m done, you can carry on wait() and singal() is totally decoupled you can wait() (decrement) on Process B and signal() on process A (increment) semaphore: integer indicating number of &ldquo;toilets&rdquo; available mutex: object acts like a key" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hieudoan7.github.io/interview/os_qa/" />
+<meta property="og:url" content="https://hieudoan7.github.io/interview/os_qa/" /><meta property="article:section" content="interview" />
 <meta property="article:published_time" content="2022-02-25T20:35:40+07:00" />
 <meta property="article:modified_time" content="2022-02-25T20:35:40+07:00" />
+
 
 
     
@@ -55,7 +56,7 @@
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
   </head>
 
   <body class=" ">
@@ -69,6 +70,10 @@
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
     <ul class="navigation-list">
       
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/ai/">AI/ML</a>
+          </li>
         
           <li class="navigation-item">
             <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
@@ -165,7 +170,7 @@ hardware cache called a translation look-aside buffer ( TLB )</p>
 <p>why stack&rsquo;s memory address grows downward and heap&rsquo;s memory grows upward</p>
 <p>Most of the answers are too caught up in the abstractions.</p>
 <p>Stack allocation is done at the CPU level, by a simple sub intruction on the stack pointer.</p>
-<p>Heap allocation, on the other hand, is managed by the operating system, or some other abstraction that “manages&rdquo; memory.</p>
+<p>Heap allocation, on the other hand, is managed by the operating system, or some other abstraction that “manages&quot; memory.</p>
 <p>What&rsquo;s faster - a single CPU instruction, or the set of operations done by calling an operating system&rsquo;s memory management algorithm? ;)</p>
 <p>Heap allocations are done at run time, so there&rsquo;s no way for a compiler to know where in the heap something gets allocated.</p>
 <p>I&rsquo;m wondering about the historical rationale for this</p>

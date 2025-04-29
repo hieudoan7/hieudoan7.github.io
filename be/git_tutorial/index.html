@@ -16,9 +16,10 @@
     <meta property="og:title" content="Basic Git Knowledge" />
 <meta property="og:description" content="Doing the job of a developer, we work with Git on daily basic and sometime we just feel fine and go on with some basic git flow. Have you ran into a git problem and hesitate to make any further steps to fix it? I think Git problem is something we cannot avoid, so why don&rsquo;t we spend a little time to dive deeply into it? Let&rsquo;s get started. Before we can imagine on different scenarios, let&rsquo;s take a look at some basic stuff." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hieudoan7.github.io/be/git_tutorial/" />
+<meta property="og:url" content="https://hieudoan7.github.io/be/git_tutorial/" /><meta property="article:section" content="be" />
 <meta property="article:published_time" content="2021-10-08T20:54:38+07:00" />
 <meta property="article:modified_time" content="2021-10-08T20:54:38+07:00" />
+
 
 
     
@@ -51,7 +52,7 @@
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
   </head>
 
   <body class=" ">
@@ -65,6 +66,10 @@
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
     <ul class="navigation-list">
       
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/ai/">AI/ML</a>
+          </li>
         
           <li class="navigation-item">
             <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
@@ -175,7 +180,7 @@ It depends:</p>
 forever</li>
 </ul>
 <p>One of the common applications of <code>git reset</code> beside actually reset, we can use it to squash last n commits into 1 commit. Just by performing 2 operations.</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ git reset --soft HEAD~n
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ git reset --soft HEAD~n
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>$ git commit -m &#39;squash last n commits&#39;
 </code></pre></div><h2 id="2-merge">2. Merge</h2>
 <p>I think this is the most powerful and common git usage, don&rsquo;t we always use git merge in working?

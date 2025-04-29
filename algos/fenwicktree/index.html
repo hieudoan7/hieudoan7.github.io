@@ -20,9 +20,10 @@
 Định nghĩa: Fenwick Tree (Binary Indexed Tree) là một CTDL với n node (n&#43;1 nodes với node gốc bù nhìn) chứa thông tin (thường là tổng cộng dồn) về các phần tử trong đoạn (i-(i&amp;-i), i] (mảng tính từ $1$)
  Nhận xét: Cây getSum vs cây Update khác nhau:  in GetSum: parent(i) = i-(i&amp;-i) in Update: parent(i) = i&#43;(i&amp;-i)    Mục đích: Mục đích cây này là để tính range sum và khi update 1 phần tử trong mảng a thì các range sum involved cũng được update với chi phí thấp." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hieudoan7.github.io/algos/fenwicktree/" />
+<meta property="og:url" content="https://hieudoan7.github.io/algos/fenwicktree/" /><meta property="article:section" content="algos" />
 <meta property="article:published_time" content="2019-06-25T13:25:20+07:00" />
 <meta property="article:modified_time" content="2019-06-25T13:25:20+07:00" />
+
 
 
     
@@ -55,7 +56,7 @@
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
   </head>
 
   <body class=" ">
@@ -69,6 +70,10 @@
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
     <ul class="navigation-list">
       
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/ai/">AI/ML</a>
+          </li>
         
           <li class="navigation-item">
             <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
@@ -152,7 +157,7 @@ fen[n+1]={0}</li>
 <li>Coi như ta đang update các phần tử của mảng, a[i] (i in [1..n]) và update vào fen[i] &amp; các parent of (i)<br>
 ** parent(i) = i+ (i&amp;-i)</li>
 </ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>  <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">update</span> (<span style="color:#00688b;font-weight:bold">int</span> pos, <span style="color:#00688b;font-weight:bold">int</span> val){
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>  <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">update</span> (<span style="color:#00688b;font-weight:bold">int</span> pos, <span style="color:#00688b;font-weight:bold">int</span> val){
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>      <span style="color:#8b008b;font-weight:bold">while</span>(pos&lt;=n){
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>          fen[pos]+=val;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>          pos+= (pos&amp;-pos);
@@ -160,7 +165,7 @@ fen[n+1]={0}</li>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>  }
 </code></pre></div><ul>
 <li>Bàn về update: Khi update a[i], ta phải update những <code>fen[j]</code> với range <code>(j-(j&amp;-j), j]</code> contains <code>i</code>
-Nghĩa là: <code>j = i + bit 1 (ở 1 vị trí nào đó)</code> đảm bảo biên phải luôn <code>&gt; i</code> \<br>
+Nghĩa là: <code>j = i + bit 1 (ở 1 vị trí nào đó)</code> đảm bảo biên phải luôn <code>&gt; i</code> \
 Biên trái:
 <ul>
 <li>Nếu add bit 1 vào trước <code>LSOne(i)</code> thì khi <code>j - (j&amp;-j)+ 1 &gt; i</code> (không chứa i) &ndash;&gt; <strong>Loại</strong></li>
@@ -175,7 +180,7 @@ Thì j - (j&amp;-j) + 1 &gt; i cũng ko contains i, lượng thêm vào nó nhi�
 <p>Chú thích: <code>LSOne(i)</code> là giá trị bit 1 trái nhất của i. (Least Significant bit)<br>
 <strong>Củ chuối vl, đọc giải thích + implement trong Handbook ok hơn!!!</strong></p>
 <h3 id="2-get-prefix-sum">2. Get prefix sum</h3>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>    <span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">sum</span> (<span style="color:#00688b;font-weight:bold">int</span> pos){ <span style="color:#228b22">//sum all [1..pos]
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>    <span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">sum</span> (<span style="color:#00688b;font-weight:bold">int</span> pos){ <span style="color:#228b22">//sum all [1..pos]
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#228b22"></span>        <span style="color:#00688b;font-weight:bold">int</span> ans = <span style="color:#b452cd">0</span>;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>        <span style="color:#8b008b;font-weight:bold">while</span>(pos &gt; <span style="color:#b452cd">0</span>){
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>            ans += fen[pos];

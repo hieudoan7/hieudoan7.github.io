@@ -22,9 +22,10 @@ I. Implementation 1typedef long long ll; 2ll gcd (ll a, ll b){ 3 return b==0? a 
 Không mất tính tổng quát, giả sử $a &gt; b$.
 Nhìn hình, ta thấy, $gcd(a, b) = x$ khi và chỉ khi $x$ là ước của $a$, $x$ cũng là ước của $b$ và $x$ lớn nhất." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hieudoan7.github.io/algos/gcd_euclid/" />
+<meta property="og:url" content="https://hieudoan7.github.io/algos/gcd_euclid/" /><meta property="article:section" content="algos" />
 <meta property="article:published_time" content="2019-07-11T21:49:24+07:00" />
 <meta property="article:modified_time" content="2019-07-11T21:49:24+07:00" />
+
 
 
     
@@ -57,7 +58,7 @@ Nhìn hình, ta thấy, $gcd(a, b) = x$ khi và chỉ khi $x$ là ước của $
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
   </head>
 
   <body class=" ">
@@ -71,6 +72,10 @@ Nhìn hình, ta thấy, $gcd(a, b) = x$ khi và chỉ khi $x$ là ước của $
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
     <ul class="navigation-list">
       
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/ai/">AI/ML</a>
+          </li>
         
           <li class="navigation-item">
             <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
@@ -133,7 +138,7 @@ Nhìn hình, ta thấy, $gcd(a, b) = x$ khi và chỉ khi $x$ là ước của $
         <h1 id="greatest-common-divisor-using-euclidean-algorithm">Greatest Common Divisor using Euclidean Algorithm</h1>
 <p>11/07/2019</p>
 <h2 id="i-implementation">I. Implementation</h2>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8b008b;font-weight:bold">typedef</span> <span style="color:#00688b;font-weight:bold">long</span> <span style="color:#00688b;font-weight:bold">long</span> ll;
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8b008b;font-weight:bold">typedef</span> <span style="color:#00688b;font-weight:bold">long</span> <span style="color:#00688b;font-weight:bold">long</span> ll;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>ll <span style="color:#008b45">gcd</span> (ll a, ll b){
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#8b008b;font-weight:bold">return</span> b==<span style="color:#b452cd">0</span>? a : gcd(b, a%b); <span style="color:#228b22">//phải hỏi b==0? chứ b=0 thì làm sao a chia dư 0 được.
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#228b22"></span>}

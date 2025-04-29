@@ -10,27 +10,27 @@
     <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Pending"/>
-<meta name="twitter:description" content="I. Google Wire for dependency injection  only one method: wire.Build(struct1.New, struct2.New) normally, struct1 will be dependency of struct2 if struct2.New only required a field in struct1 -&gt; use FieldsOf() after new struct1 if struct2&rsquo;s input is an interface, we need to bind that interface to a struct just created in struct1.New  II. Spcli proto  spcli proto gen spcli proto publish [&ndash;force] topic_name path/file_name.proto  III. Go confusing stuff  Empty list is not a nil var a *A //  a := &amp;A{} // &amp;{ empty value each fields}  Draft orders Item: ."/>
+<meta name="twitter:title" content="Introduction"/>
+<meta name="twitter:description" content="Hello there, this section contains all of my writing about AI/ML/DS. This is my new found hobby and career after trying bunch of careers. hehe"/>
 
-    <meta property="og:title" content="Pending" />
-<meta property="og:description" content="I. Google Wire for dependency injection  only one method: wire.Build(struct1.New, struct2.New) normally, struct1 will be dependency of struct2 if struct2.New only required a field in struct1 -&gt; use FieldsOf() after new struct1 if struct2&rsquo;s input is an interface, we need to bind that interface to a struct just created in struct1.New  II. Spcli proto  spcli proto gen spcli proto publish [&ndash;force] topic_name path/file_name.proto  III. Go confusing stuff  Empty list is not a nil var a *A //  a := &amp;A{} // &amp;{ empty value each fields}  Draft orders Item: ." />
+    <meta property="og:title" content="Introduction" />
+<meta property="og:description" content="Hello there, this section contains all of my writing about AI/ML/DS. This is my new found hobby and career after trying bunch of careers. hehe" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hieudoan7.github.io/others/pending/" /><meta property="article:section" content="others" />
-<meta property="article:published_time" content="2021-10-19T10:17:44+07:00" />
-<meta property="article:modified_time" content="2021-10-19T10:17:44+07:00" />
+<meta property="og:url" content="https://hieudoan7.github.io/ai/introduction/" /><meta property="article:section" content="ai" />
+<meta property="article:published_time" content="2025-04-28T08:35:57+10:00" />
+<meta property="article:modified_time" content="2025-04-28T08:35:57+10:00" />
 
 
 
     
-      <base href="https://hieudoan7.github.io/others/pending/">
+      <base href="https://hieudoan7.github.io/ai/introduction/">
     
     <title>
-  Pending · hieudoan7
+  Introduction · hieudoan7
 </title>
 
     
-      <link rel="canonical" href="https://hieudoan7.github.io/others/pending/">
+      <link rel="canonical" href="https://hieudoan7.github.io/ai/introduction/">
     
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
@@ -108,14 +108,14 @@
     <article>
       <header>
         <div class="post-title">
-          <h1 class="title">Pending</h1>
+          <h1 class="title">Introduction</h1>
         </div>
         <div class="post-meta">
           <div class="date">
             <span class="posted-on">
               <i class="fas fa-calendar"></i>
-              <time datetime='2021-10-19T10:17:44&#43;07:00'>
-                October 19, 2021
+              <time datetime='2025-04-28T08:35:57&#43;10:00'>
+                April 28, 2025
               </time>
             </span>
             <span class="reading-time">
@@ -129,66 +129,7 @@
       </header>
 
       <div>
-        <h1 id="i-google-wire-for-dependency-injection">I. Google Wire for dependency injection</h1>
-<ul>
-<li>only one method:
-wire.Build(struct1.New, struct2.New)
-normally, struct1 will be dependency of struct2
-if struct2.New only required a field in struct1
--&gt; use FieldsOf() after new struct1
-if struct2&rsquo;s input is an interface, we need to bind that interface to a struct just created in struct1.New</li>
-</ul>
-<h1 id="ii-spcli-proto">II. Spcli proto</h1>
-<ul>
-<li>spcli proto gen</li>
-<li>spcli proto publish [&ndash;force] topic_name path/file_name.proto</li>
-</ul>
-<h1 id="iii-go-confusing-stuff">III. Go confusing stuff</h1>
-<ol>
-<li>Empty list is not a nil</li>
-<li>var a *A // <nil>
-a := &amp;A{} // &amp;{ empty value each fields}</li>
-</ol>
-<h1 id="draft">Draft</h1>
-<p>orders
-Item:
-.Stock
-.ItemType
-.PffInputPriceForced
-.SumStock
-.BundleDealInfo
-.ItemFulfillmentList</p>
-<p>haveMultiWh</p>
-<p>-&gt; skip pre-check item stock for deducted items</p>
-<h1 id="iv-go-test">IV. Go test</h1>
-<ul>
-<li>go test package.go package_test.go -v -cover</li>
-<li>or move into package&rsquo;s directory</li>
-<li>go test -cover -v
-coverage: go test -coveprofile=prof.out
-visualization: go tool cover -html=prof.out</li>
-</ul>
-<h1 id="v-spex-stuff">V. SPEX stuff</h1>
-<p>export SP_UNIX_SOCKET=/tmp/spex.sock
-socat -d -d -d UNIX-LISTEN:/tmp/spex.sock,reuseaddr,fork TCP:agent-tcp.spex.test.shopee.io:9299
-list out all env variables: env
-? SPEX self call</p>
-<ol>
-<li>spex server: all about SPEX agen
-sps.Init()
-sps.registerProcessor()
-sps.Register()</li>
-<li>spex client
-sps.Init()
-sps.subscribeConfig()
-sps.Register()</li>
-</ol>
-<p>service_info_path
-./configs/spexservice/lostmodule.json
-SP_CONFIG_KEY
-c901206a990dff59fba338a6b6303dff
-SP_UNIX_SOCKET
-/tmp/spex.sock</p>
+        <p>Hello there, this section contains all of my writing about AI/ML/DS. This is my new found hobby and career after trying bunch of careers. hehe</p>
 
       </div>
 

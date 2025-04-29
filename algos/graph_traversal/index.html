@@ -24,9 +24,10 @@ Assuming we are using adjacent list to represent a graph.
 I. Depth-First Search (DFS) Idea: Đi sâu rồi quần lại.
 1. Implement 1vector&lt;int&gt; g[N]; //or vector&lt;vector&lt;int&gt;&gt; g; 2bool vis[N]; 3void dfs(int v){ //vertex 4 vis[v] = true; 5 for(auto u:g[v]){ //always for u =)) 6 if (!vis[u]) dfs(u); 7 } 8} 9//in main 10for(int i=0; i&lt;n; i&#43;&#43;){ 11 if (!" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hieudoan7.github.io/algos/graph_traversal/" />
+<meta property="og:url" content="https://hieudoan7.github.io/algos/graph_traversal/" /><meta property="article:section" content="algos" />
 <meta property="article:published_time" content="2019-09-12T20:25:41+07:00" />
 <meta property="article:modified_time" content="2019-09-12T20:25:41+07:00" />
+
 
 
     
@@ -59,7 +60,7 @@ I. Depth-First Search (DFS) Idea: Đi sâu rồi quần lại.
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://hieudoan7.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
   </head>
 
   <body class=" ">
@@ -73,6 +74,10 @@ I. Depth-First Search (DFS) Idea: Đi sâu rồi quần lại.
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
     <ul class="navigation-list">
       
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hieudoan7.github.io/ai/">AI/ML</a>
+          </li>
         
           <li class="navigation-item">
             <a class="navigation-link" href="https://hieudoan7.github.io/algos/">Algorithms</a>
@@ -139,7 +144,7 @@ Assuming we are using adjacent list to represent a graph.</p>
 <h2 id="i-depth-first-search-dfs">I. Depth-First Search (DFS)</h2>
 <p>Idea: Đi sâu rồi quần lại.</p>
 <h3 id="1-implement">1. Implement</h3>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; g[N]; <span style="color:#228b22">//or vector&lt;vector&lt;int&gt;&gt; g;
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; g[N]; <span style="color:#228b22">//or vector&lt;vector&lt;int&gt;&gt; g;
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">bool</span> vis[N];
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">dfs</span>(<span style="color:#00688b;font-weight:bold">int</span> v){  <span style="color:#228b22">//vertex
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#228b22"></span>    vis[v] = <span style="color:#658b00">true</span>;
@@ -155,7 +160,7 @@ Assuming we are using adjacent list to represent a graph.</p>
 <h3 id="2-application">2. Application</h3>
 <h4 id="21-connectivity-check-count-cc">2.1. Connectivity Check, Count #CC</h4>
 <p>Một đồ thị là connected nếu nó chỉ có 1 CC (connected component). So, giống như việc đếm số CC, nếu số CC &gt; 1 thì đồ thị là không kết nối.</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>    dfs(<span style="color:#b452cd">0</span>);
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>    dfs(<span style="color:#b452cd">0</span>);
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>    <span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=<span style="color:#b452cd">0</span>; i&lt;n; i++){
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>        <span style="color:#8b008b;font-weight:bold">if</span> (!vis[i]) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>            cout &lt;&lt; <span style="color:#cd5555">&#34;Unconnected Graph&#34;</span>;
@@ -165,7 +170,7 @@ Assuming we are using adjacent list to represent a graph.</p>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>    cout &lt;&lt; <span style="color:#cd5555">&#34;Connected Graph&#34;</span>;
 </code></pre></div><h4 id="22-finding-cycles">2.2. Finding Cycles</h4>
 <p>Nếu trong quá trình duyệt graph mà phát hiện một đỉnh đã visited mà không phải cha nó (theo chiều đang duyệt) thì chứng tỏ nó có cycle.</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; g[N];
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; g[N];
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#00688b;font-weight:bold">bool</span> vis[N];
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#00688b;font-weight:bold">bool</span> <span style="color:#008b45">dfs</span>(<span style="color:#00688b;font-weight:bold">int</span> v, <span style="color:#00688b;font-weight:bold">int</span> p = -<span style="color:#b452cd">1</span>){
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    vis[v] = <span style="color:#658b00">true</span>;
@@ -191,7 +196,7 @@ Thiết nghĩ nên tham khảo: <a href="https://cp-algorithms.com/graph/depth-f
 <p>Idea: Lan truyền theo chiều rộng
 Một điểm khác biệt của BFS vs DFS là nó có thể tìm <strong>đường đi ngắn nhất</strong> khi mà cost giữa tất cả các cạnh như nhau.</p>
 <h3 id="1-implement-1">1. Implement</h3>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#00688b;font-weight:bold">bool</span> vis[N];
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#00688b;font-weight:bold">bool</span> vis[N];
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; g[N];
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">bfs</span>(<span style="color:#00688b;font-weight:bold">int</span> s){  <span style="color:#228b22">//start vertex
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#228b22"></span>    queue&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; q;
@@ -221,7 +226,7 @@ $O(V+E)$ thực chất là cộng vật lý luôn á. Nhưng mà trong asymtomic
 Xét đồ thị:</p>
 <p><img src="https://hieudoan7.github.io/imgs/dfs.jpg" alt="dfs"></p>
 <p>Khi lưu trong máy tính sẽ là mảng $g$ các vector.</p>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>g[1] = {2, 4}  
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>g[1] = {2, 4}  
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>g[2] = {1, 3, 5}  
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>g[3] = {2, 5}  
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>g[4] = {1}  
